@@ -1,0 +1,43 @@
+@use '../../base' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: size(5);
+  flex: 1;
+
+  .hidden {
+    display: none;
+  }
+
+  .input {
+    display: flex;
+    flex: 1;
+    padding: size(10) size(6);
+    border: transparent;
+    border-bottom: 1px solid var(--clr-gray-200);
+    font-size: fontSize(3xl);
+    font-weight: normal;
+    transition: all 0.7s ease-in-out;
+    font-family: var(--font-sans);
+
+    &:focus {
+      border: transparent;
+      outline: none;
+      border-bottom: 2px solid var(--clr-black);
+    }
+
+    &::placeholder {
+      font-size: fontSize(3xl);
+      color: var(--clr-gray-400);
+      font-weight: normal;
+    }
+  }
+
+  .message {
+    display: flex;
+    margin-left: size(4);
+    font-size: fontSize(lg);
+    color: var(--clr-gray-600);
+  }
+}

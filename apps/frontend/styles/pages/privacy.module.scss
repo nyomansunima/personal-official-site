@@ -1,0 +1,50 @@
+@use '../base' as *;
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: col(6);
+  margin: 0 auto;
+  padding: 140px 0;
+
+  article {
+    display: flex;
+    flex-direction: column;
+    font-size: fontSize(xl);
+    line-height: 1.7;
+    font-weight: 500;
+    gap: size(10);
+
+    h1 {
+      font-size: fontSize(7xl);
+      font-weight: 500;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: size(5);
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        margin-left: 40px;
+        gap: size(1);
+      }
+
+      h3 {
+        font-size: fontSize(4xl);
+        font-weight: 500;
+      }
+
+      h4 {
+        font-size: fontSize(3xl);
+        font-weight: 500;
+      }
+
+      a {
+        font-weight: 600;
+      }
+    }
+  }
+}

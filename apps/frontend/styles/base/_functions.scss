@@ -1,0 +1,34 @@
+@use 'variables' as *;
+
+// function to get the scale of
+// spacings
+@function getSpace($key) {
+  $size: map-get($spacings, $key);
+
+  @return #{$size};
+}
+
+// create the colum helper
+// for manage the size of
+// columns in flex
+@function col($key) {
+  $size: calc($key/12 * 100%);
+
+  @return #{$size};
+}
+
+// helper to get the size
+// for your property
+@function size($key) {
+  $size: map-get($spacings, $key);
+
+  @return #{$size};
+}
+
+// helper to get the font size
+// property
+@function fontSize($key) {
+  $size: map-get($fontSizes, $key);
+
+  @return #{$size};
+}

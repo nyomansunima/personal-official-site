@@ -1,0 +1,49 @@
+@use '../../base' as *;
+
+.item {
+  display: inline-block;
+  flex-direction: column;
+  width: 440px;
+  overflow: hidden;
+  margin: 0 size(8);
+  cursor: pointer;
+
+  &:nth-of-type(even) {
+    picture {
+      height: 60vh;
+    }
+  }
+
+  &:nth-of-type(3) {
+    picture {
+      height: 40vh;
+    }
+  }
+
+  picture {
+    display: flex;
+    position: relative;
+    height: 70vh;
+    overflow: hidden;
+    border-radius: 24px;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  h3 {
+    display: flex;
+    white-space: normal;
+    font-size: fontSize(2xl);
+    font-weight: 500;
+    margin-top: size(10);
+  }
+
+  span {
+    display: flex;
+    white-space: normal;
+    font-size: fontSize(xl);
+    margin-top: size(4);
+  }
+}

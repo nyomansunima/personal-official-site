@@ -1,0 +1,41 @@
+@use '../../base' as *;
+
+.faq_item {
+  display: flex;
+  flex-direction: column;
+  gap: size(6);
+  border: 1px solid var(--clr-gray-200);
+  padding: size(4) size(5);
+  border-radius: 16px;
+
+  .question {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    h5 {
+      display: flex;
+      flex: 1;
+      font-size: fontSize(xl);
+      font-weight: 500;
+    }
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      border: transparent;
+      outline: transparent;
+      font-size: fontSize(xl);
+      color: var(--clr-gray-600);
+      cursor: pointer;
+    }
+  }
+
+  .answer {
+    display: flex;
+    font-size: fontSize(xl);
+    line-height: 1.6;
+  }
+}

@@ -1,0 +1,40 @@
+@use '../../base' as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: getSpace(5) getSpace(10);
+
+  .brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .link {
+      display: flex;
+      position: relative;
+      cursor: pointer;
+    }
+  }
+
+  .spacer {
+    display: flex;
+    flex: 1;
+    flex-grow: 1;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    .wrapper {
+      display: flex;
+    }
+  }
+}

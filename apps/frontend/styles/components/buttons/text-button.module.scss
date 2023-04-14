@@ -1,0 +1,21 @@
+@use '../../base/' as *;
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: transparent;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: getSpace(4);
+    font-weight: 600;
+  }
+}

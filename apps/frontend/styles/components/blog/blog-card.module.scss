@@ -1,0 +1,216 @@
+@use '../../base' as *;
+
+.card {
+  display: flex;
+  grid-column: span 2 / span 2;
+  grid-row: span 6 / span 6;
+  cursor: pointer;
+  position: relative;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      transform: translateY(-12px);
+
+      button {
+        opacity: 1;
+        transform: translateY(12px);
+      }
+
+      img {
+        transform: scale(1.1);
+      }
+    }
+
+    button {
+      position: absolute;
+      opacity: 0;
+      top: size(0);
+      right: size(3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: size(12);
+      width: size(12);
+      border-radius: 100%;
+      background: var(--clr-white);
+      border: transparent;
+      outline: transparent;
+      z-index: 20;
+      transition: all 0.5s ease-in-out;
+
+      i {
+        font-size: fontSize(lg);
+      }
+    }
+
+    .thumbnail {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      flex: 1;
+      width: 100%;
+      border-radius: 20px;
+
+      img {
+        display: flex;
+        object-fit: cover;
+        filter: brightness(1);
+        transition: all 0.7s ease-in-out;
+      }
+    }
+
+    .category {
+      display: flex;
+      align-items: center;
+      gap: size(2);
+      margin-left: size(4);
+      margin-top: size(4);
+
+      .indicator {
+        height: size(2);
+        width: size(2);
+        border-radius: 100%;
+        background: var(--clr-black);
+      }
+
+      .label {
+        font-size: fontSize(base);
+        font-weight: 500;
+      }
+    }
+
+    .title {
+      margin-top: 20px;
+      display: flex;
+      white-space: normal;
+      font-size: fontSize(xl);
+      font-weight: 500;
+      line-height: 1.3;
+      width: 100%;
+    }
+  }
+}
+
+.slide {
+  display: inline-block;
+  margin: 0 15px;
+  width: 400px;
+
+  .category {
+    position: absolute;
+    top: size(3);
+    left: size(3);
+    padding: size(2) size(3);
+    border-radius: 40px;
+    background: var(--clr-white);
+  }
+
+  .title {
+    font-size: fontSize(2xl) !important;
+  }
+
+  .thumbnail {
+    min-height: calc(80vh - 200px);
+  }
+
+  &:nth-of-type(1),
+  &:nth-of-type(5) {
+    width: 500px;
+
+    .thumbnail {
+      min-height: calc(90vh - 200px);
+    }
+  }
+
+  &:nth-of-type(even) {
+    width: 300px;
+
+    .thumbnail {
+      min-height: calc(70vh - 200px);
+    }
+  }
+}
+
+.grid.random_layout {
+  grid-column: span 2 / span 2;
+  grid-row: span 4 / span 4;
+
+  .thumbnail {
+    min-height: calc(30vh);
+  }
+
+  &:nth-of-type(1) {
+    margin-top: 128px;
+    grid-column: span 6 / span 6;
+    grid-row: span 8 / span 8;
+
+    .category {
+      position: absolute;
+      top: size(3);
+      left: size(3);
+      background: var(--clr-white);
+      border-radius: 40px;
+      padding: size(2) size(4);
+    }
+
+    .title {
+      bottom: size(10);
+      width: col(8);
+      background: var(--clr-white);
+      border-radius: size(4);
+      padding: size(4) size(10);
+      padding-left: 140px;
+      left: -100px;
+      position: absolute;
+      font-size: fontSize(4xl);
+      font-weight: 600;
+    }
+  }
+}
+
+.full.random_layout {
+  &:nth-of-type(even) {
+    width: 300px;
+
+    .thumbnail {
+      min-height: calc(70vh - 200px);
+    }
+  }
+
+  &:nth-of-type(1) {
+    margin-top: 128px;
+    grid-column: span 4 / span 4;
+    grid-row: span 8 / span 8;
+
+    .category {
+      position: absolute;
+      top: size(3);
+      left: size(3);
+      background: var(--clr-white);
+      border-radius: 40px;
+      padding: size(2) size(4);
+    }
+
+    .title {
+      bottom: size(10);
+      width: col(8);
+      background: var(--clr-white);
+      border-radius: size(4);
+      padding: size(4) size(10);
+      padding-left: 140px;
+      left: -100px;
+      position: absolute;
+      font-size: fontSize(4xl);
+      font-weight: 600;
+    }
+  }
+}

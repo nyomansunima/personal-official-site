@@ -1,0 +1,493 @@
+@use '../base' as *;
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 320px;
+
+  section.overview_section {
+    display: flex;
+    flex-direction: column;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include container;
+      margin: 0 auto;
+      padding: 0 100px;
+      position: relative;
+      gap: 100px;
+
+      .image {
+        position: relative;
+        display: flex;
+        width: col(5);
+        height: 90vh;
+        background: url('/images/profile-background.png') no-repeat;
+        background-size: cover;
+        border-radius: 240px;
+        padding: size(14);
+        margin-top: 200px;
+        overflow: hidden;
+        cursor: pointer;
+        z-index: 99;
+
+        picture {
+          display: flex;
+          position: relative;
+          height: 100%;
+          width: 100%;
+
+          img {
+            object-fit: contain;
+            object-position: bottom;
+            margin-top: 80px;
+          }
+        }
+      }
+
+      h2 {
+        position: absolute;
+        display: flex;
+        top: 20%;
+        line-height: 1;
+        text-align: center;
+        font-size: 10rem;
+        font-weight: 900;
+        color: var(--clr-white);
+        width: col(7);
+        -webkit-text-stroke: 3px var(--clr-black);
+      }
+    }
+
+    .attr {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      padding: size(5) size(10);
+      border-radius: 40px;
+      border: 2px solid var(--clr-gray-100);
+      font-size: fontSize(lg);
+      font-weight: 500;
+      cursor: pointer;
+      background: var(--clr-white);
+
+      &:nth-of-type(1) {
+        left: 15%;
+        top: 30%;
+      }
+      &:nth-of-type(2) {
+        top: 60%;
+        left: 10%;
+      }
+      &:nth-of-type(3) {
+        top: 40%;
+        right: 13%;
+      }
+      &:nth-of-type(4) {
+        top: 70%;
+        right: 15%;
+      }
+      &:nth-of-type(5) {
+        top: 10%;
+        left: 10%;
+      }
+    }
+  }
+
+  section.about_section {
+    display: flex;
+    flex-direction: column;
+    padding: 140px 0;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      @include container;
+      margin: 0 auto;
+      padding: 0 100px;
+      gap: size(10);
+
+      h2 {
+        display: flex;
+        font-size: fontSize(7xl);
+        font-weight: 500;
+        line-height: 1;
+        width: col(6);
+      }
+
+      .detail {
+        display: flex;
+        flex-direction: column;
+        width: col(8);
+        gap: size(10);
+
+        span {
+          display: flex;
+          font-size: fontSize(2xl);
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  section.goal_section {
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+
+    .image {
+      display: flex;
+      width: 100%;
+      height: 110vh;
+      overflow: hidden;
+      position: relative;
+
+      &:hover {
+        picture img {
+          transform: scale(1.1);
+        }
+      }
+
+      picture {
+        display: flex;
+        height: 100%;
+        width: 100%;
+
+        img {
+          object-fit: cover;
+          transition: all 2.1s ease-in-out;
+        }
+      }
+    }
+
+    .content {
+      display: flex;
+      @include container;
+      margin: 0 auto;
+      gap: size(10);
+      justify-content: center;
+
+      .heeading {
+        display: flex;
+        width: col(2);
+
+        h4 {
+          display: flex;
+          font-size: fontSize(2xl);
+          font-weight: 600;
+          line-height: 1.3;
+        }
+      }
+
+      .detail {
+        display: flex;
+        flex-direction: column;
+        width: col(7);
+        gap: size(10);
+
+        span {
+          display: flex;
+          font-size: fontSize(2xl);
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  section.status_section {
+    display: flex;
+    flex-direction: column;
+    padding: 140px 0;
+    gap: 200px;
+
+    .heading {
+      display: flex;
+      flex-direction: column;
+      @include container;
+      margin: 0 auto;
+      padding: 0 140px;
+      align-items: center;
+
+      h2 {
+        display: flex;
+        font-size: fontSize(7xl);
+        width: col(6);
+        font-weight: 500;
+        line-height: 1;
+        text-align: center;
+      }
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(9, minmax(0, 1fr));
+      @include container;
+      margin: 0 auto;
+      gap: size(10);
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        grid-column: span 3 / span 3;
+        gap: size(5);
+        cursor: pointer;
+        border: 1px solid var(--clr-gray-100);
+        border-radius: 28px;
+        padding: size(5) size(6);
+        transition: all 1.2s ease-in-out;
+
+        &:hover {
+          transform: translateY(-20px);
+        }
+
+        h5 {
+          display: flex;
+          font-size: fontSize(2xl);
+          font-weight: 500;
+          line-height: 1.3;
+        }
+
+        .attr {
+          display: flex;
+          align-items: center;
+          gap: size(4);
+
+          span {
+            display: flex;
+            background: var(--clr-gray-100);
+            font-size: fontSize(base);
+            font-weight: 600;
+            padding: size(1) size(4);
+            border-radius: 20px;
+          }
+        }
+
+        span {
+          display: flex;
+          font-size: fontSize(xl);
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  section.certificate_section {
+    display: flex;
+    flex-direction: column;
+    padding: 140px 0;
+    gap: 200px;
+
+    .heading {
+      display: flex;
+      flex-direction: column;
+      @include container;
+      margin: 0 auto;
+      padding: 0 140px;
+      gap: size(10);
+
+      h2 {
+        display: flex;
+        font-size: fontSize(7xl);
+        width: col(6);
+        font-weight: 500;
+        line-height: 1;
+      }
+
+      span {
+        display: flex;
+        font-size: fontSize(2xl);
+        font-weight: 500;
+        width: col(7);
+      }
+    }
+
+    .content {
+      display: flex;
+      width: 100%;
+      overflow-x: hidden;
+
+      .slide {
+        display: flex;
+        white-space: nowrap;
+        gap: size(16);
+
+        .wrapper {
+          display: inline-block;
+          margin: 0 size(4);
+
+          .item {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            cursor: pointer;
+            border: 2px dashed;
+            padding: size(6) size(5);
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--clr-white);
+
+            h5 {
+              display: flex;
+              font-size: fontSize(2xl);
+              font-weight: 500;
+              line-height: 1.3;
+              white-space: normal;
+            }
+
+            .info {
+              display: flex;
+              flex-wrap: wrap;
+              white-space: normal;
+              align-items: center;
+              gap: size(5);
+              margin-top: size(4);
+
+              .publisher {
+                display: flex;
+                font-size: fontSize(lg);
+                font-weight: 500;
+              }
+
+              .date {
+                display: flex;
+                font-size: fontSize(lg);
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  section.experience_section {
+    display: flex;
+    @include container;
+    margin: 0 auto;
+    padding: 140px 100px;
+    gap: size(10);
+
+    .heading {
+      display: flex;
+      flex-direction: column;
+      width: col(6);
+      gap: size(10);
+
+      h2 {
+        display: flex;
+        font-size: fontSize(7xl);
+        font-weight: 500;
+        line-height: 1;
+      }
+
+      span {
+        display: flex;
+        font-size: fontSize(2xl);
+        font-weight: 500;
+      }
+    }
+
+    .content {
+      display: flex;
+      width: col(6);
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin-left: 32px;
+        gap: 200px;
+
+        li {
+          display: flex;
+          flex-direction: column;
+          gap: size(5);
+          position: relative;
+          cursor: pointer;
+
+          .pos {
+            display: flex;
+            position: absolute;
+            font-size: fontSize(3xl);
+            font-weight: 600;
+            color: var(--clr-gray-500);
+          }
+
+          h4 {
+            display: flex;
+            font-size: fontSize(3xl);
+            font-weight: 600;
+            color: var(--clr-gray-600);
+          }
+
+          span {
+            display: flex;
+            font-size: fontSize(xl);
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  section.client_section {
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+    padding: 140px 0;
+
+    .heading {
+      display: flex;
+      flex-direction: column;
+      @include container;
+      margin: 0 auto;
+      padding: 0 100px;
+      gap: size(10);
+
+      h2 {
+        display: flex;
+        font-size: fontSize(7xl);
+        font-weight: 500;
+        line-height: 1;
+        width: col(6);
+      }
+
+      span {
+        display: flex;
+        font-size: fontSize(2xl);
+        font-weight: 500;
+        width: col(7);
+      }
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+      gap: size(10);
+      @include container;
+      margin: 0 auto;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        grid-column: span 2 / span 2;
+        cursor: pointer;
+
+        picture {
+          position: relative;
+          aspect-ratio: 3/2;
+          background: var(--clr-white);
+
+          img {
+            object-fit: contain;
+            filter: grayscale(100%) brightness(0%);
+          }
+        }
+      }
+    }
+  }
+}

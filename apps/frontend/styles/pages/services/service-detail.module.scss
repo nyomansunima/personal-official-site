@@ -1,0 +1,394 @@
+@use '../../base' as *;
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 200px;
+
+  section.overview_section {
+    display: flex;
+    flex-direction: column;
+    padding: 140px 0;
+    margin-top: 100px;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      @include container;
+      margin: 0 auto;
+      gap: size(10);
+      padding: 0 100px;
+
+      span {
+        display: flex;
+        font-size: fontSize(xl);
+        font-weight: 500;
+        cursor: pointer;
+      }
+
+      h1 {
+        display: flex;
+        font-size: fontSize(7xl);
+        font-weight: 500;
+        width: col(9);
+        line-height: 1;
+      }
+    }
+
+    .illustration {
+      display: flex;
+      position: relative;
+      height: 100vh;
+      margin-top: 200px;
+      width: 100%;
+      overflow: hidden;
+
+      picture {
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        &:hover {
+          img {
+            transform: scale(1.07);
+          }
+        }
+
+        img {
+          transition: all 2.1s ease-in-out;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .summary {
+      display: flex;
+      flex-direction: column;
+      @include container;
+      margin: 0 auto;
+      margin-top: 200px;
+      padding: 0 100px;
+      gap: size(8);
+
+      p {
+        display: flex;
+        font-size: fontSize(2xl);
+        font-weight: 500;
+        width: col(8);
+      }
+
+      .actions {
+        display: flex;
+        gap: size(5);
+        margin-top: size(16);
+      }
+    }
+  }
+
+  section.purpose_section {
+    display: flex;
+    flex-direction: column;
+    padding: 140px 0;
+
+    .heading {
+      display: flex;
+      flex-direction: column;
+      @include container;
+      padding: 0 100px;
+      margin: 0 auto;
+      gap: size(10);
+
+      h2 {
+        display: flex;
+        line-height: 1;
+        width: col(6);
+        font-size: fontSize(7xl);
+        font-weight: 500;
+      }
+
+      span {
+        display: flex;
+        font-weight: 500;
+        font-size: fontSize(2xl);
+        width: col(7);
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      @include container;
+      gap: size(5);
+      margin: 0 auto;
+      margin-top: 100px;
+    }
+  }
+
+  section.platform_section {
+    display: flex;
+    @include container;
+    margin: 0 auto;
+    padding: 140px 0;
+    position: relative;
+    margin-top: 320px;
+    overflow-x: hidden;
+    gap: size(16);
+
+    .heading {
+      display: flex;
+      flex-direction: column;
+      width: col(5);
+      gap: size(10);
+
+      h2 {
+        display: flex;
+        font-size: fontSize(7xl);
+        line-height: 1;
+        font-weight: 500;
+      }
+
+      span {
+        display: flex;
+        font-size: fontSize(2xl);
+        font-weight: 500;
+      }
+    }
+
+    .content {
+      display: flex;
+      width: col(7);
+      flex-wrap: wrap;
+      gap: size(10);
+    }
+  }
+
+  section.process_section {
+    display: flex;
+    flex-direction: column;
+    padding: 140px 0;
+    gap: 200px;
+
+    .illustration {
+      display: flex;
+      position: relative;
+      width: col(10);
+      height: 96vh;
+      margin: 0 auto;
+      cursor: pointer;
+      overflow: hidden;
+
+      picture {
+        display: flex;
+        position: relative;
+        height: 100%;
+        width: 100%;
+
+        &:hover {
+          img {
+            transform: scale(1.09);
+          }
+        }
+
+        img {
+          object-fit: cover;
+          transition: all 1.9s ease-in-out;
+        }
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      @include container;
+      margin: 0 auto;
+      padding: 0 100px;
+
+      h2 {
+        display: flex;
+        font-size: fontSize(7xl);
+        font-weight: 500;
+        line-height: 1;
+        width: col(6);
+      }
+
+      span {
+        display: flex;
+        font-size: fontSize(2xl);
+        font-weight: 500;
+        width: col(7);
+        margin-top: size(10);
+      }
+    }
+
+    .detail {
+      display: flex;
+      gap: size(16);
+      overflow: hidden;
+      @include container;
+      margin: 0 auto;
+      padding: 0 100px;
+
+      .process_image {
+        display: flex;
+        width: col(5);
+        height: calc(100vh - 100px);
+        overflow: hidden;
+
+        &:hover {
+          picture {
+            img {
+              transform: scale(1.09);
+            }
+          }
+        }
+
+        picture {
+          display: flex;
+          position: relative;
+          height: 100%;
+          width: 100%;
+          cursor: pointer;
+
+          img {
+            transition: all 1.3s ease-in-out;
+            object-fit: cover;
+          }
+        }
+      }
+
+      ul.process {
+        display: inline-block;
+        position: relative;
+        flex-direction: column;
+        width: col(6);
+        height: 80vh;
+        margin-top: size(10);
+      }
+    }
+  }
+
+  section.tool_stack_section {
+    display: flex;
+    flex-direction: column;
+    padding: 140px 0;
+
+    .heading {
+      display: flex;
+      flex-direction: column;
+      @include container;
+      margin: 0 auto;
+      padding: 0 100px;
+
+      h2 {
+        display: flex;
+        font-size: fontSize(7xl);
+        font-weight: 500;
+        line-height: 1;
+        width: col(6);
+      }
+
+      span {
+        display: flex;
+        font-size: fontSize(2xl);
+        font-weight: 500;
+        width: col(7);
+        margin-top: size(10);
+      }
+    }
+
+    .list {
+      display: grid;
+      width: col(11);
+      margin: 0 auto;
+      margin-top: 200px;
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+      gap: 60px size(6);
+    }
+  }
+
+  section.sample_work_section {
+    display: flex;
+    flex-direction: column;
+    padding: 140px 0;
+    overflow-x: hidden;
+
+    .heading {
+      display: flex;
+      flex-direction: column;
+      @include container;
+      margin: 0 auto;
+      padding: 0 100px;
+
+      h2 {
+        display: flex;
+        font-size: fontSize(7xl);
+        font-weight: 500;
+        line-height: 1;
+        width: col(7);
+      }
+
+      span {
+        display: flex;
+        font-size: fontSize(2xl);
+        font-weight: 500;
+        width: col(7);
+        margin-top: size(10);
+      }
+    }
+
+    .slider {
+      display: inline-block;
+      white-space: nowrap;
+      margin-top: 140px;
+    }
+
+    .actions {
+      display: flex;
+      @include container;
+      margin: 0 auto;
+      justify-content: center;
+      margin-top: 400px;
+    }
+  }
+
+  section.requirements_section {
+    display: flex;
+    flex-direction: column;
+    padding: 140px 0;
+    gap: 200px;
+
+    .heading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: size(10);
+      @include container;
+      margin: 0 auto;
+
+      h2 {
+        display: flex;
+        font-size: fontSize(7xl);
+        font-weight: 500;
+        line-height: 1;
+        width: col(6);
+        text-align: center;
+      }
+
+      span {
+        display: flex;
+        font-size: fontSize(2xl);
+        font-weight: 500;
+        width: col(7);
+        text-align: center;
+      }
+    }
+
+    .content {
+      display: grid;
+      @include container;
+      margin: 0 auto;
+      gap: size(16) size(10);
+      grid-template-columns: repeat(9, minmax(0, 1fr));
+    }
+  }
+}
