@@ -1,6 +1,6 @@
-// define the connection into
-
 import axios from 'axios'
+
+const isBrowser = typeof window !== undefined
 
 /**
  * # hashNodeClient
@@ -9,7 +9,9 @@ import axios from 'axios'
  * platform using api to get all content user
  */
 const hashNodeClient = axios.create({
-  baseURL: process.env.HASHNODE_API_URL,
+  baseURL: isBrowser
+    ? process.env.HASHNODE_API_URL
+    : process.env.NEXT_PUBLIC_HASNODE_API_URL,
   timeout: 5000,
   transformResponse: [
     (res) => {
@@ -17,7 +19,8 @@ const hashNodeClient = axios.create({
     },
   ],
 })
-hashNodeClient.defaults.headers.common['Authorization'] =
-  process.env.HASHNODE_PERSONAL_ACCESS_TOKEN
+hashNodeClient.defaults.headers.common['Authorization'] = isBrowser
+  ? process.env.HASHNODE_PERSONAL_ACCESS_TOKEN
+  : process.env.NEXT_PUBLIC_PERSONAL_ACCESS_TOKEN
 
 export default hashNodeClient

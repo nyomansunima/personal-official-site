@@ -241,7 +241,7 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
                       className={styles.item}
                       onClick={() =>
                         openLink(
-                          `https://nyomansunima.hashnode.dev/${post.slug}`
+                          `${process.env.NEXT_PUBLIC_HASHNODE_BLOG_URL}/${post.slug}`
                         )
                       }
                     >

@@ -10,7 +10,10 @@
       "outputs": []
     },
     "dev": {
-      "cache": false
-    }
+      "cache": false,
+      "persistent": true
+    },
+    "deploy": {},
+    "deploy-graphql": {}
   }
 }

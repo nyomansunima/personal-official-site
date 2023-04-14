@@ -25,7 +25,7 @@ const BlogCard: FunctionComponent<BlogCardProps> = ({
   data,
 }): JSX.Element => {
   const openLink = () => {
-    window.open(`https://nyomansunima.hashnode.dev/${data.slug}`)
+    window.open(`${process.env.NEXT_PUBLIC_HASHNODE_BLOG_URL}/${data.slug}`)
   }
 
   return (
