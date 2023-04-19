@@ -11,4 +11,3 @@ jobs:
         with:
           node-version: 14.x
       - run: npm install --legacy-peer-deps
-      - run: npm run build
