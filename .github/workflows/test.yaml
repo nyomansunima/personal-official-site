@@ -3,13 +3,13 @@ name: Testing
 on: [push, pull_request]
 
 jobs:
-  build:
+  Build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 14.x
-      - run: npm install --legacy-peer-deps
+      - run: npm install
       - run: npm run lint
       - run: npm run build
