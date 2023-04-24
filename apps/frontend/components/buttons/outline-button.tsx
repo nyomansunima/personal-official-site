@@ -12,6 +12,7 @@ interface OutlineButtonProps {
   type?: string
   onClick?: () => void
   form?: string
+  magnetic?: any
 }
 
 /**
@@ -30,6 +31,7 @@ const OutlineButton: FunctionComponent<OutlineButtonProps> = ({
   onClick,
   form,
   isProcess,
+  magnetic,
 }): JSX.Element => {
   const buttonRef = useRef<HTMLButtonElement>(null)
   const backdropRef = useRef<HTMLSpanElement>(null)
@@ -122,7 +124,7 @@ const OutlineButton: FunctionComponent<OutlineButtonProps> = ({
   return (
     <button
       ref={buttonRef}
-      data-cursor-magnetic
+      data-cursor-magnetic={magnetic}
       data-cursor-stick
       disabled={disabled}
       type={type as any}
