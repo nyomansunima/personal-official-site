@@ -442,14 +442,18 @@ const FancyCursor: FunctionComponent<FancyCursorProps> = ({
       el.addEventListener('mousemove', (e) => {
         const areatarget = el as HTMLElement
         const type = areatarget.dataset['cursorMagnetic'] as string
+        const amount = parseFloat(
+          areatarget.dataset['cursorMagneticAmount'] || '.24'
+        )
+
         if (type == 'fixed') {
           gsap.to(areatarget, {
             x:
               (e.clientX - areatarget.offsetLeft - areatarget.clientWidth / 2) *
-              0.24,
+              amount,
             y:
               (e.clientY - areatarget.offsetTop - areatarget.clientHeight / 2) *
-              0.24,
+              amount,
             duration: magneticAnimationDuration,
             ease: magneticAnimationEase,
           })
@@ -459,12 +463,12 @@ const FancyCursor: FunctionComponent<FancyCursorProps> = ({
               (e.clientX -
                 (areatarget.offsetLeft - window.scrollX) -
                 areatarget.clientWidth / 2) *
-              0.24,
+              amount,
             y:
               (e.clientY -
                 (areatarget.offsetTop - window.scrollY) -
                 areatarget.clientHeight / 2) *
-              0.24,
+              amount,
             duration: magneticAnimationDuration,
             ease: magneticAnimationEase,
           })
