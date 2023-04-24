@@ -68,6 +68,7 @@ const PillOption: FunctionComponent<PillOptionProps> = ({
       onClick={onSelect}
       data-cursor-stick
       data-cursor-magnetic
+      data-cursor-magnetic-amount=".02"
       data-cursor-exclusion
       className={`${styles.option} ${className}`}
     >
