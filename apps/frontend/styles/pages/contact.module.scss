@@ -46,7 +46,32 @@
           margin-top: size(14);
           display: flex;
           justify-content: flex-end;
+          position: relative;
         }
+      }
+    }
+  }
+
+  .socials {
+    position: fixed;
+    left: size(10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: size(8);
+    list-style: none;
+    margin: auto 0;
+
+    li {
+      display: flex;
+      width: size(10);
+      height: size(10);
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      i {
+        font-size: fontSize(3xl);
       }
     }
   }
