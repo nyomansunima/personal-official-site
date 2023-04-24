@@ -15,13 +15,12 @@
     "deploy-graphql": "turbo run deploy-graphql"
   },
   "devDependencies": {
+    "eslint-config-custom": "*",
     "prettier": "latest",
-    "turbo": "latest",
-    "eslint-config-custom": "*"
+    "turbo": "^1.9.3"
   },
   "engines": {
     "node": ">=14.0.0"
   },
-  "dependencies": {},
   "packageManager": "npm@8.19.4"
 }
