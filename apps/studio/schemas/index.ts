@@ -19,6 +19,7 @@ import serviceRequirementSchema from './service/service-requirement-schema'
 import serviceResultSchema from './service/service-result-schema'
 import serviceSchema from './service/service-schema'
 import serviceToolSchema from './service/service-tool-schema'
+import socialSchema from './socials/social-schema'
 import storySchema from './story/story-schema'
 import timelineSchema from './timeline/timeline-schema'
 import toolSchema from './tools/tool-schema'
@@ -51,6 +52,9 @@ export const schemaTypes = [
 
   // common
   seoSchema,
+
+  // socials
+  socialSchema,
 
   // client
   clientSchema,

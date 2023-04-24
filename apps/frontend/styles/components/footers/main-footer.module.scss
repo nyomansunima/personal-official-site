@@ -22,7 +22,6 @@
 
       span {
         font-size: fontSize(xl);
-        color: var(--clr-gray-600);
         font-weight: 500;
       }
 
@@ -30,17 +29,17 @@
         display: flex;
         flex-direction: column;
         list-style: none;
-        gap: size(7);
+        gap: size(9);
 
         li {
           display: flex;
           cursor: pointer;
           line-height: 1;
-          font-weight: 500;
-          transition: all 0.5s ease-in-out;
+          font-weight: 600;
+          transition: all 1.2s ease-in-out;
 
           &:hover {
-            transform: translateX(-8px);
+            transform: translateY(-8px);
           }
         }
       }
@@ -55,7 +54,7 @@
     border-top: 1px solid var(--clr-gray-200);
 
     span {
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
     }
 

@@ -2,22 +2,14 @@ import { FunctionComponent, useEffect, useRef } from 'react'
 import styles from '@styles/components/footers/main-footer.module.scss'
 import { useRouter } from 'next/router'
 import { gsap } from 'gsap'
+import { useQuery } from '@tanstack/react-query'
+import commonService from '@lib/services/common-service'
+import useCursor from '@lib/hooks/use-cursor'
 
 interface SocialMenu {
   icon: string
   link: string
 }
-
-const socials: SocialMenu[] = [
-  {
-    icon: 'fi fi-brands-instagram',
-    link: 'https://instagram.com/nyomansunima',
-  },
-  { icon: 'fi fi-brands-twitter', link: 'https://twitter.com/nyomansunima' },
-  { icon: 'fi fi-brands-dribbble', link: 'https://dribbble.com/nyomansunima' },
-  { icon: 'fi fi-brands-github', link: 'https://github.com/nyomansunima' },
-  { icon: 'fi fi-brands-youtube', link: 'https://youtube.com/nyomansunima' },
-]
 
 interface MainMenu {
   headline: string
@@ -38,18 +30,17 @@ const mainMenus: MainMenu[] = [
     headline: 'Resources',
     menus: [
       { label: 'Blog', link: '/blog' },
-      { label: 'Inspirations', link: '/inspirations' },
+      { label: 'Inspirations', link: '/inspiration' },
       { label: 'Courses', link: '/courses' },
-      { label: 'Product', link: 'https://sonibble.com' },
+      { label: 'Products', link: 'https://sonibble.com' },
     ],
   },
   {
     headline: 'Services',
     menus: [
-      { label: 'Web Development', link: '/service/web-development' },
-      { label: 'Mobile Development', link: '/mobile-development' },
+      { label: 'Web Development', link: '/services/web-development' },
+      { label: 'Mobile Development', link: '/services/mobile-development' },
       { label: 'UI & UX Design', link: '/services/ui-ux-design' },
-      { label: 'Product from scratch', link: '/services/product-from-scratch' },
     ],
   },
 ]
@@ -62,8 +53,14 @@ const mainMenus: MainMenu[] = [
  * @returns JSX.Element
  */
 const MainFooter: FunctionComponent = (): JSX.Element => {
+  const cursor = useCursor()
   const router = useRouter()
   const footerRef = useRef<HTMLElement>(null)
+  const socialsQuery = useQuery(['socials'], commonService.loadAllSocialMedia, {
+    onSuccess: () => {
+      cursor.reload()
+    },
+  })
 
   const openLink = (link: string) => {
     if (link.includes('https://') || link.includes('http://')) {
@@ -79,32 +76,36 @@ const MainFooter: FunctionComponent = (): JSX.Element => {
         .timeline({
           delay: 0,
           defaults: {
-            ease: 'none',
+            ease: 'back',
             duration: 0.7,
           },
           scrollTrigger: {
             trigger: footerRef.current,
             start: 'top center',
-            end: 'bottom bottom',
-            scrub: true,
           },
-        })
-        .to(document.body, {
-          background: '#ffffff',
-          duration: 0.7,
-          ease: 'none',
         })
         .from('#footer nav span', {
           opacity: 0,
           y: 40,
           stagger: 0.3,
-          ease: 'none',
         })
         .from('#footer nav ul', {
           stagger: 0.2,
           opacity: 0,
           y: 40,
-          ease: 'none',
+        })
+
+      gsap
+        .timeline({
+          delay: 0,
+          defaults: {
+            ease: 'back',
+            duration: 0.7,
+          },
+          scrollTrigger: {
+            trigger: footerRef.current,
+            start: 'top center',
+          },
         })
         .from('#footer .credit-anim span', {
           y: 40,
@@ -121,7 +122,7 @@ const MainFooter: FunctionComponent = (): JSX.Element => {
     return () => {
       ctx.revert()
     }
-  }, [router.pathname])
+  }, [router.pathname, socialsQuery.data])
 
   return (
     <footer ref={footerRef} id="footer" className={styles.footer}>
@@ -131,7 +132,12 @@ const MainFooter: FunctionComponent = (): JSX.Element => {
             <span>{headline}</span>
             <ul>
               {menus.map(({ label, link }, menuIndex) => (
-                <li key={menuIndex} onClick={() => openLink(link)}>
+                <li
+                  data-cursor-size="80"
+                  data-cursor-exclusion
+                  key={menuIndex}
+                  onClick={() => openLink(link)}
+                >
                   {label}
                 </li>
               ))}
@@ -144,18 +150,18 @@ const MainFooter: FunctionComponent = (): JSX.Element => {
           Copyright &copy; {new Date().getFullYear()} - Alright Reserved
         </span>
         <ul className={styles.socials}>
-          {socials.map(({ icon, link }, index) => (
-            <li
-              // data-cursor-magnetic
-              data-cursor-stick
-              data-cursor-size="52"
-              data-cursor-exclusion
-              key={index}
-              onClick={() => openLink(link)}
-            >
-              <i className={icon}></i>
-            </li>
-          ))}
+          {socialsQuery.data &&
+            socialsQuery.data.map(({ iconCode, url }, index) => (
+              <li
+                data-cursor-stick
+                data-cursor-size="60"
+                data-cursor-exclusion
+                key={index}
+                onClick={() => openLink(url)}
+              >
+                <i className={iconCode}></i>
+              </li>
+            ))}
         </ul>
       </div>
     </footer>
