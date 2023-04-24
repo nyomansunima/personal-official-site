@@ -6,7 +6,7 @@ import {
   TextInput,
 } from '@components/forms'
 import { GeneralLayout } from '@components/layouts'
-import { useMutation } from '@tanstack/react-query'
+import { useMutation, useQuery } from '@tanstack/react-query'
 import Head from 'next/head'
 import { useForm } from 'react-hook-form'
 import { NextPageWithLayout } from '~/types/app'
@@ -18,6 +18,7 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import contactService from '@lib/services/contact-service'
 import { gsap } from 'gsap'
+import commonService from '@lib/services/common-service'
 
 const interests = [
   'Site from scratch',
@@ -52,6 +53,11 @@ const ContactPage: NextPageWithLayout = (): JSX.Element => {
   const [selectedInterests, setSelectedInterests] = useState<string[]>([])
   const cursor = useCursor()
   const mainRef = useRef<HTMLElement>(null)
+  const socialsQuery = useQuery(['socials'], commonService.loadAllSocialMedia, {
+    onSuccess: () => {
+      cursor.reload()
+    },
+  })
 
   const sendContact = useMutation(contactService.sendContact, {
     onSuccess: () => {
@@ -96,12 +102,21 @@ const ContactPage: NextPageWithLayout = (): JSX.Element => {
         y: 80,
         opacity: 0,
       })
+
+      if (socialsQuery.data) {
+        gsap.from('.socials li', {
+          left: -100,
+          ease: 'back',
+          stagger: 0.25,
+          duration: 1.5,
+        })
+      }
     }, mainRef)
 
     cursor.reload()
 
     return () => ctx.revert()
-  }, [])
+  }, [socialsQuery.data])
 
   return (
     <>
@@ -121,7 +136,7 @@ const ContactPage: NextPageWithLayout = (): JSX.Element => {
               data-cursor-size="200"
               data-cursor-exclusion
             >
-              Hey, tell me about anything 🖐️
+              Hey, tell me about anything 🎉
             </h1>
 
             <Form
@@ -174,6 +189,22 @@ const ContactPage: NextPageWithLayout = (): JSX.Element => {
             </Form>
           </div>
         </section>
+
+        {socialsQuery.data && (
+          <ul className={`${styles.socials} socials`}>
+            {socialsQuery.data.map(({ iconCode, url }, index) => (
+              <li
+                data-cursor-stick
+                data-cursor-exclusion
+                data-cursor-size="80"
+                key={index}
+                onClick={() => window.open(url)}
+              >
+                <i className={iconCode}></i>
+              </li>
+            ))}
+          </ul>
+        )}
       </main>
     </>
   )
