@@ -95,28 +95,30 @@ const MainFooter: FunctionComponent = (): JSX.Element => {
           y: 40,
         })
 
-      gsap
-        .timeline({
-          delay: 0,
-          defaults: {
-            ease: 'back',
-            duration: 0.7,
-          },
-          scrollTrigger: {
-            trigger: footerRef.current,
-            start: 'top center',
-          },
-        })
-        .from('#footer .credit-anim span', {
-          y: 40,
-          opacity: 0,
-        })
-        .from('#footer .credit-anim ul li', {
-          opacity: 0,
-          y: 100,
-          stagger: 0.2,
-          ease: 'none',
-        })
+      if (socialsQuery.data) {
+        gsap
+          .timeline({
+            delay: 0,
+            defaults: {
+              ease: 'back',
+              duration: 0.7,
+            },
+            scrollTrigger: {
+              trigger: footerRef.current,
+              start: 'top center',
+            },
+          })
+          .from('#footer .credit-anim span', {
+            y: 40,
+            opacity: 0,
+          })
+          .from('#footer .credit-anim ul li', {
+            opacity: 0,
+            y: 100,
+            stagger: 0.2,
+            ease: 'none',
+          })
+      }
     }, footerRef)
 
     return () => {

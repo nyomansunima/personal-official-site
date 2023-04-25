@@ -1,0 +1,44 @@
+@use '../../base' as *;
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: size(4);
+  font-size: fontSize(2xl);
+  font-weight: 500;
+
+  picture {
+    display: flex;
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    margin: size(5) auto;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  h3 {
+    display: flex;
+    font-size: fontSize(5xl);
+    font-weight: 500;
+    margin-top: size(4);
+  }
+
+  p {
+    display: flex;
+  }
+
+  ul {
+    list-style: unset;
+    display: flex;
+    flex-direction: column;
+    gap: size(3);
+    margin-left: size(10);
+
+    li {
+      display: list-item;
+    }
+  }
+}

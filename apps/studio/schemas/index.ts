@@ -1,6 +1,8 @@
 import certificateSchema from './certificate/certificate-schema'
 import clientSchema from './client/client-schema'
 import seoSchema from './common/seo-schema'
+import contentSchema from './content/content-schema'
+import exploreSchema from './explore/explore-schema'
 import faqCategorySchema from './faq/faq-category'
 import faqSchema from './faq/faq-schema'
 import inspirationListSchema from './inspiration/list'
@@ -38,6 +40,12 @@ export const schemaTypes = [
   // faq
   faqCategorySchema,
   faqSchema,
+
+  // explore
+  exploreSchema,
+
+  // content
+  contentSchema,
 
   // service
   serviceRequirementSchema,

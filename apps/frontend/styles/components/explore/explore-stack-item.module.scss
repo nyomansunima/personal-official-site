@@ -1,0 +1,26 @@
+@use '../../base' as *;
+
+.chip {
+  display: flex;
+  align-items: center;
+  padding: size(2) size(2);
+  padding-right: size(8);
+  border-radius: 40px;
+  border: 2px solid var(--clr-gray-100);
+  gap: size(5);
+  cursor: pointer;
+
+  img {
+    border-radius: 100%;
+    overflow: hidden;
+    object-fit: contain;
+  }
+
+  span {
+    display: flex;
+    flex: 1;
+    font-size: fontSize(xl);
+    font-weight: 500;
+    line-height: 1;
+  }
+}

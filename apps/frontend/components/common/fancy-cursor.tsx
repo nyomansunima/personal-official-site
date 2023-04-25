@@ -310,6 +310,10 @@ const FancyCursor: FunctionComponent<FancyCursorProps> = ({
       el.addEventListener('mouseenter', (e: MouseEvent) => {
         if (e.target instanceof HTMLElement && cursorInnerRef.current) {
           cursorInnerRef.current.textContent = `${e.target.dataset['cursorText']}`
+          const fontSize = e.target.dataset['cursorTextSize']
+          if (fontSize) {
+            cursorInnerRef.current.style.fontSize = `${fontSize}px`
+          }
           gsap.to(cursorInnerRef.current, {
             scale: 1,
             opacity: 1,
@@ -322,6 +326,7 @@ const FancyCursor: FunctionComponent<FancyCursorProps> = ({
       el.addEventListener('mouseleave', (e: MouseEvent) => {
         if (e.target instanceof HTMLElement && cursorInnerRef.current) {
           cursorInnerRef.current.textContent = ''
+          cursorInnerRef.current.style.fontSize = 'unset'
           gsap.to(cursorInnerRef.current, {
             scale: 0,
             opacity: 0,

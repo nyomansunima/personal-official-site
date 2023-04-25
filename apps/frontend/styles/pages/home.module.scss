@@ -288,4 +288,45 @@
       justify-content: center;
     }
   }
+
+  section.explore_section {
+    display: flex;
+    @include container;
+    margin: 0 auto;
+    justify-content: space-between;
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      width: col(6);
+      gap: size(10);
+      padding-left: 100px;
+      padding-top: 200px;
+
+      h2 {
+        display: flex;
+        font-size: fontSize(7xl);
+        font-weight: 500;
+        line-height: 1;
+      }
+
+      span:nth-of-type(1) {
+        display: flex;
+        font-size: fontSize(2xl);
+        font-weight: 500;
+      }
+
+      .actions {
+        display: flex;
+        margin-top: size(10);
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      width: col(4);
+      gap: 72px;
+    }
+  }
 }
