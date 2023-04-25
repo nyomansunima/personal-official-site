@@ -1,8 +1,22 @@
 import hashNodeClient from '@lib/connection/hashnode-connection'
 import sanityClient from '@lib/connection/sanity-connection'
-import { ArticlePost, ExplorationDetail } from '~/types/content'
+import { ArticlePost, Exploration, ExplorationDetail } from '~/types/content'
 
 class ContentService {
+  async loadAllExploration(): Promise<Exploration[]> {
+    const query = `
+      *[_type == "exploration"]{
+        slug,
+        title,
+        "summary": abouts[0],
+        "thumbnail": thumbnail.asset -> url,
+      }
+    `
+
+    const res = await sanityClient.fetch(query)
+    return res
+  }
+
   async loadDetailExploration(slug: string): Promise<ExplorationDetail> {
     const query = `
       *[_type == "exploration" && slug == $slug][0]{
