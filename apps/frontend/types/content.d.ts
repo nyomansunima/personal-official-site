@@ -5,6 +5,13 @@ export interface ArticlePost {
   type: string
 }
 
+export interface Exploration {
+  slug: string
+  title: string
+  summary: string
+  thumbnail: string
+}
+
 export interface ExplorationDetail {
   slug: string
   title: string
