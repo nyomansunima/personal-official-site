@@ -22,6 +22,12 @@ class CommonService {
         "inspirations": *[_type == "inspiration"][0...3]|order(_updatedAt desc){
           ...,
         },
+        "explorations": *[_type == "exploration"][0...4]{
+          slug,
+          title,
+          "summary": abouts[0],
+          "thumbnail": thumbnail.asset -> url,
+        }
       }
     `
     const res = await sanityClient.fetch(query)
