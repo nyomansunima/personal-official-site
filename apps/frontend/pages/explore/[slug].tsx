@@ -11,6 +11,7 @@ import { GetServerSideProps } from 'next'
 import { PortableContent } from '@components/content'
 import { gsap } from 'gsap'
 import useCursor from '@lib/hooks/use-cursor'
+import { ExploreStackItem } from '@components/explore'
 
 const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const queryClient = new QueryClient()
@@ -217,17 +218,8 @@ const ExploreDetailPage: NextPageWithLayout<ExploreDetailPageProps> = ({
               </span>
             </div>
             <div className={`${styles.content} content`}>
-              {detaiQuery.data.stacks.map(({ image, title, url }, index) => (
-                <div
-                  data-cursor-magnetic
-                  className={styles.chip}
-                  key={index}
-                  onClick={() => window.open(url)}
-                >
-                  <Image src={image} alt={title} height={56} width={56} />
-
-                  <span>{title}</span>
-                </div>
+              {detaiQuery.data.stacks.map((stack, index) => (
+                <ExploreStackItem {...stack} key={index} />
               ))}
             </div>
           </section>
