@@ -12,6 +12,7 @@ import { OutlineButton } from '@components/buttons'
 import commonService from '@lib/services/common-service'
 import { useRouter } from 'next/router'
 import { ContactSection } from '@components/contact'
+import { ExploreItemCard } from '@components/explore'
 
 const getServerSideProps: GetServerSideProps = async () => {
   const queryClient = new QueryClient()
@@ -47,7 +48,6 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
   }
 
   useEffect(() => {
-    cursor.reload()
     const ctx = gsap.context(() => {
       // animate overview section
       gsap
@@ -139,7 +139,84 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
           },
         })
       }
+
+      // animate inspi section
+      gsap
+        .timeline({
+          delay: 0.2,
+          defaults: {
+            ease: 'back',
+            duration: 0.7,
+          },
+          scrollTrigger: {
+            trigger: '.inspi-section',
+            start: 'top 75%',
+          },
+        })
+        .from('.inspi-section .heading h2', {
+          y: 200,
+          opacity: 0,
+          duration: 1.2,
+        })
+        .from('.inspi-section .heading span', {
+          y: 200,
+          opacity: 0,
+        })
+
+      gsap.from('.inspi-section .content', {
+        y: 200,
+        opacity: 0,
+        duration: 1.4,
+        ease: 'back',
+        scrollTrigger: {
+          trigger: '.inspi-section .content',
+          start: 'top 75%',
+        },
+      })
+
+      // animate the explore section
+      gsap
+        .timeline({
+          delay: 0.1,
+          defaults: {
+            ease: 'back',
+            duration: 0.7,
+          },
+          scrollTrigger: {
+            trigger: '.explore-section .left h2',
+            start: 'top 80%',
+          },
+        })
+        .from(['.explore-section .left h2', '.explore-section .right'], {
+          y: 200,
+          opacity: 0,
+          duration: 1.2,
+        })
+        .from('.explore-section .left span', {
+          y: 200,
+          opacity: 0,
+        })
+        .from('.explore-section .left .actions', {
+          y: 100,
+          opacity: 0,
+        })
+
+      const exploreScroll = document.body.querySelector(
+        '.explore-section .right'
+      ) as HTMLElement
+
+      gsap.to('.explore-section .left', {
+        scrollTrigger: {
+          trigger: '.explore-section .right',
+          start: 'top 25%',
+          end: '+=' + (exploreScroll.clientHeight - 700),
+          pin: '.explore-section .left',
+          pinType: 'transform',
+        },
+      })
     }, mainRef)
+
+    cursor.reload()
 
     return () => {
       ctx.revert()
@@ -269,8 +346,8 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
         {/* inspirations */}
         {detailQuery.data?.inspirations &&
           detailQuery.data.inspirations.length > 0 && (
-            <section className={styles.inspi_section}>
-              <div className={styles.heading}>
+            <section className={`${styles.inspi_section} inspi-section`}>
+              <div className={`${styles.heading} heading`}>
                 <h2>New day, new inspiro</h2>
                 <span>
                   I update every inspiration for project, design and
@@ -278,7 +355,7 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
                   about your next project
                 </span>
               </div>
-              <div className={styles.content}>
+              <div className={`${styles.content} content`}>
                 {detailQuery.data.inspirations.map((inspi, index) => (
                   <div
                     className={styles.item}
@@ -304,6 +381,25 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
               </div>
             </section>
           )}
+
+        <section className={`${styles.explore_section} explore-section`}>
+          <div className={`${styles.left} left`}>
+            <h2>How treament make me better</h2>
+            <span>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius non
+              sunt, autem earum blanditiis iusto.
+            </span>
+            <div className={`${styles.actions} actions`}>
+              <OutlineButton link="/explore">More to explore</OutlineButton>
+            </div>
+          </div>
+          <div className={`${styles.right} right`}>
+            {detailQuery.data &&
+              detailQuery.data.explorations.map((item, index) => (
+                <ExploreItemCard data={item} key={index} />
+              ))}
+          </div>
+        </section>
 
         {/* contact section */}
         <ContactSection />
