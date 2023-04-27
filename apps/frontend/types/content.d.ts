@@ -5,11 +5,20 @@ export interface ArticlePost {
   type: string
 }
 
+export interface ExplorationRepo {
+  image: string
+  title: string
+  desc: string
+  url: string
+  source: string
+}
+
 export interface Exploration {
   slug: string
   title: string
   summary: string
   thumbnail: string
+  repos: ExplorationRepo[]
 }
 
 export interface ExplorationDetail {

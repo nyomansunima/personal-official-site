@@ -288,7 +288,7 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
                 Indonesia.
               </span>
               <div className={styles.actions}>
-                <OutlineButton className="action" link="/about">
+                <OutlineButton magnetic={true} className="action" link="/about">
                   More about me
                 </OutlineButton>
               </div>
@@ -335,7 +335,7 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
               </div>
 
               <div className={styles.actions}>
-                <OutlineButton link="/blog">
+                <OutlineButton magnetic={true} link="/blog">
                   Read more in Blog
                   <i className="fi fi-rr-arrow-right"></i>
                 </OutlineButton>
@@ -374,7 +374,7 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
               </div>
 
               <div className={styles.actions}>
-                <OutlineButton link="/inspiration">
+                <OutlineButton magnetic={true} link="/inspiration">
                   More inspirations
                   <i className="fi fi-rr-arrow-right"></i>
                 </OutlineButton>
@@ -386,8 +386,10 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
           <div className={`${styles.left} left`}>
             <h2>How treament make me better</h2>
             <span>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius non
-              sunt, autem earum blanditiis iusto.
+              I always try to explore everthing to ensure my quality. I always
+              learn, then create something that make me become a better learner
+              with a new concept. You can grap all of my exploration on github,
+              and gitlab repo.
             </span>
             <div className={`${styles.actions} actions`}>
               <OutlineButton link="/explore">More to explore</OutlineButton>

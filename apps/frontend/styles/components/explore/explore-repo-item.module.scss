@@ -1,0 +1,61 @@
+@use '../../base' as *;
+
+.item {
+  display: flex;
+  gap: size(5);
+  border: 1px solid var(--clr-gray-100);
+  border-radius: 28px;
+  padding: size(4);
+  cursor: pointer;
+
+  picture {
+    display: flex;
+    height: 64px;
+    width: 64px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .source {
+    display: flex;
+    font-size: fontSize(2xl);
+    position: absolute;
+    z-index: 99;
+    top: 52px;
+    left: 52px;
+    background: var(--clr-white);
+    border-radius: 100%;
+    padding: size(1);
+  }
+
+  .detail {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    h4 {
+      display: flex;
+      font-size: fontSize(2xl);
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    p {
+      display: flex;
+      font-size: fontSize(lg);
+      font-weight: 500;
+      margin-top: size(5);
+    }
+
+    span {
+      display: flex;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+  }
+}

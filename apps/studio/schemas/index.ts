@@ -12,6 +12,7 @@ import projectClientSchema from './project/project-client-schema'
 import projectOverviewSchema from './project/project-overview-schema'
 import projectSchema from './project/project-schema'
 import projectTeamSchema from './project/project-team-schema'
+import repoSchema from './repos/repo-schema'
 import serviceAboutSchema from './service/service-about-schema'
 import serviceOverviewSchema from './service/service-overview-schema'
 import servicePlatformSchema from './service/service-platfrom-schema'
@@ -46,6 +47,9 @@ export const schemaTypes = [
 
   // content
   contentSchema,
+
+  // repos
+  repoSchema,
 
   // service
   serviceRequirementSchema,
