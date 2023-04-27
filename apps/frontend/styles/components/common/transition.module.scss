@@ -1,0 +1,12 @@
+@use '../../base' as *;
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  clip-path: circle(0% at 50% 50%);
+  background: var(--clr-black);
+}

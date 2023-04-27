@@ -1,5 +1,6 @@
-import { useRouter } from 'next/router'
 import { FunctionComponent, ReactNode, useEffect } from 'react'
+import styles from '@styles/components/common/transition.module.scss'
+import { useRouter } from 'next/router'
 
 interface TransitionProps {
   children?: ReactNode | ReactNode[]
@@ -17,23 +18,14 @@ const Transition: FunctionComponent<TransitionProps> = ({
 }): JSX.Element => {
   const router = useRouter()
 
-  const startTransition = () => {}
+  useEffect(() => {}, [router.pathname])
 
-  const stopTransition = () => {}
-
-  useEffect(() => {
-    // track every router changes
-    // use to trigger the animation, and transitions
-    router.events.on('routeChangeStart', startTransition)
-    router.events.on('routeChangeComplete', stopTransition)
-
-    return () => {
-      router.events.off('routeChangeStart', startTransition)
-      router.events.off('routeChangeComplete', stopTransition)
-    }
-  }, [router])
-
-  return <>{children}</>
+  return (
+    <>
+      {children}
+      <div className={`${styles.overlay} overlay`}></div>
+    </>
+  )
 }
 
 export default Transition
