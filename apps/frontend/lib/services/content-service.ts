@@ -1,8 +1,25 @@
 import hashNodeClient from '@lib/connection/hashnode-connection'
 import sanityClient from '@lib/connection/sanity-connection'
-import { ArticlePost, Exploration, ExplorationDetail } from '~/types/content'
+import {
+  ArticlePost,
+  Exploration,
+  ExplorationDetail,
+  ExplorationRepo,
+} from '~/types/content'
 
 class ContentService {
+  async loadAllExploreRepo(): Promise<ExplorationRepo[]> {
+    const query = `
+      *[_type == "repo"]{
+        ...,
+        "image": image.asset -> url,
+      }
+    `
+
+    const res = await sanityClient.fetch(query)
+    return res
+  }
+
   async loadAllExploration(): Promise<Exploration[]> {
     const query = `
       *[_type == "exploration"]{

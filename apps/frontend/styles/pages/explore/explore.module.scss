@@ -45,6 +45,7 @@
   section.more_section {
     display: flex;
     flex-direction: column;
+    gap: 140px;
 
     .heading {
       display: flex;
@@ -70,6 +71,14 @@
         width: col(7);
         text-align: center;
       }
+    }
+
+    .content {
+      display: grid;
+      @include container;
+      margin: 0 auto;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: size(16) size(7);
     }
   }
 }
