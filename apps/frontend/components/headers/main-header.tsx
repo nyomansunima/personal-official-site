@@ -28,6 +28,7 @@ const MainHeader: FunctionComponent = (): JSX.Element => {
         stagger: 0.2,
         y: -40,
         ease: 'elastic',
+        delay: 2.4,
       })
     }, headerRef)
 
