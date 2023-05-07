@@ -1,4 +1,5 @@
 import FancyCursor from './fancy-cursor'
+import ParalaxImage from './paralax-image'
 import Transition from './transition'
 
-export { FancyCursor, Transition }
+export { FancyCursor, Transition, ParalaxImage }
