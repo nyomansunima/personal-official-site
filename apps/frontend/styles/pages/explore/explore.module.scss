@@ -8,44 +8,8 @@
   section.overview_section {
     display: flex;
     flex-direction: column;
-    margin-top: 300px;
-
-    .content {
-      display: flex;
-      flex-direction: column;
-      @include container;
-      margin: 0 auto;
-      align-items: center;
-
-      h1 {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        font-size: fontSize(7xl);
-        font-weight: 500;
-        width: col(7);
-        line-height: 1;
-      }
-    }
-  }
-
-  section.content_section {
-    display: flex;
-    flex-direction: column;
-
-    .content {
-      display: grid;
-      @include container;
-      margin: 0 auto;
-      gap: 72px 64px;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-
-  section.more_section {
-    display: flex;
-    flex-direction: column;
     gap: 140px;
+    margin-top: 300px;
 
     .heading {
       display: flex;
@@ -79,6 +43,19 @@
       margin: 0 auto;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: size(16) size(7);
+    }
+  }
+
+  section.content_section {
+    display: flex;
+    flex-direction: column;
+
+    .content {
+      display: grid;
+      @include container;
+      margin: 0 auto;
+      gap: 72px 64px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 }
