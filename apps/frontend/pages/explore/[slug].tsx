@@ -12,6 +12,7 @@ import { PortableContent } from '@components/content'
 import { gsap } from 'gsap'
 import useCursor from '@lib/hooks/use-cursor'
 import { ExploreStackItem } from '@components/explore'
+import { ParalaxImage } from '@components/common'
 
 const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const queryClient = new QueryClient()
@@ -181,15 +182,10 @@ const ExploreDetailPage: NextPageWithLayout<ExploreDetailPageProps> = ({
             <h1 data-cursor-size="200" data-cursor-exclusion>
               {detaiQuery.data.title}
             </h1>
-            <div className={styles.image}>
-              <picture>
-                <Image
-                  src={detaiQuery.data.thumbnail}
-                  fill
-                  alt={detaiQuery.data.title}
-                />
-              </picture>
-            </div>
+            <ParalaxImage
+              image={detaiQuery.data.thumbnail}
+              alt={detaiQuery.data.title}
+            />
             <div className={styles.wrapper}>
               <div className={`${styles.about} about`}>
                 {detaiQuery.data.abouts.map((about, index) => (
