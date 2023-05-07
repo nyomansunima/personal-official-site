@@ -16,7 +16,7 @@
 
       .image {
         display: flex;
-        height: 90vh;
+        height: 750px;
         width: 400px;
         border-radius: 240px;
         overflow: hidden;
@@ -182,7 +182,7 @@
           picture {
             display: flex;
             position: relative;
-            height: 60vh;
+            height: 500px;
             width: 100%;
             overflow: hidden;
             border-radius: 24px;
@@ -200,6 +200,8 @@
             font-weight: 500;
             line-height: 1.3;
             margin-top: size(10);
+            overflow: hidden;
+            height: 60px;
           }
         }
       }
@@ -262,7 +264,7 @@
         picture {
           position: relative;
           display: flex;
-          height: 40vh;
+          height: 400px;
           width: 100%;
           overflow: hidden;
           border-radius: 24px;
@@ -275,10 +277,10 @@
 
         h4 {
           display: flex;
-          font-size: fontSize(2xl);
+          font-size: fontSize(xl);
           font-weight: 500;
-          line-height: 1.3;
-          margin-top: size(5);
+          line-height: 1.5;
+          margin-top: size(10);
         }
       }
     }
@@ -326,7 +328,58 @@
       display: flex;
       flex-direction: column;
       width: col(4);
-      gap: 72px;
+      gap: 120px;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        grid-column: span 1 / span 1;
+        grid-row: span 4 / span 4;
+        gap: size(8);
+        cursor: pointer;
+
+        &:hover {
+          picture img {
+            transform: scale(1.1);
+          }
+        }
+
+        &:nth-of-type(1) {
+          grid-row-start: 2;
+        }
+
+        &:nth-of-type(2) {
+          grid-row-start: 3;
+        }
+
+        picture {
+          display: flex;
+          position: relative;
+          height: 500px;
+          width: 100%;
+          overflow: hidden;
+          border-radius: 24px;
+
+          img {
+            object-fit: cover;
+            transition: all 1.2s ease-in-out;
+          }
+        }
+
+        .detail {
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+          gap: size(4);
+
+          h4 {
+            display: flex;
+            font-size: fontSize(2xl);
+            font-weight: 500;
+            line-height: 1.3;
+          }
+        }
+      }
     }
   }
 }
