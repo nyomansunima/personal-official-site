@@ -1,15 +1,12 @@
 export interface ServiceDetail {
   _id: string
   slug: string
-  seo: {
-    title: string
-    description: string
-  }
   overview: {
     title: string
     headline: string
     thumbnail: string
     cursorColor: string
+    desc: string
   }
   about: {
     image: string
@@ -20,14 +17,6 @@ export interface ServiceDetail {
     desc: string
     purposes: {
       iconCode: string
-      name: string
-    }[]
-  }
-  platform: {
-    title: string
-    desc: string
-    platforms: {
-      image: string
       name: string
     }[]
   }
@@ -52,28 +41,6 @@ export interface ServiceDetail {
       image: string
       tags: string[]
       url: string
-    }[]
-  }
-  result: {
-    title: string
-    desc: string
-    works: {
-      slug: string
-      overview: {
-        title: string
-        headline: string
-        thumbnail: string
-      }
-      tags: string[]
-    }[]
-  }
-  requirement: {
-    title: string
-    desc: string
-    reqs: {
-      iconCode: string
-      title: string
-      desc: string
     }[]
   }
 }
