@@ -11,6 +11,7 @@
   .head {
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     h5 {
       display: flex;
@@ -26,7 +27,6 @@
       background: transparent;
       font-size: fontSize(lg);
       color: var(--clr-gray-600);
-      cursor: pointer;
     }
   }
 
