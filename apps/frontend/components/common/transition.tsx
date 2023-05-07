@@ -40,6 +40,7 @@ const Transition: FunctionComponent<TransitionProps> = ({
           clipPath: 'circle(0% at 50% 50%)',
           duration: 0.4,
           ease: 'none',
+          background: '#ffffff',
         })
         .from('.child-transition', {
           opacity: 0,

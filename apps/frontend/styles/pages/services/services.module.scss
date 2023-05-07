@@ -55,19 +55,19 @@
 
       .heading {
         display: flex;
-        width: col(2);
+        width: col(3);
 
         h4 {
           display: flex;
           line-height: 1.3;
           font-weight: 500;
-          font-size: fontSize(2xl);
+          font-size: fontSize(3xl);
         }
       }
 
       .desc {
         display: flex;
-        width: col(7);
+        width: col(6);
 
         span {
           display: flex;

@@ -9,9 +9,9 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: col(7);
     margin: 0 auto;
     padding: 140px 0;
+    @include container;
 
     h1 {
       display: flex;
@@ -21,6 +21,7 @@
       font-size: fontSize(7xl);
       line-height: 1.3em;
       font-weight: 500;
+      width: col(8);
 
       .space {
         width: 20px;
@@ -31,10 +32,31 @@
       display: flex;
       margin-top: size(10);
       text-align: center;
-      width: col(3);
-      font-size: fontSize(xl);
-      color: var(--clr-gray-600);
+      width: col(5);
+      font-size: fontSize(2xl);
+      color: var(--clr-gray-700);
       font-weight: 500;
+      margin-top: 100px;
+    }
+  }
+
+  .more_resources {
+    display: flex;
+    @include container;
+    margin: 0 auto;
+    justify-content: center;
+    gap: size(16);
+    align-items: center;
+    margin-top: 100px;
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+
+      i {
+        font-size: fontSize(7xl);
+      }
     }
   }
 }

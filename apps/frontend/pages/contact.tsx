@@ -88,7 +88,7 @@ const ContactPage: NextPageWithLayout = (): JSX.Element => {
     const ctx = gsap.context(() => {
       // start animate pages
       const tl = gsap.timeline({
-        delay: 0.3,
+        delay: 2.4,
         defaults: {
           ease: 'power1',
           duration: 1.4,
@@ -105,6 +105,7 @@ const ContactPage: NextPageWithLayout = (): JSX.Element => {
 
       if (socialsQuery.data) {
         gsap.from('.socials li', {
+          delay: 2.4,
           left: -100,
           ease: 'back',
           stagger: 0.25,

@@ -1,4 +1,4 @@
-import {Folder} from 'react-iconly'
+import { Bag2 } from 'react-iconly'
 
 /**
  * # serviceRequirementSchema
@@ -6,11 +6,11 @@ import {Folder} from 'react-iconly'
  * the schema of requirement
  * service
  */
-const serviceRequirementSchema = {
-  title: 'Service Requirement',
-  name: 'serviceRequirement',
+const servicePackSchema = {
+  title: 'Service Packs',
+  name: 'servicePack',
   type: 'object',
-  icon: Folder,
+  icon: Bag2,
   fields: [
     {
       title: 'Title',
@@ -52,4 +52,4 @@ const serviceRequirementSchema = {
     },
   ],
 }
-export default serviceRequirementSchema
+export default servicePackSchema

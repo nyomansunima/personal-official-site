@@ -12,7 +12,6 @@ import { OutlineButton } from '@components/buttons'
 import commonService from '@lib/services/common-service'
 import { useRouter } from 'next/router'
 import { ContactSection } from '@components/contact'
-import { ExploreItemCard } from '@components/explore'
 
 const getServerSideProps: GetServerSideProps = async () => {
   const queryClient = new QueryClient()
@@ -50,38 +49,43 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // animate overview section
-      gsap
-        .timeline({
-          delay: 0.3,
-          defaults: {
-            ease: 'back',
-            duration: 0.7,
-          },
-        })
-        .from('.overview-section .image', {
-          y: 200,
-          opacity: 0,
-          duration: 1.6,
-        })
-        .from('.overview-section .attr', {
-          y: 100,
-          scale: 0.4,
-          opacity: 0,
-          stagger: 0.2,
-        })
-        .from('.overview-section .location', {
-          opacity: 0,
-        })
-        .from('.overview-section .desc', {
-          y: 200,
-          opacity: 0,
-        })
-        .from('.overview-section .action', {
-          y: 100,
-          opacity: 0,
-        })
+      gsap.from('.overview-section .image', {
+        delay: 2.4,
+        y: 200,
+        opacity: 0,
+        duration: 1.2,
+        ease: 'back',
+      })
+      gsap.from('.overview-section .attr', {
+        delay: 2.4,
+        y: 100,
+        scale: 0.4,
+        opacity: 0,
+        stagger: 0.2,
+        ease: 'back',
+      })
+      gsap.from('.overview-section .location', {
+        delay: 2.4,
+        opacity: 0,
+        ease: 'back',
+      })
+      gsap.from('.overview-section .desc', {
+        delay: 2.4,
+        y: 200,
+        opacity: 0,
+        duration: 1.2,
+        ease: 'back',
+      })
+      gsap.from('.overview-section .action', {
+        delay: 2.6,
+        y: 100,
+        opacity: 0,
+        duration: 1.2,
+        ease: 'back',
+      })
 
       gsap.to('.overview-section .location i', {
+        delay: 2.4,
         rotate: '360deg',
         repeat: -1,
         ease: 'none',
@@ -93,6 +97,17 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
         detailQuery.data?.blogPosts &&
         detailQuery.data.blogPosts.length > 0
       ) {
+        gsap.to(document.body, {
+          background: '#e4fdfd',
+          ease: 'none',
+          duration: 1.2,
+          scrollTrigger: {
+            trigger: '.blog-section .heading h2',
+            start: 'top 75%',
+            end: 'bottom top',
+            scrub: true,
+          },
+        })
         gsap
           .timeline({
             delay: 0.3,
@@ -141,6 +156,17 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
       }
 
       // animate inspi section
+      gsap.to(document.body, {
+        background: '#fff7ff',
+        ease: 'none',
+        duration: 1.2,
+        scrollTrigger: {
+          trigger: '.inspi-section .heading h2',
+          start: 'top 75%',
+          end: 'bottom top',
+          scrub: true,
+        },
+      })
       gsap
         .timeline({
           delay: 0.2,
@@ -175,6 +201,28 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
       })
 
       // animate the explore section
+      gsap.to(document.body, {
+        background: '#f1f1ff',
+        ease: 'none',
+        duration: 1.2,
+        scrollTrigger: {
+          trigger: '.explore-section .left h2',
+          start: 'top 75%',
+          end: '+=400',
+          scrub: true,
+        },
+      })
+
+      gsap.to(document.body, {
+        background: '#ffffff',
+        ease: 'none',
+        duration: 1.2,
+        scrollTrigger: {
+          trigger: '.explore-section',
+          start: 'bottom center',
+          end: '+=400',
+        },
+      })
       gsap
         .timeline({
           delay: 0.1,
@@ -204,12 +252,15 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
       const exploreScroll = document.body.querySelector(
         '.explore-section .right'
       ) as HTMLElement
+      const listChild = gsap.utils.toArray('.explore-section .right .item')
 
       gsap.to('.explore-section .left', {
         scrollTrigger: {
           trigger: '.explore-section .right',
           start: 'top 25%',
-          end: '+=' + (exploreScroll.clientHeight - 700),
+          end:
+            '+=' +
+            (exploreScroll.clientHeight - (700 + (listChild.length - 1) * 75)),
           pin: '.explore-section .left',
           pinType: 'transform',
         },
@@ -227,7 +278,8 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
     <>
       <Head>
         <title>
-          Product Designer, Developer, & Indie App Developer - Nyoman Sunima
+          Product Designer, Fullstack Developer, & Indie App Maker | Nyoman
+          Sunima
         </title>
         <meta
           name="description"
@@ -250,13 +302,13 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
                 className={`${styles.attr} attr`}
                 data-cursor-magnetic="fixed"
               >
-                Creative Developer
+                Indie app maker
               </span>
               <span
                 className={`${styles.attr} attr`}
                 data-cursor-magnetic="fixed"
               >
-                Youtuber
+                Fullstack Developer
               </span>
               <span
                 className={`${styles.attr} attr`}
@@ -277,6 +329,8 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
                   src={'/images/profile-image.png'}
                   fill
                   alt="Nyoman Sunima"
+                  sizes="auto"
+                  priority
                 />
               </picture>
             </div>
@@ -284,8 +338,8 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
             <div className={styles.right}>
               <span className={`${styles.desc} desc`}>
                 Hi. I'm Nyoman Sunima! I'm a self-taught Senior Product
-                Designer, YouTuber, Creative Developer located in Bali,
-                Indonesia.
+                Designer, YouTuber, Creative Fullstack Developer located in
+                Bali, Indonesia.
               </span>
               <div className={styles.actions}>
                 <OutlineButton magnetic={true} className="action" link="/about">
@@ -326,7 +380,12 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
                         data-cursor-size="80"
                         data-cursor-icon="fi fi-rr-arrow-up-right"
                       >
-                        <Image src={post.coverImage} fill alt={post.title} />
+                        <Image
+                          src={post.coverImage}
+                          fill
+                          alt={post.title}
+                          sizes="auto"
+                        />
                       </picture>
                       <h4>{post.title}</h4>
                     </div>
@@ -364,9 +423,10 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
                   >
                     <picture
                       data-cursor-size="80"
-                      data-cursor-icon="fi fi-rr-arrow-up-right"
+                      data-cursor-text="Detail"
+                      data-cursor-color="#c5a8ff"
                     >
-                      <Image src={inspi.image} fill alt="Image" />
+                      <Image src={inspi.image} fill alt="Image" sizes="auto" />
                     </picture>
                     <h4>{inspi.title}</h4>
                   </div>
@@ -392,13 +452,32 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
               and gitlab repo.
             </span>
             <div className={`${styles.actions} actions`}>
-              <OutlineButton link="/explore">More to explore</OutlineButton>
+              <OutlineButton link="/explore">🎉 More to explore</OutlineButton>
             </div>
           </div>
           <div className={`${styles.right} right`}>
             {detailQuery.data &&
               detailQuery.data.explorations.map((item, index) => (
-                <ExploreItemCard data={item} key={index} />
+                <div
+                  className={`${styles.item} item`}
+                  onClick={() => router.push(`/explore/${item.slug}`)}
+                  key={index}
+                >
+                  <picture
+                    data-cursor-size="100"
+                    data-cursor-text="View Detail"
+                  >
+                    <Image
+                      src={item.thumbnail}
+                      fill
+                      alt={item.title}
+                      sizes="auto"
+                    />
+                  </picture>
+                  <div className={styles.detail}>
+                    <h4>{item.title}</h4>
+                  </div>
+                </div>
               ))}
           </div>
         </section>

@@ -35,19 +35,10 @@ const StackItem: FunctionComponent<StackItemProps> = ({
       onClick={openLink}
     >
       <picture>
-        <Image src={data.image} height={60} width={60} alt="Image" />
+        <Image src={data.image} height={40} width={40} alt="Image" />
       </picture>
 
       <h5>{data.title}</h5>
-      <p>{data.description}</p>
-
-      <div className={styles.tags}>
-        {data.tags.map((tag, index) => (
-          <span className={styles.tag_item} key={index}>
-            {tag}
-          </span>
-        ))}
-      </div>
     </div>
   )
 }

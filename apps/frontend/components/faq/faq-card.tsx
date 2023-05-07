@@ -19,9 +19,12 @@ const FAQCard: FunctionComponent<FAQCardProps> = ({ faq }): JSX.Element => {
 
   return (
     <li className={styles.item}>
-      <div className={styles.head}>
+      <div
+        className={styles.head}
+        onClick={() => setShowDesc((state) => !state)}
+      >
         <h5>{faq.question}</h5>
-        <button onClick={() => setShowDesc((state) => !state)} type="button">
+        <button type="button">
           <i className="fi fi-rr-angle-circle-down"></i>
         </button>
       </div>
