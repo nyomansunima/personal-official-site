@@ -8,19 +8,19 @@ import { gsap } from 'gsap'
 import { ServiceFAQItem, ServiceSection } from '@components/services'
 import { GetServerSideProps } from 'next'
 import { QueryClient, dehydrate, useQuery } from '@tanstack/react-query'
-import offerService from '@lib/services/offer-service'
 import { ContactSection } from '@components/contact'
+import contentService from '@lib/services/content-service'
 
 const getServerSideProps: GetServerSideProps = async () => {
   const queryClient = new QueryClient()
 
   await queryClient.prefetchQuery(
     ['service', 'faq'],
-    offerService.getAllServiceFAQ
+    contentService.getAllServiceFAQ
   )
   await queryClient.prefetchQuery(
     ['service', 'list'],
-    offerService.getAllServicePreview
+    contentService.getAllServicePreview
   )
 
   return {
@@ -41,10 +41,10 @@ const getServerSideProps: GetServerSideProps = async () => {
 const ServicePage: NextPageWithLayout = (): JSX.Element => {
   const cursor = useCursor()
   const mainRef = useRef<HTMLElement>(null)
-  const faqQuery = useQuery(['service', 'faq'], offerService.getAllServiceFAQ)
+  const faqQuery = useQuery(['service', 'faq'], contentService.getAllServiceFAQ)
   const servicePreviewsQuery = useQuery(
     ['service', 'list'],
-    offerService.getAllServicePreview
+    contentService.getAllServicePreview
   )
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const ServicePage: NextPageWithLayout = (): JSX.Element => {
 
     const ctx = gsap.context(() => {
       // animate the headline
-      gsap.timeline({ delay: 0.4 }).from('.head-section-anim div h1 span', {
+      gsap.timeline({ delay: 2.4 }).from('.head-section-anim div h1 span', {
         y: 80,
         opacity: 0,
         stagger: 0.07,
@@ -66,20 +66,12 @@ const ServicePage: NextPageWithLayout = (): JSX.Element => {
           defaults: { ease: 'none', duration: 0.7 },
           scrollTrigger: {
             trigger: '.explain-section-anim',
-            start: 'top center',
+            start: 'top 75%',
             end: '+=300',
             scrub: true,
           },
         })
-        .from('.explain-section-anim h4', {
-          y: 40,
-          opacity: 0,
-        })
-        .from('.explain-section-anim span', {
-          y: 100,
-          opacity: 0,
-        })
-        .from('.explain-section-anim .illustration-anim', {
+        .from(['.explain-section-anim h4', '.explain-section-anim span'], {
           y: 200,
           opacity: 0,
         })
@@ -200,21 +192,16 @@ const ServicePage: NextPageWithLayout = (): JSX.Element => {
           <div className={styles.content}>
             <div className={styles.heading}>
               <h4 data-cursor-size="100" data-cursor-exclusion>
-                This is what i do
+                🎉 What i do exactly
               </h4>
             </div>
             <div className={styles.desc}>
               <span>
-                I am create an idea into a working product. Playing with
+                I am create an idea 🍀 into a working product. Playing with
                 creativity, technology, and collaboration to create beautiful
-                and satisfied product for user around the world.
+                and satisfied product for user around the world 💘.
               </span>
             </div>
-          </div>
-          <div className={`${styles.illustrations} illustration-anim`}>
-            <span className={styles.bubble}>Technology</span>
-            <span className={styles.bubble}>Goals</span>
-            <span className={styles.bubble}>User Need</span>
           </div>
         </section>
 
