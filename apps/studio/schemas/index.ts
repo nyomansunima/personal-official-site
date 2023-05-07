@@ -18,7 +18,7 @@ import serviceOverviewSchema from './service/service-overview-schema'
 import servicePlatformSchema from './service/service-platfrom-schema'
 import serviceProcessSchema from './service/service-process-schema'
 import servicePurposeSchema from './service/service-purpose-schema'
-import serviceRequirementSchema from './service/service-requirement-schema'
+import servicePackSchema from './service/service-pack-schema'
 import serviceResultSchema from './service/service-result-schema'
 import serviceSchema from './service/service-schema'
 import serviceToolSchema from './service/service-tool-schema'
@@ -52,7 +52,7 @@ export const schemaTypes = [
   repoSchema,
 
   // service
-  serviceRequirementSchema,
+  servicePackSchema,
   servicePlatformSchema,
   servicePurposeSchema,
   serviceResultSchema,
