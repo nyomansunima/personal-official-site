@@ -2,12 +2,12 @@
 
 .item {
   display: flex;
-  flex-direction: column;
-  grid-column: span 2 / span 2;
-  grid-row: span 5 / span 5;
+  align-items: center;
   border: 1px solid var(--clr-gray-200);
-  border-radius: size(5);
-  padding: size(5) size(5);
+  border-radius: 40px;
+  padding: size(3);
+  padding-right: size(14);
+  gap: size(5);
   cursor: pointer;
   position: relative;
   transition: all 1.1s ease-in-out;
@@ -23,8 +23,8 @@
     align-items: center;
     background: var(--clr-gray-100);
     border-radius: 100%;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 
     img {
       object-fit: contain;
@@ -33,34 +33,8 @@
 
   h5 {
     display: flex;
-    font-size: fontSize(2xl);
+    flex: 1;
+    font-size: fontSize(xl);
     font-weight: 500;
-    margin-top: size(10);
-  }
-
-  p {
-    display: flex;
-    font-size: fontSize(lg);
-    margin-top: size(4);
-    height: 120px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-weight: 500;
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: size(1) size(2);
-    margin-top: 20px;
-
-    .tag_item {
-      display: flex;
-      padding: size(1) size(3);
-      border-radius: 20px;
-      font-size: fontSize(base);
-      font-weight: 600;
-      background: var(--clr-gray-100);
-    }
   }
 }

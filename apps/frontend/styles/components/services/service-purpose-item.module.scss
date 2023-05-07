@@ -18,13 +18,13 @@
 
     i {
       transform: scale(1.1);
-      background: var(--clr-gray-100);
+      background: rgb(206, 192, 255);
     }
   }
 
   i {
     font-size: fontSize(2xl);
-    background: var(--clr-gray-50);
+    background: rgb(255, 191, 221);
     height: size(14);
     width: size(14);
     border-radius: 100%;
