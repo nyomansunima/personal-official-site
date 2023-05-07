@@ -1,4 +1,4 @@
-import {Folder} from 'react-iconly'
+import { Play } from 'react-iconly'
 
 /**
  * # serviceSchema
@@ -10,32 +10,16 @@ const serviceSchema = {
   title: 'Services',
   name: 'service',
   type: 'document',
-  icon: Folder,
+  icon: Play,
   fields: [
     {
       title: 'Slug',
       name: 'slug',
       type: 'string',
+      desc: 'Your service slug part of url',
     },
     {
-      title: 'SEO',
-      name: 'seo',
-      type: 'seo',
-    },
-    {
-      title: 'Service Type',
-      name: 'type',
-      type: 'string',
-      options: {
-        list: [
-          {title: 'Partial Service', value: 'partial service'},
-          {title: 'Full Service', value: 'full service'},
-        ],
-        layout: 'radio',
-      },
-    },
-    {
-      title: 'Overview Service',
+      title: 'Overview about Service',
       name: 'overview',
       type: 'serviceOverview',
     },
@@ -55,26 +39,18 @@ const serviceSchema = {
       type: 'serviceProcess',
     },
     {
-      title: 'Platform Service',
-      name: 'platform',
-      type: 'servicePlatform',
-    },
-    {
       title: 'Tools Service',
       name: 'tools',
       type: 'serviceTool',
     },
-    {
-      title: 'Result Work',
-      name: 'result',
-      type: 'serviceResult',
-    },
-    {
-      title: 'Requirements',
-      name: 'requirement',
-      type: 'serviceRequirement',
-    },
   ],
+  preview: {
+    select: {
+      title: 'overview.title',
+      subtitle: 'slug',
+      media: 'overview.thumbnail',
+    },
+  },
 }
 
 export default serviceSchema
