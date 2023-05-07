@@ -4,10 +4,9 @@ import { NextPageWithLayout } from '~/types/app'
 import styles from '@styles/pages/faq.module.scss'
 import useCursor from '@lib/hooks/use-cursor'
 import { useEffect, useRef } from 'react'
-import { OutlineButton, TextButton } from '@components/buttons'
+import { OutlineButton } from '@components/buttons'
 import { gsap } from 'gsap'
 import { FAQCard } from '@components/faq'
-import { start } from 'repl'
 import { GetServerSideProps } from 'next'
 import { QueryClient, dehydrate, useQuery } from '@tanstack/react-query'
 import faqService from '@lib/services/faq-service'
@@ -135,7 +134,7 @@ const FAQPage: NextPageWithLayout = (): JSX.Element => {
   return (
     <>
       <Head>
-        <title>Frequently Asked Questions - Nyoman Sunima</title>
+        <title>Frequently Asked Questions | Nyoman Sunima</title>
         <meta
           name="description"
           content="Gost question?, here are the answer of most question asked to me"

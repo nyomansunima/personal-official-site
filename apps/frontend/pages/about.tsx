@@ -68,11 +68,6 @@ const AboutPage: NextPageWithLayout = (): JSX.Element => {
             pinType: 'transform',
           },
         })
-        .from('.overview-section .content h2', {
-          y: 200,
-          opacity: 0,
-          duration: 1.2,
-        })
         .from('.overview-section .attr', {
           opacity: 0,
           y: 100,

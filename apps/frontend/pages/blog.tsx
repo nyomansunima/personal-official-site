@@ -12,6 +12,27 @@ import contentService from '@lib/services/content-service'
 import { GetServerSideProps } from 'next'
 import { ArticlePost } from '~/types/content'
 
+// define the blog resource come from
+// this including the platform and url
+interface MoreBlogResource {
+  label: string
+  icon: string
+  link: string
+}
+
+const blogResources: MoreBlogResource[] = [
+  {
+    icon: 'fi fi-brands-dev',
+    label: 'Dev.to',
+    link: 'https://dev.to/nyomansunima',
+  },
+  {
+    icon: 'fi fi-brands-medium',
+    label: 'Medium',
+    link: 'https://medium.com/@nyomansunima',
+  },
+]
+
 const getServerSideProps: GetServerSideProps = async ({}) => {
   const queryClient = new QueryClient()
 
@@ -62,7 +83,7 @@ const BlogPage: NextPageWithLayout = (): JSX.Element => {
     const ctx = gsap.context(() => {
       // animate the header
       gsap
-        .timeline({ delay: 0.3, defaults: { ease: 'expo' } })
+        .timeline({ delay: 2.4, defaults: { ease: 'expo' } })
         .from('.featured-section-anim h1 span', {
           opacity: 0,
           y: 40,
@@ -86,7 +107,7 @@ const BlogPage: NextPageWithLayout = (): JSX.Element => {
           scrollTrigger: {
             trigger: '.best-of-week-post-section-anim',
             start: 'top 50%',
-            end: '+=500px',
+            end: '+=1200px',
             scrub: true,
           },
         })
@@ -99,8 +120,8 @@ const BlogPage: NextPageWithLayout = (): JSX.Element => {
           opacity: 0,
           y: 400,
           scale: 0.8,
-          stagger: 2,
-          duration: 1.4,
+          stagger: 3,
+          duration: 2.2,
         })
 
       // animate the new post section
@@ -204,7 +225,25 @@ const BlogPage: NextPageWithLayout = (): JSX.Element => {
                 </span>
               ))}
           </h1>
-          <p>You are great, now let's explore</p>
+          <p>
+            Hey, i create any content to share all of my experience to other
+            developer and designer around the world. Now let's explore
+          </p>
+
+          <div className={styles.more_resources}>
+            {blogResources.map((res, index) => (
+              <div
+                className={styles.item}
+                onClick={() => window.open(res.link)}
+                key={index}
+                data-cursor-size="100"
+                data-cursor-text={res.label}
+                data-cursor-color="pink"
+              >
+                <i className={`${res.icon}`}></i>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* showing the best of week post sections */}
