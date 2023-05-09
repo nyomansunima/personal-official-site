@@ -43,7 +43,10 @@ class CommonService {
     const query = `
       {
         "stories": *[_type == "story"]{
-          ...,
+          title,
+          url,
+          "image": image.asset -> url,
+          "accentColor": accentColor.hex,
         },
         "certificates": *[_type == "certificate"]|order(_updatedAt desc){
           ...,
