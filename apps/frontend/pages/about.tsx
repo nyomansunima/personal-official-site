@@ -370,32 +370,36 @@ const AboutPage: NextPageWithLayout = (): JSX.Element => {
           </div>
         </section>
 
-        {/* status section */}
+        {/* Stories section */}
         {detailQuery.data?.stories && detailQuery.data.stories.length > 0 && (
-          <section className={`${styles.status_section} status-section`}>
-            <div className={`${styles.heading} heading`}>
-              <h2 data-cursor-size="200" data-cursor-exclusion>
-                Now Iam working on
-              </h2>
-            </div>
-            <div className={`${styles.content} content`}>
-              {detailQuery.data.stories.map((story, index) => (
-                <div
-                  key={index}
-                  className={styles.item}
-                  data-cursor-size="100"
-                  data-cursor-icon="fi fi-rr-arrow-right"
-                  onClick={() => openLink(story.url)}
-                >
-                  <h5>{story.title}</h5>
-                  <div className={styles.attr}>
-                    {story.tags.map((tag, index) => (
-                      <span key={index}>{tag}</span>
-                    ))}
+          <section className={styles.stories_section}>
+            <div className={styles.content}>
+              <div className={styles.list}>
+                {detailQuery.data.stories.map((story, index) => (
+                  <div
+                    className={styles.item}
+                    key={index}
+                    data-cursor-image={story.image}
+                    data-cursor-size="200"
+                    onClick={() => window.open(story.url)}
+                    style={{
+                      background: story.accentColor,
+                    }}
+                  >
+                    <div className={styles.detail}>
+                      <h5>{story.title}</h5>
+                    </div>
+
+                    <button className={styles.action}>
+                      <i className="fi fi-rr-badge"></i>
+                    </button>
                   </div>
-                  <span>{story.desc}</span>
-                </div>
-              ))}
+                ))}
+              </div>
+              <div className={styles.heading}>
+                <h2>What i do recently</h2>
+                <h2>is recorded on Stories</h2>
+              </div>
             </div>
           </section>
         )}
