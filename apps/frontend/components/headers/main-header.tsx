@@ -43,12 +43,7 @@ const MainHeader: FunctionComponent = (): JSX.Element => {
         data-cursor-magnetic="fixed"
       >
         <Link href={'/'} className={styles.link}>
-          <Image
-            src={'/images/logo.png'}
-            alt="Logo"
-            width={32.44}
-            height={40.78}
-          />
+          <Image src={'/images/logo.png'} alt="Logo" width={40} height={40} />
         </Link>
       </div>
       <div className={styles.spacer}></div>
