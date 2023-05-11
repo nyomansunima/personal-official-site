@@ -92,6 +92,30 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
         duration: 4.3,
       })
 
+      // animate the stories section
+      if (detailQuery.data?.stories && detailQuery.data.stories.length > 0) {
+        gsap
+          .timeline({
+            delay: 0,
+            scrollTrigger: {
+              trigger: '.stories-section',
+              start: 'top bottom',
+              end: '+=1000',
+              scrub: 0.7,
+            },
+          })
+          .from('.stories-section .heading h2', {
+            x: -200,
+            ease: 'back',
+            duration: 0.7,
+            opacity: 0,
+          })
+          .from('.stories-section .content', {
+            y: 200,
+            opacity: 0,
+          })
+      }
+
       // animate blog section
       if (
         detailQuery.data?.blogPosts &&
@@ -219,8 +243,8 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
         duration: 1.2,
         scrollTrigger: {
           trigger: '.explore-section',
-          start: 'bottom center',
-          end: '+=400',
+          // start: 'bottom center',
+          end: '+=1400',
         },
       })
       gsap
@@ -233,16 +257,13 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
           scrollTrigger: {
             trigger: '.explore-section .left h2',
             start: 'top 80%',
+            scrub: 4,
           },
         })
-        .from(['.explore-section .left h2', '.explore-section .right'], {
-          y: 200,
+        .from('.explore-section .left h2', {
+          x: -200,
           opacity: 0,
           duration: 1.2,
-        })
-        .from('.explore-section .left span', {
-          y: 200,
-          opacity: 0,
         })
         .from('.explore-section .left .actions', {
           y: 100,
@@ -257,7 +278,7 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
       gsap.to('.explore-section .left', {
         scrollTrigger: {
           trigger: '.explore-section .right',
-          start: 'top 25%',
+          start: 'top top',
           end:
             '+=' +
             (exploreScroll.clientHeight - (700 + (listChild.length - 1) * 75)),
@@ -338,8 +359,8 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
             <div className={styles.right}>
               <span className={`${styles.desc} desc`}>
                 Hi. I'm Nyoman Sunima! I'm a self-taught Senior Product
-                Designer, YouTuber, Creative Fullstack Developer located in
-                Bali, Indonesia.
+                Designer, Creative Fullstack Developer located in Bali,
+                Indonesia.
               </span>
               <div className={styles.actions}>
                 <OutlineButton magnetic={true} className="action" link="/about">
@@ -349,6 +370,29 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
             </div>
           </div>
         </section>
+
+        {detailQuery.data?.stories && detailQuery.data.stories.length > 0 && (
+          <section className={`${styles.stories_section} stories-section`}>
+            <div className={`${styles.heading} heading`}>
+              <h2 data-cursor-size="200" data-cursor-exclusion>
+                So here is what's currently <span> i am doing on</span>
+              </h2>
+            </div>
+            <div className={`${styles.content} content`}>
+              {detailQuery.data.stories.map((story, index) => (
+                <span
+                  data-cursor-size="80"
+                  data-cursor-text="View"
+                  key={index}
+                  data-cursor-color={story.accentColor}
+                  onClick={() => window.open(story.url)}
+                >
+                  {story.title}
+                </span>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* latest blog posts */}
         {detailQuery.data?.blogPosts &&
@@ -442,15 +486,14 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
             </section>
           )}
 
+        {/* explorations section */}
         <section className={`${styles.explore_section} explore-section`}>
           <div className={`${styles.left} left`}>
-            <h2>How treament make me better</h2>
-            <span>
-              I always try to explore everthing to ensure my quality. I always
-              learn, then create something that make me become a better learner
-              with a new concept. You can grap all of my exploration on github,
-              and gitlab repo.
-            </span>
+            <h2 data-cursor-size="200" data-cursor-exclusion>
+              The important thing to enhance my skill{' '}
+              <span> is doing exploration</span>
+            </h2>
+
             <div className={`${styles.actions} actions`}>
               <OutlineButton link="/explore">🎉 More to explore</OutlineButton>
             </div>
