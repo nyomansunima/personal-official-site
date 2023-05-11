@@ -1,4 +1,4 @@
-import {Folder} from 'react-iconly'
+import { Paper } from 'react-iconly'
 
 /**
  * # certificateSchema
@@ -9,7 +9,7 @@ const certificateSchema = {
   title: 'Certificates',
   name: 'certificate',
   type: 'document',
-  icon: Folder,
+  icon: Paper,
   fields: [
     {
       title: 'Image',
@@ -32,5 +32,12 @@ const certificateSchema = {
       type: 'date',
     },
   ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'publisher',
+      media: 'image',
+    },
+  },
 }
 export default certificateSchema
