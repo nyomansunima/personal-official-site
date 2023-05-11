@@ -13,7 +13,7 @@ export interface AboutDetail {
     url: string
   }[]
   timelines: {
-    image: string
+    url: string
     title: string
     desc: string
   }[]
