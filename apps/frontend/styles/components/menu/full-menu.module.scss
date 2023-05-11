@@ -11,7 +11,7 @@
   border-radius: 100%;
   gap: 6px;
   border: none;
-  background: transparent;
+  background: var(--clr-black);
   cursor: pointer;
   z-index: 9999;
   transition: background 0.5s ease-in-out;
@@ -33,10 +33,10 @@
 
   .stick {
     display: flex;
-    width: getSpace(8);
-    height: 3px;
+    width: size(7);
+    height: 2.5px;
     border-radius: 10px;
-    background: var(--clr-black);
+    background: var(--clr-white);
     transition: all 0.5s ease-in-out;
     transform-origin: 25% 25%;
     will-change: transform;

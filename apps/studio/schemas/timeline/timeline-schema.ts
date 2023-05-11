@@ -1,4 +1,4 @@
-import {Folder} from 'react-iconly'
+import { Heart2 } from 'react-iconly'
 
 /**
  * # timelineSchema
@@ -10,13 +10,8 @@ const timelineSchema = {
   title: 'Timelines',
   name: 'timeline',
   type: 'document',
-  icon: Folder,
+  icon: Heart2,
   fields: [
-    {
-      title: 'Image',
-      name: 'image',
-      type: 'image',
-    },
     {
       title: 'Title',
       name: 'title',
@@ -26,6 +21,11 @@ const timelineSchema = {
       title: 'Description',
       name: 'desc',
       type: 'text',
+    },
+    {
+      title: 'URL',
+      name: 'url',
+      type: 'url',
     },
   ],
 }

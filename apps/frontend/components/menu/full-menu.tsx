@@ -58,20 +58,20 @@ const FullMenu: FunctionComponent = (): JSX.Element => {
 
   useEffect(() => {
     const ctx = gsap.context((self) => {
-      const tl = gsap.timeline({
-        delay: 0.2,
-        defaults: {
-          duration: 1.7,
-          ease: 'back',
-        },
-        paused: true,
-      })
-
-      tl.set(menuRef.current, {
-        display: 'flex',
-        opacity: 1,
-        duration: 0.2,
-      })
+      const tl = gsap
+        .timeline({
+          delay: 0.2,
+          defaults: {
+            duration: 1.7,
+            ease: 'back',
+          },
+          paused: true,
+        })
+        .set(menuRef.current, {
+          display: 'flex',
+          opacity: 1,
+          duration: 0.2,
+        })
         .to('.full-menu-overlay-anim', {
           clipPath: 'circle(135.9% at 95% 3%)',
           duration: 0.9,
@@ -98,7 +98,7 @@ const FullMenu: FunctionComponent = (): JSX.Element => {
           duration: 1.3,
           opacity: 0,
           y: 40,
-          stagger: 0.3,
+          stagger: 0.2,
           ease: 'elastic',
         })
 
@@ -107,9 +107,7 @@ const FullMenu: FunctionComponent = (): JSX.Element => {
         tl.play()
       })
       self.add('hide', () => {
-        if (tl.isActive()) {
-          tl.reverse(2)
-        }
+        tl.reverse()
       })
     }, menuRef)
 

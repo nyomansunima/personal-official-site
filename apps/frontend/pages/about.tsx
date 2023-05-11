@@ -129,28 +129,30 @@ const AboutPage: NextPageWithLayout = (): JSX.Element => {
           yPercent: 30,
         })
 
-      // animate status
+      // animate stories status
       if (detailQuery.data?.stories && detailQuery.data.stories.length > 0) {
         gsap
           .timeline({
-            delay: 0.3,
+            delay: 0,
             defaults: {
               ease: 'back',
               duration: 0.7,
             },
             scrollTrigger: {
-              trigger: '.status-section',
-              start: 'top center',
+              trigger: '.stories-section',
+              start: 'top 75%',
+              end: '+=400',
+              scrub: 4,
             },
           })
-          .from('.status-section .heading h2', {
-            y: 200,
+          .from('.stories-section .heading h2', {
+            x: 200,
             opacity: 0,
           })
-          .from('.status-section .content', {
+          .from('.stories-section .list', {
             y: 200,
             opacity: 0,
-            duration: 1.4,
+            duration: 0.7,
           })
       }
 
@@ -240,43 +242,49 @@ const AboutPage: NextPageWithLayout = (): JSX.Element => {
           })
       }
 
-      // animate experience section
-      const timelineEl = document.body.querySelector(
-        '.experience-section .content ul'
-      ) as HTMLElement
-
+      // animate the timeline sections
       if (
         detailQuery.data?.timelines &&
         detailQuery.data.timelines.length > 0
       ) {
         gsap
           .timeline({
-            delay: 0.2,
-            defaults: {
-              ease: 'back',
-              duration: 0.7,
-            },
+            delay: 0.4,
             scrollTrigger: {
-              trigger: '.experience-section .heading',
-              start: 'top 30%',
-              pin: '.experience-section .heading',
-              end: '+=' + (timelineEl.clientHeight - window.innerHeight / 2),
-              pinType: 'transform',
+              trigger: '.timeline-section',
+              start: 'top bottom',
             },
           })
-          .from('.experience-section .heading h2', {
+          .from('.timeline-section .heading', {
+            y: 200,
+            opacity: 0,
+            ease: 'back',
+          })
+          .from('.timeline-section .content', {
             y: 200,
             opacity: 0,
           })
-          .from('.experience-section .heading span', {
-            y: 100,
-            opacity: 0,
-          })
-          .from('.experience-section .content ul li', {
-            y: 200,
-            opacity: 0,
-            stagger: 0.2,
-          })
+
+        const listEl = document.body.querySelector(
+          '.timeline-section .content ul'
+        ) as HTMLElement
+
+        gsap.to('.timeline-section .content ul', {
+          yPercent:
+            -100 *
+            ((listEl.clientHeight -
+              window.innerHeight -
+              window.innerHeight * 0.3) /
+              window.innerHeight),
+          scrollTrigger: {
+            trigger: '.timeline-section .heading h2',
+            start: 'top center',
+            pin: true,
+            scrub: 5,
+            pinType: 'transform',
+            pinSpacing: true,
+          },
+        })
       }
     }, mainRef)
 
@@ -370,32 +378,38 @@ const AboutPage: NextPageWithLayout = (): JSX.Element => {
           </div>
         </section>
 
-        {/* status section */}
+        {/* Stories section */}
         {detailQuery.data?.stories && detailQuery.data.stories.length > 0 && (
-          <section className={`${styles.status_section} status-section`}>
-            <div className={`${styles.heading} heading`}>
-              <h2 data-cursor-size="200" data-cursor-exclusion>
-                Now Iam working on
-              </h2>
-            </div>
-            <div className={`${styles.content} content`}>
-              {detailQuery.data.stories.map((story, index) => (
-                <div
-                  key={index}
-                  className={styles.item}
-                  data-cursor-size="100"
-                  data-cursor-icon="fi fi-rr-arrow-right"
-                  onClick={() => openLink(story.url)}
-                >
-                  <h5>{story.title}</h5>
-                  <div className={styles.attr}>
-                    {story.tags.map((tag, index) => (
-                      <span key={index}>{tag}</span>
-                    ))}
+          <section className={`${styles.stories_section} stories-section`}>
+            <div className={styles.content}>
+              <div className={`${styles.list} list`}>
+                {detailQuery.data.stories.map((story, index) => (
+                  <div
+                    className={styles.item}
+                    key={index}
+                    data-cursor-image={story.image}
+                    data-cursor-size="200"
+                    onClick={() => window.open(story.url)}
+                    style={{
+                      background: story.accentColor,
+                    }}
+                  >
+                    <div className={`${styles.detail}`}>
+                      <h5>{story.title}</h5>
+                    </div>
+
+                    <button className={styles.action}>
+                      <i className="fi fi-rr-arrow-right"></i>
+                    </button>
                   </div>
-                  <span>{story.desc}</span>
-                </div>
-              ))}
+                ))}
+              </div>
+              <div className={`${styles.heading} heading`}>
+                <h2>
+                  What i do recently
+                  <span> is recorded on stories</span>
+                </h2>
+              </div>
             </div>
           </section>
         )}
@@ -412,8 +426,8 @@ const AboutPage: NextPageWithLayout = (): JSX.Element => {
                 </h2>
                 <span>
                   Always steady to make something on track. Here are all of my
-                  certificate that belong to my skill. This will help you gain
-                  more info about me
+                  certificate that belong to my skill. This will help you trust
+                  more about me
                 </span>
               </div>
 
@@ -436,6 +450,8 @@ const AboutPage: NextPageWithLayout = (): JSX.Element => {
                             {format(new Date(cert.publishedAt), 'MMMM, yyyy')}
                           </span>
                         </div>
+
+                        <i className={`${styles.icon} fi fi-rr-badge`}></i>
                       </div>
                     </div>
                   ))}
@@ -444,36 +460,31 @@ const AboutPage: NextPageWithLayout = (): JSX.Element => {
             </section>
           )}
 
-        {/* experience section */}
+        {/* timeline section */}
         {detailQuery.data?.timelines &&
           detailQuery.data.timelines.length > 0 && (
-            <section
-              className={`${styles.experience_section} experience-section`}
-            >
+            <section className={`${styles.timeline_section} timeline-section`}>
               <div className={`${styles.heading} heading`}>
                 <h2 data-cursor-exclusion data-cursor-size="200">
-                  Capture in the timeline
+                  My experience, achievement, journey, and past activity
+                  <span> is placed in timeline</span>
                 </h2>
-                <span>
-                  Everytime i achive something i wrote into the timeline. All my
-                  experience and history are clearly saved in special place with
-                  contain all moment
-                </span>
               </div>
               <div className={`${styles.content} content`}>
                 <ul>
                   {detailQuery.data.timelines.map((timeline, index) => (
-                    <li
-                      key={index}
-                      data-cursor-size="400"
-                      data-cursor-image={timeline.image}
-                    >
-                      <h4>
-                        {index + 1}. {timeline.title}
-                      </h4>
+                    <li key={index} onClick={() => window.open(timeline.url)}>
+                      <h5>{timeline.title}</h5>
                       <span>{timeline.desc}</span>
                     </li>
                   ))}
+                  <li>
+                    <h5>🎉 Now, still waiting</h5>
+                    <span>
+                      I still dreaming, and wake on the real world to enjoy the
+                      next destiny
+                    </span>
+                  </li>
                 </ul>
               </div>
             </section>
