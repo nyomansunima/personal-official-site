@@ -27,6 +27,11 @@ class CommonService {
           title,
           "summary": abouts[0],
           "thumbnail": thumbnail.asset -> url,
+        },
+        "stories": *[_type == "story"][0...3]{
+          title, 
+          url,
+          "accentColor": accentColor.hex,
         }
       }
     `
@@ -56,9 +61,8 @@ class CommonService {
           ...,
           "image": image.asset -> url,
         },
-        "timelines": *[_type == "timeline"]|order(_updatedAt desc){
+        "timelines": *[_type == "timeline"]|order(_createdAt desc){
           ...,
-          "image": image.asset -> url,
         },
       }
     `
