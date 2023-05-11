@@ -5,4 +5,9 @@ export interface HomeDetail {
   inspirations: Inspiration[]
   blogPosts: ArticlePost[]
   explorations: Exploration[]
+  stories: {
+    accentColor: string
+    title: string
+    url: string
+  }[]
 }
