@@ -1,4 +1,4 @@
-import {Folder} from 'react-iconly'
+import { User } from 'react-iconly'
 
 /**
  * # clientSchema
@@ -10,7 +10,7 @@ const clientSchema = {
   title: 'Clients',
   name: 'client',
   type: 'document',
-  icon: Folder,
+  icon: User,
   fields: [
     {
       title: 'Image',
@@ -38,5 +38,12 @@ const clientSchema = {
       type: 'url',
     },
   ],
+  preview: {
+    select: {
+      title: 'name',
+      subtitle: 'url',
+      media: 'image',
+    },
+  },
 }
 export default clientSchema

@@ -1,10 +1,4 @@
 export interface AboutDetail {
-  stories: {
-    title: string
-    desc: string
-    tags: string[]
-    url: string
-  }[]
   certificates: {
     image: string
     title: string
@@ -19,8 +13,14 @@ export interface AboutDetail {
     url: string
   }[]
   timelines: {
-    image: string
+    url: string
     title: string
     desc: string
+  }[]
+  stories: {
+    title: string
+    image: string
+    accentColor: string
+    url: string
   }[]
 }

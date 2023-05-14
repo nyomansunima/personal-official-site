@@ -164,8 +164,11 @@ class ContentService {
     const res = await hashNodeClient.post('/', {
       query,
     })
-
-    return (res.data.user.publication.posts as any[]).slice(0, 10)
+    if (res.data.user && res.data.user.publication) {
+      return (res.data.user.publication.posts as any[]).slice(0, 10)
+    } else {
+      return []
+    }
   }
 
   async getAllPosts(): Promise<ArticlePost[]> {
@@ -184,7 +187,6 @@ class ContentService {
     `
 
     const res = await hashNodeClient.post('/', { query })
-
     return res.data.user.publication.posts as any
   }
 }
