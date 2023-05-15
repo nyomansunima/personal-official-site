@@ -1,4 +1,4 @@
-import {Folder} from 'react-iconly'
+import { Folder } from 'react-iconly'
 
 /**
  * # projectSchema
@@ -19,11 +19,6 @@ const projectSchema = {
       type: 'string',
     },
     {
-      title: 'SEO',
-      name: 'seo',
-      type: 'seo',
-    },
-    {
       title: 'Project Overview',
       name: 'overview',
       type: 'projectOverview',
@@ -32,13 +27,13 @@ const projectSchema = {
       title: 'Tags',
       name: 'tags',
       type: 'array',
-      of: [{type: 'string'}],
+      of: [{ type: 'string' }],
     },
     {
       title: 'Service Used',
       name: 'services',
       type: 'array',
-      of: [{type: 'reference', to: [{type: 'service'}]}],
+      of: [{ type: 'reference', to: [{ type: 'service' }] }],
     },
     {
       title: 'Client',
@@ -54,7 +49,7 @@ const projectSchema = {
       title: 'Project Teams',
       name: 'teams',
       type: 'array',
-      of: [{type: 'projectTeam'}],
+      of: [{ type: 'projectTeam' }],
     },
   ],
 }

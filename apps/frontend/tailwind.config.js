@@ -1,3 +1,6 @@
+const forms = require('@tailwindcss/forms')
+const aspectRatio = require('@tailwindcss/aspect-ratio')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -8,5 +11,5 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [forms, aspectRatio],
 }

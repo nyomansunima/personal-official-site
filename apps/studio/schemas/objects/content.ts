@@ -15,6 +15,9 @@ const contentSchema = {
     {
       type: 'image',
     },
+    {
+      type: 'code',
+    },
   ],
 }
 export default contentSchema
