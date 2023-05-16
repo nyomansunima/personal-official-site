@@ -1,3 +1,23 @@
+export interface BioDetail {
+  socials: { iconCode: string; url: string; name: string }[]
+  links: { iconCode: string; url: string; label: string; customColor: string }[]
+}
+
+export interface BlogTag {
+  iconCode: string
+  title: string
+  desc: string
+}
+
+export interface BlogPost {
+  slug: string
+  title: string
+  desc: string
+  thumbnail: string
+  content: any
+  tags: BlogTag[]
+}
+
 export interface ArticlePost {
   title: string
   coverImage: string
