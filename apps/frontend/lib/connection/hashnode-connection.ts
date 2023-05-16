@@ -19,6 +19,7 @@ const hashNodeClient = axios.create({
     },
   ],
 })
+
 hashNodeClient.defaults.headers.common['Authorization'] = isBrowser
   ? process.env.HASHNODE_PERSONAL_ACCESS_TOKEN
   : process.env.NEXT_PUBLIC_PERSONAL_ACCESS_TOKEN
