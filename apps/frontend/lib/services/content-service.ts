@@ -2,6 +2,8 @@ import hashNodeClient from '@lib/connection/hashnode-connection'
 import sanityClient from '@lib/connection/sanity-connection'
 import {
   ArticlePost,
+  BioDetail,
+  BlogPost,
   Exploration,
   ExplorationDetail,
   ExplorationRepo,
@@ -10,6 +12,43 @@ import { FAQ } from '~/types/faq'
 import { PreviewService, ServiceDetail } from '~/types/service'
 
 class ContentService {
+  async getDetailBio(): Promise<BioDetail> {
+    const query = `
+      {
+        "socials": *[_type == "bioSocial"]{
+          ...,
+        },
+        "links": *[_type == "bioLink"]{
+          ...,
+          "customColor": customColor.hex,
+        },
+      }
+    `
+
+    const res = await sanityClient.fetch(query)
+    return res
+  }
+
+  async getDetailBlog(slug: string): Promise<BlogPost> {
+    const query = `
+      *[_type == "blog" && slug.current == $slug][0]{
+        ...,
+        "slug": slug.current,
+        "thumbnail": thumbnail.asset -> url,
+        tags[] -> {
+          ...,
+          "image": image.asset -> url,
+        }
+      }
+    `
+
+    const res = await sanityClient.fetch(query, {
+      slug,
+    })
+
+    return res
+  }
+
   async getDetailService(slug: string): Promise<ServiceDetail> {
     const query = `
       *[_type == "service" && slug == "${slug}"][0]{
