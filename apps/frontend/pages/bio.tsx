@@ -1,3 +1,4 @@
+import { Form, TextInput } from '@components/forms'
 import contentService from '@lib/services/content-service'
 import { QueryClient, dehydrate, useQuery } from '@tanstack/react-query'
 import { GetServerSideProps } from 'next'
@@ -6,6 +7,20 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect } from 'react'
 import { NextPageWithLayout } from '~/types/app'
+import { useMutation } from '@tanstack/react-query'
+import contactService from '@lib/services/contact-service'
+import { useForm } from 'react-hook-form'
+import { FlatButton } from '@components/buttons'
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+
+const newsletterValidation = z.object({
+  fullName: z.string(),
+  email: z
+    .string()
+    .min(1, 'Please add your email')
+    .email('Opps, your email look weird'),
+})
 
 /**
  * # BioPage
@@ -15,11 +30,25 @@ import { NextPageWithLayout } from '~/types/app'
  * @returns JSX.Element
  */
 const BioPage: NextPageWithLayout = (): JSX.Element => {
+  const newsletterForm = useForm({
+    mode: 'onChange',
+    resolver: zodResolver(newsletterValidation),
+  })
   const detailQuery = useQuery(['bio'], contentService.getDetailBio)
+  const subscribeNewsletter = useMutation(
+    contactService.subscribeToNewsletter,
+    {
+      onSuccess: () => {
+        newsletterForm.reset()
+      },
+      onError: () => {
+        newsletterForm.reset()
+      },
+    }
+  )
 
   useEffect(() => {
-    document.body.classList.add('bg-slate-100')
-    document.body.classList.add(`dark:bg-[#13101e]`)
+    document.body.classList.add('bg-slate-100', 'dark:bg-[#13101e]')
   }, [])
 
   return (
@@ -176,6 +205,42 @@ const BioPage: NextPageWithLayout = (): JSX.Element => {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* newsletter form */}
+          <div className="flex flex-col mt-10 bg-white p-5 rounded-3xl">
+            <h4 className="text-xl font-semibold">Subscribe to newsletter</h4>
+            <span className="text-gray-600 mt-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+              vitae numquam illo reprehenderit unde velit laboriosam facere
+              consequatur ipsum dignissimos.
+            </span>
+
+            <Form
+              context={newsletterForm}
+              onSubmit={subscribeNewsletter.mutate}
+              className="mt-8"
+            >
+              <div className="flex flex-col tablet:flex-row w-full gap-5">
+                <TextInput
+                  name="fullName"
+                  placeholder="Your full name"
+                  preIcon="fi fi-rr-user"
+                />
+                <TextInput
+                  name="email"
+                  placeholder="Your email address"
+                  preIcon="fi fi-rr-user"
+                />
+              </div>
+              <FlatButton
+                disabled={subscribeNewsletter.isLoading}
+                className="w-full mt-7 transition-all duration-500 hover:-translate-y-1"
+              >
+                <i className="fi fi-rr-paper-plane"></i>
+                Subscribe now
+              </FlatButton>
+            </Form>
           </div>
         </div>
       </main>
