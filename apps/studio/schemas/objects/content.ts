@@ -16,7 +16,11 @@ const contentSchema = {
       type: 'image',
     },
     {
+      title: '🧑🏿‍💻 Code',
       type: 'code',
+      options: {
+        withFilename: true,
+      },
     },
   ],
 }
