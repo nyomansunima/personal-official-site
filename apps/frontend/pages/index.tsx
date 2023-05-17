@@ -12,6 +12,7 @@ import { OutlineButton } from '@components/buttons'
 import commonService from '@lib/services/common-service'
 import { useRouter } from 'next/router'
 import { ContactSection } from '@components/contact'
+import Link from 'next/link'
 
 const getServerSideProps: GetServerSideProps = async () => {
   const queryClient = new QueryClient()
@@ -411,28 +412,24 @@ const HomePage: NextPageWithLayout = (): JSX.Element => {
               <div className={styles.content}>
                 <div className={`${styles.slide} slide`}>
                   {detailQuery.data.blogPosts.map((post, index) => (
-                    <div
+                    <Link
+                      href={`/blog/${post.slug}`}
                       key={index}
                       className={styles.item}
-                      onClick={() =>
-                        openLink(
-                          `${process.env.NEXT_PUBLIC_HASHNODE_BLOG_URL}/${post.slug}`
-                        )
-                      }
                     >
                       <picture
                         data-cursor-size="80"
                         data-cursor-icon="fi fi-rr-arrow-up-right"
                       >
                         <Image
-                          src={post.coverImage}
+                          src={post.thumbnail}
                           fill
                           alt={post.title}
                           sizes="auto"
                         />
                       </picture>
                       <h4>{post.title}</h4>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               </div>

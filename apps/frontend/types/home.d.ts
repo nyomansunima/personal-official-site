@@ -1,9 +1,9 @@
-import { ArticlePost, Exploration } from './content'
+import { ArticlePost, BlogPostItem, Exploration } from './content'
 import { Inspiration } from './inspiration'
 
 export interface HomeDetail {
   inspirations: Inspiration[]
-  blogPosts: ArticlePost[]
+  blogPosts: BlogPostItem[]
   explorations: Exploration[]
   stories: {
     accentColor: string
