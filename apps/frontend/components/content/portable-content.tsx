@@ -73,7 +73,7 @@ const CodeComponent: FunctionComponent<CodeComponentProps> = ({
                     <span className="text-gray-500">{i + 1}</span>
                     <div>
                       {line.map((token, key) => (
-                        <span {...getTokenProps({ token, key })} />
+                        <span {...getTokenProps({ token, key })} key={key} />
                       ))}
                     </div>
                   </div>
