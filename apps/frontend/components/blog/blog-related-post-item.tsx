@@ -1,5 +1,11 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { FunctionComponent } from 'react'
+import { RelatedBlogPost } from '~/types/content'
+
+interface BlogRelatedPostItemProps {
+  data: RelatedBlogPost
+}
 
 /**
  * # BlogRelatedPostItem
@@ -8,18 +14,21 @@ import { FunctionComponent } from 'react'
  *
  * @returns JSX.Element
  */
-const BlogRelatedPostItem: FunctionComponent = (): JSX.Element => {
+const BlogRelatedPostItem: FunctionComponent<BlogRelatedPostItemProps> = ({
+  data,
+}): JSX.Element => {
   return (
-    <div className="flex flex-col w-1/3 cursor-pointer">
+    <Link
+      href={`/blog/${data.slug}`}
+      className="flex flex-col w-1/3 cursor-pointer"
+    >
       <picture
         className="flex w-full relative h-[360px] rounded-2xl overflow-hidden"
         data-cursor-size="120"
         data-cursor-text="Read Now"
       >
         <Image
-          src={
-            'https://cdn.dribbble.com/userupload/4868050/file/original-fa4d9cce4e53f82c335700f93ac8cf79.png?compress=1&resize=2048x1536'
-          }
+          src={data.thumbnail}
           fill
           alt="Image"
           sizes="auto"
@@ -27,13 +36,10 @@ const BlogRelatedPostItem: FunctionComponent = (): JSX.Element => {
         />
       </picture>
 
-      <span className="flex font-semibold text-pink-500 mt-3">Design</span>
+      <span className="flex font-semibold text-pink-500 mt-3">{data.tag}</span>
 
-      <h2 className="text-2xl font-medium line-clamp-2 mt-4">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta,
-        dolore.
-      </h2>
-    </div>
+      <h2 className="text-2xl font-medium line-clamp-2 mt-4">{data.title}</h2>
+    </Link>
   )
 }
 

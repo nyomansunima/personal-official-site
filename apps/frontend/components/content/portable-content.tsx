@@ -99,12 +99,13 @@ const ImageComponent: FunctionComponent<ImageComponentProps> = ({
   value,
 }): JSX.Element => {
   return (
-    <picture>
+    <picture className="flex w-full relative h-[500px] rounded-3xl overflow-hidden my-6">
       <Image
         src={urlBuilder(sanityClient).image(value).url()}
         fill
         sizes="auto"
         alt={value.alt || ''}
+        className="!m-0"
       />
     </picture>
   )

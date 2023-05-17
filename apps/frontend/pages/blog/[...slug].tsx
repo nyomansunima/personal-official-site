@@ -27,7 +27,7 @@ const BlogDetailPage: NextPageWithLayout<BlogDetailPageProps> = ({ slug }) => {
   return (
     <>
       <Head>
-        <title>{detailQuery.data?.title} | Nyoman Sunima</title>
+        <title>{detailQuery.data?.title}</title>
         <meta
           name="description"
           content={detailQuery.data?.desc.substring(0, 100)}
@@ -48,22 +48,22 @@ const BlogDetailPage: NextPageWithLayout<BlogDetailPageProps> = ({ slug }) => {
             />
           </picture>
 
+          {/* title */}
+          <h1 className="flex text-5xl font-bold mt-10">
+            {detailQuery.data.title}
+          </h1>
+
           {/* tags */}
-          <div className="flex flex-wrap items-center gap-x-5 mt-10">
+          <div className="flex flex-wrap items-center gap-x-5 mt-10  border-b border-b-gray-100 pb-5">
             {detailQuery.data.tags.map((tag, index) => (
               <span
-                className="flex items-center justify-center px-4 py-2 rounded-full text-indigo-600 bg-indigo-100 font-medium"
+                className="flex font-semibold text-indigo-600 first:text-pink-500 even:text-violet-600 justify-center items-center px-3 py-1.5 rounded-xl border border-gray-100 cursor-pointer"
                 key={index}
               >
                 {tag.title}
               </span>
             ))}
           </div>
-
-          {/* title */}
-          <h1 className="flex text-5xl font-medium mt-10 border-b border-b-gray-100 pb-5">
-            {detailQuery.data.title}
-          </h1>
 
           {/* actual content */}
           <ContentPortable

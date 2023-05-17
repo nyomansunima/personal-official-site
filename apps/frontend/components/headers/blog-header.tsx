@@ -44,13 +44,14 @@ const BlogHeader: FunctionComponent = (): JSX.Element => {
   return (
     <header className="flex fixed z-10 top-0 inset-x-0 bg-white border-b border-b-gray-100 px-10 py-4 items-center">
       {/* brand */}
-      <Link
-        href={'/'}
-        className="flex items-center text-xl font-medium gap-3 z-10"
-      >
-        <Image src={'/images/logo.png'} height={40} width={40} alt="Logo" />
-        Blog
-      </Link>
+      <div className="flex items-center text-xl font-medium gap-3">
+        <Link href={'/'}>
+          <Image src={'/images/logo.png'} height={40} width={40} alt="Logo" />
+        </Link>
+        <Link href={'/blog'} className="font-semibold">
+          Blog
+        </Link>
+      </div>
 
       {/* navigations */}
       <div className="flex flex-1"></div>

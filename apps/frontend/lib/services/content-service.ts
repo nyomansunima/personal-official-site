@@ -1,17 +1,160 @@
-import hashNodeClient from '@lib/connection/hashnode-connection'
 import sanityClient from '@lib/connection/sanity-connection'
+import axios from 'axios'
 import {
-  ArticlePost,
   BioDetail,
   BlogPost,
+  BlogPostItem,
   Exploration,
   ExplorationDetail,
   ExplorationRepo,
+  RelatedBlogPost,
 } from '~/types/content'
 import { FAQ } from '~/types/faq'
 import { PreviewService, ServiceDetail } from '~/types/service'
+import * as toMarkdown from '@sanity/block-content-to-markdown'
 
 class ContentService {
+  async transformContentToMarkdown(content: any) {
+    const serializers = {
+      types: {
+        code: (props) =>
+          '```' + props.node.language + '\n' + props.node.code + '\n```',
+      },
+    }
+
+    const mdContent = toMarkdown(content, { serializers })
+  }
+
+  async multiPlatformBlogIntegration(body: any): Promise<void> {
+    const {
+      documentId,
+      revisionId,
+      operation,
+      platform,
+      title,
+      slug,
+      desc,
+      content,
+      thumbnail,
+    } = body
+
+    // predefine vars
+    const baseBlogUrl = `${process.env.APP_BASE_URL}/blog`
+    const mediumAPIKey = process.env.MEDIUM_API_KEY!
+    const mediumUserId =
+      '19c02fbce6b6b90a9a11486a087a9cae7db87906cb1894c0a6b5ddbeb3a610ae7'
+    const hashnodeAPIKey = process.env.HASHNODE_API_KEY!
+    const devtoAPIKey = process.env.DEV_TO_API_KEY!
+
+    const markdownParsedContent = ''
+
+    // Start to publish the blog post to
+    // another platform including hashnode, dev.to and medium
+    // this can be create, update and delete the content
+
+    if (operation == 'create') {
+      // create post on medium
+      const mediumData = await axios
+        .post(
+          `https://api.medium.com/v1/users/${mediumUserId}/posts`,
+          {
+            title: title,
+            contentFormat: 'markdown',
+            content: markdownParsedContent,
+            canonicalUrl: `${baseBlogUrl}/${slug}`,
+            tags: ['football', 'sport', 'Liverpool'],
+            publishStatus: 'public',
+            notifyFollowers: true,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${mediumAPIKey}`,
+            },
+          }
+        )
+        .then((res) => res.data.data)
+
+      // create post on dev.to
+      const devtoData = await axios
+        .post(
+          `https://dev.to/api/api/articles`,
+          {
+            article: {
+              title: title,
+              body_markdown: markdownParsedContent,
+              published: true,
+              main_image: thumbnail,
+              canonical_url: `${baseBlogUrl}/${slug}`,
+              description: desc,
+              tags: ['tips'],
+            },
+          },
+          {
+            headers: {
+              'api-key': devtoAPIKey,
+            },
+          }
+        )
+        .then((res) => res.data)
+
+      await sanityClient.patch(documentId, {
+        set: {},
+      })
+    }
+
+    if (operation == 'update') {
+      // update dev.to post
+      await axios.put(
+        `https://dev.to/api/api/articles/${platform.devto}`,
+        {
+          article: {
+            title: title,
+            body_markdown: markdownParsedContent,
+            published: true,
+            main_image: thumbnail,
+            canonical_url: `${baseBlogUrl}/${slug}`,
+            description: desc,
+            tags: ['tips'],
+          },
+        },
+        {
+          headers: {
+            'api-key': devtoAPIKey,
+          },
+        }
+      )
+    }
+
+    if (operation == 'delete') {
+      // unpublish the dev.to post
+      await axios.put(
+        `https://dev.to/api/api/articles/${platform.devto}/unpublish`,
+        {},
+        {
+          headers: {
+            'api-key': devtoAPIKey,
+          },
+        }
+      )
+    }
+  }
+
+  async getRelatedBlogPost(slug: string): Promise<RelatedBlogPost[]> {
+    const query = `
+      *[_type == "blog" && slug.current == $slug][0]{
+        "relatedPosts": *[_type == "blog" && references(^.tags[]._ref) && _id != ^._id] | order(_updatedAt desc) [0...3]{
+          "tag": tags[0] -> title,
+          title,
+          "thumbnail": thumbnail.asset ->url,
+          "slug": slug.current,
+        }
+      }
+    `
+
+    const res = await sanityClient.fetch(query, { slug })
+    return res.relatedPosts || []
+  }
+
   async getDetailBio(): Promise<BioDetail> {
     const query = `
       {
@@ -165,68 +308,46 @@ class ContentService {
     return res
   }
 
-  async getBestWeekPosts(): Promise<ArticlePost[]> {
-    const query = `{
-      user(username: "nyomansunima") {
-        publication {
-          posts(page: 0) {
-            title
-            coverImage
-            slug
-            type
-          }
-        }
-      }
+  async getBestWeekPosts(): Promise<BlogPostItem[]> {
+    const query = `
+    *[_type == "blog"] | order(updatedAt desc) [0...7]{
+      title,
+      "slug": slug.current,
+      "thumbnail": thumbnail.asset-> url,
+      "tag": tags[0] -> title,
     }
-    `
+  `
 
-    const res = await hashNodeClient.post('/', { query })
-
-    return (res.data.user.publication.posts as any[]).slice(0, 6)
+    const res = await sanityClient.fetch(query)
+    return res
   }
 
-  async getRecentPosts(): Promise<ArticlePost[]> {
-    const query = `{
-      user(username: "nyomansunima") {
-        publication {
-          posts(page: 0) {
-            title
-            coverImage
-            slug
-            type
-          }
-        }
+  async getRecentPosts(): Promise<BlogPostItem[]> {
+    const query = `
+      *[_type == "blog"] | order(updatedAt desc) [0...8]{
+        title,
+        "slug": slug.current,
+        "thumbnail": thumbnail.asset-> url,
+        "tag": tags[0] -> title,
       }
-    }
     `
 
-    const res = await hashNodeClient.post('/', {
-      query,
-    })
-    if (res.data.user && res.data.user.publication) {
-      return (res.data.user.publication.posts as any[]).slice(0, 10)
-    } else {
-      return []
-    }
+    const res = await sanityClient.fetch(query)
+    return res
   }
 
-  async getAllPosts(): Promise<ArticlePost[]> {
-    const query = `{
-      user(username: "nyomansunima") {
-        publication {
-          posts(page: 0) {
-            title
-            coverImage
-            type
-            slug
-          }
-        }
+  async getAllPosts(): Promise<BlogPostItem[]> {
+    const query = `
+      *[_type == "blog"] | order(updatedAt desc){
+        title,
+        "slug": slug.current,
+        "thumbnail": thumbnail.asset-> url,
+        "tag": tags[0] -> title,
       }
-    }
     `
 
-    const res = await hashNodeClient.post('/', { query })
-    return res.data.user.publication.posts as any
+    const res = await sanityClient.fetch(query)
+    return res
   }
 }
 

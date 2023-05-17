@@ -1,4 +1,8 @@
-import { BlogBreadscrumb, BlogRelatedPost } from '@components/blog'
+import {
+  BlogBreadscrumb,
+  BlogNewsletter,
+  BlogRelatedPost,
+} from '@components/blog'
 import { BlogFooter } from '@components/footers'
 import { BlogHeader } from '@components/headers'
 import { FunctionComponent, ReactNode } from 'react'
@@ -24,8 +28,13 @@ const BlogDetailLayout: FunctionComponent<BlogDetailLayoutProps> = ({
       <main className="flex flex-col container mx-auto py-28 gap-10 items-center ">
         {/* the content article */}
         <div className="flex flex-col w-8/12 gap-10">
+          {/* breadscrumb */}
           <BlogBreadscrumb />
+
           {children}
+
+          {/* newsletter */}
+          <BlogNewsletter />
         </div>
 
         {/* related post */}

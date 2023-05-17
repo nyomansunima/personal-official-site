@@ -3,6 +3,13 @@ export interface BioDetail {
   links: { iconCode: string; url: string; label: string; customColor: string }[]
 }
 
+export interface RelatedBlogPost {
+  title: string
+  slug: string
+  tag: string
+  thumbnail: string
+}
+
 export interface BlogTag {
   iconCode: string
   title: string
@@ -18,11 +25,11 @@ export interface BlogPost {
   tags: BlogTag[]
 }
 
-export interface ArticlePost {
+export interface BlogPostItem {
   title: string
-  coverImage: string
   slug: string
-  type: string
+  tag: string
+  thumbnail: string
 }
 
 export interface ExplorationRepo {

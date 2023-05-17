@@ -16,7 +16,7 @@ const BlogBreadscrumb: FunctionComponent = (): JSX.Element => {
     <div className="flex items-center gap-3 px-4 py-3 rounded-2xl border bg-white border-gray-100">
       <span className="flex font-medium text-gray-600">Blog</span>
 
-      <i className="fi fi-rr-angle-small-right"></i>
+      <i className="fi fi-br-angle-small-right"></i>
 
       {params.map((path) => (
         <span className="flex font-medium" key={path}>

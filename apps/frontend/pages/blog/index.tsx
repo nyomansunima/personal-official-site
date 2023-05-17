@@ -1,16 +1,15 @@
-import { GeneralLayout } from '@components/layouts'
+import { BlogLayout } from '@components/layouts'
 import Head from 'next/head'
 import { NextPageWithLayout } from '~/types/app'
 import styles from '@styles/pages/blog.module.scss'
 import useCursor from '@lib/hooks/use-cursor'
 import { useEffect, useRef } from 'react'
-import { BlogCard } from '@components/blog'
+import { BlogCard, BlogNewsletter } from '@components/blog'
 import { gsap } from 'gsap'
 import { OutlineButton } from '@components/buttons'
 import { QueryClient, dehydrate, useQuery } from '@tanstack/react-query'
 import contentService from '@lib/services/content-service'
 import { GetServerSideProps } from 'next'
-import { ArticlePost } from '~/types/content'
 
 // define the blog resource come from
 // this including the platform and url
@@ -64,15 +63,12 @@ const getServerSideProps: GetServerSideProps = async ({}) => {
 const BlogPage: NextPageWithLayout = (): JSX.Element => {
   const cursor = useCursor()
   const mainRef = useRef<HTMLElement>(null)
-  const allPostsQuery = useQuery<ArticlePost[]>(
-    ['post', 'list'],
-    contentService.getAllPosts
-  )
-  const bestWeekPostsQuery = useQuery<ArticlePost[]>(
+  const allPostsQuery = useQuery(['post', 'list'], contentService.getAllPosts)
+  const bestWeekPostsQuery = useQuery(
     ['post', 'best-week'],
     contentService.getBestWeekPosts
   )
-  const recentPostsQuery = useQuery<ArticlePost[]>(
+  const recentPostsQuery = useQuery(
     ['post', 'recent'],
     contentService.getRecentPosts
   )
@@ -253,9 +249,9 @@ const BlogPage: NextPageWithLayout = (): JSX.Element => {
           >
             <h2>Best of week</h2>
             <div className={`${styles.wrapper} wrapper-anim`}>
-              {bestWeekPostsQuery.data.map((data, index) => (
+              {bestWeekPostsQuery.data.map((post, index) => (
                 <BlogCard
-                  data={data}
+                  data={post}
                   key={index}
                   view="grid"
                   randomLayout={true}
@@ -266,14 +262,19 @@ const BlogPage: NextPageWithLayout = (): JSX.Element => {
           </section>
         )}
 
+        {/* subscribe newsletter form */}
+        <section className="flex container mx-auto px-14">
+          <BlogNewsletter />
+        </section>
+
         {/* showing the new post of articles */}
         {recentPostsQuery.data && (
           <section className={`${styles.new_post} new-post-section-anim`}>
             <h2>New Posts</h2>
             <div className={`${styles.wrapper} wrapper-anim`}>
-              {recentPostsQuery.data.map((data, index) => (
+              {recentPostsQuery.data.map((post, index) => (
                 <BlogCard
-                  data={data}
+                  data={post}
                   key={index}
                   view="slide"
                   className="card-anim"
@@ -288,9 +289,9 @@ const BlogPage: NextPageWithLayout = (): JSX.Element => {
           <section className={`${styles.all_post} post-section-anim`}>
             <h2>All Posts</h2>
             <div className={styles.wrapper}>
-              {allPostsQuery.data.map((data, index) => (
+              {allPostsQuery.data.map((post, index) => (
                 <BlogCard
-                  data={data}
+                  data={post}
                   key={index}
                   view="full"
                   randomLayout={true}
@@ -312,7 +313,7 @@ const BlogPage: NextPageWithLayout = (): JSX.Element => {
 }
 
 BlogPage.layout = (page) => {
-  return <GeneralLayout>{page}</GeneralLayout>
+  return <BlogLayout>{page}</BlogLayout>
 }
 
 export { getServerSideProps }

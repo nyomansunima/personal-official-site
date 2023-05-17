@@ -1,4 +1,5 @@
-import { BlogFooter, BlogHeader } from '@components/blog'
+import { BlogFooter } from '@components/footers'
+import { BlogHeader } from '@components/headers'
 import { FunctionComponent, ReactNode } from 'react'
 
 interface BlogLayoutProps {
