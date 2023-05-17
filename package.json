@@ -22,5 +22,11 @@
   "engines": {
     "node": ">=14.0.0"
   },
-  "packageManager": "npm@8.19.4"
+  "packageManager": "npm@8.19.4",
+  "dependencies": {
+    "-": "^0.0.1",
+    "@sanity/block-content-to-markdown": "^0.0.5",
+    "frontend": "^0.0.0",
+    "w": "^1.1.0"
+  }
 }

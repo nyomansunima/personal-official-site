@@ -9,7 +9,7 @@ import localFont from 'next/font/local'
 import { DM_Mono } from 'next/font/google'
 import { AppPropsWithLayout } from '~/types/app'
 import '@styles/globals.scss'
-import { FloatingContactButton } from '@components/buttons'
+import '@styles/globals.css'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Lenis from '@studio-freight/lenis'
@@ -120,7 +120,6 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
                 {/* add the top level component */}
                 <FancyCursor />
-                <FloatingContactButton />
               </>
             )}
           </Transition>

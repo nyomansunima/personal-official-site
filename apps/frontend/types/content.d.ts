@@ -1,8 +1,35 @@
-export interface ArticlePost {
+export interface BioDetail {
+  socials: { iconCode: string; url: string; name: string }[]
+  links: { iconCode: string; url: string; label: string; customColor: string }[]
+}
+
+export interface RelatedBlogPost {
   title: string
-  coverImage: string
   slug: string
-  type: string
+  tag: string
+  thumbnail: string
+}
+
+export interface BlogTag {
+  iconCode: string
+  title: string
+  desc: string
+}
+
+export interface BlogPost {
+  slug: string
+  title: string
+  desc: string
+  thumbnail: string
+  content: any
+  tags: BlogTag[]
+}
+
+export interface BlogPostItem {
+  title: string
+  slug: string
+  tag: string
+  thumbnail: string
 }
 
 export interface ExplorationRepo {

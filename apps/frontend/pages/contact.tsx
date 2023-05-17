@@ -1,9 +1,9 @@
 import {
+  ContactTextAreaInput,
+  ContactTextInput,
   Form,
   HiddenInput,
   PillOption,
-  TextAreaInput,
-  TextInput,
 } from '@components/forms'
 import { GeneralLayout } from '@components/layouts'
 import { useMutation, useQuery } from '@tanstack/react-query'
@@ -163,9 +163,9 @@ const ContactPage: NextPageWithLayout = (): JSX.Element => {
                 name="interest"
                 value={selectedInterests.join(', ')}
               />
-              <TextInput name="name" placeholder="Your name" />
-              <TextInput name="email" placeholder="Your email" />
-              <TextAreaInput
+              <ContactTextInput name="name" placeholder="Your name" />
+              <ContactTextInput name="email" placeholder="Your email" />
+              <ContactTextAreaInput
                 name="message"
                 placeholder="Tell me about your project"
               />

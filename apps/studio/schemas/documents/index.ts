@@ -1,3 +1,5 @@
+import bioLinkSchema from './bio/link'
+import bioSocialSchema from './bio/social'
 import blogSchema from './blog'
 import blogTagSchema from './blog-tag'
 import certificateSchema from './certificate'
@@ -16,6 +18,8 @@ import timelineSchema from './timeline'
 import toolSchema from './tool'
 
 export default [
+  bioLinkSchema,
+  bioSocialSchema,
   blogSchema,
   blogTagSchema,
   certificateSchema,
