@@ -14,12 +14,12 @@ const blogSchema = {
   groups: [
     {
       title: '💘 SEO',
-      name: 'seo',
+      name: 'seo'
     },
     {
       title: '🍀 Content',
-      name: 'content',
-    },
+      name: 'content'
+    }
   ],
   fields: [
     {
@@ -28,45 +28,48 @@ const blogSchema = {
       type: 'slug',
       description: 'Content url that showing into the blog',
       options: {
-        source: 'title',
-      },
+        source: 'title'
+      }
     },
     {
       title: 'Title',
       name: 'title',
       type: 'string',
-      description: 'Title of article',
+      description: 'The article title, also use in a seo'
     },
     {
       title: 'Thumbnail',
       name: 'thumbnail',
       type: 'image',
+      description: 'The image thumbnail and seo og image'
     },
     {
       title: 'Short Description',
       name: 'desc',
       type: 'text',
-      description: 'Short description to show as summary',
+      description: 'Short description to show as summary'
     },
     {
       title: 'Tags',
       name: 'tags',
       type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'blogTag' }] }],
+      description: 'Start to relate the article using tags',
+      of: [{ type: 'reference', to: [{ type: 'blogTag' }] }]
     },
     {
       title: 'Content',
       name: 'content',
-      type: 'content',
-    },
+      type: 'blockContent',
+      description: 'Your content in'
+    }
   ],
   preview: {
     select: {
       title: 'title',
       subtitle: 'slug.current',
-      media: 'thumbnail',
-    },
-  },
+      media: 'thumbnail'
+    }
+  }
 }
 
 export default blogSchema

@@ -1,3 +1,4 @@
+import codepenSchema from './codepen'
 import contentSchema from './content'
 import projectAreaSchema from './project/area'
 import projectClientSchema from './project/client'
@@ -26,4 +27,5 @@ export default [
   servicePurposeSchema,
   serviceResultSchema,
   serviceToolSchema,
+  codepenSchema
 ]
