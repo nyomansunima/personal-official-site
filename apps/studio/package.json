@@ -1,7 +1,6 @@
 {
   "name": "studio",
   "private": true,
-  "version": "0.0.0",
   "main": "package.json",
   "license": "UNLICENSED",
   "scripts": {
@@ -32,8 +31,6 @@
     "@sanity/eslint-config-studio": "^2.0.1",
     "@types/react": "^18.2.6",
     "@types/styled-components": "^5.1.26",
-    "eslint-config-custom": "*",
-    "tsconfig": "*",
     "typescript": "^5.0.4"
   }
 }

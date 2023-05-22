@@ -59,30 +59,6 @@ const blogSchema = {
       name: 'content',
       type: 'content',
     },
-    {
-      title: 'Other platform integrations',
-      name: 'platform',
-      description:
-        'Integration with another blog platform automatically, Connect with another one by passing the id',
-      type: 'object',
-      fields: [
-        {
-          title: 'Dev.to',
-          name: 'devto',
-          type: 'string',
-        },
-        {
-          title: 'Hashnode',
-          name: 'hashnode',
-          type: 'string',
-        },
-        {
-          title: 'Medium',
-          name: 'medium',
-          type: 'string',
-        },
-      ],
-    },
   ],
   preview: {
     select: {

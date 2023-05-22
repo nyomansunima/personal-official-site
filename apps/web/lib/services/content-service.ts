@@ -11,7 +11,7 @@ import {
 } from '~/types/content'
 import { FAQ } from '~/types/faq'
 import { PreviewService, ServiceDetail } from '~/types/service'
-import * as toMarkdown from '@sanity/block-content-to-markdown'
+// import * as toMarkdown from '@sanity/block-content-to-markdown'
 
 class ContentService {
   async transformContentToMarkdown(content: any) {
@@ -22,7 +22,8 @@ class ContentService {
       },
     }
 
-    const mdContent = toMarkdown(content, { serializers })
+    // const mdContent = toMarkdown(content, { serializers })
+    return ''
   }
 
   async multiPlatformBlogIntegration(body: any): Promise<void> {

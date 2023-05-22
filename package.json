@@ -1,6 +1,5 @@
 {
   "name": "personal-portfolio-website",
-  "version": "0.0.0",
   "private": true,
   "workspaces": [
     "apps/*",
@@ -15,18 +14,11 @@
     "deploy-graphql": "turbo run deploy-graphql"
   },
   "devDependencies": {
-    "eslint-config-custom": "*",
     "prettier": "latest",
-    "turbo": "^1.9.4"
+    "turbo": "^1.9.8"
   },
   "engines": {
     "node": ">=14.0.0"
   },
-  "packageManager": "npm@8.19.4",
-  "dependencies": {
-    "-": "^0.0.1",
-    "@sanity/block-content-to-markdown": "^0.0.5",
-    "frontend": "^0.0.0",
-    "w": "^1.1.0"
-  }
+  "dependencies": {}
 }
