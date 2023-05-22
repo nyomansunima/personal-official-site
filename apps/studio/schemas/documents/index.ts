@@ -29,11 +29,11 @@ export default [
   faqSchema,
   inspirationListSchema,
   inspirationSourceSchema,
-  projectSchema,
+  // projectSchema,
   repoSchema,
   serviceSchema,
   socialSchema,
   storySchema,
   timelineSchema,
-  toolSchema,
+  toolSchema
 ]

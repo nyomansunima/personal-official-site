@@ -15,23 +15,23 @@ const exploreSchema = {
     {
       title: 'Slug',
       name: 'slug',
-      type: 'string',
+      type: 'string'
     },
     {
       title: 'Title',
       name: 'title',
-      type: 'string',
+      type: 'string'
     },
     {
       title: 'Thumbnail',
       name: 'thumbnail',
-      type: 'image',
+      type: 'image'
     },
     {
       title: 'Abouts',
       name: 'abouts',
       type: 'array',
-      of: [{ type: 'text' }],
+      of: [{ type: 'text' }]
     },
     {
       title: 'Actions',
@@ -45,29 +45,29 @@ const exploreSchema = {
             {
               title: 'Label',
               name: 'label',
-              type: 'string',
+              type: 'string'
             },
             {
               title: 'URL',
               name: 'url',
-              type: 'url',
-            },
-          ],
-        },
-      ],
+              type: 'url'
+            }
+          ]
+        }
+      ]
     },
     {
       title: 'Stacks',
       name: 'stacks',
       type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'tool' }] }],
+      of: [{ type: 'reference', to: [{ type: 'tool' }] }]
     },
     {
       title: 'Content',
       name: 'content',
-      type: 'content',
-    },
-  ],
+      type: 'blockContent'
+    }
+  ]
 }
 
 export default exploreSchema

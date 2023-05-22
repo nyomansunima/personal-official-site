@@ -7,9 +7,9 @@ const nextConfig = {
       'cdn.hashnode.com',
       'cdn.dribbble.com',
       'cdn.sanity.io',
-      'seeklogo.com',
-    ],
-  },
+      'seeklogo.com'
+    ]
+  }
 }
 
 module.exports = nextConfig
