@@ -1,4 +1,10 @@
 <!-- README -->
+<img src="https://github.com/nyomansunima/personal-site/assets/54091887/88e76701-30e7-4b77-91cc-70fe3cd2706f" width="100"/>
+
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/nyomansunima/personal-site)
+![GitHub Sponsors](https://img.shields.io/github/sponsors/nyomansunima)
+![GitHub](https://img.shields.io/github/license/nyomansunima/personal-site)
+![GitHub issues](https://img.shields.io/github/issues/nyomansunima/personal-site)
 
 # Personal Site
 
@@ -6,7 +12,7 @@ My personal website to connect and share something with client and audience
 
 <br/>
 
-[Issues](https://github.com/nyomansunima/personal-site/issues) . [Explore docs](https://github.com/nyomansunima/personal-site)
+[🐛 Issues](https://github.com/nyomansunima/personal-site/issues) . [📝 Explore docs](https://github.com/nyomansunima/personal-site)
 
 <br/>
 
@@ -22,10 +28,6 @@ You can access this site on [https://nyomansunima.com](https://nyomansunima.com)
 ### 😎 Screenshots
 
 Here are some screenshot that cover the application look
-<img width="1440" alt="Screenshot 2023-05-15 at 07 21 50" src="https://github.com/nyomansunima/personal-site/assets/54091887/4a0bea1b-fb48-4a11-8ff6-bc03aa6d79f1">
-<img width="1440" alt="Screenshot 2023-05-15 at 07 22 31" src="https://github.com/nyomansunima/personal-site/assets/54091887/8fe318af-8fd4-4c1c-bad8-c01618bcce25">
-<img width="1440" alt="Screenshot 2023-05-15 at 07 22 43" src="https://github.com/nyomansunima/personal-site/assets/54091887/12704b99-a1ad-4bbf-93b8-808dfe0aabc3">
-<img width="1440" alt="Screenshot 2023-05-15 at 07 22 53" src="https://github.com/nyomansunima/personal-site/assets/54091887/3dea2849-f9d1-44b2-beee-40d3ba2fe9cb">
 
 <br/>
 
