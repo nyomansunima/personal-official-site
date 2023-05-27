@@ -10,6 +10,9 @@ export default defineNuxtConfig({
     '~/assets/styles/globals.css',
     '@flaticon/flaticon-uicons/css/all/all.css'
   ],
+  components: {
+    dirs: [{ path: '~/components', pathPrefix: false }]
+  },
   devtools: {
     enabled: true
   },
