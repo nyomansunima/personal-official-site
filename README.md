@@ -1,23 +1,18 @@
 <!-- README -->
-<div id="top"/>
+<img src="https://github.com/nyomansunima/personal-site/assets/54091887/88e76701-30e7-4b77-91cc-70fe3cd2706f" width="100"/>
 
-<!-- Project Info -->
-<div align="center">
-  <a href="https://github.com/nyomansunima/personal-portfolio-website">
-    <img src="https://github.com/nyomansunima/personal-portfolio-website/assets/54091887/a686f3e9-f0eb-46d9-935b-a95be6e7af19" width=""80 height="80"/>
-  </a>
-  
-  <h1>My Personal Website</h1>
-  <span>My personal website to connect and share something with client and audience</span>
-  <br/>
-  <br/>
-  <a href="https://github.com/nyomansunima/personal-portfolio-website"><strong>🗂️ Explore docs </strong></a>
-  <br/>
-  <br/>
-  <a href="https://nyomansunima.com">View Demo</a>
-  .
-  <a href="https://github.com/nyomansunima/personal-portfolio-website/issues">Issues</a>
-</div>
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/nyomansunima/personal-site)
+![GitHub Sponsors](https://img.shields.io/github/sponsors/nyomansunima)
+![GitHub](https://img.shields.io/github/license/nyomansunima/personal-site)
+![GitHub issues](https://img.shields.io/github/issues/nyomansunima/personal-site)
+
+# Personal Site
+
+My personal website to connect and share something with client and audience
+
+<br/>
+
+[🐛 Issues](https://github.com/nyomansunima/personal-site/issues) . [📝 Explore docs](https://github.com/nyomansunima/personal-site)
 
 <br/>
 
@@ -33,10 +28,6 @@ You can access this site on [https://nyomansunima.com](https://nyomansunima.com)
 ### 😎 Screenshots
 
 Here are some screenshot that cover the application look
-<img width="1440" alt="Screenshot 2023-05-15 at 07 21 50" src="https://github.com/nyomansunima/personal-portfolio-website/assets/54091887/4a0bea1b-fb48-4a11-8ff6-bc03aa6d79f1">
-<img width="1440" alt="Screenshot 2023-05-15 at 07 22 31" src="https://github.com/nyomansunima/personal-portfolio-website/assets/54091887/8fe318af-8fd4-4c1c-bad8-c01618bcce25">
-<img width="1440" alt="Screenshot 2023-05-15 at 07 22 43" src="https://github.com/nyomansunima/personal-portfolio-website/assets/54091887/12704b99-a1ad-4bbf-93b8-808dfe0aabc3">
-<img width="1440" alt="Screenshot 2023-05-15 at 07 22 53" src="https://github.com/nyomansunima/personal-portfolio-website/assets/54091887/3dea2849-f9d1-44b2-beee-40d3ba2fe9cb">
 
 <br/>
 
@@ -71,15 +62,13 @@ This project is contain buch of feature included to help me support my workflow
 
 Since building this project here are list about stack, site, tech and any library in this project
 
-- NextJs
-- Sanity.io
-- Gsap
-- Tailwincss
-- React Query
-- Scroll Smoothter
-- Vercel
-- Godaddy
-- Portable Text
+- [NuxtJs](https://nuxt.com)
+- [Sanity.io](https://www.sanity.io/)
+- [GSAP](https://greensock.com/gsap/)
+- [Tailwincss](https://tailwindcss.com/)
+- [Lenis Scroll Smoother](https://lenis.studiofreight.com/)
+- [Vercel](https://vercel.com/)
+- [GoDaddy](https://www.godaddy.com/)
 
 <br/>
 
