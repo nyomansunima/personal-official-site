@@ -1,5 +1,5 @@
 {
-  "name": "personal-portfolio-website",
+  "name": "personal-site",
   "private": true,
   "workspaces": [
     "apps/*",
@@ -11,14 +11,18 @@
     "start": "turbo run start",
     "lint": "turbo run lint",
     "deploy": "turbo run deploy",
-    "deploy-graphql": "turbo run deploy-graphql"
+    "deploy-graphql": "turbo run deploy-graphql",
+    "generate": "turbo run generate",
+    "postinstall": "turbo run postinstall",
+    "test": "turbo run test"
   },
   "devDependencies": {
-    "prettier": "latest",
-    "turbo": "^1.9.8"
+    "turbo": "^1.9.9"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "vee-validate": "^4.9.5"
+  }
 }

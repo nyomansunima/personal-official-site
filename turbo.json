@@ -1,20 +1,21 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
   "pipeline": {
     "start": {},
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+      "outputs": ["dist/**", ".nuxt/**", "dist/**", ".output/**"]
     },
-    "lint": {
-      "outputs": []
-    },
+    "lint": {},
     "dev": {
       "cache": false,
       "persistent": true
     },
     "deploy": {},
-    "deploy-graphql": {}
+    "deploy-graphql": {},
+    "postinstall": {},
+    "preview": {},
+    "generate": {},
+    "test": {}
   }
 }
