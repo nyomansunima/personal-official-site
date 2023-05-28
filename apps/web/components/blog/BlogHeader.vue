@@ -16,23 +16,13 @@
     <ul class="flex items-center gap-6 mr-16">
       <li
         class="flex items-center font-medium cursor-pointer transition-all duration-300 hover:-translate-y-1"
+        @click.prevent="viewTag(menu.path)"
         v-for="menu in menus"
         :key="menu.path"
       >
         {{ menu.label }}
       </li>
     </ul>
-
-    <!-- another buttons -->
-    <IconButton
-      @click="
-        () => {
-          console.log('Hello')
-        }
-      "
-    >
-      <i class="fi fi-rr-search"></i>
-    </IconButton>
   </header>
 </template>
 
@@ -56,4 +46,8 @@ const menus: Menu[] = [
     path: 'design'
   }
 ]
+
+const viewTag = (tag: string) => {
+  navigateTo(`/blog?tag=${tag}`)
+}
 </script>

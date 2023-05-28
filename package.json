@@ -21,8 +21,5 @@
   },
   "engines": {
     "node": ">=16.0.0"
-  },
-  "dependencies": {
-    "vee-validate": "^4.9.5"
   }
 }

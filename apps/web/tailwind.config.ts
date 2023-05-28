@@ -14,7 +14,11 @@ export default <Partial<Config>>{
       laptop: '1024px',
       desktop: '1280px'
     },
-    extend: {}
+    extend: {
+      borderRadius: {
+        '4xl': '32px'
+      }
+    }
   },
   plugins: [forms, aspectRatio, typography]
 }

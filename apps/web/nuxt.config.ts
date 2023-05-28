@@ -6,6 +6,10 @@ export default defineNuxtConfig({
     '@nuxtjs/sanity',
     '@nuxtjs/tailwindcss'
   ],
+  routeRules: {
+    '/blog': { prerender: true },
+    '/blog/**': { isr: true }
+  },
   css: [
     '~/assets/styles/globals.css',
     '@flaticon/flaticon-uicons/css/all/all.css'
