@@ -6,6 +6,9 @@ export default defineNuxtConfig({
     '@nuxtjs/sanity',
     '@nuxtjs/tailwindcss'
   ],
+  nitro: {
+    preset: 'vercel-edge'
+  },
   routeRules: {
     '/blog': { prerender: true },
     '/blog/**': { isr: true }
