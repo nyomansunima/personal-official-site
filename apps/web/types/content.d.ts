@@ -20,3 +20,23 @@ export interface BlogDetail {
   }
   related: BlogPost[]
 }
+
+export interface BioContent {
+  avatar: string
+  desc: string
+  stats: {
+    totalFollower: number
+    totalSubscriber: number
+  }
+  socials: {
+    label: string
+    iconCode: string
+    url: string
+  }[]
+  links: {
+    label: string
+    iconCode: string
+    url: string
+    customColor: string
+  }[]
+}
