@@ -28,5 +28,10 @@ export default defineNuxtConfig({
     apiVersion: process.env.SANITY_API_VERSION,
     dataset: process.env.SANITY_DATASET,
     useCdn: true
+  },
+  runtimeConfig: {
+    public: {
+      brevoApiKey: ''
+    }
   }
 })

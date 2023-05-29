@@ -1,0 +1,81 @@
+{
+  "header": [
+    {
+      "label": "Projects",
+      "path": "/projects"
+    },
+    {
+      "label": "Services",
+      "path": "/services"
+    },
+    {
+      "label": "About",
+      "path": "/about"
+    },
+    {
+      "label": "Contact",
+      "path": "/contact"
+    }
+  ],
+  "footer": [
+    {
+      "headline": "Explore",
+      "menus": [
+        {
+          "label": "About",
+          "link": "/about"
+        },
+        {
+          "label": "Contact",
+          "link": "/about"
+        },
+        {
+          "label": "Privacy",
+          "link": "/privacy"
+        },
+        {
+          "label": "Terms",
+          "link": "/terms"
+        }
+      ]
+    },
+    {
+      "headline": "Services",
+      "menus": [
+        {
+          "label": "Web Development",
+          "link": "/service/web-development"
+        },
+        {
+          "label": "Mobile Development",
+          "link": "/service/mobile-development"
+        },
+        {
+          "label": "UI UX Design",
+          "link": "/service/ui-ux-design"
+        },
+        {
+          "label": "Backend & Devops",
+          "link": "/service/backend-devops"
+        }
+      ]
+    },
+    {
+      "headline": "Resources",
+      "menus": [
+        {
+          "label": "Inspiration",
+          "link": "/inspiration"
+        },
+        {
+          "label": "Blog",
+          "link": "/blog"
+        },
+        {
+          "label": "Products",
+          "link": "/privacy"
+        }
+      ]
+    }
+  ]
+}

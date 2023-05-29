@@ -1,0 +1,29 @@
+{
+  "socials": [
+    {
+      "label": "Instagram",
+      "url": "https://instagram.com/nyomansunima",
+      "icon": "fi fi-brands-instagram"
+    },
+    {
+      "label": "Twitter",
+      "url": "https://twitter.com/nyomansunima",
+      "icon": "fi fi-brands-twitter"
+    },
+    {
+      "label": "Github",
+      "url": "https://github.com/nyomansunima",
+      "icon": "fi fi-brands-github"
+    },
+    {
+      "label": "Buy me coffee",
+      "url": "https://ko-fi.com/nyomansunima",
+      "icon": "fi fi-rr-mug-hot-alt"
+    },
+    {
+      "label": "Dribbble",
+      "url": "https://dribbble.com/nyomansunima",
+      "icon": "fi fi-brands-dribbble"
+    }
+  ]
+}

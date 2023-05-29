@@ -1,11 +1,11 @@
 <template>
   <header
-    class="flex fixed z-10 top-0 inset-x-0 bg-white bg-opacity-50 backdrop-blur-sm border-b border-b-gray-100 px-14 py-3"
+    class="flex fixed z-10 top-0 inset-x-0 bg-white dark:bg-black bg-opacity-50 backdrop-blur-sm border-b border-b-gray-100 dark:border-b-gray-800 px-14 py-3"
     s
   >
     <!-- branding -->
     <div class="flex items-center gap-2">
-      <NuxtLink to="/" class="h-10 w-10 relative">
+      <NuxtLink to="/" class="h-10 w-10 relative dark:bg-white rounded-full">
         <NuxtImg src="/images/logo.png" />
       </NuxtLink>
       <NuxtLink to="/blog" class="text-xl font-semibold">Blog</NuxtLink>

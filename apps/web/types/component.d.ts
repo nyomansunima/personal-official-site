@@ -1,6 +1,7 @@
 export interface BaseButtonProps {
   class?: string
   type?: 'button' | 'submit'
+  link?: string
 }
 
 export interface BaseButtonEmits {
