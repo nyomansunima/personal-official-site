@@ -9,7 +9,7 @@
     >
       <!-- categories -->
       <div
-        class="flex bg-white px-5 h-12 rounded-full gap-3 absolute right-5 top-5 justify-center items-center z-10"
+        class="flex bg-white dark:text-black px-5 h-12 rounded-full gap-3 absolute right-5 top-5 justify-center items-center z-10"
       >
         <span class="h-2 w-2 rounded-full bg-black"></span>
         <span class="text-base font-medium">{{ data.tag }}</span>

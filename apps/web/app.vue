@@ -8,10 +8,10 @@
 
 <script setup lang="ts">
 useHead({
-  titleTemplate: '%s - Nyoman Sunima',
+  titleTemplate: '%s | Nyoman Sunima',
   bodyAttrs: {
     class:
-      'font-sans font-medium text-base leading-normal text-black bg-white dark:bg-black'
+      'font-sans font-medium text-base leading-normal text-black dark:text-gray-100 bg-white dark:bg-black'
   }
 })
 </script>

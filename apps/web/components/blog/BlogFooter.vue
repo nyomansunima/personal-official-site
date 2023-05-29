@@ -4,7 +4,7 @@
 
     <!-- credit -->
     <div
-      class="flex items-center justify-between px-10 py-8 border-t-2 border-t-gray-100"
+      class="flex items-center justify-between px-10 py-8 border-t-2 border-t-gray-100 dark:border-t-gray-900"
     >
       <span>Copyright &copy; {{ currentYear }} - Alright Reserved </span>
       <span class="flex items-center gap-3"

@@ -1,7 +1,7 @@
 <template>
   <button
-    @click.prevent="$emit('click')"
-    class="flex justify-center items-center h-16 rounded-full px-8 text-lg font-medium gap-3 border border-gray-100"
+    @click="link ? viewLink() : $emit('click')"
+    class="flex justify-center items-center h-16 rounded-full px-8 text-lg font-medium gap-3 border border-gray-100 dark:border-gray-600"
     :class="class"
     :type="type"
   >
@@ -13,10 +13,18 @@
 import { BaseButtonProps, BaseButtonEmits } from '~/types/component'
 
 interface OutlineButtonProps extends BaseButtonProps {}
-const { type = 'button' } = defineProps<OutlineButtonProps>()
+const { type = 'button', link } = defineProps<OutlineButtonProps>()
 
 interface OutlineButtonEmits extends BaseButtonEmits {}
-const emit = defineEmits<BaseButtonEmits>()
+defineEmits<OutlineButtonEmits>()
+
+const viewLink = () => {
+  if (link?.includes('https://') || link?.includes('http://')) {
+    window.open(link)
+  } else {
+    navigateTo(link)
+  }
+}
 </script>
 
 <style scoped>

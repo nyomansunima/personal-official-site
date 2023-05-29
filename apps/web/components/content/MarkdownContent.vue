@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col prose prose-xl prose-headings:font-semibold marker:text-black mt-16 prose-img:w-full prose-img:rounded-3xl prose-img:overflow-hidden prose-pre:border prose-pre:rounded-2xl content prose-pre:font-mono text-black prose-li:my-0 prose-p:mt-1 mb-0"
+    class="flex flex-col prose prose-xl prose-headings:font-medium marker:text-black dark:marker:text-gray-100 mt-16 prose-img:w-full prose-img:rounded-3xl prose-img:overflow-hidden prose-pre:border prose-pre:dark:border-gray-800 prose-pre:rounded-2xl content prose-pre:font-mono text-black prose-li:my-0 prose-p:mt-1 mb-0 dark:text-gray-200 prose-headings:text-black dark:prose-headings:text-gray-200 dark:prose-invert"
     v-html="parsedMarkdown"
   ></div>
 </template>

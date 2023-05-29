@@ -2,7 +2,7 @@
   <button
     @click.prevent="$emit('click')"
     class="flex justify-center items-center"
-    :class="class"
+    :class="$props.class"
     :type="type"
   >
     <slot />
@@ -16,7 +16,7 @@ interface IconButtonProps extends BaseButtonProps {}
 const { type = 'button' } = defineProps<IconButtonProps>()
 
 interface IconButtonEmits extends BaseButtonEmits {}
-const emit = defineEmits<BaseButtonEmits>()
+defineEmits<IconButtonEmits>()
 </script>
 
 <style scoped>
