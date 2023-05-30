@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@flaticon/flaticon-uicons": "^2.2.0",
+    "@studio-freight/lenis": "^1.0.13",
     "defu": "^6.1.2",
     "gsap": "^3.11.5",
     "highlight.js": "^11.8.0",
