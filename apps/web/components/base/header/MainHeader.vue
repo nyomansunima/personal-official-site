@@ -5,7 +5,7 @@
     <!-- brands -->
     <NuxtLink
       to="/"
-      class="flex items-center h-10 w-10 transition-all duration-300 hover:scale-95 dark:bg-white rounded-full dark:p-2"
+      class="flex items-center h-10 w-10 transition-all duration-300 hover:scale-95 dark:bg-white rounded-full p-2"
     >
       <NuxtImg src="/images/logo.png" class="flex w-full h-full" />
     </NuxtLink>
