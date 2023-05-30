@@ -40,3 +40,15 @@ export interface BioContent {
     customColor: string
   }[]
 }
+
+export interface AboutDetail {
+  stories: {
+    url: string
+    title: string
+  }[]
+  timelines: {
+    url: string
+    title: string
+    desc: string
+  }[]
+}
