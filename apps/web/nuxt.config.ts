@@ -4,29 +4,30 @@ export default defineNuxtConfig({
     '@nuxt/devtools',
     '@nuxt/image-edge',
     '@nuxtjs/sanity',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
   ],
   routeRules: {
-    '/blog/**': { isr: true }
+    '/blog/**': { isr: true },
   },
   css: [
     '~/assets/styles/globals.css',
-    '@flaticon/flaticon-uicons/css/all/all.css'
+    '@flaticon/flaticon-uicons/css/all/all.css',
   ],
   components: {
-    dirs: [{ path: '~/components', pathPrefix: false }]
+    dirs: [{ path: '~/components', pathPrefix: false }],
   },
   devtools: {
-    enabled: true
+    enabled: true,
   },
   sanity: {
     projectId: process.env.SANITY_PROJECT_ID,
     apiVersion: process.env.SANITY_API_VERSION,
-    dataset: process.env.SANITY_DATASET
+    dataset: process.env.SANITY_DATASET,
+    useCdn: false,
   },
   runtimeConfig: {
     public: {
-      brevoApiKey: ''
-    }
-  }
+      brevoApiKey: '',
+    },
+  },
 })

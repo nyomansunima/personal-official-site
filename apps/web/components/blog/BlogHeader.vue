@@ -5,7 +5,10 @@
   >
     <!-- branding -->
     <div class="flex items-center gap-2">
-      <NuxtLink to="/" class="h-10 w-10 relative dark:bg-white rounded-full">
+      <NuxtLink
+        to="/"
+        class="h-10 w-10 p-2 relative dark:bg-white rounded-full"
+      >
         <NuxtImg src="/images/logo.png" />
       </NuxtLink>
       <NuxtLink to="/blog" class="text-xl font-semibold">Blog</NuxtLink>
@@ -35,16 +38,16 @@ interface Menu {
 const menus: Menu[] = [
   {
     label: 'Tips',
-    path: 'tips'
+    path: 'tips',
   },
   {
     label: 'Development',
-    path: 'development'
+    path: 'development',
   },
   {
     label: 'Design',
-    path: 'design'
-  }
+    path: 'design',
+  },
 ]
 
 const viewTag = (tag: string) => {
