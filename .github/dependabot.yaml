@@ -24,3 +24,27 @@ updates:
     labels:
       - 'npm'
       - 'dependencies'
+      
+  - package-ecosystem: 'npm'
+    directory: '/studio'
+    schedule:
+      interval: 'weekly'
+    commit-message:
+      prefix: 'npm'
+      include: 'scope'
+    labels:
+      - 'npm'
+      - 'dependencies'
+      
+  - package-ecosystem: 'npm'
+    directory: '/web'
+    schedule:
+      interval: 'weekly'
+    commit-message:
+      prefix: 'npm'
+      include: 'scope'
+    labels:
+      - 'npm'
+      - 'dependencies'
+
+
