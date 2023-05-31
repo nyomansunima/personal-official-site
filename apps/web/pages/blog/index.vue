@@ -7,7 +7,6 @@
         class="flex flex-col laptop:grid laptop:grid-cols-6 mt-10 w-full gap-6"
       >
         <BlogPostItem
-          class="!col-span-4"
           :size="index == 0 ? 'large' : 'medium'"
           v-for="(post, index) in featuredPost.data.value"
           :data="post"
@@ -49,13 +48,6 @@
         />
       </div>
     </section>
-
-    <section class="container mx-auto flex justify-center laptop:mt-0 mt-16">
-      <OutlineButton
-        >Load more articles
-        <i class="fi fi-rr-spinner"></i>
-      </OutlineButton>
-    </section>
   </main>
 </template>
 
@@ -74,7 +66,7 @@ const featuredQuery = `
   }
 `
 const postQuery = `
-  *[_type == "blog"]{
+  *[_type == "blog"] | order(_updatedAt desc){
     "slug": slug.current,
     title,
     "thumbnail": thumbnail.asset -> url,

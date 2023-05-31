@@ -3,9 +3,13 @@
     <!-- top action including back, share and other -->
     <div class="container mx-auto px-5">
       <div class="flex laptop:w-7/12 mx-auto">
-        <TextButton @click="navigateTo('/blog')"
-          ><i class="fi fi-rr-arrow-left text-2xl"></i> Back to
-          overview</TextButton
+        <TextButton
+          @click="navigateTo('/blog')"
+          class="transition-all duration-500 hover:-translate-x-1"
+          ><i
+            class="fi fi-rr-arrow-left text-2xl h-12 w-12 rounded-full bg-black text-white dark:bg-white dark:text-black"
+          ></i>
+          Back to overview</TextButton
         >
       </div>
     </div>

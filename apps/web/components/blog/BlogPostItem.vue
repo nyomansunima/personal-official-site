@@ -1,7 +1,7 @@
 <template>
   <div
-    class="flex flex-col col-span-2 row-span-6 transition-all duration-300 hover:-translate-y-2 cursor-pointer"
-    :class="class"
+    class="flex flex-col row-span-6 transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+    :class="[$props.class, sizeClass]"
     @click="openPost"
   >
     <div
@@ -48,6 +48,10 @@ interface BlogPostItemProps {
 }
 
 const { size = 'medium', data } = defineProps<BlogPostItemProps>()
+
+const sizeClass = computed(() => {
+  return size == 'large' ? 'col-span-4' : 'col-span-2'
+})
 const parsedDate = computed(() => {
   return parseDateToRelative(new Date(data._createdAt))
 })

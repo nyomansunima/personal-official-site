@@ -1,6 +1,6 @@
 <template>
   <header
-    class="flex fixed z-10 top-0 inset-x-0 bg-white dark:bg-black bg-opacity-50 backdrop-blur-sm border-b border-b-gray-100 dark:border-b-gray-800 px-14 py-3"
+    class="flex fixed z-20 top-0 inset-x-0 bg-white dark:bg-black bg-opacity-50 backdrop-blur-sm border-b border-b-gray-100 dark:border-b-gray-800 px-14 py-3"
     s
   >
     <!-- branding -->
