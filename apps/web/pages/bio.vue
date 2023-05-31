@@ -50,7 +50,7 @@
             class="flex px-6 py-4 rounded-3xl bg-white font-medium gap-3 justify-center items-center transition-all duration-700 hover:scale-95"
             :style="{
               background: link.customColor,
-              color: link.customColor && 'white'
+              color: link.customColor && 'white',
             }"
           >
             <i
@@ -172,19 +172,14 @@ const query = `
 `
 const {
   data: {
-    value: { content }
-  }
+    value: { content },
+  },
 } = await useSanityQuery<{ content: BioContent }>(query, {
-  slug: 'bio'
+  slug: 'bio',
 })
 
-useHead({
+useSeoMeta({
   title: 'Bio',
-  meta: [
-    {
-      name: 'description',
-      content: 'Explore my favorite links and special gift'
-    }
-  ]
+  description: 'Explore my favorite links and special gift',
 })
 </script>

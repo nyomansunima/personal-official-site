@@ -49,7 +49,7 @@
 import { BlogDetail } from '~/types/content'
 
 definePageMeta({
-  layout: 'blog'
+  layout: 'blog',
 })
 
 const route = useRoute()
@@ -74,24 +74,26 @@ const query = `
 `
 const {
   data: {
-    value: { post, related }
-  }
+    value: { post, related },
+  },
 } = await useSanityQuery<BlogDetail>(query, {
-  slug: route.params.slug
+  slug: route.params.slug,
 })
 
 // parse the date into readable string
 const parsedReleaseDate = computed(() =>
-  parseDateToRelative(new Date(post._createdAt))
+  parseDateToRelative(new Date(post._createdAt)),
 )
 
-useHead({
+useSeoMeta({
   title: post.title,
-  meta: [
-    {
-      name: 'description',
-      content: post.desc.substring(0, 100)
-    }
-  ]
+  description: post.desc.substring(0, 100),
+  ogTitle: post.title,
+  ogDescription: post.desc.substring(0, 100),
+  ogImage: post.thumbnail,
+  ogType: 'article',
+  twitterTitle: post.title,
+  twitterDescription: post.desc.substring(0, 100),
+  twitterImage: post.thumbnail,
 })
 </script>

@@ -1,7 +1,7 @@
 <template>
   <Teleport to="body">
     <div
-      class="flex fixed z-50 h-3 w-3 rounded-full bg-black dark:bg-white will-change-transform -translate-y-1/2 -translate-x-1/2 origin-center"
+      class="flex fixed z-50 h-3 w-3 rounded-full bg-black dark:bg-white will-change-transform -translate-y-1/2 -translate-x-1/2 origin-center pointer-events-none"
       ref="cursorRef"
       id="clean-cursor"
     >

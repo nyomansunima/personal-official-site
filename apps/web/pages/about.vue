@@ -99,6 +99,8 @@ definePageMeta({
 useSeoMeta({
   title: 'About',
   description: 'Know more about me and what i did',
+  ogTitle: 'About',
+  ogDescription: 'Know more about me and what i did',
 })
 
 const dataQuery = `

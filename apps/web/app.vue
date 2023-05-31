@@ -26,11 +26,18 @@ onMounted(() => {
   requestAnimationFrame(raf)
 })
 
-useHead({
+useSeoMeta({
   titleTemplate: '%s | Nyoman Sunima',
+  ogSiteName: 'Nyoman Sunima',
+  twitterCard: 'summary_large_image',
+  ogType: 'website',
+  twitterCreator: '@nyomansunima',
+})
+
+useHead({
   bodyAttrs: {
     class:
-      'font-sans font-medium text-base leading-normal text-black dark:text-gray-100 bg-white dark:bg-black transition-all duration-1000',
+      'font-sans font-medium text-base leading-normal text-black dark:text-gray-100 bg-white dark:bg-black transition-all duration-1000 selection:bg-black selection:text-gray-200 dark:selection:bg-white dark:selection:text-black',
   },
 })
 </script>

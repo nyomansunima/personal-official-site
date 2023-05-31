@@ -43,17 +43,14 @@ import { socials } from '~/contents/social.json'
 import { object, string } from 'yup'
 
 definePageMeta({
-  layout: 'main'
+  layout: 'main',
 })
 
-useHead({
+useSeoMeta({
   title: 'Contact',
-  meta: [
-    {
-      name: 'description',
-      content: 'Get in touch with me and collaborate'
-    }
-  ]
+  description: 'Get in touch with me and collaborate',
+  ogTitle: 'Contact',
+  ogDescription: 'Get in touch with me and collaborate',
 })
 
 const formSchema = object({
@@ -61,7 +58,7 @@ const formSchema = object({
   email: string()
     .required('Please add email')
     .email('Opps, your email look weirds'),
-  message: string().required('Please add your message')
+  message: string().required('Please add your message'),
 })
 
 const form = useForm({ validationSchema: formSchema })
@@ -73,21 +70,21 @@ const sendMessage = useMutation(
       body: {
         sender: {
           name: 'Site Contact',
-          email: 'contact@nyomansunima.com'
+          email: 'contact@nyomansunima.com',
         },
         to: [
           {
             name: 'Nyoman Sunima',
-            email: 'nyomansunima@gmail.com'
-          }
+            email: 'nyomansunima@gmail.com',
+          },
         ],
         templateId: '1',
         params: {
           fullname: fullName,
           message,
-          email
-        }
-      }
+          email,
+        },
+      },
     })
   },
   {
@@ -97,7 +94,7 @@ const sendMessage = useMutation(
     onError: (err) => {
       console.log(err)
       // form.resetForm()
-    }
-  }
+    },
+  },
 )
 </script>

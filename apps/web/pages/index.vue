@@ -33,5 +33,8 @@ useSeoMeta({
   title: 'Product Designer, Developer & Indie Maker',
   description:
     'Hi, iam a product designer and developer located in bali, Iam indie maker',
+  ogTitle: 'Product Designer, Developer & Indie Maker',
+  ogDescription:
+    'Hi, iam a product designer and developer located in bali, Iam indie maker',
 })
 </script>
