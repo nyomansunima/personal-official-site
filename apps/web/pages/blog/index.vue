@@ -63,6 +63,7 @@ const featuredQuery = `
     "tag": tags[0],
     _createdAt,
     featured,
+    "isIncoming": "Incoming" in tags[],
   }
 `
 const postQuery = `
@@ -73,6 +74,7 @@ const postQuery = `
     "tag": tags[0],
     _createdAt,
     featured,
+    "isIncoming": "Incoming" in tags[],
   }
 `
 const featuredPost = await useSanityQuery<BlogPost[]>(featuredQuery)
