@@ -5,6 +5,7 @@ export interface BlogPost {
   tag: string
   featured: string
   _createdAt: string
+  isIncoming: boolean
 }
 
 export interface BlogDetail {
