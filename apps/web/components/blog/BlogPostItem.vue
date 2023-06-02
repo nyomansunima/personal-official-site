@@ -1,7 +1,11 @@
 <template>
   <div
-    class="flex flex-col row-span-6 transition-all duration-300 hover:-translate-y-2 cursor-pointer"
-    :class="[$props.class, sizeClass]"
+    class="flex flex-col row-span-6 transition-all duration-300 hover:-translate-y-2"
+    :class="[
+      $props.class,
+      sizeClass,
+      data.isIncoming ? 'cursor-auto' : 'cursor-pointer',
+    ]"
     @click="openPost"
   >
     <div
@@ -17,10 +21,19 @@
 
       <!-- release date -->
       <div
+        v-show="!data.isIncoming"
         class="flex justify-center items-center bg-white px-5 h-12 rounded-full gap-3 absolute text-gray-600 text-base left-5 bottom-5 z-10"
       >
         {{ parsedDate }}
       </div>
+
+      <!-- incoming tags -->
+      <span
+        class="flex absolute z-10 bg-white px-6 py-3 rounded-full bottom-4 left-4 text-lg"
+        v-show="data.isIncoming"
+      >
+        💘 Incoming Post
+      </span>
 
       <!-- thumbnail -->
       <NuxtImg
@@ -57,6 +70,8 @@ const parsedDate = computed(() => {
 })
 
 const openPost = () => {
-  navigateTo(`/blog/${data.slug}`)
+  if (!data.isIncoming) {
+    navigateTo(`/blog/${data.slug}`)
+  }
 }
 </script>
