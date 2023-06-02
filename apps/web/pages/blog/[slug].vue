@@ -66,7 +66,7 @@ const query = `
       ...,
       "thumbnail": thumbnail.asset -> url,
     },
-    "related": *[_type == "blog" && slug.current != $slug] | order(_createdAt desc) [0...3]{
+    "related": *[_type == "blog" && slug.current != $slug && !("Incoming" in tags)] | order(_createdAt desc) [0...3]{
       "slug": slug.current,
       title,
       "thumbnail": thumbnail.asset -> url,
