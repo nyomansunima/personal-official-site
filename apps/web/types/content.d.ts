@@ -13,6 +13,7 @@ export interface BlogDetail {
     slug: string
     title: string
     desc: string
+    canonical?: string
     thumbnail: string
     tags: string[]
     featured: string
