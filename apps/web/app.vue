@@ -13,6 +13,10 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Lenis from '@studio-freight/lenis'
 
+const {
+  public: { host },
+} = useRuntimeConfig()
+
 // register the gsap plugins
 gsap.registerPlugin(ScrollTrigger)
 
@@ -35,6 +39,7 @@ useSeoMeta({
 })
 
 useHead({
+  link: [{ rel: 'icon', type: 'image/png', href: `${host}/images/logo.png` }],
   bodyAttrs: {
     class:
       'font-sans font-medium text-base leading-normal text-black dark:text-gray-100 bg-white dark:bg-black transition-all duration-1000 selection:bg-black selection:text-gray-200 dark:selection:bg-white dark:selection:text-black',
