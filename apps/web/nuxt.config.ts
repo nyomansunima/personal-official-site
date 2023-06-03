@@ -26,6 +26,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
+      host: process.env.APP_HOST_DOMAIN,
       brevoApiKey: '',
     },
   },
