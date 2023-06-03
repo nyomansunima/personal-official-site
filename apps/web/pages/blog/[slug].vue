@@ -28,7 +28,7 @@
         <picture
           class="flex relative overflow-hidden w-full h-[400px] rounded-3xl mt-10"
         >
-          <NuxtImg :src="post.thumbnail" class="flex w-full" />
+          <NuxtImg :src="post.thumbnail" class="flex w-full object-cover" />
         </picture>
 
         <!-- tags -->
@@ -57,6 +57,9 @@ definePageMeta({
 })
 
 const route = useRoute()
+const {
+  public: { host },
+} = useRuntimeConfig()
 
 // fetching the post including with
 // related posts
@@ -94,10 +97,19 @@ useSeoMeta({
   description: post.desc.substring(0, 100),
   ogTitle: post.title,
   ogDescription: post.desc.substring(0, 100),
+  ogUrl: `${host}/blog/${route.params.slug}`,
   ogImage: post.thumbnail,
   ogType: 'article',
   twitterTitle: post.title,
   twitterDescription: post.desc.substring(0, 100),
   twitterImage: post.thumbnail,
+})
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: post.canonical || `${host}/blog/${route.params.slug}`,
+    },
+  ],
 })
 </script>
