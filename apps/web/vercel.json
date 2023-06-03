@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/manage",
+      "destination": "https://studio.nyomansunima.vercel.app"
+    },
+    {
+      "source": "/manage/:match*",
+      "destination": "https://studio.nyomansunima.vercel.app/:match*"
+    }
+  ]
+}
