@@ -13,8 +13,8 @@ export default defineType({
       name: 'slug',
       type: 'slug',
       options: {
-        source: 'title'
-      }
+        source: 'title',
+      },
     }),
     defineField({
       title: 'Thumbnail',
@@ -22,45 +22,51 @@ export default defineType({
       name: 'thumbnail',
       type: 'image',
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+      },
     }),
     defineField({
       title: 'Title',
       description: 'Title of article post',
       name: 'title',
-      type: 'string'
+      type: 'string',
     }),
     defineField({
       title: 'Short Descrition',
       description: 'Meta description',
       name: 'desc',
-      type: 'text'
+      type: 'text',
+    }),
+    defineField({
+      title: 'Canonical URL',
+      name: 'canonical',
+      description: 'Add the origin url if you republishing',
+      type: 'url',
     }),
     defineField({
       title: 'Featured',
       description: 'Is this post will be featured for other reader',
       name: 'featured',
-      type: 'boolean'
+      type: 'boolean',
     }),
     defineField({
       title: 'Tags',
       description: 'Pick the tags for article',
       name: 'tags',
       type: 'array',
-      of: [{ type: 'string' }]
+      of: [{ type: 'string' }],
     }),
     defineField({
       title: 'Content',
       name: 'content',
-      type: 'markdown'
-    })
+      type: 'markdown',
+    }),
   ],
   preview: {
     select: {
       title: 'title',
       subtitle: 'slug.current',
-      media: 'thumbnail'
-    }
-  }
+      media: 'thumbnail',
+    },
+  },
 })
