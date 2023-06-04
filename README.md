@@ -1,10 +1,16 @@
 <!-- README -->
-<img src="https://github.com/nyomansunima/personal-site/assets/54091887/88e76701-30e7-4b77-91cc-70fe3cd2706f" width="100"/>
+![Github Social Preview (4)](https://github.com/nyomansunima/nyomansunima.com/assets/54091887/9b4c46c0-4be1-4318-a112-bc397707f89d)
+
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/nyomansunima/personal-site)
 ![GitHub Sponsors](https://img.shields.io/github/sponsors/nyomansunima)
 ![GitHub](https://img.shields.io/github/license/nyomansunima/personal-site)
 ![GitHub issues](https://img.shields.io/github/issues/nyomansunima/personal-site)
+
+<br/>
+
+[🐛 Issues](https://github.com/nyomansunima/personal-site/issues) . [📝 Explore docs](https://github.com/nyomansunima/personal-site)
+
 
 # Personal Site
 
@@ -12,7 +18,6 @@ My personal website to connect and share something with client and audience
 
 <br/>
 
-[🐛 Issues](https://github.com/nyomansunima/personal-site/issues) . [📝 Explore docs](https://github.com/nyomansunima/personal-site)
 
 <br/>
 
