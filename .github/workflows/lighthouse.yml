@@ -1,0 +1,51 @@
+# Check the web performace using
+# lighthouse ci
+# allow to show the page result for seo, performace, compatibility
+#
+# ******** NOTE *********
+# Lighthouse only check your web result and platform
+
+name: Lighthouse
+
+# only run this workflows
+# on the apps/web sub directory
+on:
+  push:
+    branches-ignore: [main]
+    paths:
+      - "/apps/web/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "/apps/web/**"
+
+jobs:
+  lighthouse:
+    strategy:
+      matrix:
+        node: [18]
+    env:
+      url: https://localhost:3000
+    runs-on: ubuntu-latest
+    name: Lighthouse Testing the web on Node ${{matrix.node}}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{matrix.node}}
+
+      - name: Install dependencies
+        run: npm i --legacy-peer-deps --silent
+
+      - name: Build
+        run: npm run dev
+
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          urls: ${{env.url}}
+          uploadArtifacts: true
+          temporaryPublicStorage: true

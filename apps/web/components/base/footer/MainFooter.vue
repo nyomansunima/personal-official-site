@@ -30,6 +30,9 @@
         <ul class="flex list-none gap-10">
           <li
             class="transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+            data-cursor-stick
+            data-cursor-size="60"
+            data-cursor-exclusion
             v-for="social in socials"
             :key="social.label"
           >
