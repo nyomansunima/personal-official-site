@@ -2,15 +2,15 @@
   <main class="flex flex-col py-60">
     <div class="container mx-auto">
       <article
-        class="mx-auto px-5 prose prose-lg dark:prose-invert prose-headings:font-semibold prose-strong:font-semibold text-black dark:text-gray-100 prose-h1:text-6xl"
+        class="mx-auto px-5 prose prose-lg dark:prose-invert prose-headings:font-medium text-black dark:text-gray-100 prose-h1:text-6xl"
       >
         <h1 data-cursor-size="200" data-cursor-exclusion>Privacy Policy</h1>
         <p><strong>Effective Date: Monday, 12 June 2023</strong></p>
 
         <p>
           This Privacy Policy outlines the information practices and procedures
-          followed by [Your Website Name] ("we," "us," or "our") regarding the
-          collection, use, and disclosure of personal information when you
+          followed by https://nyomansunima.com ("we," "us," or "our") regarding
+          the collection, use, and disclosure of personal information when you
           access and use our website (the "Website"). We are committed to
           protecting your privacy and ensuring the security of your personal
           information. By accessing or using our Website, you consent to the
