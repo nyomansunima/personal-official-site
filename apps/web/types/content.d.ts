@@ -53,4 +53,19 @@ export interface AboutDetail {
     title: string
     desc: string
   }[]
+  contributions: {
+    url: string
+    title: string
+    desc: string
+    image: string
+  }[]
+}
+
+export interface Project {
+  slug: string
+  thumbnail: string
+  title: string
+  desc: string
+  tag: string
+  isCommingSoon: boolean
 }

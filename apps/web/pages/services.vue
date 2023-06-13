@@ -1,8 +1,12 @@
 <template>
   <main class="flex flex-col pt-60 pb-80 text-xl gap-80">
     <!-- intro section -->
-    <section class="container mx-auto px-20">
-      <h2 class="text-6xl font-medium leading-loose w-8/12 text-center mx-auto">
+    <section class="container mx-auto px-20 intro">
+      <h2
+        class="text-6xl font-medium leading-loose w-8/12 text-center mx-auto"
+        data-cursor-size="200"
+        data-cursor-exclusion
+      >
         I
         <span
           class="border-4 border-black dark:border-gray-200 px-10 py-4 rounded-full"
@@ -23,8 +27,12 @@
     </section>
 
     <!-- process -->
-    <section class="flex flex-col items-center container mx-auto px-20">
-      <h2 class="text-6xl font-medium w-6/12 leading-relaxed text-center">
+    <section class="flex flex-col items-center container mx-auto px-20 process">
+      <h2
+        class="text-6xl font-medium w-6/12 leading-relaxed text-center"
+        data-cursor-size="200"
+        data-cursor-exclusion
+      >
         Where the
         <span
           class="border-4 border-black dark:border-gray-200 px-10 py-4 rounded-full"
@@ -45,7 +53,11 @@
 
     <!-- Get in touch -->
     <section class="flex flex-col items-center container mx-auto px-20">
-      <h2 class="text-6xl font-medium mx-auto leading-relaxed">
+      <h2
+        class="text-6xl font-medium mx-auto leading-relaxed"
+        data-cursor-size="200"
+        data-cursor-exclusion
+      >
         Have an idea?
       </h2>
       <NuxtLink to="/contact" class="text-6xl font-normal dark:text-gray-400"
@@ -56,7 +68,8 @@
 </template>
 
 <script setup lang="ts">
-import { list, process } from '~/contents/service.json'
+import { gsap } from 'gsap'
+import { list, process } from '~/data/service.json'
 
 definePageMeta({
   layout: 'main',
@@ -64,5 +77,23 @@ definePageMeta({
 useSeoMeta({
   title: 'Service',
   description: 'Explore my expertise and service offer',
+})
+
+onMounted(() => {
+  gsap.from('section.intro h2', {
+    // y: 200,
+    opacity: 0,
+    scale: 8,
+    duration: 1.2,
+  })
+
+  gsap.from('section.process h2', {
+    y: 200,
+    opacity: 0,
+    duration: 1.2,
+    scrollTrigger: {
+      trigger: 'section.process',
+    },
+  })
 })
 </script>

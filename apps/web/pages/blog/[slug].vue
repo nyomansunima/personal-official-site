@@ -17,7 +17,7 @@
     <!-- content articles -->
     <div class="flex flex-col container mx-auto mt-20">
       <article
-        class="flex flex-col w-11/12 laptop:w-7/12 mx-auto border-b border-gray-100 dark:border-b-gray-800 pb-10"
+        class="flex w-full flex-col px-5 laptop:w-7/12 mx-auto border-b border-gray-100 dark:border-b-gray-800 pb-10"
       >
         <!-- title -->
         <h1 class="text-5xl font-medium leading-tight">
@@ -42,6 +42,9 @@
 
       <!-- the article author -->
       <BlogPostAuthor />
+
+      <!-- newsletter -->
+      <BlogNewsletter />
     </div>
 
     <!-- Related posts -->

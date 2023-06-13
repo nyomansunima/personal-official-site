@@ -11,7 +11,7 @@ interface FormInputProps {
   context: FormContext
 }
 const {
-  context: { handleSubmit }
+  context: { handleSubmit },
 } = defineProps<FormInputProps>()
 
 interface FormInputEmits {

@@ -23,7 +23,7 @@ interface UseMutationOptions {
  */
 export default function useMutation<D, E>(
   mutateFunc: (...args: any) => void,
-  options?: UseMutationOptions
+  options?: UseMutationOptions,
 ): UseMutationReturn<D, E> {
   const pending = ref<boolean>(false)
   const error = ref<E | any>()

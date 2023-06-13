@@ -52,7 +52,7 @@
 </template>
 
 <script setup lang="ts">
-import { tags } from '~/contents/blog.json'
+import { tags } from '~/data/blog.json'
 import { BlogPost } from '~/types/content'
 
 const featuredQuery = `
