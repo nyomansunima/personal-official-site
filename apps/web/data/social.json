@@ -16,6 +16,11 @@
       "icon": "fi fi-brands-github"
     },
     {
+      "label": "Gitlab",
+      "url": "https://gitlab.com/nyomansunima",
+      "icon": "fi fi-brands-gitlab"
+    },
+    {
       "label": "Buy me coffee",
       "url": "https://ko-fi.com/nyomansunima",
       "icon": "fi fi-rr-mug-hot-alt"

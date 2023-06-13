@@ -1,6 +1,5 @@
 <template>
   <button
-    @click.prevent="$emit('click')"
     class="flex justify-center items-center"
     :class="$props.class"
     :type="type"
@@ -10,13 +9,10 @@
 </template>
 
 <script setup lang="ts">
-import { BaseButtonProps, BaseButtonEmits } from '~/types/component'
+import { BaseButtonProps } from '~/types/component'
 
 interface IconButtonProps extends BaseButtonProps {}
 const { type = 'button' } = defineProps<IconButtonProps>()
-
-interface IconButtonEmits extends BaseButtonEmits {}
-defineEmits<IconButtonEmits>()
 </script>
 
 <style scoped>

@@ -6,7 +6,7 @@
       id="clean-cursor"
     >
       <div
-        class="text-white flex justify-center items-center h-full w-full rounded-full overflow-hidden bg-no-repeat bg-cover bg-center"
+        class="text-white dark:text-black flex justify-center items-center h-full w-full rounded-full overflow-hidden bg-no-repeat bg-cover bg-center"
         ref="cursorInnerRef"
         id="clean-cursor-inner"
       ></div>
@@ -33,6 +33,8 @@ const {
   animationDuration = 0.7,
   cursorExclusionBackgroundColor = '#ffffff',
 } = defineProps<CleanCursorProps>()
+
+const route = useRoute()
 
 // adding the effect to the cursor
 // including the move, size and other things
@@ -88,123 +90,191 @@ onMounted(() => {
     setY(y)
   }
 
-  // define all cursor element
-  // including the size, text, image, exclusion
-  // and so on
-  const sizeEls =
-    document.querySelectorAll<HTMLElement>('[data-cursor-size]') || []
-  const textEls =
-    document.querySelectorAll<HTMLElement>('[data-cursor-text]') || []
-  const exclusionEls =
-    document.querySelectorAll<HTMLElement>('[data-cursor-exclusion]') || []
-  const imageEls =
-    document.querySelectorAll<HTMLElement>('[data-cursor-image]') || []
-  const stickEls =
-    document.querySelectorAll<HTMLElement>('[data-cursor-stick]') || []
-  const colorEls =
-    document.querySelectorAll<HTMLElement>('[data-cursor-color]') || []
+  watch(
+    () => route.path,
+    () => {
+      // define all cursor element
+      // including the size, text, image, exclusion
+      // and so on
+      const sizeEls =
+        document.querySelectorAll<HTMLElement>('[data-cursor-size]') || []
+      const textEls =
+        document.querySelectorAll<HTMLElement>('[data-cursor-text]') || []
+      const exclusionEls =
+        document.querySelectorAll<HTMLElement>('[data-cursor-exclusion]') || []
+      const imageEls =
+        document.querySelectorAll<HTMLElement>('[data-cursor-image]') || []
+      const stickEls =
+        document.querySelectorAll<HTMLElement>('[data-cursor-stick]') || []
+      const colorEls =
+        document.querySelectorAll<HTMLElement>('[data-cursor-color]') || []
+      const iconEls =
+        document.querySelectorAll<HTMLElement>('[data-cursor-icon]') || []
 
-  sizeEls.forEach((el) => {
-    el.addEventListener('mouseenter', () => {
-      const size = parseFloat(el.dataset['cursorSize'] || '12')
-      gsap.to('#clean-cursor', {
-        width: size,
-        height: size,
-      })
-    })
-    el.addEventListener('mouseleave', () => {
-      gsap.to('#clean-cursor', {
-        width: cursorSize,
-        height: cursorSize,
-      })
-    })
-  })
-
-  colorEls.forEach((el) => {
-    el.addEventListener('mouseenter', () => {
-      const color = el.dataset['cursorColor'] || ''
+      // reset the element when something chnages
+      // or the route of pages are changes
       if (cursorInnerRef.value) {
-        gsap.to(cursorInnerRef.value, {
-          ease: 'expo',
-          duration: 1.2,
-          background: color,
-        })
-      }
-    })
-    el.addEventListener('mouseleave', () => {
-      if (cursorInnerRef.value) {
-        gsap.to(cursorInnerRef.value, {
-          ease: 'expo',
-          duration: 1.2,
-          background: ``,
-        })
-      }
-    })
-  })
-
-  textEls.forEach((el) => {
-    el.addEventListener('mouseenter', () => {
-      const content = el.dataset['cursorText'] || ''
-      if (cursorInnerRef.value) {
-        cursorInnerRef.value.textContent = content
-      }
-    })
-    el.addEventListener('mouseleave', () => {
-      if (cursorInnerRef.value) {
+        cursorInnerRef.value.innerHTML = ''
         cursorInnerRef.value.textContent = ''
-      }
-    })
-  })
 
-  imageEls.forEach((el) => {
-    el.addEventListener('mouseenter', () => {
-      const image = el.dataset['cursorImage'] || ''
-      if (cursorInnerRef.value) {
-        gsap.to(cursorInnerRef.value, {
-          ease: 'expo',
-          duration: 1.2,
-          backgroundImage: `url("${image}")`,
+        gsap.to('#clean-cursor', {
+          width: cursorSize,
+          height: cursorSize,
         })
-      }
-    })
-    el.addEventListener('mouseleave', () => {
-      if (cursorInnerRef.value) {
+
         gsap.to(cursorInnerRef.value, {
           ease: 'expo',
           duration: 1.2,
           background: ``,
         })
       }
-    })
-  })
 
-  exclusionEls.forEach((el) => {
-    el.addEventListener('mouseenter', () => {
-      if (cursorRef.value) {
-        cursorRef.value.style.mixBlendMode = 'exclusion'
-        cursorRef.value.style.background = cursorExclusionBackgroundColor
-      }
-    })
-    el.addEventListener('mouseleave', () => {
-      if (cursorRef.value) {
-        cursorRef.value.style.mixBlendMode = ''
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          cursorRef.value.style.background = '#ffffff'
-        } else {
-          cursorRef.value.style.background = '#000000'
-        }
-      }
-    })
-  })
+      sizeEls.forEach((el) => {
+        el.addEventListener('mouseenter', () => {
+          const size = parseFloat(el.dataset['cursorSize'] || '12')
+          gsap.to('#clean-cursor', {
+            width: size,
+            height: size,
+          })
+        })
+        el.addEventListener('mouseleave', () => {
+          gsap.to('#clean-cursor', {
+            width: cursorSize,
+            height: cursorSize,
+          })
+        })
+      })
 
-  stickEls.forEach((el) => {
-    el.addEventListener('mouseenter', () => {
-      isStickElement.value = true
-    })
-    el.addEventListener('mouseleave', () => {
-      isStickElement.value = false
-    })
-  })
+      colorEls.forEach((el) => {
+        el.addEventListener('mouseenter', () => {
+          const color = el.dataset['cursorColor'] || ''
+          if (cursorInnerRef.value) {
+            gsap.to(cursorInnerRef.value, {
+              ease: 'expo',
+              duration: 1.2,
+              background: color,
+            })
+          }
+        })
+        el.addEventListener('mouseleave', () => {
+          if (cursorInnerRef.value) {
+            gsap.to(cursorInnerRef.value, {
+              ease: 'expo',
+              duration: 1.2,
+              background: ``,
+            })
+          }
+        })
+      })
+
+      textEls.forEach((el) => {
+        el.addEventListener('mouseenter', () => {
+          const content = el.dataset['cursorText'] || ''
+          if (cursorInnerRef.value) {
+            cursorInnerRef.value.textContent = content
+          }
+        })
+        el.addEventListener('mouseleave', () => {
+          if (cursorInnerRef.value) {
+            cursorInnerRef.value.textContent = ''
+          }
+        })
+      })
+      iconEls.forEach((el) => {
+        el.addEventListener('mouseenter', () => {
+          const icon = el.dataset['cursorIcon'] || ''
+          if (cursorInnerRef.value) {
+            cursorInnerRef.value.innerHTML = `<i class="${icon}"/>`
+          }
+        })
+        el.addEventListener('mouseleave', () => {
+          if (cursorInnerRef.value) {
+            cursorInnerRef.value.innerHTML = ''
+          }
+        })
+      })
+
+      imageEls.forEach((el) => {
+        el.addEventListener('mouseenter', () => {
+          const image = el.dataset['cursorImage'] || ''
+          if (cursorInnerRef.value) {
+            gsap.to(cursorInnerRef.value, {
+              ease: 'expo',
+              duration: 1.2,
+              backgroundImage: `url("${image}")`,
+            })
+          }
+        })
+        el.addEventListener('mouseleave', () => {
+          if (cursorInnerRef.value) {
+            gsap.to(cursorInnerRef.value, {
+              ease: 'expo',
+              duration: 1.2,
+              background: ``,
+            })
+          }
+        })
+      })
+
+      exclusionEls.forEach((el) => {
+        el.addEventListener('mouseenter', () => {
+          if (cursorRef.value) {
+            cursorRef.value.style.mixBlendMode = 'exclusion'
+            cursorRef.value.style.background = cursorExclusionBackgroundColor
+          }
+        })
+        el.addEventListener('mouseleave', () => {
+          if (cursorRef.value) {
+            cursorRef.value.style.mixBlendMode = ''
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+              cursorRef.value.style.background = '#ffffff'
+            } else {
+              cursorRef.value.style.background = '#000000'
+            }
+          }
+        })
+      })
+
+      stickEls.forEach((el) => {
+        el.addEventListener('mouseenter', () => {
+          isStickElement.value = true
+        })
+        el.addEventListener('mouseleave', () => {
+          isStickElement.value = false
+        })
+      })
+
+      return () => {
+        sizeEls.forEach((el) => {
+          el.removeEventListener('mouseenter', () => {})
+          el.removeEventListener('mouseleave', () => {})
+        })
+        exclusionEls.forEach((el) => {
+          el.removeEventListener('mouseenter', () => {})
+          el.removeEventListener('mouseleave', () => {})
+        })
+        colorEls.forEach((el) => {
+          el.removeEventListener('mouseenter', () => {})
+          el.removeEventListener('mouseleave', () => {})
+        })
+        textEls.forEach((el) => {
+          el.removeEventListener('mouseenter', () => {})
+          el.removeEventListener('mouseleave', () => {})
+        })
+        imageEls.forEach((el) => {
+          el.removeEventListener('mouseenter', () => {})
+          el.removeEventListener('mouseleave', () => {})
+        })
+        stickEls.forEach((el) => {
+          el.removeEventListener('mouseenter', () => {})
+          el.removeEventListener('mouseleave', () => {})
+        })
+      }
+    },
+    {
+      immediate: true,
+    },
+  )
 
   // register all event
   window.document.addEventListener('mouseleave', hideCursor)
@@ -212,31 +282,6 @@ onMounted(() => {
   window.document.addEventListener('mousemove', moveCursor)
 
   return () => {
-    sizeEls.forEach((el) => {
-      el.removeEventListener('mouseenter', () => {})
-      el.removeEventListener('mouseleave', () => {})
-    })
-    exclusionEls.forEach((el) => {
-      el.removeEventListener('mouseenter', () => {})
-      el.removeEventListener('mouseleave', () => {})
-    })
-    colorEls.forEach((el) => {
-      el.removeEventListener('mouseenter', () => {})
-      el.removeEventListener('mouseleave', () => {})
-    })
-    textEls.forEach((el) => {
-      el.removeEventListener('mouseenter', () => {})
-      el.removeEventListener('mouseleave', () => {})
-    })
-    imageEls.forEach((el) => {
-      el.removeEventListener('mouseenter', () => {})
-      el.removeEventListener('mouseleave', () => {})
-    })
-    stickEls.forEach((el) => {
-      el.removeEventListener('mouseenter', () => {})
-      el.removeEventListener('mouseleave', () => {})
-    })
-
     window.document.removeEventListener('mouseleave', hideCursor)
     window.document.removeEventListener('mouseenter', showCursor)
     window.document.removeEventListener('mousemove', moveCursor)

@@ -1,15 +1,13 @@
 <template>
   <div
     class="flex flex-col row-span-6 transition-all duration-300 hover:-translate-y-2"
-    :class="[
-      $props.class,
-      sizeClass,
-      data.isIncoming ? 'cursor-auto' : 'cursor-pointer',
-    ]"
+    :class="[sizeClass, data.isIncoming ? 'cursor-auto' : 'cursor-pointer']"
     @click="openPost"
   >
     <div
       class="flex h-[320px] laptop:h-[480px] relative rounded-3xl overflow-hidden"
+      data-cursor-size="80"
+      data-cursor-icon="fi fi-sr-play"
     >
       <!-- categories -->
       <div
@@ -29,10 +27,10 @@
 
       <!-- incoming tags -->
       <span
-        class="flex absolute z-10 bg-white px-6 py-3 rounded-full bottom-4 left-4 text-lg"
+        class="flex absolute z-10 bg-white dark:text-black px-6 py-3 rounded-full bottom-4 left-4 text-lg"
         v-show="data.isIncoming"
       >
-        💘 Incoming Post
+        Coming soon
       </span>
 
       <!-- thumbnail -->
@@ -43,7 +41,7 @@
     </div>
 
     <h3
-      class="text line-clamp-2 font-semibold mt-8 w-10/12 leading-snug"
+      class="text line-clamp-2 font-medium mt-8 w-10/12 leading-snug"
       :class="size === 'large' ? 'text-3xl' : 'text-2xl'"
     >
       {{ data.title }}
@@ -55,7 +53,6 @@
 import { BlogPost } from '~/types/content'
 
 interface BlogPostItemProps {
-  class?: string
   size?: 'medium' | 'large'
   data: BlogPost
 }

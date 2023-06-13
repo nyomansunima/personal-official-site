@@ -2,34 +2,11 @@
   <footer
     class="flex flex-col border-t border-t-gray-100 dark:border-t-gray-900"
   >
-    <!-- menus -->
-    <div class="grid grid-cols-4 container mx-auto px-28 mt-32">
-      <div
-        class="flex flex-col col-span-1"
-        v-for="section in footerMenus"
-        :key="section.headline"
-      >
-        <h4 class="flex text-2xl">{{ section.headline }}</h4>
-        <ul class="flex flex-col gap-5 mt-10">
-          <li class="flex text-lg" v-for="menu in section.menus">
-            <NuxtLink :to="menu.link">{{ menu.label }}</NuxtLink>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- credit -->
-    <div
-      class="flex items-center px-10 py-6 border-t border-t-gray-100 dark:border-t-gray-900 mt-60"
-    >
-      <span>Copyright &copy; {{ currentYear }} - Alright Reserved</span>
-
-      <div class="flex flex-1"></div>
-
-      <div class="flex items-center">
-        <ul class="flex list-none gap-10">
+    <div class="flex justify-center mt-5">
+      <div class="flex items-center laptop:mr-20 justify-center px-5">
+        <ul class="flex items-center list-none gap-4 flex-wrap justify-center">
           <li
-            class="transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+            class="transition-all duration-300 hover:-translate-y-1 cursor-pointer h-12 w-12 flex justify-center items-center rounded-full border border-gray-100 dark:border-gray-800"
             data-cursor-stick
             data-cursor-size="60"
             data-cursor-exclusion
@@ -48,12 +25,48 @@
         </ul>
       </div>
     </div>
+
+    <!-- credit -->
+    <div
+      class="flex flex-col tablet:flex-row items-center laptop:px-10 py-6 border-t border-t-gray-100 dark:border-t-gray-900 mt-5"
+    >
+      <span
+        class="flex items-center"
+        data-cursor-size="40"
+        data-cursor-exclusion
+        >Copyright &copy; {{ currentYear }}</span
+      >
+
+      <div class="flex laptop:flex-1"></div>
+      <div class="flex items-center laptop:mr-20">
+        <ul class="flex items-center gap-5">
+          <li
+            class="flex items-center"
+            data-cursor-exclusion
+            data-cursor-size="40"
+          >
+            <NuxtLink to="/privacy">Privacy</NuxtLink>
+          </li>
+          <li
+            class="flex items-center"
+            data-cursor-exclusion
+            data-cursor-size="40"
+          >
+            <NuxtLink to="/terms">Terms</NuxtLink>
+          </li>
+        </ul>
+      </div>
+
+      <span class="flex items-center gap-4"
+        >Created with <i class="fi fi-sr-heart text-red-600"></i
+      ></span>
+    </div>
   </footer>
 </template>
 
 <script setup lang="ts">
-import { socials } from '~/contents/social.json'
-import { footer as footerMenus } from '~/contents/menu.json'
+import { socials } from '~/data/social.json'
+import { footer as footerMenus } from '~/data/menu.json'
 
 const currentYear = computed(() => new Date().getFullYear())
 </script>

@@ -1,20 +1,32 @@
 {
   "header": [
     {
-      "label": "Projects",
+      "label": "My Works",
       "path": "/projects"
     },
     {
-      "label": "Services",
+      "label": "What i do",
       "path": "/service"
     },
     {
-      "label": "About",
+      "label": "About me",
       "path": "/about"
     },
     {
-      "label": "Contact",
+      "label": "Get in touch",
       "path": "/contact"
+    }
+  ],
+  "donations": [
+    {
+      "label": "Buy me a coffe",
+      "icon": "fi fi-rr-mug-hot-alt",
+      "link": "https://ko-fi.com/nyomansunima"
+    },
+    {
+      "label": "Become sponsors",
+      "icon": "fi fi-rr-piggy-bank",
+      "link": "https://github.com/sponsors/nyomansunima"
     }
   ],
   "footer": [

@@ -20,7 +20,7 @@ const emit = defineEmits<BaseButtonEmits>()
 </script>
 
 <style scoped>
-button:slotted(i.fi) {
-  @apply text-xl;
+:slotted(i.fi) {
+  @apply text-2xl;
 }
 </style>

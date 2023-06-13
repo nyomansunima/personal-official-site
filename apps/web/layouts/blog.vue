@@ -1,12 +1,12 @@
 <template>
   <div>
     <!-- header -->
-    <BlogHeader />
+    <MainHeader />
 
     <!-- content -->
     <slot />
 
     <!-- footer -->
-    <BlogFooter />
+    <MainFooter />
   </div>
 </template>
