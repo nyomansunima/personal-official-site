@@ -69,3 +69,8 @@ export interface Project {
   tag: string
   isCommingSoon: boolean
 }
+
+export interface Faq {
+  question: string
+  answer: string
+}
