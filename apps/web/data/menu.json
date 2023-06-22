@@ -15,6 +15,10 @@
     {
       "label": "Get in touch",
       "path": "/contact"
+    },
+    {
+      "label": "FAQs",
+      "path": "/faq"
     }
   ],
   "donations": [
