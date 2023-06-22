@@ -1,33 +1,59 @@
 <template>
   <main class="flex flex-col pt-40 py-32 laptop:py-60 gap-28 laptop:gap-80">
-    <section
-      class="flex flex-col container mx-auto laptop:px-20 items-center intro"
-    >
+    <section class="flex flex-col container mx-auto laptop:px-20 intro px-5">
       <h2
-        class="text-5xl laptop:text-6xl !leading-relaxed text-center laptop:w-8/12"
+        class="text-5xl laptop:text-7xl !leading-tight w-11/12"
         data-cursor-size="200"
         data-cursor-exclusion
       >
-        🎉 Hello, iam a Product
-        <span
-          class="px-6 py-4 border-4 border-black dark:border-white rounded-full"
-          >Designer</span
-        >,
-        <span
-          class="px-7 py-5 bg-black dark:bg-white rounded-full text-white dark:text-black"
-          >Developer</span
-        >
-        & Indie maker
+        <span class="laptop:pl-28">In search of quality.</span>
+        <br />
+        Designer & developer focused on how it's work.
       </h2>
-      <p class="text-xl leading-relaxed text-center laptop:w-7/12 mt-10">
-        Hi, My name Nyoman Sunima. Iam a Product Designer and Developer located
-        in Bali, Indonesia. I work as software engineering and cratf the app
-        from the zero and make something special. Everytime my day i use to
-        write the content, sharing with community, craft app and connect with
-        other creators.
-      </p>
+      <div
+        class="flex flex-col laptop:flex-row text-xl leading-relaxed mt-24 gap-16"
+      >
+        <div class="flex laptop:w-1/2 flex-col gap-10">
+          <p
+            data-cursor-size="40"
+            data-cursor-icon="fi fi-sr-camera-viewfinder"
+          >
+            Hello. I am Nyoman Sunima, a product designer and an developer based
+            in Bali, Indonesia and currently iam working as freelancer. For the
+            past 5+ years I have been focusing my work on product design and
+            development. All of my day is used to design and crafting an
+            interesting product.
+          </p>
+          <p
+            data-cursor-size="40"
+            data-cursor-icon="fi fi-sr-camera-viewfinder"
+          >
+            In my free time I love to doing something happy, farming, create a
+            side hustle, create and share products, and selling.
+          </p>
+        </div>
+        <div class="flex laptop:w-1/2 flex-col gap-10">
+          <p
+            data-cursor-size="40"
+            data-cursor-icon="fi fi-sr-camera-viewfinder"
+          >
+            The truth is, I started my journey in my high school. As a tech
+            anthusiast i love to blogging and start to theme and design the blog
+            for my self. Being from an mobile developer in Bali. I start was
+            introduced to the new world that interesting and challenging. Then
+            start grew up into a design and fullstack developer.
+          </p>
+          <p
+            data-cursor-size="40"
+            data-cursor-icon="fi fi-sr-camera-viewfinder"
+          >
+            Now create a product is part of my execution and goals. Start with
+            research and craft it into a working product.
+          </p>
+        </div>
+      </div>
 
-      <div class="flex flex-wrap mt-12 gap-4 actions">
+      <div class="flex flex-wrap justify-center mt-28 gap-4 actions">
         <OutlineButton link="/blog"
           ><i class="fi fi-sr-heart"></i> My Blog</OutlineButton
         >
@@ -47,7 +73,8 @@
         data-cursor-size="200"
         data-cursor-exclusion
       >
-        Here some project that <span class="text-gray-400"> works </span>
+        Because project should
+        <span class="text-gray-400"> works </span>
       </h2>
       <div class="grid grid-cols-3 laptop:grid-cols-9 gap-6 mt-20 list">
         <ProjectItem v-for="item in projects" :key="item.slug" :data="item" />
@@ -164,13 +191,15 @@ onMounted(() => {
     .timeline({})
     .from('section.intro h2', {
       opacity: 0,
-      scale: 8,
+      y: 300,
       duration: 1.2,
+      ease: 'back',
     })
     .from('section.intro p', {
       opacity: 0,
       y: 200,
       duration: 1.2,
+      stagger: 0.2,
       ease: 'back',
     })
     .from('section.intro .actions', {
