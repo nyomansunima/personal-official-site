@@ -19,6 +19,10 @@
     {
       "label": "FAQs",
       "path": "/faq"
+    },
+    {
+      "label": "Apps",
+      "path": "/apps"
     }
   ],
   "donations": [

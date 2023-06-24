@@ -1,5 +1,6 @@
 <template>
   <main class="flex flex-col pt-40 py-32 laptop:py-60 gap-28 laptop:gap-80">
+    <!-- intro -->
     <section class="flex flex-col container mx-auto laptop:px-20 intro px-5">
       <h2
         class="text-5xl laptop:text-7xl !leading-tight w-11/12"
@@ -8,7 +9,7 @@
       >
         <span class="laptop:pl-28">In search of quality.</span>
         <br />
-        Designer & developer focused on how it's work.
+        Designer & developer focused on how the thing work.
       </h2>
       <div
         class="flex flex-col laptop:flex-row text-xl leading-relaxed mt-24 gap-16"
@@ -69,34 +70,37 @@
     <!-- projects -->
     <section class="flex flex-col container mx-auto px-5 laptop:px-20 projects">
       <h2
-        class="text-5xl laptop:text-6xl leading-tight laptop:w-6/12"
+        class="text-5xl laptop:text-7xl !leading-tight laptop:w-11/12"
         data-cursor-size="200"
         data-cursor-exclusion
       >
-        Because project should
-        <span class="text-gray-400"> works </span>
+        <span class="text-gray-400 laptop:pl-28">In creating project.</span>
+        <br />
+        I try my best to make a special and bring more value to products.
       </h2>
+      <div class="flex actions mt-10">
+        <OutlineButton link="/projects">
+          See more <i class="fi fi-rr-arrow-right"></i
+        ></OutlineButton>
+      </div>
       <div class="grid grid-cols-3 laptop:grid-cols-9 gap-6 mt-20 list">
         <ProjectItem v-for="item in projects" :key="item.slug" :data="item" />
-      </div>
-
-      <div class="flex justify-center mt-32 actions">
-        <OutlineButton link="/projects">
-          Read More <i class="fi fi-rr-arrow-right"></i
-        ></OutlineButton>
       </div>
     </section>
 
     <!-- current activity -->
     <section class="flex flex-col container mx-auto px-5 laptop:px-20 activity">
       <h2
-        class="text-5xl laptop:text-6xl leading-tight laptop:w-6/12"
+        class="text-5xl laptop:text-7xl !leading-tight laptop:w-11/12"
         data-cursor-size="200"
         data-cursor-exclusion
       >
-        Now in
-        <span class="text-gray-400"> progress </span>
-        on my hand
+        <span class="laptop:pl-28">
+          Now, something that i focused in
+          <span class="text-gray-400">special one</span>.
+        </span>
+        <br />
+        Build something that feel good.
       </h2>
       <div class="flex mt-20 gap-5 flex-wrap list">
         <OutlineButton
@@ -110,23 +114,95 @@
       </div>
     </section>
 
+    <!-- apps -->
+    <section class="flex flex-col container mx-auto px-5 laptop:px-20 activity">
+      <h2
+        class="text-5xl laptop:text-7xl text-center mx-auto !leading-tight laptop:w-11/12"
+        data-cursor-size="200"
+        data-cursor-exclusion
+        data-anim-slide-up
+      >
+        All solution should work.
+        <br />
+        Put every single <span class="text-gray-400">problem</span> into
+        research and solve with elegant
+        <span class="text-gray-400">solutions</span>.
+      </h2>
+      <div class="flex actions mt-10 justify-center" data-anim-slide-up>
+        <OutlineButton link="/apps">
+          See apps <i class="fi fi-rr-arrow-right"></i
+        ></OutlineButton>
+      </div>
+      <div
+        class="grid grid-cols-1 laptop:grid-cols-4 gap-6 mt-20 list laptop:mt-96"
+      >
+        <AppItem
+          v-for="item in apps"
+          :key="item.title"
+          :data="item"
+          data-anim-sick-slide-up
+        />
+      </div>
+    </section>
+
+    <!-- products -->
+    <section
+      class="flex flex-col items-end container mx-auto px-5 laptop:px-20 activity"
+    >
+      <h2
+        class="text-5xl laptop:text-7xl text-end mx-auto !leading-tight laptop:w-11/12"
+        data-cursor-size="200"
+        data-cursor-exclusion
+        data-anim-slide-up
+      >
+        Goodie products.
+        <br />
+        I craft something that may help you to move faster.
+      </h2>
+      <div class="flex actions mt-10 justify-center" data-anim-slide-up>
+        <OutlineButton link="/shop">
+          Explore products <i class="fi fi-rr-arrow-right"></i
+        ></OutlineButton>
+      </div>
+      <div
+        class="grid grid-cols-1 laptop:grid-cols-4 gap-6 mt-20 list laptop:mt-96"
+      >
+        <ProductItem
+          v-for="item in products"
+          :key="item.slug"
+          :data="item"
+          data-anim-sick-slide-up=""
+        />
+      </div>
+    </section>
+
     <!-- blog -->
     <section class="flex flex-col container mx-auto px-5 laptop:px-20 blog">
       <h2
-        class="text-5xl laptop:text-6xl leading-tight laptop:w-6/12"
+        class="text-5xl laptop:text-7xl !leading-tight laptop:w-11/12"
         data-cursor-size="200"
         data-cursor-exclusion
+        data-anim-slide-up
       >
-        I sharing the things in <span class="text-gray-400"> community </span>
+        <span class="laptop:pl-28">What i sharing.</span>
+        <br />
+        Is just about my <span class="text-gray-400"> experiences </span> that
+        can help you.
       </h2>
-      <div class="grid grid-cols-2 laptop:grid-cols-6 gap-6 mt-20 list">
-        <BlogPostItem v-for="post in posts" :key="post.slug" :data="post" />
-      </div>
-
-      <div class="flex justify-center mt-32 actions">
+      <div class="flex mt-10 actions" data-anim-slide-up>
         <OutlineButton link="/blog">
           Read More <i class="fi fi-rr-arrow-right"></i
         ></OutlineButton>
+      </div>
+      <div
+        class="grid grid-cols-2 laptop:grid-cols-6 gap-6 mt-20 list laptop:mt-96"
+      >
+        <BlogPostItem
+          v-for="post in posts"
+          :key="post.slug"
+          :data="post"
+          data-anim-sick-slide-up
+        />
       </div>
     </section>
   </main>
@@ -134,7 +210,7 @@
 
 <script setup lang="ts">
 import { gsap } from 'gsap'
-import { BlogPost, Project } from '~/types/content'
+import { App, BlogPost, Product, Project } from '~/types/content'
 
 definePageMeta({
   layout: 'main',
@@ -168,13 +244,23 @@ const detailQuery = `
       "thumbnail": thumbnail.asset -> url,
       "slug": slug.current,
       "tag": tags[0]
+    },
+    "apps": *[_type == "app"] | order(_created desc){
+      ...,
+      "thumbnail": thumbnail.asset -> url,
+    },
+    "products": *[_type == "product"] | order(_createdAt desc){
+      title,
+      initialPrice,
+      "thumbnail":images[0].asset->url,
+      "slug": slug.current,
     }
   }
 `
 
 const {
   data: {
-    value: { posts, stories, projects },
+    value: { posts, stories, projects, apps, products },
   },
 } = await useSanityQuery<{
   posts: BlogPost[]
@@ -183,46 +269,86 @@ const {
     url: string
   }[]
   projects: Project[]
+  apps: App[]
+  products: Product[]
 }>(detailQuery)
 
 // start the animation when finish load
 onMounted(() => {
+  useAnimation()
+
+  gsap.from('section.intro h2', {
+    opacity: 0,
+    y: 300,
+    duration: 1.2,
+    scrollTrigger: {
+      trigger: 'section.intro h2',
+      scrub: true,
+      end: '+=900',
+    },
+  })
+  gsap.from('section.intro p', {
+    opacity: 0,
+    y: 200,
+    duration: 1.8,
+    stagger: 0.4,
+    scrollTrigger: {
+      trigger: 'section.intro h2',
+      scrub: true,
+      end: '+=800',
+    },
+  })
+  gsap.from('section.intro .actions', {
+    opacity: 0,
+    y: 200,
+    duration: 1.2,
+    scrollTrigger: {
+      trigger: 'section.intro .actions',
+      scrub: true,
+    },
+  })
+
   gsap
-    .timeline({})
-    .from('section.intro h2', {
-      opacity: 0,
-      y: 300,
-      duration: 1.2,
-      ease: 'back',
+    .timeline({
+      scrollTrigger: {
+        trigger: 'section.projects',
+        scrub: 1,
+        start: 'top bottom',
+        end: 'bottom top',
+      },
     })
-    .from('section.intro p', {
-      opacity: 0,
-      y: 200,
+    .from('section.projects h2', {
+      y: 5000,
+      scale: 8,
       duration: 1.2,
-      stagger: 0.2,
-      ease: 'back',
     })
-    .from('section.intro .actions', {
-      opacity: 0,
+    .from('section.projects .actions', {
       y: 200,
-      duration: 1.2,
-      ease: 'back',
+      opacity: 0,
+    })
+    .from('section.projects .list', {
+      y: 200,
+      duration: 1.0,
     })
 
   gsap
     .timeline({
-      defaults: {
-        duration: 1.2,
+      scrollTrigger: {
+        trigger: 'section.activity',
+        scrub: 1,
+        start: 'top bottom',
+        end: 'bottom top',
       },
-      scrollTrigger: 'section.activity',
     })
     .from('section.activity h2', {
       y: 200,
       opacity: 0,
+      duration: 1.2,
     })
     .from('section.activity .list', {
       y: 200,
       opacity: 0,
+      duration: 1.2,
     })
 
   gsap
@@ -242,27 +368,6 @@ onMounted(() => {
       opacity: 0,
     })
     .from('section.blog .actions', {
-      y: 200,
-      opacity: 0,
-    })
-
-  gsap
-    .timeline({
-      defaults: {
-        duration: 1.2,
-        ease: 'back',
-      },
-      scrollTrigger: 'section.projects',
-    })
-    .from('section.projects h2', {
-      y: 200,
-      opacity: 0,
-    })
-    .from('section.projects .list', {
-      y: 200,
-      opacity: 0,
-    })
-    .from('section.projects .actions', {
       y: 200,
       opacity: 0,
     })

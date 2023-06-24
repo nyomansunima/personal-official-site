@@ -47,6 +47,8 @@ definePageMeta({
 useSeoMeta({
   title: 'Frequently Asked Questions',
   description: 'Something help for you from other people questions',
+  ogTitle: 'Frequently Asked Questions | Nyoman Sunima',
+  ogDescription: 'Something help for you from other people questions',
 })
 
 const {
@@ -68,7 +70,10 @@ onMounted(() => {
     opacity: 0,
     duration: 1.2,
     stagger: 0.2,
-    scrollTrigger: 'section.question ul',
+    scrollTrigger: {
+      trigger: 'section.question ul',
+      start: 'top center',
+    },
   })
 })
 </script>

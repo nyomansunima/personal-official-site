@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     '@nuxt/image-edge',
     '@nuxtjs/sanity',
     '@nuxtjs/tailwindcss',
+    '@vueuse/nuxt',
   ],
   routeRules: {
     '/blog/**': { isr: true },

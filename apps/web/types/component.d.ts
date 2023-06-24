@@ -2,10 +2,6 @@ export interface BaseButtonProps {
   link?: string
 }
 
-export interface BaseButtonEmits {
-  (e: 'click'): void
-}
-
 export interface BaseInputProps {
   preIcon?: string
   sufIcon?: string

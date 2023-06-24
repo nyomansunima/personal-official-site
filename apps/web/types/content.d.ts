@@ -74,3 +74,35 @@ export interface Faq {
   question: string
   answer: string
 }
+
+export interface App {
+  thumbnail: string
+  title: string
+  tagline: string
+  url: string
+}
+
+export interface ProductDetail {
+  slug: string
+  title: string
+  images: string[]
+  tags: string[]
+  initialPrice: number
+  desc: string
+  highlights: {
+    property: string
+    value: string
+  }[]
+  contexts: {
+    title: string
+    url: string
+  }[]
+  about: string
+}
+
+interface Product {
+  title: string
+  thumbnail: string
+  slug: string
+  initialPrice: number
+}

@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
 import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ScrollTrigger, MotionPathPlugin, ScrollToPlugin } from 'gsap/all'
 import Lenis from '@studio-freight/lenis'
 
 const {
@@ -18,7 +18,7 @@ const {
 } = useRuntimeConfig()
 
 // register the gsap plugins
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, ScrollToPlugin)
 
 // scroll smoother using lenis
 onMounted(() => {

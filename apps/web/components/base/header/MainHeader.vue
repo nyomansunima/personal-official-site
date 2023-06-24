@@ -22,9 +22,25 @@
         class="text-lg font-semibold mr-3"
         >Blog</NuxtLink
       >
+
+      <!-- is on shop -->
+      <NuxtLink
+        to="/shop"
+        v-show="$route.path.includes('/shop')"
+        class="text-lg font-semibold mr-3"
+        >Shop</NuxtLink
+      >
     </div>
 
     <div class="flex flex-1"></div>
+
+    <div class="shop mr-5">
+      <IconButton
+        link="/shop"
+        class="flex justify-center items-center h-10 w-10 rounded-full bg-black text-white transition-all duration-500 hover:scale-95 dark:bg-white dark:text-black"
+        ><i class="fi fi-sr-basket-shopping-simple"></i
+      ></IconButton>
+    </div>
 
     <!-- actions to menu and donations -->
     <div
@@ -44,8 +60,22 @@
     </div>
 
     <!-- modal menus -->
-    <MainMenuModal :is-show="isShowMenu" />
-    <DonationModal :is-show="isShowDonation" />
+    <MainMenuModal
+      :is-show="isShowMenu"
+      @close="
+        () => {
+          isShowMenu = false
+        }
+      "
+    />
+    <DonationModal
+      :is-show="isShowDonation"
+      @close="
+        () => {
+          isShowDonation = false
+        }
+      "
+    />
   </header>
 </template>
 
@@ -63,7 +93,7 @@ const toggleDonation = () => {
 }
 
 onMounted(() => {
-  gsap.from(['.brand', '.buttons'], {
+  gsap.from(['.brand', '.buttons', '.shop'], {
     y: -200,
     opacity: 0,
     ease: 'back',

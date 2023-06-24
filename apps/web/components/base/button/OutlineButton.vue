@@ -1,21 +1,22 @@
 <template>
   <button
-    @click="link ? viewLink() : $emit('click')"
-    class="flex justify-center items-center h-16 rounded-full px-8 text-lg font-medium gap-3 border border-gray-100 dark:border-gray-800 transition-all duration-700 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
-    :class="class"
+    @click="link ? viewLink() : undefined"
+    class="flex justify-center items-center h-16 rounded-full px-8 text-lg font-medium gap-3 border border-gray-200 dark:border-gray-800 transition-all duration-700 group hover:text-white dark:hover:text-black relative overflow-hidden"
   >
-    <slot />
+    <span
+      class="absolute h-full w-full bg-black dark:bg-white transition-all duration-700 -translate-x-[110%] group-hover:translate-x-0 rounded-full"
+    />
+    <span class="relative flex gap-4 items-center justify-center">
+      <slot />
+    </span>
   </button>
 </template>
 
 <script setup lang="ts">
-import { BaseButtonProps, BaseButtonEmits } from '~/types/component'
+import { BaseButtonProps } from '~/types/component'
 
 interface OutlineButtonProps extends BaseButtonProps {}
 const { link } = defineProps<OutlineButtonProps>()
-
-interface OutlineButtonEmits extends BaseButtonEmits {}
-defineEmits<OutlineButtonEmits>()
 
 const viewLink = () => {
   if (link?.includes('https://') || link?.includes('http://')) {

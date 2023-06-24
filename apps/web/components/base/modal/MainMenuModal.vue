@@ -3,6 +3,7 @@
     <div
       v-show="isShow"
       class="flex flex-col fixed top-24 right-16 px-1 py-4 rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-black z-30 w-[280px]"
+      ref="modalRef"
     >
       <h3
         class="flex border-b border-b-gray-100 dark:border-b-gray-800 pb-2 font-semibold px-4"
@@ -32,9 +33,18 @@
 
 <script setup lang="ts">
 import { header } from '~/data/menu.json'
+import { onClickOutside } from '@vueuse/core'
+
+const modalRef = ref<HTMLDivElement>()
+onClickOutside(modalRef, () => emit('close'))
 
 interface MainMenuModalProps {
   isShow?: boolean
 }
 defineProps<MainMenuModalProps>()
+
+interface MainMenuModalEmits {
+  (e: 'close'): void
+}
+const emit = defineEmits<MainMenuModalEmits>()
 </script>

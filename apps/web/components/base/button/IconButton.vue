@@ -1,8 +1,7 @@
 <template>
   <button
     class="flex justify-center items-center"
-    :class="$props.class"
-    :type="type"
+    @click="link ? viewLink() : undefined"
   >
     <slot />
   </button>
@@ -12,7 +11,15 @@
 import { BaseButtonProps } from '~/types/component'
 
 interface IconButtonProps extends BaseButtonProps {}
-const { type = 'button' } = defineProps<IconButtonProps>()
+const { link } = defineProps<IconButtonProps>()
+
+const viewLink = () => {
+  if (link?.includes('https://') || link?.includes('http://')) {
+    window.open(link)
+  } else {
+    navigateTo(link)
+  }
+}
 </script>
 
 <style scoped>
