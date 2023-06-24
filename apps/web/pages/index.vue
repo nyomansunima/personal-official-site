@@ -6,6 +6,7 @@
         class="text-5xl laptop:text-7xl !leading-tight w-11/12"
         data-cursor-size="200"
         data-cursor-exclusion
+        data-anim-slide-up
       >
         <span class="laptop:pl-28">In search of quality.</span>
         <br />
@@ -277,16 +278,6 @@ const {
 onMounted(() => {
   useAnimation()
 
-  gsap.from('section.intro h2', {
-    opacity: 0,
-    y: 300,
-    duration: 1.2,
-    scrollTrigger: {
-      trigger: 'section.intro h2',
-      scrub: true,
-      end: '+=900',
-    },
-  })
   gsap.from('section.intro p', {
     opacity: 0,
     y: 200,

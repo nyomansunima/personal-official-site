@@ -6,7 +6,7 @@
     },
     {
       "label": "What i do",
-      "path": "/service"
+      "path": "/services"
     },
     {
       "label": "About me",
@@ -64,19 +64,19 @@
       "menus": [
         {
           "label": "Web Development",
-          "link": "/service/web-development"
+          "link": "/services/web-development"
         },
         {
           "label": "Mobile Development",
-          "link": "/service/mobile-development"
+          "link": "/services/mobile-development"
         },
         {
           "label": "UI UX Design",
-          "link": "/service/ui-ux-design"
+          "link": "/services/ui-ux-design"
         },
         {
           "label": "Backend & Devops",
-          "link": "/service/backend-devops"
+          "link": "/services/backend-devops"
         }
       ]
     },
