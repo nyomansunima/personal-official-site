@@ -43,16 +43,21 @@ export interface BioContent {
   }[]
 }
 
+export interface Timeline {
+  timeline: string
+  image: string
+  url: string
+  title: string
+  desc: string
+  isStory: boolean
+}
+
 export interface AboutDetail {
   stories: {
     url: string
     title: string
   }[]
-  timelines: {
-    url: string
-    title: string
-    desc: string
-  }[]
+  timelines: Timeline[]
   contributions: {
     url: string
     title: string

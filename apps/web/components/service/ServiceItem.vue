@@ -16,23 +16,24 @@
     </div>
     <div class="flex flex-col w-1/2 gap-10 pt-16 content">
       <h2
-        class="text-5xl font-medium leading-tight"
+        class="text-7xl font-medium leading-tight"
         data-cursor-size="200"
         data-cursor-exclusion
+        animation="text-line-mask-opacity-scrub"
       >
         {{ data.title }}
       </h2>
 
-      <p class="leading-relaxed text-lg">
-        {{ data.desc }}
-      </p>
+      <div animation="text-slide-up">
+        <p class="leading-relaxed text-xl" animation-target>
+          {{ data.desc }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { gsap } from 'gsap'
-
 const itemRef = ref<HTMLDivElement>()
 
 interface ServiceItemProps {
@@ -44,25 +45,4 @@ interface ServiceItemProps {
   }
 }
 defineProps<ServiceItemProps>()
-
-onMounted(() => {
-  gsap.from(itemRef.value?.querySelector('.image')!, {
-    y: 200,
-    opacity: 0,
-    duration: 1.2,
-    scrollTrigger: {
-      trigger: itemRef.value,
-      start: 'top 75%',
-    },
-  })
-  gsap.from(itemRef.value?.querySelector('.content')!, {
-    opacity: 0,
-    duration: 1.2,
-    delay: 0.7,
-    scrollTrigger: {
-      trigger: itemRef.value,
-      start: 'top 90%',
-    },
-  })
-})
 </script>

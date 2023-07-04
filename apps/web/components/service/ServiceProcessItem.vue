@@ -15,8 +15,6 @@
 </template>
 
 <script setup lang="ts">
-import { gsap } from 'gsap'
-
 const itemRef = ref<HTMLDivElement>()
 
 interface ServiceProcessItemProps {
@@ -27,14 +25,4 @@ interface ServiceProcessItemProps {
   }
 }
 defineProps<ServiceProcessItemProps>()
-
-onMounted(() => {
-  gsap.from(itemRef.value!, {
-    y: 200,
-    opacity: 0,
-    ease: 'back',
-    duration: 1.2,
-    scrollTrigger: itemRef.value,
-  })
-})
 </script>

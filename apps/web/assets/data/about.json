@@ -1,0 +1,44 @@
+{
+  "totals": [
+    {
+      "label": "Total Products",
+      "count": "2"
+    },
+    {
+      "label": "Total Followers",
+      "count": "1.2k"
+    },
+    {
+      "label": "Total Clients",
+      "count": "5"
+    },
+    {
+      "label": "Total Contributions",
+      "count": "3"
+    },
+    {
+      "label": "Total works",
+      "count": "3"
+    }
+  ],
+  "careers": [
+    {
+      "timeline": "2019 - 2021",
+      "rule": "Fullstack Developer",
+      "domain": "Dimata IT Solutions",
+      "type": "Fulltime"
+    },
+    {
+      "timeline": "2021 - 2022",
+      "rule": "Fullstack Developer",
+      "domain": "Tomisha",
+      "type": "Freelance"
+    },
+    {
+      "timeline": "2022",
+      "rule": "Fullstack Developer",
+      "domain": "Enterprise",
+      "type": "Freelance"
+    }
+  ]
+}

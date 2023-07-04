@@ -36,6 +36,30 @@
 }
 
 /* presets */
+/* preset for icon, animation and base elements */
 .fi {
   @apply flex justify-center items-center;
+}
+
+[animation^='text-word'] {
+  font-kerning: none;
+}
+
+[animation] [animation-target] {
+  @apply opacity-0;
+}
+
+.word,
+.line {
+  overflow: hidden;
+  @apply relative;
+}
+
+.word {
+  @apply -my-5;
+}
+
+.line-mask {
+  @apply absolute right-0 top-0 w-full h-full bg-white dark:bg-black bg-opacity-70 dark:bg-opacity-70;
+  z-index: 999;
 }

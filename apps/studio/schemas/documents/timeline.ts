@@ -8,6 +8,21 @@ export default defineType({
   icon: Send,
   fields: [
     defineField({
+      title: 'Timeline',
+      name: 'timeline',
+      type: 'string',
+    }),
+    defineField({
+      title: 'Is Story',
+      name: 'isStory',
+      type: 'boolean',
+    }),
+    defineField({
+      title: 'Image',
+      name: 'image',
+      type: 'image',
+    }),
+    defineField({
       title: 'Title',
       name: 'title',
       type: 'string',
@@ -26,7 +41,7 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
-      subtitle: 'url',
+      subtitle: 'timeline',
     },
   },
 })

@@ -7,7 +7,7 @@
     external
     target="_blank"
   >
-    <picture class="flex flex-1 min-h-[240px] rounded-2xl overflow-hidden">
+    <picture class="flex flex-1 min-h-[340px] rounded-3xl overflow-hidden">
       <NuxtImg
         :src="data.thumbnail"
         class="h-full w-full object-cover transition-all duration-700 hover:scale-105"

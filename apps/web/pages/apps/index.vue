@@ -44,19 +44,28 @@
       </svg>
 
       <h2
-        class="text-5xl laptop:text-7xl !leading-tight laptop:w-10/12 relative"
+        class="text-5xl laptop:text-8xl !leading-tight laptop:w-10/12 relative"
         data-cursor-size="200"
         data-cursor-exclusion
+        animation="text-char-opacity"
       >
-        <span class="laptop:pl-28">Good apps build with dedication.</span>
-        Solving problem is must.
+        <span class="laptop:pl-28"></span>
+        Good apps build with dedication. Solving problem is must.
       </h2>
     </section>
 
     <!-- all apps -->
     <section class="flex container mx-auto laptop:px-20 px-5">
-      <div class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 gap-5">
-        <AppItem v-for="(item, i) in apps" :key="i" :data="item" />
+      <div
+        class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 gap-5"
+        animation="item-slide-up-scrub"
+      >
+        <AppItem
+          v-for="(item, i) in apps"
+          :key="i"
+          :data="item"
+          animation-target
+        />
       </div>
     </section>
   </main>
@@ -88,16 +97,7 @@ onMounted(() => {
   MotionPathPlugin.convertToPath('#globe-anim-1')
   MotionPathPlugin.convertToPath('#globe-anim-2')
 
-  gsap.from('section.intro h2', {
-    y: 400,
-    opacity: 0,
-    duration: 1.2,
-    scrollTrigger: {
-      trigger: 'section.intro h2',
-      end: '+=500',
-      scrub: true,
-    },
-  })
+  useAnimation()
 
   gsap.from('#globe-animation', {
     opacity: 0,

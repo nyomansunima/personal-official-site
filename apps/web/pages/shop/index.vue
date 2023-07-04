@@ -2,15 +2,13 @@
   <main class="flex flex-col laptop:gap-80 gap-40 laptop:py-60 py-32">
     <section class="flex flex-col container mx-auto laptop:px-20 px-5 intro">
       <h2
-        class="text-5xl laptop:text-7xl !leading-tight laptop:w-10/12"
+        class="text-5xl laptop:text-8xl !leading-tight laptop:w-10/12"
         data-cursor-size="200"
         data-cursor-exclusion
+        animation="text-char-opacity"
       >
-        <span class="laptop:pl-28">
-          Because good product is solve your problem.
-        </span>
-        <br />
-        Not to make you confused.
+        <span class="laptop:pl-28"> </span>Because good product is solve your
+        problem. Not to make you confused.
       </h2>
     </section>
 
@@ -45,24 +43,27 @@
         <h3 class="text-4xl !leading-tight">Recomended</h3>
         <div
           class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 gap-x-6 gap-y-16 mt-10 mb-28 list"
+          animation="item-slide-up-scrub"
         >
           <ProductItem
             v-for="(product, i) in recomendeds"
             :key="i"
             :data="product"
+            animation-target
           />
         </div>
       </div>
 
       <!-- all products -->
       <div
-        class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 gap-x-6 gap-y-16 laptop:mt-96"
+        class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 gap-x-6 gap-y-16 laptop:mt-36"
+        animation="item-slide-up-scrub"
       >
         <ProductItem
           v-for="(product, i) in products"
           :key="i"
           :data="product"
-          data-anim-sick-slide-up
+          animation-target
         />
       </div>
     </section>
@@ -71,10 +72,7 @@
 
 <script setup lang="ts">
 import { gsap } from 'gsap'
-import { useWindowSize } from '@vueuse/core'
 import { Product } from '~/types/content'
-
-const windowSize = useWindowSize()
 
 const tags = [
   'Design',
@@ -130,16 +128,6 @@ useSeoMeta({
 
 onMounted(() => {
   useAnimation()
-  gsap.from('section.intro', {
-    y: 300,
-    opacity: 0,
-    duration: 0.2,
-    scrollTrigger: {
-      trigger: 'section.intro',
-      scrub: true,
-      end: '+=1000',
-    },
-  })
 
   gsap.from('.tags .item', {
     y: 200,
@@ -160,16 +148,6 @@ onMounted(() => {
     duration: 1.9,
     scrollTrigger: {
       trigger: '.input-search',
-      scrub: true,
-      end: '+=400',
-    },
-  })
-
-  gsap.from('.featured', {
-    y: 200,
-    opacity: 0,
-    scrollTrigger: {
-      trigger: '.featured',
       scrub: true,
       end: '+=400',
     },

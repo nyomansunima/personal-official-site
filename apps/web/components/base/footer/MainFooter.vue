@@ -65,8 +65,8 @@
 </template>
 
 <script setup lang="ts">
-import { socials } from '~/data/social.json'
-import { footer as footerMenus } from '~/data/menu.json'
+import { socials } from '~/assets/data/social.json'
+import { footer as footerMenus } from '~/assets/data/menu.json'
 
 const currentYear = computed(() => new Date().getFullYear())
 </script>

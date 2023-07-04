@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import { header } from '~/data/menu.json'
+import { header } from '~/assets/data/menu.json'
 import { onClickOutside } from '@vueuse/core'
 
 const modalRef = ref<HTMLDivElement>()

@@ -39,7 +39,7 @@
 
 <script setup lang="ts">
 import { useForm } from 'vee-validate'
-import { socials } from '~/data/social.json'
+import { socials } from '~/assets/data/social.json'
 import { object, string } from 'yup'
 
 definePageMeta({

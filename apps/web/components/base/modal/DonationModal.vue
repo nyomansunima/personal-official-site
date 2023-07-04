@@ -33,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import { donations } from '~/data/menu.json'
+import { donations } from '~/assets/data/menu.json'
 import { onClickOutside } from '@vueuse/core'
 
 const modalRef = ref<HTMLDivElement>()
