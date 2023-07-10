@@ -157,24 +157,13 @@
 </template>
 
 <script setup lang="ts">
+import { bioQuery } from '~/lib/queries'
 import { BioContent } from '~/types/content'
-const query = `
-  *[_type == "page" && slug.current == $slug][0]{
-    content[0]{
-      ...,
-      "avatar": avatar.asset -> url,
-      links[]{
-        ...,
-        "customColor": customColor.hex,
-      }
-    }
-  }
-`
 const {
   data: {
     value: { content },
   },
-} = await useSanityQuery<{ content: BioContent }>(query, {
+} = await useSanityQuery<{ content: BioContent }>(bioQuery, {
   slug: 'bio',
 })
 

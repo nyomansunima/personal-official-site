@@ -3,9 +3,10 @@
     <!-- intro -->
     <section class="flex container mx-auto px-5 laptop:px-20 intro">
       <h2
-        class="text-5xl laptop:text-7xl leading-tight laptop:w-10/12"
+        class="text-5xl laptop:text-8xl !leading-tight laptop:w-10/12"
         data-cursor-size="200"
         data-cursor-exclusion
+        animation="text-char-opacity"
       >
         Find the answer from Frequently asked questions
       </h2>
@@ -21,23 +22,28 @@
     </section>
 
     <!-- Get in touch -->
-    <section class="flex flex-col items-center container mx-auto px-20">
-      <h2
-        class="text-6xl font-medium mx-auto leading-tight"
-        data-cursor-size="200"
-        data-cursor-exclusion
-      >
-        Have a question?
-      </h2>
-      <NuxtLink to="/contact" class="text-6xl font-normal dark:text-gray-400"
-        >Tell me about it</NuxtLink
-      >
+    <section
+      class="flex flex-col items-center container mx-auto px-20 text-5xl laptop:text-8xl"
+      animation="slide-up"
+    >
+      <div animation-target>
+        <h2
+          class="font-medium mx-auto leading-tight"
+          data-cursor-size="200"
+          data-cursor-exclusion
+        >
+          Have a question?
+        </h2>
+        <NuxtLink to="/contact" class="font-normal dark:text-gray-400"
+          >Tell me about it</NuxtLink
+        >
+      </div>
     </section>
   </main>
 </template>
 
 <script setup lang="ts">
-import { gsap } from 'gsap'
+import { faqQuery } from '~/lib/queries'
 import { Faq } from '~/types/content'
 
 definePageMeta({
@@ -53,27 +59,9 @@ useSeoMeta({
 
 const {
   data: { value: questions },
-} = await useSanityQuery<Faq[]>(`*[_type == "faq"] | order(_createdAt asc){
-  ...
-}`)
+} = await useSanityQuery<Faq[]>(faqQuery)
 
 onMounted(() => {
-  gsap.from('section.intro h2', {
-    opacity: 0,
-    y: 200,
-    ease: 'back',
-    duration: 1.3,
-  })
-
-  gsap.from('section.question ul li', {
-    y: 100,
-    opacity: 0,
-    duration: 1.2,
-    stagger: 0.2,
-    scrollTrigger: {
-      trigger: 'section.question ul',
-      start: 'top center',
-    },
-  })
+  useAnimation()
 })
 </script>

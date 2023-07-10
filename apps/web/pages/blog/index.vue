@@ -8,7 +8,7 @@
       >
         <BlogPostItem
           :size="index == 0 ? 'large' : 'medium'"
-          v-for="(post, index) in featuredPost.data.value"
+          v-for="(post, index) in featured"
           :data="post"
           :key="post.slug"
         />
@@ -37,14 +37,13 @@
       <!-- articles -->
       <div
         class="flex flex-col laptop:grid laptop:grid-cols-6 gap-x-8 gap-y-16 mt-28 grid-flow-row"
+        animation="item-slide-up-scrub"
       >
         <BlogPostItem
-          v-for="(post, index) in posts.data.value"
+          v-for="(post, index) in latest"
           :key="index"
-          :class="
-            index === 1 ? 'row-start-2' : index === 2 ? 'row-start-3' : ''
-          "
           :data="post"
+          animation-target
         />
       </div>
     </section>
@@ -53,32 +52,17 @@
 
 <script setup lang="ts">
 import { tags } from '~/assets/data/blog.json'
+import { blogQuery } from '~/lib/queries'
 import { BlogPost } from '~/types/content'
 
-const featuredQuery = `
-  *[_type == "blog" && featured == true][0...2]{
-    "slug": slug.current,
-    title,
-    "thumbnail": thumbnail.asset -> url,
-    "tag": tags[0],
-    _createdAt,
-    featured,
-    "isIncoming": "Incoming" in tags[],
-  }
-`
-const postQuery = `
-  *[_type == "blog"] | order(_updatedAt desc){
-    "slug": slug.current,
-    title,
-    "thumbnail": thumbnail.asset -> url,
-    "tag": tags[0],
-    _createdAt,
-    featured,
-    "isIncoming": "Incoming" in tags[],
-  }
-`
-const featuredPost = await useSanityQuery<BlogPost[]>(featuredQuery)
-const posts = await useSanityQuery<BlogPost[]>(postQuery)
+const {
+  data: {
+    value: { featured, latest },
+  },
+} = await useSanityQuery<{
+  featured: BlogPost[]
+  latest: BlogPost[]
+}>(blogQuery)
 
 useSeoMeta({
   title: 'Blog',
@@ -90,5 +74,9 @@ useSeoMeta({
 
 definePageMeta({
   layout: 'blog',
+})
+
+onMounted(() => {
+  useAnimation()
 })
 </script>

@@ -47,112 +47,141 @@ export default function useAnimation() {
   })
 
   const animEls = document.body.querySelectorAll<HTMLElement>('[animation]')
-
-  // only for the individuals animation
   animEls.forEach((el) => {
     const animation = el.getAttribute('animation')
     const duration = parseInt(el.getAttribute('animation-duration') || '1.2')
     const target = el.querySelector('[animation-target]') ?? el
+    const targets = el.querySelectorAll('[animation-target]') ?? [el]
+    const triggerStart = el.getAttribute('animation-trigger-start')
+    const triggerEnd = el.getAttribute('animation-trigger-end')
 
-    // filter the animation
-    if (animation == 'text-word-slide-up') {
-      new SplitType(el, { types: ['words'] })
-      let tl = gsap.timeline({ paused: true })
-      tl.from(el.querySelectorAll('.word'), {
-        yPercent: 100,
-        opacity: 0,
-        duration: duration,
-        ease: 'back',
-        stagger: 0.1,
-      })
-      triggerAnimationOnScroll(el, tl)
-    }
+    function startAnimate() {
+      // filter the animation
+      if (animation == 'text-word-slide-up') {
+        let tl = gsap.timeline({ paused: true })
+        tl.from(target.querySelectorAll('.word'), {
+          yPercent: 100,
+          opacity: 0,
+          duration: duration,
+          ease: 'back',
+          stagger: 0.1,
+        })
+        triggerAnimationOnScroll(el, tl)
+      }
 
-    if (animation == 'text-char-slide-up') {
-      new SplitType(el, { types: ['lines', 'chars'] })
-      let tl = gsap.timeline({ paused: true })
-      tl.from(el.querySelectorAll('.char'), {
-        yPercent: 100,
-        opacity: 0,
-        duration: duration,
-        ease: 'back',
-        stagger: 0.02,
-      })
-      triggerAnimationOnScroll(el, tl)
-    }
+      if (animation == 'text-char-slide-up') {
+        let tl = gsap.timeline({ paused: true })
+        tl.from(target.querySelectorAll('.char'), {
+          yPercent: 100,
+          opacity: 0,
+          duration: duration,
+          ease: 'back',
+          stagger: 0.02,
+        })
+        triggerAnimationOnScroll(el, tl)
+      }
 
-    if (animation == 'text-char-slide-down') {
-      new SplitType(el, { types: ['lines', 'chars'] })
-      let tl = gsap.timeline({ paused: true })
-      tl.from(el.querySelectorAll('.char'), {
-        yPercent: -100,
-        opacity: 0,
-        duration: duration,
-        ease: 'back',
-        stagger: 0.02,
-      })
-      triggerAnimationOnScroll(el, tl)
-    }
+      if (animation == 'text-char-slide-down') {
+        let tl = gsap.timeline({ paused: true })
+        tl.from(target.querySelectorAll('.char'), {
+          yPercent: -100,
+          opacity: 0,
+          duration: duration,
+          ease: 'back',
+          stagger: 0.02,
+        })
+        triggerAnimationOnScroll(el, tl)
+      }
 
-    if (animation == 'text-slide-up' && target) {
-      let tl = gsap.timeline({ paused: true })
-      tl.from(target, {
-        yPercent: 100,
-        opacity: 0,
-        duration: duration,
-        ease: 'back',
-      })
-      triggerAnimationOnScroll(el, tl, 'top 70%')
-    }
+      if (animation == 'text-char-opacity') {
+        let tl = gsap.timeline({ paused: true })
+        tl.from(target.querySelectorAll('.char'), {
+          opacity: 0.1,
+          duration: duration,
+          ease: 'expo',
+          stagger: 0.05,
+        })
+        triggerAnimationOnScroll(el, tl, 'top 80%')
+      }
 
-    if (animation == 'text-char-opacity') {
-      new SplitType(el, { types: ['lines', 'chars'] })
-      let tl = gsap.timeline({ paused: true })
-      tl.from(el.querySelectorAll('.char'), {
-        opacity: 0.1,
-        duration: duration,
-        ease: 'expo',
-        stagger: 0.05,
-      })
-      triggerAnimationOnScroll(el, tl, 'top 80%')
-    }
+      if (animation == 'text-line-mask-opacity-scrub') {
+        target.querySelectorAll('.line').forEach((line) => {
+          const lineMaskEl = document.createElement('div')
+          lineMaskEl.classList.add('line-mask')
+          line.appendChild(lineMaskEl)
 
-    if (animation == 'text-line-mask-opacity-scrub') {
-      new SplitType(el, { types: ['lines'] })
-      el.querySelectorAll('.line').forEach((line) => {
-        const lineMaskEl = document.createElement('div')
-        lineMaskEl.classList.add('line-mask')
-        line.appendChild(lineMaskEl)
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: line,
+              start: 'top 70%',
+              end: 'bottom 30%',
+              scrub: 1,
+            },
+          })
+          tl.to(lineMaskEl, {
+            width: '0%',
+            duration: duration,
+          })
+        })
+      }
 
+      if (animation == 'item-slide-up-scrub') {
+        const yAmount = el.getAttribute('animation-amount') ?? '200'
         const tl = gsap.timeline({
           scrollTrigger: {
-            trigger: line,
-            start: 'top 70%',
-            end: 'bottom 30%',
-            scrub: 1,
+            trigger: targets,
+            scrub: true,
           },
         })
-        tl.to(lineMaskEl, {
-          width: '0%',
+
+        tl.from(targets, {
+          y: yAmount,
+          stagger: 0.1,
+          ease: 'back',
+        })
+      }
+
+      if (animation == 'slide-up') {
+        const tl = gsap.timeline({ paused: true })
+        tl.from(target, {
+          yPercent: 100,
+          opacity: 0,
+          ease: 'expo',
           duration: duration,
         })
+        triggerAnimationOnScroll(el, tl, triggerStart)
+      }
+
+      if (animation == 'fade') {
+        const tl = gsap.timeline({ paused: true })
+        tl.from(target, {
+          opacity: 0,
+          ease: 'expo',
+          duration: duration,
+        })
+        triggerAnimationOnScroll(el, tl)
+      }
+    }
+
+    // split text some of the element that can
+    // run the text animation
+    // can be run also when the window is being reized
+    if (
+      animation?.includes('text-word') ||
+      animation?.includes('text-char') ||
+      animation?.includes('text-line')
+    ) {
+      const splitTypes = new SplitType(el)
+      // resize and start animate
+      window.addEventListener('resize', (e) => {
+        if (window.innerWidth < 1024) {
+          splitTypes.split({})
+          startAnimate()
+        }
       })
     }
 
-    if (animation == 'item-slide-up-scrub') {
-      const yAmount = el.getAttribute('animation-amount') ?? '200'
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: el.querySelectorAll('[animation-target]'),
-          scrub: true,
-        },
-      })
-
-      tl.from(el.querySelectorAll('[animation-target]'), {
-        y: yAmount,
-        stagger: 0.1,
-        ease: 'back',
-      })
-    }
+    // trigger the animation to start
+    startAnimate()
   })
 }

@@ -3,17 +3,12 @@
     <!-- intro section -->
     <section class="container mx-auto px-20 intro">
       <h2
-        class="text-8xl font-medium leading-loose w-10/12 text-center mx-auto"
+        class="text-5xl laptop:text-8xl font-medium !leading-tight w-10/12 text-center mx-auto"
         data-cursor-size="200"
         data-cursor-exclusion
         animation="text-char-slide-up"
       >
-        I
-        <span
-          class="border-4 border-black dark:border-gray-200 px-10 py-0 rounded-full"
-          >crafting</span
-        >
-        app that work as solution
+        I craft product that that work for high solutions.
       </h2>
     </section>
 
@@ -30,21 +25,16 @@
     <!-- process -->
     <section class="flex flex-col items-center container mx-auto px-20 process">
       <h2
-        class="text-8xl font-medium laptop:w-10/12 leading-relaxed text-center"
+        class="text-5xl laptop:text-8xl font-medium laptop:w-10/12 !leading-tight text-center"
         data-cursor-size="200"
         data-cursor-exclusion
         animation="text-line-mask-opacity-scrub"
       >
-        Where the
-        <span
-          class="border-4 border-black dark:border-gray-200 px-10 py-0 rounded-full"
-          >great</span
-        >
-        things began
+        Here are where the great thing come from.
       </h2>
 
       <div
-        class="grid grid-cols-2 gap-x-5 gap-y-8 px-28 mt-32"
+        class="grid grid-cols-1 laptop:grid-cols-2 gap-x-5 gap-y-5 laptop:gap-y-8 laptop:px-28 mt-20 laptop:mt-32"
         animation="item-slide-up-scrub"
       >
         <ServiceProcessItem
@@ -58,17 +48,24 @@
     </section>
 
     <!-- Get in touch -->
-    <section class="flex flex-col items-center container mx-auto px-20">
-      <h2
-        class="text-8xl font-medium mx-auto leading-relaxed"
-        data-cursor-size="200"
-        data-cursor-exclusion
-      >
-        Have an idea?
-      </h2>
-      <NuxtLink to="/contact" class="text-8xl font-normal dark:text-gray-400"
-        >Tell me about it</NuxtLink
-      >
+    <section
+      class="flex flex-col items-center container mx-auto px-20"
+      animation="slide-up"
+    >
+      <div animation-target>
+        <h2
+          class="text-5xl laptop:text-8xl font-medium mx-auto leading-relaxed"
+          data-cursor-size="200"
+          data-cursor-exclusion
+        >
+          Have an idea?
+        </h2>
+        <NuxtLink
+          to="/contact"
+          class="text-5xl laptop:text-8xl font-normal dark:text-gray-400"
+          >Tell me about it</NuxtLink
+        >
+      </div>
     </section>
   </main>
 </template>

@@ -34,7 +34,7 @@
       <div
         class="flex flex-col laptop:w-8/12 text-xl leading-relaxed gap-10 mt-36"
       >
-        <div animation="text-slide-up" class="flex-none">
+        <div animation="slide-up" class="flex-none">
           <p animation-target>
             Hello, My name is Nyoman Sunima, a product designer and creative
             developer with a passion for solving problems. My journey as a
@@ -49,7 +49,7 @@
             impression.
           </p>
         </div>
-        <div animation="text-slide-up" class="flex-none">
+        <div animation="slide-up" class="flex-none">
           <p animation-target>
             But my expertise doesn't stop at design. I'm also a creative
             developer equipped with technical skills to bring ideas to life.
@@ -83,7 +83,7 @@
       <div
         class="grid grid-cols-1 laptop:grid-cols-2 text-xl leading-relaxed gap-10 mt-20 laptop:mt-36"
       >
-        <div animation="text-slide-up">
+        <div animation="slide-up">
           <p animation-target>
             My daily activities revolve around the exciting process of
             transforming concepts into fully-fledged applications. From the very
@@ -95,7 +95,7 @@
             process.
           </p>
         </div>
-        <div animation="text-slide-up">
+        <div animation="slide-up">
           <p animation-target>
             Design is where the magic happens. With a keen eye for aesthetics
             and an understanding of user experience, I create captivating
@@ -109,7 +109,7 @@
             forms the backbone of the final product.
           </p>
         </div>
-        <div animation="text-slide-up">
+        <div animation="slide-up">
           <p animation-target>
             I believe in the power of shipping products that make a real impact.
             With careful testing, bug fixes, and optimizations, I ensure that
@@ -208,7 +208,7 @@
         class="text-5xl laptop:text-8xl text-center !leading-tight"
         data-cursor-size="200"
         data-cursor-text="Contact Now"
-        animation="text-slide-up"
+        animation="slide-up"
       >
         <div animation-target>
           Let's make your idea become reality. We can discuss anything.
@@ -222,6 +222,7 @@
 import { AboutDetail } from '~/types/content'
 import data from '~/assets/data/about.json'
 import AboutCareerItem from '~/components/about/AboutCareerItem.vue'
+import { aboutQuery } from '~/lib/queries'
 
 definePageMeta({
   layout: 'main',
@@ -235,22 +236,9 @@ useSeoMeta({
 
 const {
   data: {
-    value: { stories, timelines, contributions },
+    value: { timelines },
   },
-} = await useSanityQuery<AboutDetail>(`
-  {
-    "timelines": *[_type == "timeline"] | order(_createdAt asc){
-      ...,
-      "image": image.asset -> url,
-    },
-    "contributions": *[_type == "contribute"] | order(_updatedAt desc) [0...6]{
-      "image": image.asset ->url,
-      title,
-      desc,
-      url,
-    }
-  }
-`)
+} = await useSanityQuery<AboutDetail>(aboutQuery)
 
 // animate the elements
 onMounted(() => {

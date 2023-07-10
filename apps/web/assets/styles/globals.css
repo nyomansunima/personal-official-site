@@ -41,7 +41,7 @@
   @apply flex justify-center items-center;
 }
 
-[animation^='text-word'] {
+[animation^='text-'] {
   font-kerning: none;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .word {
-  @apply -my-5;
+  @apply -my-6;
 }
 
 .line-mask {

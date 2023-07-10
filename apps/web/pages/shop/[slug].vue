@@ -104,22 +104,16 @@
 
 <script setup lang="ts">
 import { gsap } from 'gsap'
+import { productDetailQuery } from '~/lib/queries'
 import { ProductDetail } from '~/types/content'
 
 const route = useRoute()
 
 const {
   data: { value: product },
-} = await useSanityQuery<ProductDetail>(
-  `*[_type == "product" && slug.current == $slug][0]{
-  ...,
-  "slug": slug.current,
-  "images": images[].asset -> url,
-}`,
-  {
-    slug: route.params.slug || '',
-  },
-)
+} = await useSanityQuery<ProductDetail>(productDetailQuery, {
+  slug: route.params.slug || '',
+})
 definePageMeta({
   layout: 'main',
 })

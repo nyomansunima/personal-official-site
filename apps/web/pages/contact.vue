@@ -1,18 +1,23 @@
 <template>
   <main class="flex flex-col py-64">
     <div class="flex container mx-auto">
-      <div class="flex flex-col w-8/12 mx-auto">
-        <h2 class="text-7xl font-medium flex w-10/12 leading-tight">
+      <div class="flex flex-col laptop:w-8/12 px-5 laptop:px-0 mx-auto">
+        <h2
+          class="text-5xl laptop:text-8xl font-medium flex laptop:w-10/12 leading-tight"
+          animation="text-char-opacity"
+        >
           ✋ Hi, let's discus something
         </h2>
 
-        <div class="flex flex-wrap gap-4 items-center mt-16">
-          <OutlineButton
-            :link="social.url"
-            v-for="social in socials"
-            :key="social.label"
-            >{{ social.label }}</OutlineButton
-          >
+        <div animation="slide-up">
+          <div class="flex flex-wrap gap-4 items-center mt-16" animation-target>
+            <OutlineButton
+              :link="social.url"
+              v-for="social in socials"
+              :key="social.label"
+              >{{ social.label }}</OutlineButton
+            >
+          </div>
         </div>
 
         <!-- form -->
@@ -97,4 +102,8 @@ const sendMessage = useMutation(
     },
   },
 )
+
+onMounted(() => {
+  useAnimation()
+})
 </script>

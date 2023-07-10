@@ -22,6 +22,7 @@
             class="flex gap-3 w-full"
             :to="path"
             :external="path.includes('http')"
+            :target="path.includes('http') ? '_blank' : '_self'"
           >
             {{ label }}</NuxtLink
           >

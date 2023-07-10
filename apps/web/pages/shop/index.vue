@@ -72,6 +72,7 @@
 
 <script setup lang="ts">
 import { gsap } from 'gsap'
+import { productsQuery } from '~/lib/queries'
 import { Product } from '~/types/content'
 
 const tags = [
@@ -100,22 +101,7 @@ const {
 } = await useSanityQuery<{
   recomendeds: Product[]
   products: Product[]
-}>(`
-  {
-    "recomendeds": *[_type == "product"] | order(_createdAt desc)[0...4]{
-      title,
-      initialPrice,
-      "thumbnail":images[0].asset->url,
-      "slug": slug.current,
-    },
-    "products": *[_type == "product"] | order(_createdAt desc){
-      title,
-      initialPrice,
-      "thumbnail":images[0].asset->url,
-      "slug": slug.current,
-    }
-  }
-`)
+}>(productsQuery)
 
 definePageMeta({
   layout: 'main',

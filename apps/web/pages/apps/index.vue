@@ -74,6 +74,7 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
 import { MotionPathPlugin } from 'gsap/all'
+import { appsQuery } from '~/lib/queries'
 import { App } from '~/types/content'
 
 definePageMeta({
@@ -87,10 +88,7 @@ useSeoMeta({
 
 const {
   data: { value: apps },
-} = await useSanityQuery<App[]>(`*[_type == "app"] | order(_created desc){
-  ...,
-  "thumbnail": thumbnail.asset -> url,
-}`)
+} = await useSanityQuery<App[]>(appsQuery)
 
 // animate the everything element inside
 onMounted(() => {

@@ -53,6 +53,7 @@
 </template>
 
 <script setup lang="ts">
+import { blogDetailQuery } from '~/lib/queries'
 import { BlogDetail } from '~/types/content'
 
 definePageMeta({
@@ -66,27 +67,11 @@ const {
 
 // fetching the post including with
 // related posts
-const query = `
-  {
-    "post": *[_type == "blog" && slug.current == $slug][0]{
-      ...,
-      "thumbnail": thumbnail.asset -> url,
-    },
-    "related": *[_type == "blog" && slug.current != $slug && !("Incoming" in tags)] | order(_createdAt desc) [0...3]{
-      "slug": slug.current,
-      title,
-      "thumbnail": thumbnail.asset -> url,
-      "tag": tags[0],
-      _createdAt,
-      featured,
-    }
-  }
-`
 const {
   data: {
     value: { post, related },
   },
-} = await useSanityQuery<BlogDetail>(query, {
+} = await useSanityQuery<BlogDetail>(blogDetailQuery, {
   slug: route.params.slug,
 })
 

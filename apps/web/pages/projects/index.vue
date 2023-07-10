@@ -2,17 +2,12 @@
   <main class="flex flex-col laptop:py-60 py-32 gap-28 laptop:gap-80">
     <section class="flex container mx-auto laptop:px-20 intro">
       <h2
-        class="text-8xl leading-relaxed laptop:w-11/12 text-center mx-auto"
+        class="text-5xl laptop:text-8xl !leading-tight laptop:w-11/12 text-center mx-auto"
         data-cursor-size="200"
         data-cursor-exclusion
         animation="text-char-opacity"
       >
-        Because
-        <span
-          class="bg-black dark:bg-white text-white dark:text-black px-10 py-0 rounded-full"
-          >perfection</span
-        >
-        never be ending
+        Because too perfect is a mistake. Just make it run in incredible way.
       </h2>
     </section>
 
@@ -33,6 +28,7 @@
 </template>
 
 <script setup lang="ts">
+import { projectQuery } from '~/lib/queries'
 import { Project } from '~/types/content'
 
 definePageMeta({
@@ -46,23 +42,13 @@ useSeoMeta({
   ogDescription: 'Everything i sbuild using special treatment',
 })
 
-const query = `
-  {
-    "projects": *[_type == "project"]{
-      ...,
-      "thumbnail": thumbnail.asset -> url,
-      "slug": slug.current,
-      "tag": tags[0]
-    }
-  }
-`
 const {
   data: {
     value: { projects },
   },
 } = await useSanityQuery<{
   projects: Project[]
-}>(query)
+}>(projectQuery)
 
 onMounted(() => {
   useAnimation()

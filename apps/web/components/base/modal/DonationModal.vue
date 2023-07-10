@@ -21,6 +21,7 @@
             class="flex gap-3 w-full"
             :to="link"
             :external="link.includes('http')"
+            :target="link.includes('http') ? '_blank' : '_self'"
           >
             <i :class="icon"></i>
 

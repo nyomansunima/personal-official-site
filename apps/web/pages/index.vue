@@ -19,7 +19,7 @@
           <div
             data-cursor-size="40"
             data-cursor-icon="fi fi-sr-camera-viewfinder"
-            animation="text-slide-up"
+            animation="slide-up"
           >
             <p animation-target>
               Hello. I am Nyoman Sunima, a product designer and an developer
@@ -32,11 +32,11 @@
           <div
             data-cursor-size="40"
             data-cursor-icon="fi fi-sr-camera-viewfinder"
-            animation="text-slide-up"
+            animation="slide-up"
           >
             <p animation-target>
               In my free time I love to doing something happy, farming, create a
-              side hustle, create and share products, and selling.
+              side hustle, create and share free products.
             </p>
           </div>
         </div>
@@ -44,20 +44,20 @@
           <div
             data-cursor-size="40"
             data-cursor-icon="fi fi-sr-camera-viewfinder"
-            animation="text-slide-up"
+            animation="slide-up"
           >
             <p animation-target>
               The truth is, I started my journey in my high school. As a tech
               anthusiast i love to blogging and start to theme and design the
               blog for my self. Being from an mobile developer in Bali. I start
               was introduced to the new world that interesting and challenging.
-              Then start grew up into a design and fullstack developer.
+              Then start grew up into a designer and fullstack developer.
             </p>
           </div>
           <div
             data-cursor-size="40"
             data-cursor-icon="fi fi-sr-camera-viewfinder"
-            animation="text-slide-up"
+            animation="slide-up"
           >
             <p animation-target>
               Now create a product is part of my execution and goals. Start with
@@ -67,7 +67,7 @@
         </div>
       </div>
 
-      <div class="flex flex-wrap justify-center mt-28 gap-4">
+      <div class="flex flex-wrap justify-center mt-28 gap-4" animation="fade">
         <OutlineButton link="/blog"
           ><i class="fi fi-sr-heart"></i> My Blog</OutlineButton
         >
@@ -95,7 +95,7 @@
         <br />
         I try my best to make a special and bring more value to products.
       </h2>
-      <div class="flex actions mt-10">
+      <div class="flex actions mt-10" animation="slide-up">
         <OutlineButton link="/projects">
           See more <i class="fi fi-rr-arrow-right"></i
         ></OutlineButton>
@@ -126,7 +126,7 @@
         All solution should work. Put every single problem into research and
         solve with elegant solutions.
       </h2>
-      <div class="flex actions mt-10 justify-center">
+      <div class="flex actions mt-10 justify-center" animation="slide-up">
         <OutlineButton link="/apps">
           See apps <i class="fi fi-rr-arrow-right"></i
         ></OutlineButton>
@@ -156,7 +156,7 @@
       >
         Goodie products. I craft something that may help you to move faster.
       </h2>
-      <div class="flex actions mt-10 justify-center">
+      <div class="flex actions mt-10 justify-center" animation="slide-up">
         <OutlineButton link="/shop">
           Explore products <i class="fi fi-rr-arrow-right"></i
         ></OutlineButton>
@@ -185,9 +185,9 @@
         animation="text-word-slide-up"
       >
         <span class="laptop:pl-28"></span>
-        What i sharing. Is just about my experiences that can help you.
+        What I sharing. Is just about my experiences that can help you.
       </h2>
-      <div class="flex mt-10 actions">
+      <div class="flex mt-10 actions" animation="slide-up">
         <OutlineButton link="/blog">
           Read More <i class="fi fi-rr-arrow-right"></i
         ></OutlineButton>
@@ -209,6 +209,7 @@
 
 <script setup lang="ts">
 import { App, BlogPost, Product, Project } from '~/types/content'
+import { homeQuery } from '~/lib/queries'
 
 definePageMeta({
   layout: 'main',
@@ -223,36 +224,6 @@ useSeoMeta({
     'Hi, iam a product designer and developer located in bali, Iam indie maker',
 })
 
-const detailQuery = `
-  {
-    "posts": *[_type == "blog"] | order(_updatedAt desc)[0...3]{
-      "slug": slug.current,
-      title,
-      "thumbnail": thumbnail.asset -> url,
-      "tag": tags[0],
-      _createdAt,
-      featured,
-      "isIncoming": "Incoming" in tags[],
-    },
-    "projects": *[_type == "project"] | order(_updatedAt desc) [0...3]{
-      ...,
-      "thumbnail": thumbnail.asset -> url,
-      "slug": slug.current,
-      "tag": tags[0]
-    },
-    "apps": *[_type == "app"] | order(_created desc){
-      ...,
-      "thumbnail": thumbnail.asset -> url,
-    },
-    "products": *[_type == "product"] | order(_createdAt desc){
-      title,
-      initialPrice,
-      "thumbnail":images[0].asset->url,
-      "slug": slug.current,
-    }
-  }
-`
-
 const {
   data: {
     value: { posts, projects, apps, products },
@@ -262,7 +233,7 @@ const {
   projects: Project[]
   apps: App[]
   products: Product[]
-}>(detailQuery)
+}>(homeQuery)
 
 // start the animation when finish load
 onMounted(() => {
