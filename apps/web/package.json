@@ -42,7 +42,7 @@
     "markdown-it": "^13.0.1",
     "markdown-it-attrs": "^4.1.6",
     "split-type": "^0.3.3",
-    "vee-validate": "^4.9.5",
+    "vee-validate": "^4.10.8",
     "yup": "^1.2.0"
   }
 }
