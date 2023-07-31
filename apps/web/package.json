@@ -37,7 +37,7 @@
     "@flaticon/flaticon-uicons": "^2.2.0",
     "@studio-freight/lenis": "^1.0.19",
     "defu": "^6.1.2",
-    "gsap": "^3.11.5",
+    "gsap": "^3.12.2",
     "highlight.js": "^11.8.0",
     "markdown-it": "^13.0.1",
     "markdown-it-attrs": "^4.1.6",
