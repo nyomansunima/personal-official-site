@@ -11,7 +11,7 @@
     "test": "cypress open"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^0.5.5",
+    "@nuxt/devtools": "^0.7.1",
     "@nuxt/image-edge": "^1.0.0-28094923.e859bba",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/sanity": "^1.7.2",
