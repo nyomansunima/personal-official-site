@@ -29,7 +29,7 @@
     "cypress": "^12.14.0",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-prettier": "^5.0.0",
     "nuxt": "^3.5.3",
     "prettier": "^3.0.0"
   },
