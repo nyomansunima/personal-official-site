@@ -24,7 +24,7 @@
     "@types/node": "^20",
     "@typescript-eslint/parser": "^6.1.0",
     "@vueuse/components": "^10.2.1",
-    "@vueuse/core": "^10.2.0",
+    "@vueuse/core": "^10.3.0",
     "@vueuse/nuxt": "^10.2.0",
     "cypress": "^12.14.0",
     "eslint": "^8.42.0",
