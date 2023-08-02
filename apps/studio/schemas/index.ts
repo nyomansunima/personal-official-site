@@ -4,6 +4,7 @@ import faq from './documents/faq'
 import page from './documents/page'
 import product from './documents/product'
 import project from './documents/project'
+import series from './documents/series'
 import timeline from './documents/timeline'
 import bio from './objects/content/bio'
 
@@ -16,4 +17,5 @@ export const schemaTypes = [
   faq,
   app,
   product,
+  series,
 ]
