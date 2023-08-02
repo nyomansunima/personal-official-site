@@ -57,6 +57,12 @@ export default defineType({
       of: [{ type: 'string' }],
     }),
     defineField({
+      title: 'Series',
+      name: 'series',
+      type: 'reference',
+      to: [{ type: 'series' }],
+    }),
+    defineField({
       title: 'Content',
       name: 'content',
       type: 'markdown',
