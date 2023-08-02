@@ -1,8 +1,8 @@
 <template>
   <main class="flex flex-col min-h-screen pt-40 text-xl pb-80">
     <!-- Featured posts -->
-    <section class="container mx-auto flex flex-col px-5 laptop:px-10">
-      <h3 class="flex text-3xl font-semibold">🎉 Featured</h3>
+    <section class="container mx-auto flex flex-col px-5 laptop:px-20">
+      <h3 class="flex text-3xl">🎉 Featured</h3>
       <div
         class="flex flex-col laptop:grid laptop:grid-cols-6 mt-10 w-full gap-6"
       >
@@ -15,13 +15,21 @@
       </div>
     </section>
 
+    <!-- series post -->
+    <section class="container mx-auto px-5 laptop:px-20 mt-60">
+      <h3 class="text-3xl">🏀 Top Series</h3>
+      <div class="grid grid-cols-1 laptop:grid-cols-3 mt-16 w-full">
+        <SeriesItem v-for="(item, i) in series" :key="i" :data="item" />
+      </div>
+    </section>
+
     <!-- Latest post -->
     <section
       class="container mx-auto px-5 laptop:px-10 flex flex-col laptop:mt-60 mt-28"
     >
       <!-- filter -->
       <div class="flex flex-col">
-        <h4 class="text-2xl font-semibold">Search blog posts</h4>
+        <h4 class="text-2xl">Search blog posts</h4>
         <div class="flex laptop:w-4/12 mt-10">
           <TextInput
             placeholder="search blog posts ..."
@@ -53,15 +61,16 @@
 <script setup lang="ts">
 import { tags } from '~/assets/data/blog.json'
 import { blogQuery } from '~/lib/queries'
-import { BlogPost } from '~/types/content'
+import { BlogPost, BlogSeries } from '~/types/content'
 
 const {
   data: {
-    value: { featured, latest },
+    value: { featured, latest, series },
   },
 } = await useSanityQuery<{
   featured: BlogPost[]
   latest: BlogPost[]
+  series: BlogSeries[]
 }>(blogQuery)
 
 useSeoMeta({
