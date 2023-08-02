@@ -93,6 +93,12 @@ export const blogQuery = `
     featured,
     "isIncoming": "Incoming" in tags[],
   },
+  "series": *[_type == "series"]{
+    "slug": slug.current,
+    "thumbnail": thumbnail.asset -> url,
+    title,
+    desc,
+  },
   "latest": *[_type == "blog"] | order(_updatedAt desc){
     "slug": slug.current,
     title,
@@ -137,4 +143,25 @@ export const productsQuery = `
     "slug": slug.current,
   }
 }
+`
+
+export const loadSeriesDetail = `
+  {
+    "detail": *[_type == "series" && slug.current == $slug][0]{
+      title,
+      desc,
+      "thumbnail": thumbnail.asset -> url,  
+      "slug": slug.current,
+      "totalContent": count(*[_type == "blog" && references(^._id)])
+    },
+    "contents": *[_type == "blog" && references(*[_type == "series" && slug.current == $slug][0]._id)] | order(_createdAt desc){
+      "slug": slug.current,
+      title,
+      "thumbnail": thumbnail.asset -> url,
+      "tag": tags[0],
+      _createdAt,
+      featured,
+      "isIncoming": "Incoming" in tags[],
+    }
+  }
 `

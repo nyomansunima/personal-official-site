@@ -8,6 +8,24 @@ export interface BlogPost {
   isIncoming: boolean
 }
 
+export interface BlogSeries {
+  thumbnail: string
+  title: string
+  slug: string
+  desc: string
+}
+
+export interface BlogSeriesDetail {
+  detail: {
+    thumbnail: string
+    title: string
+    slug: string
+    desc: string
+    totalContent: number
+  }
+  contents: BlogPost[]
+}
+
 export interface BlogDetail {
   post: {
     slug: string
