@@ -10,10 +10,10 @@ import { markdownSchema } from 'sanity-plugin-markdown'
 const devOnlyPlugins = []
 
 export default defineConfig({
-  name: 'default',
-  title: 'personal-site',
-  projectId: '5vg8abbe',
-  dataset: 'production',
+  name: process.env.SANITY_STUDIO_NAME,
+  title: process.env.SANITY_STUDIO_TITLE,
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID!,
+  dataset: process.env.SANITY_STUDIO_DATASET!,
   plugins: [
     deskTool(),
     visionTool(),
@@ -21,9 +21,9 @@ export default defineConfig({
     colorInput(),
     codeInput(),
     markdownSchema(),
-    ...(isDev ? devOnlyPlugins : [])
+    ...(isDev ? devOnlyPlugins : []),
   ],
   schema: {
-    types: schemaTypes
-  }
+    types: schemaTypes,
+  },
 })
