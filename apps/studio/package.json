@@ -25,7 +25,7 @@
     "react-is": "^18.2.0",
     "sanity": "^3.11.5",
     "sanity-plugin-markdown": "^4.1.0",
-    "sanity-plugin-media": "^2.0.5",
+    "sanity-plugin-media": "^2.2.2",
     "styled-components": "^6.0.7"
   },
   "devDependencies": {
