@@ -13,17 +13,6 @@ updates:
     labels:
       - "dependencies"
 
-  # Maintain the web dependencies on npm
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    commit-message:
-      prefix: "npm"
-      include: "scope"
-    labels:
-      - "📦 dependencies"
-
   - package-ecosystem: "npm"
     directory: "/apps/studio"
     schedule:
