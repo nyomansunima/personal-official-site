@@ -1,35 +1,26 @@
-<!-- Pull request template -->
+## What type of PR is this? (check all applicable)
 
-# Description
+- [ ] 🚜Refactor
+- [ ] ✅ Feature
+- [ ] 🐛 Bug Fix
+- [ ] 🚀 Optimization
+- [ ] 📝 Documentation Update
 
-Please include a summary of the changes and the related issue. Please also include relevant motivation and context. List any dependencies that are required for this change.
+## Description
 
-Fixes # (issue)
+## Related Tickets & Documents
 
-## Type of change
+- Related Issue #
+- Closes #
+- Fixed #
 
-Please delete options that are not relevant.
+## QA Instructions, Screenshots, Recordings
 
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] This change requires a documentation update
+_Please replace this line with instructions on how to test your changes, a note
+on the devices and browsers this has been tested on, as well as any relevant
+images for UI changes._
 
-# How Has This Been Tested?
-
-Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce. Please also list any relevant details for your test configuration
-
-- [ ] Test A
-- [ ] Test B
-
-**Test Configuration**:
-
-- Firmware version:
-- Hardware:
-- Toolchain:
-- SDK:
-
-# Checklist:
+### Chechlist
 
 - [ ] My code follows the style guidelines of this project
 - [ ] I have performed a self-review of my code
@@ -39,3 +30,19 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 - [ ] I have added tests that prove my fix is effective or that my feature works
 - [ ] New and existing unit tests pass locally with my changes
 - [ ] Any dependent changes have been merged and published in downstream modules
+
+## Added/updated tests?
+
+- [ ] 👍 Yes
+- [ ] 🙅‍♀️ No, and this is why: _please replace this line with details on why tests
+      have not been included_
+- [ ] ☝️ I need help with writing tests
+
+## Documentation Update Needs ?
+
+- [ ] 📝 Readme
+- [ ] 🚀 Changelog
+- [ ] 🥰 Contributing
+- [ ] 🙅‍♀️ No, Docs Already Update
+
+## Are there any post deployment tasks we need to perform?

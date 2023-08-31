@@ -13,6 +13,9 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger, MotionPathPlugin, ScrollToPlugin } from 'gsap/all'
 import Lenis from '@studio-freight/lenis'
+const {
+  public: { host },
+} = useRuntimeConfig()
 
 // register the gsap plugins
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, ScrollToPlugin)
@@ -33,6 +36,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   ogType: 'website',
   twitterCreator: '@nyomansunima',
+  ogImage: `${host}/images/social-image.png`,
 })
 
 useHead({

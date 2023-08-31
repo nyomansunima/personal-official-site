@@ -216,12 +216,12 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'Product Designer, Developer & Indie Maker',
+  title: 'Product Designer, Fullstack Developer',
   description:
-    'Hi, iam a product designer and developer located in bali, Iam indie maker',
-  ogTitle: 'Product Designer, Developer & Indie Maker',
+    'Hi, iam a product designer and fullstack developer located in Bali, Indonesia',
+  ogTitle: 'Product Designer, Fullstack Developer',
   ogDescription:
-    'Hi, iam a product designer and developer located in bali, Iam indie maker',
+    'Hi, iam a product designer and fullstack developer located in Bali, Indonesia',
 })
 
 const {
