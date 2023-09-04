@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@flaticon/flaticon-uicons": "^2.2.0",
-    "@nuxt/image-edge": "^1.0.0-rc.1-28180077.d51e794",
+    "@nuxt/image-edge": "^1.0.0-28094923.e859bba",
     "@studio-freight/lenis": "^1.0.19",
     "defu": "^6.1.2",
     "gsap": "^3.12.2",
