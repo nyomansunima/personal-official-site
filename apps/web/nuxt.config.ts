@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     enabled: true,
   },
   image: {
-    providers: ['ipx'],
+    provider: 'ipx',
     domains: [process.env.APP_HOST_DOMAIN!],
   },
   sanity: {
