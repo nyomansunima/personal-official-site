@@ -11,7 +11,7 @@
         to="/"
         class="flex items-center h-8 w-8 transition-all duration-300 hover:scale-95"
       >
-        <NuxtImg src="/images/logo.png" class="flex w-full h-full" />
+        <NuxtImg src="/images/logo.svg" class="flex w-full h-full" />
       </NuxtLink>
 
       <!-- only show if the route -->
