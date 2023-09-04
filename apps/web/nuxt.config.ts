@@ -1,11 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  nitro: {
-    preset: 'vercel',
+  $production: {
+    nitro: {
+      preset: 'vercel',
+    },
   },
   modules: [
     '@nuxt/devtools',
-    '@nuxt/image',
+    '@nuxt/image-edge',
     '@nuxtjs/sanity',
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
@@ -24,7 +26,6 @@ export default defineNuxtConfig({
     enabled: true,
   },
   image: {
-    provider: 'ipx',
     domains: [process.env.APP_HOST_DOMAIN!],
   },
   sanity: {
