@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxt/devtools',
-    '@nuxt/image-edge',
+    '@nuxt/image',
     '@nuxtjs/sanity',
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
