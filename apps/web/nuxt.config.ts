@@ -23,6 +23,10 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
+  image: {
+    providers: ['ipx'],
+    domains: [process.env.APP_HOST_DOMAIN!],
+  },
   sanity: {
     projectId: process.env.SANITY_PROJECT_ID,
     apiVersion: process.env.SANITY_API_VERSION,
