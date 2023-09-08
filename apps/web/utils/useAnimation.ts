@@ -10,7 +10,7 @@ function triggerAnimationOnScroll(
   start?: any,
 ) {
   ScrollTrigger.create({
-    trigger: trigger,
+    trigger,
     start: start || 'top 70%',
     onEnter: () => {
       timeline.play()
@@ -18,7 +18,7 @@ function triggerAnimationOnScroll(
   })
 
   ScrollTrigger.create({
-    trigger: trigger,
+    trigger,
     start: 'top bottom',
     onLeaveBack: () => {
       timeline.pause(0)
@@ -58,11 +58,11 @@ export default function useAnimation() {
     function startAnimate() {
       // filter the animation
       if (animation == 'text-word-slide-up') {
-        let tl = gsap.timeline({ paused: true })
+        const tl = gsap.timeline({ paused: true })
         tl.from(target.querySelectorAll('.word'), {
           yPercent: 100,
           opacity: 0,
-          duration: duration,
+          duration,
           ease: 'back',
           stagger: 0.1,
         })
@@ -70,11 +70,11 @@ export default function useAnimation() {
       }
 
       if (animation == 'text-char-slide-up') {
-        let tl = gsap.timeline({ paused: true })
+        const tl = gsap.timeline({ paused: true })
         tl.from(target.querySelectorAll('.char'), {
           yPercent: 100,
           opacity: 0,
-          duration: duration,
+          duration,
           ease: 'back',
           stagger: 0.02,
         })
@@ -82,11 +82,11 @@ export default function useAnimation() {
       }
 
       if (animation == 'text-char-slide-down') {
-        let tl = gsap.timeline({ paused: true })
+        const tl = gsap.timeline({ paused: true })
         tl.from(target.querySelectorAll('.char'), {
           yPercent: -100,
           opacity: 0,
-          duration: duration,
+          duration,
           ease: 'back',
           stagger: 0.02,
         })
@@ -94,10 +94,10 @@ export default function useAnimation() {
       }
 
       if (animation == 'text-char-opacity') {
-        let tl = gsap.timeline({ paused: true })
+        const tl = gsap.timeline({ paused: true })
         tl.from(target.querySelectorAll('.char'), {
           opacity: 0.1,
-          duration: duration,
+          duration,
           ease: 'expo',
           stagger: 0.05,
         })
@@ -120,7 +120,7 @@ export default function useAnimation() {
           })
           tl.to(lineMaskEl, {
             width: '0%',
-            duration: duration,
+            duration,
           })
         })
       }
@@ -147,7 +147,7 @@ export default function useAnimation() {
           yPercent: 100,
           opacity: 0,
           ease: 'expo',
-          duration: duration,
+          duration,
         })
         triggerAnimationOnScroll(el, tl, triggerStart)
       }
@@ -157,7 +157,7 @@ export default function useAnimation() {
         tl.from(target, {
           opacity: 0,
           ease: 'expo',
-          duration: duration,
+          duration,
         })
         triggerAnimationOnScroll(el, tl)
       }

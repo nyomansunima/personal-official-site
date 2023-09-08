@@ -7,10 +7,10 @@
         class="flex flex-col laptop:grid laptop:grid-cols-6 mt-10 w-full gap-6"
       >
         <BlogPostItem
-          :size="index == 0 ? 'large' : 'medium'"
           v-for="(post, index) in featured"
-          :data="post"
           :key="post.slug"
+          :size="index == 0 ? 'large' : 'medium'"
+          :data="post"
         />
       </div>
     </section>
@@ -38,7 +38,7 @@
           />
         </div>
         <div class="flex flex-wrap gap-3 mt-6 laptop:w-8/12">
-          <BlogFilterTagItem :tag="tag" v-for="tag in tags" :key="tag" />
+          <BlogFilterTagItem v-for="tag in tags" :key="tag" :tag="tag" />
         </div>
       </div>
 
@@ -83,9 +83,5 @@ useSeoMeta({
 
 definePageMeta({
   layout: 'blog',
-})
-
-onMounted(() => {
-  useAnimation()
 })
 </script>

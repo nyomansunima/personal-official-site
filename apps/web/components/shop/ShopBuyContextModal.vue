@@ -1,17 +1,17 @@
 <template>
   <Teleport to="body">
     <div
+      v-show="isShow"
       ref="modalRef"
       class="flex flex-col bg-white dark:bg-black fixed z-50 inset-y-0 right-0 h-full w-[400px] py-14 px-10 shadow-2xl border-l border-l-gray-100 dark:border-l-gray-800"
-      v-show="isShow"
     >
       <h4 class="text-2xl w-8/12 !leading-tight">
         Buy in your favorite place.
       </h4>
 
       <ul class="flex flex-col mt-10 gap-4">
-        <li class="flex context-item" v-for="(item, i) in list" :key="i">
-          <OutlineButton :link="item.url">{{ item.title }}</OutlineButton>
+        <li v-for="(item, i) in list" :key="i" class="flex context-item">
+          <Button>{{ item.title }}</Button>
         </li>
       </ul>
     </div>
@@ -19,9 +19,9 @@
 </template>
 
 <script setup lang="ts">
-const modalRef = ref<HTMLDivElement>()
 import { onClickOutside } from '@vueuse/core'
 import { gsap } from 'gsap'
+const modalRef = ref<HTMLDivElement>()
 
 interface ShopBuyContextModalProps {
   isShow: boolean

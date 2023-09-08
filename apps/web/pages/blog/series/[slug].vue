@@ -14,13 +14,13 @@
       </div>
       <div class="flex flex-col laptop:w-1/2 laptop:pt-10">
         <div class="flex">
-          <TextButton
-            @click="navigateTo('/blog')"
+          <NuxtLink
+            href="/blog"
             class="transition-all duration-500 hover:-translate-x-1"
             ><i
               class="fi fi-rr-arrow-left text-2xl h-12 w-12 rounded-full bg-black text-white dark:bg-white dark:text-black"
             ></i>
-            Back to blog</TextButton
+            Back to blog</NuxtLink
           >
         </div>
         <h2 class="text-4xl laptop:text-5xl !leading-tight mt-10">
@@ -47,6 +47,7 @@
       <div class="grid grid-cols-1 laptop:grid-cols-2 w-full gap-10">
         <BlogSeriesItem
           v-for="(post, i) in contents"
+          :key="i"
           :data="post"
           :position="i + 1"
         />

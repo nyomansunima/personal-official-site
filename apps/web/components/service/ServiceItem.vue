@@ -1,14 +1,26 @@
+<script setup lang="ts">
+const itemRef = ref<HTMLDivElement>()
+
+interface ServiceItemProps {
+  position: number
+  data: {
+    image: string
+    title: string
+    desc: string
+  }
+}
+defineProps<ServiceItemProps>()
+</script>
+
 <template>
   <div
-    class="flex flex-col laptop:flex-row gap-10 laptop:gap-16 mt-20 laptop:mt-32 service-item"
-    :class="[position % 2 == 0 ? 'flex-row' : 'flex-row-reverse']"
     ref="itemRef"
+    class="flex flex-col gap-10 laptop:gap-16 mt-20 laptop:mt-32"
+    :class="[position % 2 == 0 ? 'laptop:flex-row' : 'laptop:flex-row-reverse']"
     animation="slide-up"
   >
     <div
-      class="flex w-full laptop:w-5/12 h-80 laptop:h-[560px] relative rounded-3xl overflow-hidden cursor-pointer laptop:mx-10 image"
-      data-cursor-icon="fi fi-sr-video-camera-alt"
-      data-cursor-size="80"
+      class="flex w-full laptop:w-5/12 h-80 laptop:h-[560px] relative rounded-3xl overflow-hidden laptop:mx-10 image"
       animation-target
     >
       <NuxtImg
@@ -34,17 +46,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-const itemRef = ref<HTMLDivElement>()
-
-interface ServiceItemProps {
-  position: number
-  data: {
-    image: string
-    title: string
-    desc: string
-  }
-}
-defineProps<ServiceItemProps>()
-</script>

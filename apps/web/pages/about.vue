@@ -1,5 +1,29 @@
+<script setup lang="ts">
+import { AboutDetail } from '~/types/content'
+import data from '~/assets/data/about.json'
+import AboutCareerItem from '~/components/about/AboutCareerItem.vue'
+import { aboutQuery } from '~/lib/queries'
+
+definePageMeta({
+  layout: 'main',
+})
+useSeoMeta({
+  title: 'About',
+  description: 'Know more about me and what i did',
+  ogTitle: 'About | Nyoman Sunima',
+  ogDescription: 'Know more about me and what i did',
+})
+
+const {
+  data: {
+    value: { timelines },
+  },
+} = await useSanityQuery<AboutDetail>(aboutQuery)
+</script>
+
 <template>
   <main class="flex flex-col pt-48 pb-80 gap-40 laptop:gap-80">
+    <!-- profile image -->
     <section
       class="flex flex-col items-center container mx-auto gap-20 px-5 laptop:px-20 -mt-32 relative"
     >
@@ -19,6 +43,7 @@
       </div>
     </section>
 
+    <!-- about me -->
     <section class="flex flex-col container mx-auto laptop:px-20 px-5">
       <h2
         class="text-5xl laptop:text-8xl !leading-tight"
@@ -26,9 +51,8 @@
         data-cursor-size="200"
         data-cursor-exclusion
       >
-        <span class="laptop:pl-28"></span>
-        I'am product designer & creative developer that train to solve the
-        problems.
+        <span class="laptop:pl-20"></span>
+        I'm product designer & creative fullstack developer
       </h2>
 
       <div
@@ -67,17 +91,18 @@
       </div>
     </section>
 
+    <!-- what i did -->
     <section
       class="flex flex-col container mx-auto laptop:px-20 px-5 items-center"
     >
       <h2
-        class="text-5xl laptop:text-8xl text-center !leading-tight"
+        class="text-5xl laptop:text-8xl !leading-tight"
         animation="text-char-opacity"
         data-cursor-size="200"
         data-cursor-exclusion
       >
-        I doing research, planning, design, development & ship the product. I'am
-        the indie maker.
+        <span class="laptop:pl-20"></span>
+        I did research, planning, design, development & ship the product.
       </h2>
 
       <div
@@ -126,6 +151,7 @@
       </div>
     </section>
 
+    <!-- timelines -->
     <section class="flex flex-col container mx-auto laptop:px-20 px-5">
       <h2
         class="text-5xl laptop:text-8xl !leading-tight"
@@ -133,8 +159,8 @@
         data-cursor-size="200"
         data-cursor-exclusion
       >
-        <span class="laptop:pl-28"></span>What's going on today & how the thing
-        change to become better everyday.
+        <span class="laptop:pl-20"></span>
+        Everything goes according to timeline
       </h2>
       <div
         class="grid w-full grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 mt-36"
@@ -150,17 +176,16 @@
       </div>
     </section>
 
-    <section
-      class="flex flex-col container mx-auto laptop:px-20 px-5 items-center"
-    >
+    <!-- careers -->
+    <section class="flex flex-col container mx-auto laptop:px-20 px-5">
       <h2
         class="text-5xl laptop:text-8xl !leading-tight"
         animation="text-char-slide-down"
         data-cursor-size="200"
         data-cursor-exclusion
       >
-        <span class="pl-28"></span>I dedicate my time on my career and journey.
-        Bacause a great things never came from comfort zones.
+        <span class="laptop:pl-20"></span>
+        My career is about dedication and hard work.
       </h2>
 
       <div
@@ -176,38 +201,13 @@
       </div>
     </section>
 
-    <section class="flex flex-col container mx-auto laptop:px-20 px-5">
-      <h2
-        class="text-5xl laptop:text-8xl !leading-tight"
-        animation="text-line-mask-opacity-scrub"
-        data-cursor-size="200"
-        data-cursor-exclusion
-      >
-        <span class="laptop:pl-28"></span>Now everything is a total. Totality
-        work and totality dedication.
-      </h2>
-      <div
-        class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 mt-80 gap-x-10 gap-y-40"
-        animation="item-slide-up-scrub"
-      >
-        <div
-          class="flex flex-col items-center gap-10"
-          v-for="({ count, label }, i) in data.totals"
-          :key="i"
-          animation-target
-        >
-          <span class="text-7xl">{{ count }}</span>
-          <h3 class="text-xl">{{ label }}</h3>
-        </div>
-      </div>
-    </section>
-
+    <!-- contact -->
     <section class="flex container mx-auto laptop:px-20 px-5">
       <NuxtLink
         to="/contact"
         class="text-5xl laptop:text-8xl text-center !leading-tight"
-        data-cursor-size="200"
-        data-cursor-text="Contact Now"
+        data-cursor-size="100"
+        data-cursor-text="Contact"
         animation="slide-up"
       >
         <div animation-target>
@@ -217,31 +217,3 @@
     </section>
   </main>
 </template>
-
-<script setup lang="ts">
-import { AboutDetail } from '~/types/content'
-import data from '~/assets/data/about.json'
-import AboutCareerItem from '~/components/about/AboutCareerItem.vue'
-import { aboutQuery } from '~/lib/queries'
-
-definePageMeta({
-  layout: 'main',
-})
-useSeoMeta({
-  title: 'About',
-  description: 'Know more about me and what i did',
-  ogTitle: 'About | Nyoman Sunima',
-  ogDescription: 'Know more about me and what i did',
-})
-
-const {
-  data: {
-    value: { timelines },
-  },
-} = await useSanityQuery<AboutDetail>(aboutQuery)
-
-// animate the elements
-onMounted(() => {
-  useAnimation()
-})
-</script>

@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="saveForm" class="flex flex-col">
+  <form class="flex flex-col" @submit.prevent="saveForm">
     <slot />
   </form>
 </template>

@@ -18,6 +18,7 @@
           >${{ data.initialPrice }}</span
         >
       </picture>
+
       <h3 class="line-clamp-2 text-lg mt-5 px-3 !leading-tight">
         {{ data.title }}
       </h3>

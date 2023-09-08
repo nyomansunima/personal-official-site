@@ -6,6 +6,11 @@
       "icon": "fi fi-brands-instagram"
     },
     {
+      "label": "Linkedin",
+      "url": "https://linkedin.com/in/nyomansunima",
+      "icon": "fi fi-brands-linkedin"
+    },
+    {
       "label": "Twitter",
       "url": "https://twitter.com/nyomansunima",
       "icon": "fi fi-brands-twitter"

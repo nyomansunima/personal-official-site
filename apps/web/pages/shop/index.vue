@@ -16,16 +16,16 @@
       <!-- tags and search -->
       <div class="flex flex-col gap-10">
         <div class="flex items-center gap-5 flex-wrap laptop:w-11/12 tags">
-          <div class="flex item" v-for="(tag, i) in tags" :key="i">
-            <OutlineButton
-              @click="updateSelectedTag(tag)"
+          <div v-for="(tag, i) in tags" :key="i" class="flex item">
+            <Button
               class="transition-all duration-500 hover:-translate-y-2"
               :class="
                 selectedTag == tag
                   ? 'bg-black dark:bg-white text-white dark:text-black'
                   : ''
               "
-              ><i class="fi fi-rr-circle-small"></i> {{ tag }}</OutlineButton
+              @click="updateSelectedTag(tag)"
+              ><i class="fi fi-rr-circle-small"></i> {{ tag }}</Button
             >
           </div>
         </div>
@@ -39,7 +39,7 @@
       </div>
 
       <!-- Featured products -->
-      <div class="flex flex-col mt-16 featured" v-show="recomendeds.length > 0">
+      <div v-show="recomendeds.length > 0" class="flex flex-col mt-16 featured">
         <h3 class="text-4xl !leading-tight">Recomended</h3>
         <div
           class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 gap-x-6 gap-y-16 mt-10 mb-28 list"
@@ -113,8 +113,6 @@ useSeoMeta({
 })
 
 onMounted(() => {
-  useAnimation()
-
   gsap.from('.tags .item', {
     y: 200,
     opacity: 0,

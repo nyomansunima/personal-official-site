@@ -12,10 +12,10 @@
     </picture>
     <div class="flex items-center mt-10 gap-4">
       <button
-        class="h-16 w-16 rounded-2xl overflow-hidden border-2 border-transparent cursor-pointer item-image"
-        :class="activeImage == image ? '!border-black dark:!border-white' : ''"
         v-for="(image, i) in images"
         :key="i"
+        class="h-16 w-16 rounded-2xl overflow-hidden border-2 border-transparent cursor-pointer item-image"
+        :class="activeImage == image ? '!border-black dark:!border-white' : ''"
         @click="
           () => {
             activeImage = image

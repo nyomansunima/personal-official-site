@@ -17,11 +17,11 @@
         </h2>
 
         <div class="flex items-center mt-5 gap-4">
-          <TextButton
-            class="text-gray-500"
+          <span
             v-for="(tag, i) in product.tags"
             :key="i"
-            >{{ tag }}</TextButton
+            class="text-neutral-500"
+            >{{ tag }}</span
           >
 
           <span
@@ -36,33 +36,33 @@
 
         <div class="flex items-center mt-10 gap-6">
           <div
-            class="flex flex-col border-gray-100"
             v-for="(highlight, i) in product.highlights"
             :key="i"
+            class="flex flex-col border-gray-100"
             data-cursor-size="100"
             data-cursor-exclusion
           >
             <span class="text-xl">{{ highlight.value }}</span>
-            <span class="text-gray-500">{{ highlight.property }}</span>
+            <span class="text-neutral-500">{{ highlight.property }}</span>
           </div>
         </div>
 
         <div class="flex flex-wrap items-center mt-14 gap-5">
-          <OutlineButton @click="scrollToMore">
+          <Button @click="scrollToMore">
             <i class="fi fi-sr-circle-waveform-lines"></i>
-            Know More</OutlineButton
+            Know More</Button
           >
 
-          <OutlineButton @click="showBuyContext">
+          <Button @click="showBuyContext">
             <i class="fi fi-sr-basket-shopping-simple"></i>
-            Buy Now</OutlineButton
+            Buy Now</Button
           >
         </div>
       </div>
     </section>
 
     <!-- about -->
-    <section class="flex flex-col container mx-auto px-5 mt-20 pt-16" id="more">
+    <section id="more" class="flex flex-col container mx-auto px-5 mt-20 pt-16">
       <!-- main section -->
       <div class="flex flex-col gap-10 laptop:w-9/12">
         <!-- about -->

@@ -1,26 +1,26 @@
 <template>
   <div class="flex flex-col w-full">
-    <label :for="`${name}-input`" v-show="label" class="flex">{{
+    <label v-show="label" :for="`${name}-input`" class="flex">{{
       label
     }}</label>
     <div
-      class="flex w-full items-center bg-white dark:bg-black h-[52px] rounded-2xl ring-1 ring-gray-100 dark:ring-gray-800 focus-within:ring-2 focus-within:ring-black focus-within:dark:ring-gray-700 transition-all duration-300 px-5"
+      class="flex w-full items-center bg-white dark:bg-black h-[52px] rounded-2xl ring-1 ring-neutral-100 dark:ring-neutral-800 focus-within:ring-2 focus-within:ring-black focus-within:dark:ring-neutral-700 transition-all duration-300 px-5"
     >
-      <i :class="preIcon" v-show="preIcon"></i>
+      <i v-show="preIcon" :class="preIcon"></i>
       <input
+        :id="`${name}-input`"
         v-model="value"
         :name="name"
-        :id="`${name}-input`"
         type="text"
         :placeholder="placeholder"
-        class="flex h-full flex-1 bg-transparent border-transparent outline-transparent ring-transparent focus:ring-transparent focus:border-transparent focus:outline-transparent text-base text-black dark:text-gray-200 placeholder:text-gray-600"
+        class="flex h-full flex-1 bg-transparent border-transparent outline-transparent ring-transparent focus:ring-transparent focus:border-transparent focus:outline-transparent text-base text-black dark:text-neutral-300 placeholder:text-neutral-400"
       />
-      <i :class="sufIcon" class="dark:text-gray-600" v-show="sufIcon"></i>
+      <i v-show="sufIcon" :class="sufIcon" class="dark:text-neutral-600"></i>
     </div>
 
     <span
       v-show="errorMessage"
-      class="flex ml-3 mt-5 text-gray-500 dark:text-gray-600"
+      class="flex ml-3 mt-5 text-neutral-500 dark:text-neutral-600"
       >{{ errorMessage }}</span
     >
   </div>

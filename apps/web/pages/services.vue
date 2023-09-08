@@ -1,47 +1,76 @@
+<script setup lang="ts">
+import { list, process } from '~/assets/data/service.json'
+
+definePageMeta({
+  layout: 'main',
+})
+
+useSeoMeta({
+  title: 'Services',
+  description: 'Explore my expertise and service offer',
+  ogTitle: 'Services | Nyoman Sunima',
+  ogDescription: 'Explore my expertise and service offer',
+})
+</script>
+
 <template>
-  <main class="flex flex-col pt-60 pb-80 text-xl gap-80">
+  <main
+    class="flex flex-col laptop:pt-60 pt-32 laptop:pb-80 pb-40 text-xl laptop:gap-80 gap-32"
+  >
     <!-- intro section -->
-    <section class="container mx-auto px-20 intro">
+    <section class="container mx-auto laptop:px-20 px-5">
       <h2
-        class="text-5xl laptop:text-8xl font-medium !leading-tight w-10/12 text-center mx-auto"
+        class="text-5xl laptop:text-8xl font-medium !leading-tight laptop:w-10/12"
         data-cursor-size="200"
         data-cursor-exclusion
         animation="text-char-slide-up"
       >
-        I craft product that that work for high solutions.
+        I craft products that provide high quality solutions.
       </h2>
+
+      <div class="flex flex-col laptop:w-8/12 mt-24" animation="slide-up">
+        <p class="text-xl leading-relaxed" animation-target>
+          In today's fast-paced digital landscape, having a dynamic and
+          user-friendly app is no longer a luxury; it's a necessity. I
+          understand the importance of staying ahead in the ever-evolving world
+          of technology. That's why I offer cutting-edge services that bring
+          your vision to life and drive your business forward.
+        </p>
+      </div>
     </section>
 
     <!-- service lists -->
-    <section class="flex flex-col container mx-auto px-20 gap-32">
+    <section
+      class="flex flex-col container mx-auto laptop:px-20 px-5 laptop:gap-32 gap-16"
+    >
       <ServiceItem
-        v-for="(item, index) in list"
+        v-for="(item, i) in list"
+        :key="i"
         :data="item"
-        :position="index"
-        :key="index"
+        :position="i"
       />
     </section>
 
     <!-- process -->
-    <section class="flex flex-col items-center container mx-auto px-20 process">
+    <section class="flex flex-col container mx-auto laptop:px-20 px-5">
       <h2
-        class="text-5xl laptop:text-8xl font-medium laptop:w-10/12 !leading-tight text-center"
+        class="text-5xl laptop:text-8xl font-medium laptop:w-10/12 !leading-tight"
         data-cursor-size="200"
         data-cursor-exclusion
         animation="text-line-mask-opacity-scrub"
       >
-        Here are where the great thing come from.
+        Here is where the great things come from.
       </h2>
 
       <div
-        class="grid grid-cols-1 laptop:grid-cols-2 gap-x-5 gap-y-5 laptop:gap-y-8 laptop:px-28 mt-20 laptop:mt-32"
+        class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-x-5 gap-y-5 laptop:gap-y-8 mt-20 laptop:mt-32"
         animation="item-slide-up-scrub"
       >
         <ServiceProcessItem
           v-for="(item, index) in process"
+          :key="index"
           :data="item"
           :position="index"
-          :key="index"
           animation-target
         />
       </div>
@@ -49,7 +78,7 @@
 
     <!-- Get in touch -->
     <section
-      class="flex flex-col items-center container mx-auto px-20"
+      class="flex flex-col items-center container mx-auto laptop:px-20 px-5"
       animation="slide-up"
     >
       <div animation-target>
@@ -62,26 +91,10 @@
         </h2>
         <NuxtLink
           to="/contact"
-          class="text-5xl laptop:text-8xl font-normal dark:text-gray-400"
+          class="text-5xl laptop:text-8xl font-normal dark:text-neutral-400 text-center"
           >Tell me about it</NuxtLink
         >
       </div>
     </section>
   </main>
 </template>
-
-<script setup lang="ts">
-import { list, process } from '~/assets/data/service.json'
-
-definePageMeta({
-  layout: 'main',
-})
-useSeoMeta({
-  title: 'Service',
-  description: 'Explore my expertise and service offer',
-})
-
-onMounted(() => {
-  useAnimation()
-})
-</script>
