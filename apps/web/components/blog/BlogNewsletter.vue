@@ -1,24 +1,3 @@
-<template>
-  <div class="flex flex-col laptop:w-7/12 mx-auto mt-28">
-    <h3 class="text-2xl font-medium">🎉 Subscribe to newsletter</h3>
-    <FormInput
-      class="flex flex-col gap-5 mt-10"
-      :context="form"
-      @save="subscribe.mutate"
-    >
-      <TextInput name="fullName" placeholder="Your full name" />
-      <TextInput name="email" placeholder="Your email address" />
-
-      <div class="flex justify-end">
-        <OutlineButton :disabled="subscribe.pending" type="submit"
-          >{{ subscribe.pending.value ? 'Please wait ...' : 'Subscribe now' }}
-          <i class="fi fi-rr-envelope-plus"></i>
-        </OutlineButton>
-      </div>
-    </FormInput>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { useForm } from 'vee-validate'
 import { object, string } from 'yup'
@@ -61,3 +40,24 @@ const subscribe = useMutation(
   },
 )
 </script>
+
+<template>
+  <div class="flex flex-col laptop:w-7/12 mx-auto mt-28">
+    <h3 class="text-2xl font-medium">🎉 Subscribe to newsletter</h3>
+    <FormInput
+      class="flex flex-col gap-5 mt-10"
+      :context="form"
+      @save="subscribe.mutate"
+    >
+      <TextInput name="fullName" placeholder="Your full name" />
+      <TextInput name="email" placeholder="Your email address" />
+
+      <div class="flex justify-end">
+        <Button type="submit" variant="primary" size="lg"
+          >{{ subscribe.pending.value ? 'Please wait ...' : 'Subscribe now' }}
+          <i class="fi fi-rr-envelope-plus"></i>
+        </Button>
+      </div>
+    </FormInput>
+  </div>
+</template>

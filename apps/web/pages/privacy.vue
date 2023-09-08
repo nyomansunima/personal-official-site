@@ -1,8 +1,21 @@
+<script setup lang="ts">
+definePageMeta({
+  layout: 'main',
+})
+
+useSeoMeta({
+  title: 'Privacy Policy',
+  description: 'The privacy policy',
+  ogTitle: 'Privacy Policy | Nyoman Sunima',
+  ogDescription: 'The privacy policy',
+})
+</script>
+
 <template>
-  <main class="flex flex-col py-60">
+  <main class="flex flex-col laptop:py-60 py-36">
     <div class="container mx-auto">
       <article
-        class="mx-auto px-5 prose prose-lg dark:prose-invert prose-headings:font-medium text-black dark:text-gray-100 prose-h1:text-6xl"
+        class="mx-auto px-5 prose prose-lg dark:prose-invert prose-headings:font-medium text-black dark:text-neutral-100 laptop:prose-h1:text-6xl prose-h1:text-5xl"
       >
         <h1 data-cursor-size="200" data-cursor-exclusion>Privacy Policy</h1>
         <p><strong>Effective Date: Monday, 12 June 2023</strong></p>
@@ -130,16 +143,3 @@
     </div>
   </main>
 </template>
-
-<script setup lang="ts">
-definePageMeta({
-  layout: 'main',
-})
-
-useSeoMeta({
-  title: 'Privacy Policy',
-  description: 'The privacy policy',
-  ogTitle: 'Privacy Policy | Nyoman Sunima',
-  ogDescription: 'The privacy policy',
-})
-</script>

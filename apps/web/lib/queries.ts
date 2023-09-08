@@ -24,6 +24,9 @@ export const homeQuery = `
       initialPrice,
       "thumbnail":images[0].asset->url,
       "slug": slug.current,
+    },
+    "stories": *[_type == "story"] | order(_updatedtAt desc) [0...4]{
+      ...,
     }
   }
 `

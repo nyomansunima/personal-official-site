@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col">
     <span class="text-lg">{{ data.timeline }}</span>
-    <h4 class="text-2xl mt-4">{{ data.rule }}</h4>
-    <p class="mt-1 text-lg">{{ data.domain }}</p>
+    <h4 class="text-2xl mt-4">{{ data.domain }}</h4>
+    <p class="mt-1 text-lg">{{ data.rule }}</p>
     <div class="flex mt-5">
       <p
         class="rounded-full px-3 py-2 border-2 border-gray-100 dark:border-gray-900 leading-none"

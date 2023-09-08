@@ -1,21 +1,25 @@
 <template>
-  <main class="flex flex-col py-64">
-    <div class="flex container mx-auto">
+  <main class="flex flex-col laptop:py-64 py-32">
+    <div class="flex container mx-auto laptop:px-20 px-5">
       <div class="flex flex-col laptop:w-8/12 px-5 laptop:px-0 mx-auto">
         <h2
-          class="text-5xl laptop:text-8xl font-medium flex laptop:w-10/12 leading-tight"
+          class="text-5xl laptop:text-8xl font-medium flex leading-tight"
           animation="text-char-opacity"
         >
-          ✋ Hi, let's discus something
+          Hello, let's discus something
         </h2>
 
         <div animation="slide-up">
           <div class="flex flex-wrap gap-4 items-center mt-16" animation-target>
-            <OutlineButton
-              :link="social.url"
+            <Button
               v-for="social in socials"
               :key="social.label"
-              >{{ social.label }}</OutlineButton
+              as="a"
+              :href="social.url"
+              target="_blank"
+              external
+              size="lg"
+              >{{ social.label }}</Button
             >
           </div>
         </div>
@@ -23,18 +27,18 @@
         <!-- form -->
         <FormInput
           :context="form"
-          @save="sendMessage.mutate"
           class="mt-20 gap-5"
+          @save="sendMessage.mutate"
         >
           <TextInput name="fullName" placeholder="Your full name" />
           <TextInput name="email" placeholder="Your email address" />
           <AreaTextInput name="message" placeholder="Your messages" />
 
           <div class="flex justify-end">
-            <OutlineButton type="submit">
+            <Button type="submit" variant="primary" size="lg">
               <i class="fi fi-rr-paper-plane"></i>
               Send Messages
-            </OutlineButton>
+            </Button>
           </div>
         </FormInput>
       </div>
@@ -44,8 +48,8 @@
 
 <script setup lang="ts">
 import { useForm } from 'vee-validate'
-import { socials } from '~/assets/data/social.json'
 import { object, string } from 'yup'
+import { socials } from '~/assets/data/social.json'
 
 definePageMeta({
   layout: 'main',
@@ -54,7 +58,7 @@ definePageMeta({
 useSeoMeta({
   title: 'Contact',
   description: 'Get in touch with me and collaborate',
-  ogTitle: 'Contact',
+  ogTitle: 'Contact | Nyoman Sunima',
   ogDescription: 'Get in touch with me and collaborate',
 })
 
@@ -96,14 +100,6 @@ const sendMessage = useMutation(
     onSuccess: () => {
       form.resetForm()
     },
-    onError: (err) => {
-      console.log(err)
-      // form.resetForm()
-    },
   },
 )
-
-onMounted(() => {
-  useAnimation()
-})
 </script>

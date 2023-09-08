@@ -8,6 +8,11 @@ export interface BlogPost {
   isIncoming: boolean
 }
 
+export interface Story {
+  title: string
+  url: string
+}
+
 export interface BlogSeries {
   thumbnail: string
   title: string

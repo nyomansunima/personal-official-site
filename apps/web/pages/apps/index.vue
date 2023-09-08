@@ -4,42 +4,42 @@
     <section class="container mx-auto laptop:px-20 px-5 relative intro">
       <!-- the animation -->
       <svg
+        id="globe-animation"
         width="900"
         height="600"
         viewBox="0 0 1221 715"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         class="absolute -top-40 -right-20"
-        id="globe-animation"
       >
         <circle
+          id="globe-anim-1"
           cx="357.5"
           cy="357.5"
           r="356.5"
           transform="matrix(1 0 -0.707107 0.707107 505.581 133)"
           stroke-width="2"
-          id="globe-anim-1"
           class="stroke-gray-200 dark:stroke-gray-900"
         />
         <path
-          d="M528 221C528 235.912 515.912 248 501 248C486.088 248 474 235.912 474 221C474 206.088 486.088 194 501 194C515.912 194 528 206.088 528 221Z"
           id="globe-anim-1-el"
+          d="M528 221C528 235.912 515.912 248 501 248C486.088 248 474 235.912 474 221C474 206.088 486.088 194 501 194C515.912 194 528 206.088 528 221Z"
           class="fill-black dark:fill-white"
         />
         <circle
+          id="globe-anim-2"
           cx="579.5"
           cy="357.5"
           r="356.5"
           stroke-width="2"
-          id="globe-anim-2"
           class="stroke-gray-200 dark:stroke-gray-900"
         />
         <circle
+          id="globe-anim-2-el"
           cx="910.5"
           cy="240.5"
           r="46.5"
           class="fill-black dark:fill-white"
-          id="globe-anim-2-el"
         />
       </svg>
 
@@ -94,8 +94,6 @@ const {
 onMounted(() => {
   MotionPathPlugin.convertToPath('#globe-anim-1')
   MotionPathPlugin.convertToPath('#globe-anim-2')
-
-  useAnimation()
 
   gsap.from('#globe-animation', {
     opacity: 0,

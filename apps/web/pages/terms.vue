@@ -1,8 +1,21 @@
+<script setup lang="ts">
+definePageMeta({
+  layout: 'main',
+})
+
+useSeoMeta({
+  title: 'Terms of use',
+  description: 'Term of use Nyomansunima',
+  ogTitle: 'Term of use | Nyoman Sunima',
+  ogDescription: 'Term of use Nyomansunima',
+})
+</script>
+
 <template>
-  <main class="flex flex-col py-60">
+  <main class="flex flex-col laptop:py-60 py-36">
     <div class="container mx-auto">
       <article
-        class="mx-auto px-5 prose prose-lg dark:prose-invert prose-headings:font-medium text-black dark:text-gray-100 prose-h1:text-6xl prose-a:font-semibold"
+        class="mx-auto px-5 prose prose-lg dark:prose-invert prose-headings:font-medium text-black dark:text-neutral-100 laptop:prose-h1:text-6xl prose-h1:text-5xl prose-a:font-semibold"
       >
         <h1 data-cursor-size="200" data-cursor-exclusion>Term of use</h1>
 
@@ -113,16 +126,3 @@
     </div>
   </main>
 </template>
-
-<script setup lang="ts">
-definePageMeta({
-  layout: 'main',
-})
-
-useSeoMeta({
-  title: 'Terms of use',
-  description: 'Term of use Nyomansunima',
-  ogTitle: 'Term of use | Nyoman Sunima',
-  ogDescription: 'Term of use Nyomansunima',
-})
-</script>

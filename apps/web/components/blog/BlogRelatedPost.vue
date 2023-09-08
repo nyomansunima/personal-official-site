@@ -4,7 +4,7 @@
   >
     <h3 class="text-4xl font-semibold">Related posts</h3>
     <div class="grid tablet:grid-cols-2 laptop:grid-cols-6 mt-10 gap-6">
-      <BlogPostItem :data="post" v-for="post in data" :key="post.slug" />
+      <BlogPostItem v-for="post in data" :key="post.slug" :data="post" />
     </div>
   </div>
 </template>

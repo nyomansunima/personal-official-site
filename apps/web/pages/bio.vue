@@ -15,52 +15,48 @@
           <h2 class="text-2xl font-medium dark:text-white">Nyoman Sunima</h2>
           <i class="fi fi-rr-badge-check text-violet-500 text-2xl"></i>
         </div>
-        <p class="flex w-11/12 text-center text-lg mt-4 dark:text-gray-200">
+        <p class="flex w-11/12 text-center text-lg mt-4 dark:text-neutral-200">
           {{ content.desc }}
         </p>
       </div>
 
       <!-- socials icons -->
       <div
-        class="flex items-center gap-4 justify-center mt-10"
         v-if="content.socials.length > 0"
+        class="flex items-center gap-4 justify-center mt-10"
       >
-        <template v-for="social in content.socials">
-          <NuxtLink
-            :to="social.url"
-            external
-            target="_blank"
-            class="flex justify-center items-center h-14 w-14 shadow-sm rounded-full bg-white transition-all duration-300 hover:-translate-y-1"
-          >
-            <i class="text-xl" :class="social.iconCode"></i>
-          </NuxtLink>
-        </template>
+        <NuxtLink
+          v-for="(social, i) in content.socials"
+          :key="i"
+          :to="social.url"
+          external
+          target="_blank"
+          class="flex justify-center items-center h-14 w-14 shadow-sm rounded-full bg-white transition-all duration-300 hover:-translate-y-1"
+        >
+          <i class="text-xl" :class="social.iconCode"></i>
+        </NuxtLink>
       </div>
 
       <!-- special buttons -->
       <div
-        class="flex flex-wrap items-center gap-4 justify-center mt-6 via-violet-50"
         v-show="content.links.length > 0"
+        class="flex flex-wrap items-center gap-4 justify-center mt-6 via-violet-50"
       >
-        <template v-for="link in content.links">
-          <NuxtLink
-            :to="link.url"
-            external
-            target="_blank"
-            class="flex px-6 py-4 rounded-3xl bg-white font-medium gap-3 justify-center items-center transition-all duration-700 hover:scale-95"
-            :style="{
-              background: link.customColor,
-              color: link.customColor && 'white',
-            }"
-          >
-            <i
-              class="text-xl"
-              :class="link.iconCode"
-              v-show="link.iconCode"
-            ></i>
-            {{ link.label }}
-          </NuxtLink>
-        </template>
+        <NuxtLink
+          v-for="(link, i) in content.links"
+          :key="i"
+          :to="link.url"
+          external
+          target="_blank"
+          class="flex px-6 py-4 rounded-3xl bg-white font-medium gap-3 justify-center items-center transition-all duration-700 hover:scale-95"
+          :style="{
+            background: link.customColor,
+            color: link.customColor && 'white',
+          }"
+        >
+          <i v-show="link.iconCode" class="text-xl" :class="link.iconCode"></i>
+          {{ link.label }}
+        </NuxtLink>
       </div>
 
       <!-- summary info -->
@@ -89,7 +85,7 @@
             <h4 class="flex text-2xl font-medium">
               {{ content.stats.totalSubscriber }}+
             </h4>
-            <i class="fi fi-rr-envelope-dot text-2xl text-gray-500"></i>
+            <i class="fi fi-rr-envelope-dot text-2xl text-neutral-500"></i>
           </div>
           <p class="flex mt-2">My monthly newsletter feed subscriber</p>
         </div>

@@ -4,7 +4,7 @@
     :data-cursor-size="data.image ? '300' : '20'"
     :data-cursor-image="data.image"
   >
-    <span class="text-lg text-gray-400">{{ data.timeline }}</span>
+    <span class="text-lg text-neutral-400">{{ data.timeline }}</span>
     <span
       v-show="data.isStory"
       class="leading-none px-3 py-2 rounded-full bg-lime-300 ml-2 text-base text-black"

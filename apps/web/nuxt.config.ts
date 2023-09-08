@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '@nuxtjs/sanity',
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
+    '@nuxtjs/color-mode',
   ],
   routeRules: {
     '/blog/**': { isr: true },
@@ -27,6 +28,12 @@ export default defineNuxtConfig({
   },
   image: {
     domains: [process.env.APP_HOST_DOMAIN!],
+  },
+  colorMode: {
+    fallback: 'light',
+    classSuffix: '',
+    dataValue: 'theme',
+    preference: 'system',
   },
   sanity: {
     projectId: process.env.SANITY_PROJECT_ID,

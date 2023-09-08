@@ -1,19 +1,3 @@
-<template>
-  <Teleport to="body">
-    <div
-      class="fixed z-40 top-0 left-0 rounded-full will-change-transform -translate-x-1/2 -translate-y-1/2 pointer-events-none h-3 w-3 bg-black dark:bg-white"
-      ref="cursorRef"
-      id="clean-cursor"
-    >
-      <div
-        class="text-white dark:text-black flex justify-center items-center h-full w-full rounded-full overflow-hidden bg-no-repeat bg-cover bg-center"
-        ref="cursorInnerRef"
-        id="clean-cursor-inner"
-      ></div>
-    </div>
-  </Teleport>
-</template>
-
 <script setup lang="ts">
 import { gsap } from 'gsap'
 
@@ -131,7 +115,7 @@ onMounted(() => {
 
       sizeEls.forEach((el) => {
         el.addEventListener('mouseenter', () => {
-          const size = parseFloat(el.dataset['cursorSize'] || '12')
+          const size = parseFloat(el.dataset.cursorSize || '12')
           gsap.to('#clean-cursor', {
             width: size,
             height: size,
@@ -147,7 +131,7 @@ onMounted(() => {
 
       colorEls.forEach((el) => {
         el.addEventListener('mouseenter', () => {
-          const color = el.dataset['cursorColor'] || ''
+          const color = el.dataset.cursorColor || ''
           if (cursorInnerRef.value) {
             gsap.to(cursorInnerRef.value, {
               ease: 'expo',
@@ -169,7 +153,7 @@ onMounted(() => {
 
       textEls.forEach((el) => {
         el.addEventListener('mouseenter', () => {
-          const content = el.dataset['cursorText'] || ''
+          const content = el.dataset.cursorText || ''
           if (cursorInnerRef.value) {
             cursorInnerRef.value.textContent = content
           }
@@ -182,7 +166,7 @@ onMounted(() => {
       })
       iconEls.forEach((el) => {
         el.addEventListener('mouseenter', () => {
-          const icon = el.dataset['cursorIcon'] || ''
+          const icon = el.dataset.cursorIcon || ''
           if (cursorInnerRef.value) {
             cursorInnerRef.value.innerHTML = `<i class="${icon}"/>`
           }
@@ -196,7 +180,7 @@ onMounted(() => {
 
       imageEls.forEach((el) => {
         el.addEventListener('mouseenter', () => {
-          const image = el.dataset['cursorImage'] || ''
+          const image = el.dataset.cursorImage || ''
           if (cursorInnerRef.value) {
             gsap.to(cursorInnerRef.value, {
               ease: 'expo',
@@ -224,9 +208,12 @@ onMounted(() => {
           }
         })
         el.addEventListener('mouseleave', () => {
+          const isDarkMode =
+            document.querySelector<HTMLElement>('html')?.dataset.theme == 'dark'
+
           if (cursorRef.value) {
             cursorRef.value.style.mixBlendMode = ''
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            if (isDarkMode) {
               cursorRef.value.style.background = '#ffffff'
             } else {
               cursorRef.value.style.background = '#000000'
@@ -288,3 +275,19 @@ onMounted(() => {
   }
 })
 </script>
+
+<template>
+  <Teleport to="body">
+    <div
+      id="clean-cursor"
+      ref="cursorRef"
+      class="fixed z-40 top-0 left-0 rounded-full will-change-transform -translate-x-1/2 -translate-y-1/2 pointer-events-none h-3 w-3 bg-black dark:bg-white"
+    >
+      <div
+        id="clean-cursor-inner"
+        ref="cursorInnerRef"
+        class="text-white dark:text-black flex justify-center items-center h-full w-full rounded-full overflow-hidden bg-no-repeat bg-cover bg-center"
+      ></div>
+    </div>
+  </Teleport>
+</template>

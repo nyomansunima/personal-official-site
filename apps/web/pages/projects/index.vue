@@ -49,8 +49,4 @@ const {
 } = await useSanityQuery<{
   projects: Project[]
 }>(projectQuery)
-
-onMounted(() => {
-  useAnimation()
-})
 </script>
