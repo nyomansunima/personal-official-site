@@ -1,19 +1,3 @@
-<template>
-  <Teleport to="body">
-    <div
-      class="fixed z-40 top-0 left-0 rounded-full will-change-transform -translate-x-1/2 -translate-y-1/2 pointer-events-none h-3 w-3 bg-black dark:bg-white"
-      ref="cursorRef"
-      id="clean-cursor"
-    >
-      <div
-        class="text-white dark:text-black flex justify-center items-center h-full w-full rounded-full overflow-hidden bg-no-repeat bg-cover bg-center"
-        ref="cursorInnerRef"
-        id="clean-cursor-inner"
-      ></div>
-    </div>
-  </Teleport>
-</template>
-
 <script setup lang="ts">
 import { gsap } from 'gsap'
 
@@ -224,9 +208,14 @@ onMounted(() => {
           }
         })
         el.addEventListener('mouseleave', () => {
+          const isDarkMode =
+            document.querySelector<HTMLElement>('html')?.dataset['theme'] ==
+            'dark'
+
+          console.log(isDarkMode)
           if (cursorRef.value) {
             cursorRef.value.style.mixBlendMode = ''
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            if (isDarkMode) {
               cursorRef.value.style.background = '#ffffff'
             } else {
               cursorRef.value.style.background = '#000000'
@@ -288,3 +277,19 @@ onMounted(() => {
   }
 })
 </script>
+
+<template>
+  <Teleport to="body">
+    <div
+      class="fixed z-40 top-0 left-0 rounded-full will-change-transform -translate-x-1/2 -translate-y-1/2 pointer-events-none h-3 w-3 bg-black dark:bg-white"
+      ref="cursorRef"
+      id="clean-cursor"
+    >
+      <div
+        class="text-white dark:text-black flex justify-center items-center h-full w-full rounded-full overflow-hidden bg-no-repeat bg-cover bg-center"
+        ref="cursorInnerRef"
+        id="clean-cursor-inner"
+      ></div>
+    </div>
+  </Teleport>
+</template>
