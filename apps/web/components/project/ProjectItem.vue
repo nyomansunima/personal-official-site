@@ -23,8 +23,11 @@ defineProps<ProjectItemProps>()
       <p class="text-xl leading-relaxed mt-5 line-clamp-4">
         {{ data.desc }}
       </p>
-      <div class="flex mt-10">
+      <div class="flex mt-10 items-center gap-4">
         <Button as="span" size="base" variant="secondary">Side Project</Button>
+        <Button v-show="data.isCommingSoon" as="span" size="base"
+          >Incoming</Button
+        >
       </div>
     </div>
     <div

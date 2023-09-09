@@ -1,6 +1,6 @@
 <template>
   <div
-    class="prose prose-lg laptop:prose-xl prose-headings:font-medium marker:text-black dark:marker:text-neutral-100 mt-16 prose-img:w-full prose-img:rounded-lg laptop:prose-img:rounded-2xl prose-img:overflow-hidden prose-pre:border prose-pre:dark:border-gray-800 prose-pre:rounded-2xl content prose-pre:font-mono text-black dark:text-neutral-200 prose-headings:text-black dark:prose-headings:text-neutral-200 dark:prose-invert prose-h2:text-4xl"
+    class="prose prose-lg laptop:prose-xl prose-headings:font-medium marker:text-black dark:marker:text-neutral-100 mt-16 prose-img:w-full prose-img:rounded-lg laptop:prose-img:rounded-2xl prose-img:overflow-hidden prose-pre:border prose-pre:dark:border-gray-800 prose-pre:rounded-2xl content prose-pre:font-mono text-black dark:text-neutral-200 prose-headings:text-black dark:prose-headings:text-neutral-200 dark:prose-invert prose-h2:text-4xl leading-normal"
     v-html="parsedMarkdown"
   ></div>
 </template>
@@ -30,8 +30,8 @@ const parsedMarkdown = computed(() => {
       if (lang && highlightJs.getLanguage(lang)) {
         try {
           return (
-            '<pre class="hljs relative pt-6"><code>' +
-            '<div class="flex items-center gap-1 absolute top-3 left-3"> <span class="flex h-3 w-3 rounded-full bg-red-500"></span> <span class="flex h-3 w-3 rounded-full bg-yellow-500"></span> <span class="flex h-3 w-3 rounded-full bg-green-500"></span></div>' +
+            '<pre class="hljs relative !pt-7 !font-mono !font-normal"><code>' +
+            '<div class="flex items-center gap-1 absolute top-3 left-3"> <span class="flex h-2 w-2 rounded-full bg-red-500"></span> <span class="flex h-2 w-2 rounded-full bg-yellow-500"></span> <span class="flex h-2 w-2 rounded-full bg-green-500"></span></div>' +
             highlightJs.highlight(str, {
               language: lang,
               ignoreIllegals: true,

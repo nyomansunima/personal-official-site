@@ -31,7 +31,7 @@ useHead({
 // register and start the animation
 // use GSAP and also add soem animation in global scopes
 onMounted(() => {
-  const lenis = new Lenis({ duration: 2.0 })
+  const lenis = new Lenis({ duration: 4.0 })
   function raf(time) {
     lenis.raf(time)
     requestAnimationFrame(raf)
@@ -42,10 +42,6 @@ onMounted(() => {
   watch(
     () => route.path,
     () => {
-      // bring the default page into
-      // the top scroll position
-      gsap.set(window, { scrollTo: 0 })
-
       // start the animation
       // for text, elements and other
       useAnimation()

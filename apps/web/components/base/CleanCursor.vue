@@ -74,12 +74,13 @@ onMounted(() => {
     setY(y)
   }
 
+  // reload and get the new element
+  // when the route gotta changes
   watch(
     () => route.path,
     () => {
       // define all cursor element
       // including the size, text, image, exclusion
-      // and so on
       const sizeEls =
         document.querySelectorAll<HTMLElement>('[data-cursor-size]') || []
       const textEls =

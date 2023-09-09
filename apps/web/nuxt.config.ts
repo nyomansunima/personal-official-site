@@ -12,11 +12,13 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
     '@nuxtjs/color-mode',
+    // '@nuxtjs/fontaine',
   ],
   routeRules: {
     '/blog/**': { isr: true },
   },
   css: [
+    '~/assets/styles/font.css',
     '~/assets/styles/globals.css',
     '@flaticon/flaticon-uicons/css/all/all.css',
   ],
