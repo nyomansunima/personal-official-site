@@ -4,6 +4,7 @@ import { ScrollTrigger, MotionPathPlugin, ScrollToPlugin } from 'gsap/all'
 import Lenis from '@studio-freight/lenis'
 
 const route = useRoute()
+const app = useNuxtApp()
 
 const {
   public: { host },
@@ -28,6 +29,12 @@ useHead({
   },
 })
 
+// get to the top level of page
+// when changes route
+app.hook('page:finish', () => {
+  window.scroll(0, 0)
+})
+
 // register and start the animation
 // use GSAP and also add soem animation in global scopes
 onMounted(() => {
@@ -38,6 +45,7 @@ onMounted(() => {
   }
 
   requestAnimationFrame(raf)
+  useAnimation()
 
   watch(
     () => route.path,
@@ -46,7 +54,6 @@ onMounted(() => {
       // for text, elements and other
       useAnimation()
     },
-    { immediate: true },
   )
 })
 </script>
