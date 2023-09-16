@@ -7,7 +7,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: 'bg-accent dark:text-black',
+        primary: 'bg-black text-neutral-100 dark:bg-white dark:text-black',
         outline: 'border border-neutral-100 dark:border-neutral-800',
         secondary: 'bg-neutral-100 dark:bg-neutral-900',
       },
