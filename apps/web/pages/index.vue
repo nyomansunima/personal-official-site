@@ -17,13 +17,11 @@ useSeoMeta({
 
 const {
   data: {
-    value: { posts, projects, apps, products, stories },
+    value: { posts, projects, stories },
   },
 } = await useSanityQuery<{
   posts: BlogPost[]
   projects: Project[]
-  apps: App[]
-  products: Product[]
   stories: Story[]
 }>(homeQuery)
 </script>
@@ -47,12 +45,12 @@ const {
       <div class="flex flex-col mt-24">
         <div class="flex flex-col gap-10 text-xl leading-relaxed laptop:w-8/12">
           <p>
-            Hello, my name is Nyoman Sunima, and I’m a product designer and
-            full-stack developer. I currently work as a freelancer to craft apps
-            through research, design, and development. My daily job is design
-            and development. I have enjoyed what I have been doing since the
-            beginning. I think I have fashion when doing design and then
-            bringing it into a real product.
+            5+ years as a product designer and full stack developer. Been
+            focusing on crafting apps through research, design, and development.
+            My day to day revolves around designing and developing digital
+            products. I've been passionate about this work from the start,
+            combining style with functionality to create user-friendly
+            experiences.
           </p>
         </div>
       </div>
