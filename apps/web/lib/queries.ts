@@ -15,16 +15,6 @@ export const homeQuery = `
       "slug": slug.current,
       "tag": tags[0]
     },
-    "apps": *[_type == "app"] | order(_created desc){
-      ...,
-      "thumbnail": thumbnail.asset -> url,
-    },
-    "products": *[_type == "product"] | order(_createdAt desc){
-      title,
-      initialPrice,
-      "thumbnail":images[0].asset->url,
-      "slug": slug.current,
-    },
     "stories": *[_type == "story"] | order(_updatedtAt desc) [0...4]{
       ...,
     }
