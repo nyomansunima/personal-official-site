@@ -23,7 +23,7 @@
     "@types/markdown-it": "^13.0.1",
     "@types/markdown-it-attrs": "^4.1.0",
     "@types/node": "^20",
-    "@typescript-eslint/parser": "^6.4.1",
+    "@typescript-eslint/parser": "^6.7.0",
     "@vueuse/components": "^10.2.1",
     "@vueuse/core": "^10.3.0",
     "@vueuse/nuxt": "^10.2.0",
