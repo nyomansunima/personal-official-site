@@ -28,7 +28,7 @@
     "@vueuse/core": "^10.3.0",
     "@vueuse/nuxt": "^10.2.0",
     "cypress": "^13.1.0",
-    "eslint": "^8.42.0",
+    "eslint": "^8.50.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "nuxt": "^3.7.1",
