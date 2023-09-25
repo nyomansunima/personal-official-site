@@ -46,7 +46,7 @@
     "highlight.js": "^11.8.0",
     "markdown-it": "^13.0.1",
     "markdown-it-attrs": "^4.1.6",
-    "radix-vue": "^0.1.30",
+    "radix-vue": "^0.3.0",
     "split-type": "^0.3.3",
     "tailwind-merge": "^1.14.0",
     "vee-validate": "^4.10.8",
