@@ -4,7 +4,7 @@
 # ***** NOTE ******
 # This deployment need to setup some secrets
 
-name: Deploy Web Application to Production
+name: Web Production
 
 # define the env for this workflows
 env:

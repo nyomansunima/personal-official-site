@@ -4,7 +4,7 @@
 # ***** NOTE ******
 # This deployment need to setup some secrets
 
-name: Deploy Studio Application to Production
+name: Studio Production
 
 # define the env for this workflows
 env:
@@ -24,7 +24,7 @@ on:
 
 jobs:
   update:
-    name: Update Web App
+    name: Update Studio App
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the code

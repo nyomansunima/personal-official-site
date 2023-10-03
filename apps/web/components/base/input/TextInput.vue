@@ -30,7 +30,7 @@
 import { useField } from 'vee-validate'
 import { BaseInputProps } from '~/types/component'
 
-interface TextInputProps extends BaseInputProps {}
+interface TextInputProps extends /* @vue-ignore */ BaseInputProps {}
 const props = defineProps<TextInputProps>()
 const { errorMessage, value, setValue } = useField(() => props.name)
 if (props.value) {
