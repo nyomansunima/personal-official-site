@@ -49,7 +49,7 @@
     "radix-vue": "^0.1.30",
     "split-type": "^0.3.3",
     "tailwind-merge": "^1.14.0",
-    "vee-validate": "^4.10.8",
+    "vee-validate": "^4.11.8",
     "yup": "^1.2.0"
   }
 }
