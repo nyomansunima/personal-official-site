@@ -13,6 +13,8 @@ const {
   >
     <h2
       class="text-5xl laptop:text-8xl !leading-tight laptop:w-11/12"
+      data-cursor-size="200"
+      data-cursor-exclusion
       animation="text-line-mask-opacity-scrub"
     >
       <span class="laptop:pl-20"></span>
@@ -32,7 +34,7 @@ const {
 
     <div class="flex justify-center mt-56">
       <Button as="a" href="/projects" size="lg" variant="primary">
-        More projects <i class="fi fi-rr-gamepad" />
+        More projects <i class="fi fi-sr-gamepad" />
       </Button>
     </div>
   </section>

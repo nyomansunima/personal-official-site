@@ -4,6 +4,8 @@
   <section class="flex flex-col container mx-auto px-5 laptop:px-20">
     <h2
       class="text-5xl laptop:text-8xl !leading-tight laptop:w-11/12"
+      data-cursor-size="200"
+      data-cursor-exclusion
       animation="text-char-slide-up"
     >
       I share tips about design, development & crafting app.

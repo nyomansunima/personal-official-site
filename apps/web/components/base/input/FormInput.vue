@@ -1,9 +1,3 @@
-<template>
-  <form class="flex flex-col" @submit.prevent="saveForm">
-    <slot />
-  </form>
-</template>
-
 <script setup lang="ts">
 import { FormContext } from 'vee-validate'
 
@@ -23,3 +17,9 @@ const saveForm = handleSubmit((formData) => {
   emit('save', formData)
 })
 </script>
+
+<template>
+  <form class="flex flex-col" @submit.prevent="saveForm">
+    <slot />
+  </form>
+</template>

@@ -12,6 +12,8 @@ const {
   >
     <h2
       class="text-5xl laptop:text-8xl !leading-tight laptop:w-11/12"
+      data-cursor-size="200"
+      data-cursor-exclusion
       animation="text-word-slide-up"
     >
       I share my experience and educate other people.

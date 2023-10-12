@@ -1,3 +1,21 @@
+<script setup lang="ts">
+import { useField } from 'vee-validate'
+
+interface TextAreaInputProps {
+  preIcon?: string
+  sufIcon?: string
+  name: string
+  placeholder?: string
+  label?: string
+  value?: any
+}
+const props = defineProps<TextAreaInputProps>()
+const { errorMessage, value, setValue } = useField(() => props.name)
+if (props.value) {
+  setValue(props.value)
+}
+</script>
+
 <template>
   <div class="flex flex-col w-full">
     <label v-show="label" :for="`${name}-input`" class="flex">{{
@@ -24,15 +42,3 @@
     >
   </div>
 </template>
-
-<script setup lang="ts">
-import { useField } from 'vee-validate'
-import { BaseInputProps } from '~/types/component'
-
-interface TextAreaInputProps extends /* @vue-ignore */ BaseInputProps {}
-const props = defineProps<TextAreaInputProps>()
-const { errorMessage, value, setValue } = useField(() => props.name)
-if (props.value) {
-  setValue(props.value)
-}
-</script>

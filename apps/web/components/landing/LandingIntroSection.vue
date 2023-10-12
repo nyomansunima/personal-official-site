@@ -4,6 +4,8 @@
   <section class="flex flex-col container mx-auto laptop:px-20 intro px-5">
     <h2
       class="text-5xl laptop:text-8xl !leading-tight"
+      data-cursor-size="200"
+      data-cursor-exclusion
       animation="text-char-opacity"
     >
       <span class="laptop:pl-20"></span>
