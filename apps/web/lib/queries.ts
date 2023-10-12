@@ -1,23 +1,27 @@
-export const homeQuery = `
-  {
-    "posts": *[_type == "blog"] | order(_updatedAt desc)[0...3]{
-      "slug": slug.current,
-      title,
-      "thumbnail": thumbnail.asset -> url,
-      "tag": tags[0],
-      _createdAt,
-      featured,
-      "isIncoming": "Incoming" in tags[],
-    },
-    "projects": *[_type == "project"] | order(_updatedAt desc) [0...3]{
-      ...,
-      "thumbnail": thumbnail.asset -> url,
-      "slug": slug.current,
-      "tag": tags[0]
-    },
-    "stories": *[_type == "story"] | order(_updatedtAt desc) [0...4]{
-      ...,
-    }
+export const featuredPostListQuery = `
+  *[_type == "blog"] | order(_updatedAt desc)[0...3]{
+    "slug": slug.current,
+    title,
+    "thumbnail": thumbnail.asset -> url,
+    "tag": tags[0],
+    _createdAt,
+    featured,
+    "isIncoming": "Incoming" in tags[],
+  }
+`
+
+export const featuredProjectsListQuery = `
+  *[_type == "project"] | order(_updatedAt desc) [0...3]{
+    ...,
+    "thumbnail": thumbnail.asset -> url,
+    "slug": slug.current,
+    "tag": tags[0]
+  }
+`
+
+export const storiesListQuery = `
+  *[_type == "story"] | order(_updatedtAt desc) [0...4]{
+    ...,
   }
 `
 

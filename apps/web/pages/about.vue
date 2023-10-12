@@ -28,15 +28,10 @@ const {
       class="flex flex-col items-center container mx-auto gap-20 px-5 laptop:px-20 -mt-32 relative"
     >
       <div
-        class="flex relative laptop:w-5/12 mx-auto justify-center items-end overflow-hidden rounded-3xl mt-20 laptop:mt-0 laptop:rounded-full h-80 laptop:min-h-[700px]"
+        class="flex relative laptop:w-5/12 mx-auto justify-center items-end overflow-hidden rounded-3xl mt-20 laptop:mt-0 laptop:rounded-full h-80 laptop:min-h-[700px] border border-neutral-200 dark:border-neutral-800"
       >
-        <div class="flex absolute w-full h-full">
-          <NuxtImg
-            src="/images/profile-cover.png"
-            class="flex h-full w-full object-fill"
-          />
-        </div>
-        <NuxtImg
+        <div class="flex absolute w-full h-full"></div>
+        <img
           src="/images/photo.png"
           class="relative flex w-[400px] h-[400px] object-cover"
         />
