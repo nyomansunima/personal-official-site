@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default function FaqContactSection() {
+export default function ContactSection() {
   return (
     <section className="flex flex-col items-center container mx-auto laptop:px-20 px-5 text-center text-5xl laptop:text-8xl">
       <div animation-target>

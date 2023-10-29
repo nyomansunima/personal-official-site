@@ -1,4 +1,4 @@
-import FaqContactSection from '@components/faq/faq-contact-section'
+import ContactSection from '@components/contact/contact-section'
 import FaqIntroSection from '@components/faq/faq-intro-section'
 import FaqListSection from '@components/faq/faq-list-section'
 import { type Metadata } from 'next'
@@ -27,7 +27,7 @@ export default function FaqPage() {
     <main className="flex flex-col py-20 laptop:py-28 gap-40 laptop:gap-80">
       <FaqIntroSection />
       <FaqListSection />
-      <FaqContactSection />
+      <ContactSection />
     </main>
   )
 }

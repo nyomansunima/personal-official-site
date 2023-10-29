@@ -1,5 +1,5 @@
 import { hygraphConnection } from '~/config/hygraph'
-import { FAQ } from '~/types'
+import { Career, FAQ, Timeline } from '~/types'
 
 class CommonService {
   async getAllFaq(): Promise<FAQ[]> {
@@ -13,8 +13,38 @@ class CommonService {
     `
 
     const res = await hygraphConnection.request<any>(query)
-
     return res.faqs
+  }
+
+  async getAllTimelines(): Promise<Timeline[]> {
+    const query = `
+      query TimelinesQuery {
+        timelines {
+          date
+          desc
+          title
+        }
+      }
+    `
+
+    const res = await hygraphConnection.request<any>(query)
+    return res.timelines
+  }
+
+  async getAllCareers(): Promise<Career[]> {
+    const query = `
+      query CareersQuery {
+        careers {
+          role
+          type
+          timeline
+          company
+        }
+      }    
+    `
+
+    const res = await hygraphConnection.request<any>(query)
+    return res.careers
   }
 }
 

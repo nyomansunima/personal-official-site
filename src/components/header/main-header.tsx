@@ -20,7 +20,7 @@ export default function MainHeader() {
   }
 
   return (
-    <header className="flex items-center fixed top-0 inset-x-0 px-10 py-3">
+    <header className="flex items-center fixed top-0 inset-x-0 px-10 py-3 z-50">
       <DynamicBrand />
       <div className="flex flex-grow"></div>
       <div className="flex items-center gap-3">

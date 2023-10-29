@@ -9,15 +9,15 @@ export const sideNavMenus: MenuItem[] = [
     link: '/projects',
   },
   {
-    label: 'What I do',
+    label: 'Services',
     link: '/services',
   },
   {
-    label: 'About Me',
+    label: 'About',
     link: '/about',
   },
   {
-    label: 'Get in Touch',
+    label: 'Contacts',
     link: '/contact',
   },
 ]

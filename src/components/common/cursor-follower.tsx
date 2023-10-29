@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import { gsap, Expo, Power4 } from 'gsap'
+import { usePathname } from 'next/navigation'
 
 interface Pos {
   x?: number
@@ -102,6 +103,7 @@ export default function CursorFollower({
 }: Props) {
   const cursor = React.useRef<HTMLDivElement | null>(null)
   const cursorInner = React.useRef<HTMLDivElement | null>(null)
+  const pathname = usePathname()
 
   const pos: Pos = useInstance(() => ({ x: 0, y: 0 }))
   const vel: Vel = useInstance(() => ({ x: 0, y: 0 }))
@@ -118,7 +120,7 @@ export default function CursorFollower({
       set.width = gsap.quickSetter(cursor.current, 'width', 'px')
       set.rt = gsap.quickSetter(cursorInner.current, 'rotate', 'deg')
     }
-  })
+  }, [pathname])
 
   const loop = React.useCallback(() => {
     const rotation = getAngle(vel.x, vel.y)
@@ -134,7 +136,7 @@ export default function CursorFollower({
       set.sy(1 - scale)
       set.rt(-rotation)
     }
-  }, [gellyAnimationAmount, isGelly, pos.x, pos.y, set, vel.x, vel.y])
+  }, [gellyAnimationAmount, isGelly, pos.x, pos.y, set, vel.x, vel.y, pathname])
 
   React.useLayoutEffect(() => {
     const sizeElements = document.querySelectorAll(
@@ -459,7 +461,7 @@ export default function CursorFollower({
         el.removeEventListener('mouseleave', () => {})
       })
     }
-  })
+  }, [pathname])
 
   useTicker(loop)
 
