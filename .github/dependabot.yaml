@@ -6,29 +6,19 @@
 version: 2
 updates:
   # Maintain the github action dependencies
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: 'github-actions'
+    directory: '/'
     schedule:
-      interval: "daily"
+      interval: 'daily'
     labels:
-      - "dependencies"
+      - 'dependencies'
 
-  - package-ecosystem: "npm"
-    directory: "/apps/studio"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "weekly"
+      interval: 'weekly'
     commit-message:
-      prefix: "npm"
-      include: "scope"
+      prefix: 'npm'
+      include: 'scope'
     labels:
-      - "📦 dependencies"
-
-  - package-ecosystem: "npm"
-    directory: "/apps/web"
-    schedule:
-      interval: "weekly"
-    commit-message:
-      prefix: "npm"
-      include: "scope"
-    labels:
-      - "📦 dependencies"
+      - '📦 dependencies'
