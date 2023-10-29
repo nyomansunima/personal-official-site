@@ -20,7 +20,7 @@ export function NavigationMenu() {
             variant={'outline'}
             onClick={() => setOpen(true)}
           >
-            <i className="fi fi-sr-apps-add" />
+            <i className="fi fi-rr-apps-add" />
           </Button>
         </TooltipTrigger>
         <TooltipContent>Open Menu</TooltipContent>

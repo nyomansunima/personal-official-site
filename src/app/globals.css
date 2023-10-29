@@ -138,7 +138,7 @@ html.lenis {
 
 /* base preset */
 body {
-  @apply text-base font-normal text-foreground bg-background leading-normal font-sans;
+  @apply text-base font-medium text-foreground bg-background leading-normal font-sans;
 }
 .fi {
   @apply flex justify-center items-center;

@@ -1,4 +1,6 @@
 {
   "extends": ["next", "prettier"],
-  "rules": {}
+  "rules": {
+    "react/no-unescaped-entities": "off"
+  }
 }

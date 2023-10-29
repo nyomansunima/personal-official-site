@@ -64,7 +64,7 @@ export default function RootLayout({
           <AnimationProvider>
             <body className={`${gilroy.variable} ${dmMono.variable}`}>
               <MainHeader />
-              <div className="py-20">{children}</div>
+              <div className="py-20 min-h-screen">{children}</div>
               <MainFooter />
               <CursorFollower isGelly />
             </body>

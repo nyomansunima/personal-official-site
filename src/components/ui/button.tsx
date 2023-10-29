@@ -14,7 +14,7 @@ const buttonVariants = cva('flex justify-center items-center relative gap-3', {
       base: 'h-10 px-4 py-2',
       sm: 'h-9 rounded-md px-3',
       lg: 'h-11 rounded-md px-8',
-      md: 'h-16 px-10 rounded-full',
+      md: 'h-16 px-10 rounded-full text-lg',
       icon: 'h-11 w-11 rounded-full',
     },
   },

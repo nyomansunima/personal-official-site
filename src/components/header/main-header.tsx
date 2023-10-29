@@ -31,8 +31,8 @@ export default function MainHeader() {
                 <i
                   className={`${
                     theme === 'light'
-                      ? 'fi fi-sr-moon-stars'
-                      : 'fi fi-sr-brightness'
+                      ? 'fi fi-rr-moon-stars'
+                      : 'fi fi-rr-brightness'
                   }`}
                 />
               </Button>
