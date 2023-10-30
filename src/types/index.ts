@@ -15,3 +15,22 @@ export type Career = {
   role: string
   type: string
 }
+
+export type Post = {
+  image: string
+  title: string
+  tags: string[]
+  slug: string
+  publishedAt: string
+  totalViews: number
+  readTimeInMinutes: number
+  reactionCount: number
+}
+
+export type PaginatedBlogPost = {
+  posts: Post[]
+  pageInfo: {
+    hasNextPage: boolean
+    endCursor: string
+  }
+}

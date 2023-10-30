@@ -1,9 +1,11 @@
-'use client'
-
+import { BlogPostItemCard } from '@components/blog/blog-post-item'
 import { Button } from '@components/ui/button'
 import Link from 'next/link'
+import { blogService } from '~/services/blog-service'
 
-export default function HomeBlogSection() {
+export default async function HomeBlogSection() {
+  const posts = await blogService.getInitialBlogPost()
+
   return (
     <section
       v-show="posts.length > 0"
@@ -19,18 +21,18 @@ export default function HomeBlogSection() {
       </h2>
 
       <div className="flex mt-16 actions">
-        <Button
-          asChild
-          variant={'outline'}
-          className="transition-all duration-700 hover:scale-95"
-        >
+        <Button asChild className="transition-all duration-700 hover:scale-95">
           <Link href={'/blog'}>
             Learn from blog <i className="fi fi-rr-arrow-right"></i>
           </Link>
         </Button>
       </div>
 
-      <div className="grid grid-cols-1 laptop:grid-cols-1 gap-6 mt-20 list laptop:mt-36"></div>
+      <div className="grid grid-cols-1 laptop:grid-cols-3 gap-6 mt-20 list laptop:mt-36">
+        {posts.map((post, i) => (
+          <BlogPostItemCard post={post} key={i} />
+        ))}
+      </div>
     </section>
   )
 }
