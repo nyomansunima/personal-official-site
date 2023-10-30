@@ -198,10 +198,7 @@ export default function AnimationProvider({ children }: Props) {
   const pathname = usePathname()
 
   React.useEffect(function registerAnimationEffect() {
-    // register all of the gsap plugins
     gsap.registerPlugin(ScrollTrigger)
-
-    // register the smooth scroll animation
     const lenis = new Lenis({ duration: 4.0 })
 
     lenis.on('scroll', ScrollTrigger.update)

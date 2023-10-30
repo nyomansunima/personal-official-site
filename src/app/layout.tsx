@@ -2,21 +2,15 @@ import type { Metadata } from 'next'
 import { dmMono, gilroy } from '~/fonts'
 import ThemeProvider from '~/providers/theme-provider'
 import './globals.css'
-import {
-  defaultOpenGraphMetadata,
-  defaultTwitterMetadata,
-} from '~/lib/shared-metadata'
 import QueryProvider from '~/providers/query-provider'
 import MainHeader from '@components/header/main-header'
 import MainFooter from '@components/footer/main-footer'
 import AnimationProvider from '~/providers/animation-provider'
 import CursorFollower from '@components/common/cursor-follower'
+import { configuration } from '~/config/setting'
+import { Analytics } from '@vercel/analytics/react'
 
 export const metadata: Metadata = {
-  title:
-    'Product Designer & Fullstack developer focused on crafting app | Nyoman Sunima',
-  description:
-    'Product Designer with fullstack developer experience. Focused on building app from scratch and indie hacker',
   applicationName: 'Nyoman Sunima',
   keywords: [
     'Nyoman',
@@ -31,20 +25,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Nyoman Sunima' }],
   publisher: 'Nyoman Sunima',
   creator: 'Nyoman Sunima',
-  openGraph: {
-    ...defaultOpenGraphMetadata,
-    title:
-      'Product Designer & Fullstack developer focused on crafting app | Nyoman Sunima',
-    description:
-      'Product Designer with fullstack developer experience. Focused on building app from scratch and indie hacker',
-  },
-  twitter: {
-    ...defaultTwitterMetadata,
-    title:
-      'Product Designer & Fullstack developer focused on crafting app | Nyoman Sunima',
-    description:
-      'Product Designer with fullstack developer experience. Focused on building app from scratch and indie hacker',
-  },
+  metadataBase: new URL(configuration.app.host),
 }
 
 export default function RootLayout({
@@ -67,6 +48,7 @@ export default function RootLayout({
               <div className="py-20 min-h-screen">{children}</div>
               <MainFooter />
               <CursorFollower isGelly />
+              <Analytics />
             </body>
           </AnimationProvider>
         </QueryProvider>

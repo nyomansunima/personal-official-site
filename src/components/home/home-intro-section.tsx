@@ -13,7 +13,7 @@ export default function HomeIntroSection() {
         data-animation="text-char-opacity"
       >
         <span className="laptop:pl-20"></span>
-        Product Designer & Fullstack Developer focused on crafting app from
+        Product Designer & Fullstack Developer specialized in crafting apps from
         scratch.
       </h2>
 

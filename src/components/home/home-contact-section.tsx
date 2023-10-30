@@ -1,4 +1,5 @@
 import { Button } from '@components/ui/button'
+import Link from 'next/link'
 
 export default function HomeContactSection() {
   return (
@@ -13,8 +14,14 @@ export default function HomeContactSection() {
       </h2>
 
       <div className="flex justify-center m-auto mt-24">
-        <Button variant="primary">
-          Get in touch <i className="fi fi-sr-heart" />
+        <Button
+          variant="primary"
+          asChild
+          className="transition-all duration-1000 hover:scale-95"
+        >
+          <Link href={'/contact'}>
+            Get in touch <i className="fi fi-sr-heart" />
+          </Link>
         </Button>
       </div>
     </section>
