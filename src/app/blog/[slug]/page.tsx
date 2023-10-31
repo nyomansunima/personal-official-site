@@ -1,4 +1,4 @@
-import { Metadata, ResolvedMetadata } from 'next'
+import { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 import { blogService } from '~/services/blog-service'
 import {
@@ -17,7 +17,7 @@ type Props = {
 
 export async function generateMetadata(
   { params }: Props,
-  parent: ResolvedMetadata,
+  parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const slug = params.slug
 
