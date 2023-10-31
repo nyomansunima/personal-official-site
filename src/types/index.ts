@@ -34,3 +34,27 @@ export type PaginatedBlogPost = {
     endCursor: string
   }
 }
+
+export type PostMetadata = {
+  title: string
+  desc: string
+  image: string
+}
+
+export type PostDetail = {
+  title: string
+  subtitle: string
+  image: string
+  tags: string[]
+  readTimeInMinutes: number
+  views: number
+  reactionCount: number
+  publishedAt: string
+  content: string
+}
+
+export type PostAuthor = {
+  avatar: string
+  name: string
+  bio: string
+}

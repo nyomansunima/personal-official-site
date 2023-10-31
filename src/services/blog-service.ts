@@ -1,5 +1,11 @@
 import { hashnodeConnection } from '~/config/hashnode'
-import { PaginatedBlogPost, Post } from '~/types'
+import {
+  PaginatedBlogPost,
+  Post,
+  PostAuthor,
+  PostDetail,
+  PostMetadata,
+} from '~/types'
 
 class BlogService {
   async getInitialBlogPost(): Promise<Post[]> {
@@ -105,5 +111,99 @@ class BlogService {
 
     return payload
   }
+
+  async getPostMetadata(slug: string): Promise<PostMetadata> {
+    const query = `
+      query PostMetadata($slug: String!) {
+        publication(host: "nyomansunima.hashnode.dev") {
+          post(slug: $slug) {
+            title
+            brief
+            coverImage {
+              url
+            }
+          }
+        }
+      }
+    `
+
+    const res = await hashnodeConnection.request<any>(query, {
+      slug,
+    })
+
+    const payload = res.publication.post
+
+    return {
+      title: payload.title,
+      desc: payload.brief,
+      image: payload.coverImage.url,
+    }
+  }
+
+  async getPostDetail(slug: string): Promise<PostDetail> {
+    const query = `
+      query DetailBlogPost($slug: String!) {
+        publication(host: "nyomansunima.hashnode.dev") {
+          post(slug: $slug) {
+            title
+            subtitle
+            coverImage {
+              url
+            }
+            tags {
+              name
+            }
+            readTimeInMinutes
+            views
+            reactionCount
+            publishedAt
+            content {
+              markdown
+            }
+          }
+        }
+      }
+    `
+
+    const res = await hashnodeConnection.request<any>(query, { slug })
+    const payload = res.publication.post
+
+    return {
+      ...payload,
+      image: payload.coverImage.url,
+      content: payload.content.markdown,
+      tags: payload.tags.map((tag) => tag.name),
+    }
+  }
+
+  async getPostAuthor(slug: string): Promise<PostAuthor> {
+    const query = `
+      query DetailBlogPost($slug: String!) {
+        publication(host: "nyomansunima.hashnode.dev") {
+          post(slug: $slug) {
+            author {
+              name
+              bio {
+                text
+              }
+              profilePicture
+            }
+          }
+        }
+      }
+    `
+
+    const res = await hashnodeConnection.request<any>(query, {
+      slug,
+    })
+    const payload = res.publication.post.author
+
+    return {
+      avatar: payload.profilePicture,
+      bio: payload.bio.text,
+      name: payload.name,
+    }
+  }
 }
+
 export const blogService = new BlogService()
