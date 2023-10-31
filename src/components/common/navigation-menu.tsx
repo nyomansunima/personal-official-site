@@ -4,12 +4,21 @@ import { Button } from '@components/ui/button'
 import { Sheet, SheetContent } from '@components/ui/sheet'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@components/ui/tooltip'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import * as React from 'react'
 import { sideNavMenus } from '~/constants/menu'
 import { socials } from '~/constants/social'
 
 export function NavigationMenu() {
+  const pathname = usePathname()
   const [isOpen, setOpen] = React.useState<boolean>(false)
+
+  React.useEffect(
+    function closeSheetOnPathChange() {
+      setOpen(false)
+    },
+    [pathname],
+  )
 
   return (
     <>
