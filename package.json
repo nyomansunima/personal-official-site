@@ -33,7 +33,7 @@
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.0",
     "split-type": "^0.3.4",
-    "tailwind-merge": "^1.14.0",
+    "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.22.4"
   },
