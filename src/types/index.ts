@@ -58,3 +58,13 @@ export type PostAuthor = {
   name: string
   bio: string
 }
+
+export type LinkBio = {
+  iconCode?: string
+  title: string
+  type: string
+  url: string
+  description?: string
+  publishedAt: string
+  image?: string
+}
