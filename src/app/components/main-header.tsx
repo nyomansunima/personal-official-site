@@ -1,14 +1,14 @@
 'use client'
 
-import { DynamicBrand } from '@components/common/dynamic-logo'
-import { NavigationMenu } from '@components/common/navigation-menu'
-import { Button } from '@components/ui/button'
+import { DynamicBrand } from '~/app/components/common/dynamic-logo'
+import { NavigationMenu } from '~/app/components/common/navigation-menu'
+import { Button } from '~/app/components/ui/button'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@components/ui/tooltip'
+} from '~/app/components/ui/tooltip'
 import { useTheme } from 'next-themes'
 
 export default function MainHeader() {

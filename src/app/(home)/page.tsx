@@ -1,8 +1,8 @@
-import HomeBlogSection from '@components/home/home-blog-section'
-import HomeContactSection from '@components/home/home-contact-section'
-import HomeIntroSection from '@components/home/home-intro-section'
-import HomeLearnSection from '@components/home/home-learn-section'
-import HomeProjectSection from '@components/home/home-project-section'
+import HomeBlogSection from './components/home-blog-section'
+import HomeContactSection from './components/home-contact-section'
+import HomeIntroSection from './components/home-intro-section'
+import HomeLearnSection from './components/home-learn-section'
+import HomeProjectSection from './components/home-project-section'
 import { Metadata } from 'next'
 import {
   defaultOpenGraphMetadata,

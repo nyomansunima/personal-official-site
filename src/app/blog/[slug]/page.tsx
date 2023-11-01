@@ -5,9 +5,9 @@ import {
   defaultOpenGraphMetadata,
   defaultTwitterMetadata,
 } from '~/lib/shared-metadata'
-import BlogDetailHeaderSection from '@components/blog/blog-detail-header-section'
-import BlogDetailArticleSection from '@components/blog/blog-detail-article-section'
-import BlogDetailNewsletterSection from '@components/blog/blog-detail-newsletter-section'
+import BlogDetailHeaderSection from '../components/blog-detail-header-section'
+import BlogDetailArticleSection from '../components/blog-detail-article-section'
+import BlogDetailNewsletterSection from '../components/blog-detail-newsletter-section'
 
 type Props = {
   params: {
@@ -48,7 +48,7 @@ export async function generateMetadata(
 export default function BlogDetailPage({ params }: Props) {
   return (
     <main className="flex flex-col items-center laptop:py-28 container mx-auto px-5">
-      <div className="flex flex-col w-8/12 mx-auto">
+      <div className="flex flex-col w-7/12 mx-auto">
         <BlogDetailHeaderSection />
         <BlogDetailArticleSection slug={params.slug} />
         <BlogDetailNewsletterSection />

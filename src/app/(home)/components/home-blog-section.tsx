@@ -1,6 +1,6 @@
-import { BlogPostItemCard } from '@components/blog/blog-post-item'
-import { Button } from '@components/ui/button'
 import Link from 'next/link'
+import { BlogPostItemCard } from '~/app/blog/components/blog-post-item'
+import { Button } from '~/app/components/ui/button'
 import { blogService } from '~/services/blog-service'
 
 export default async function HomeBlogSection() {

@@ -6,13 +6,13 @@ import {
   FormField,
   FormItem,
   FormMessage,
-} from '@components/ui/form'
+} from '~/app/components/ui/form'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation } from '@tanstack/react-query'
-import { Input } from '@components/ui/input'
-import { Button } from '@components/ui/button'
+import { Input } from '~/app/components/ui/input'
+import { Button } from '~/app/components/ui/button'
 import { newsletterService } from '~/services/newsletter-service'
 
 const formSchema = z.object({

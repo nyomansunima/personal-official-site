@@ -1,5 +1,5 @@
-import ContactIntroSection from '@components/contact/contact-intro-section'
-import ContactSocialSection from '@components/contact/contact-social-section'
+import ContactIntroSection from './components/contact-intro-section'
+import ContactSocialSection from './components/contact-social-section'
 import { Metadata } from 'next'
 import {
   defaultOpenGraphMetadata,

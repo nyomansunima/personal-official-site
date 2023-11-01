@@ -1,4 +1,4 @@
-import BlogLatestPostSection from '@components/blog/blog-latest-post-section'
+import BlogLatestPostSection from './components/blog-latest-post-section'
 import { Metadata } from 'next'
 import {
   defaultOpenGraphMetadata,

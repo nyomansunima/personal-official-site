@@ -1,14 +1,14 @@
 import type { Metadata } from 'next'
 import { dmMono, gilroy } from '~/fonts'
-import ThemeProvider from '~/providers/theme-provider'
 import './globals.css'
-import QueryProvider from '~/providers/query-provider'
-import MainHeader from '@components/header/main-header'
-import MainFooter from '@components/footer/main-footer'
-import AnimationProvider from '~/providers/animation-provider'
-import CursorFollower from '@components/common/cursor-follower'
 import { configuration } from '~/config/setting'
 import { Analytics } from '@vercel/analytics/react'
+import ThemeProvider from './components/provider/theme-provider'
+import QueryProvider from './components/provider/query-provider'
+import AnimationProvider from './components/provider/animation-provider'
+import MainHeader from './components/main-header'
+import MainFooter from './components/main-footer'
+import CursorFollower from './components/common/cursor-follower'
 
 export const metadata: Metadata = {
   applicationName: 'Nyoman Sunima',

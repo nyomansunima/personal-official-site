@@ -1,7 +1,7 @@
-import ContactSection from '@components/contact/contact-section'
-import ServiceIntroSection from '@components/services/service-intro-section'
-import ServiceListSection from '@components/services/service-list-section'
-import ServiceProcessSection from '@components/services/service-process-section'
+import ContactSection from '../contact/components/contact-section'
+import ServiceIntroSection from './components/service-intro-section'
+import ServiceListSection from './components/service-list-section'
+import ServiceProcessSection from './components/service-process-section'
 import { Metadata } from 'next'
 import {
   defaultOpenGraphMetadata,

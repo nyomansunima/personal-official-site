@@ -1,7 +1,7 @@
 'use client'
 
-import { Button } from '@components/ui/button'
 import Link from 'next/link'
+import { Button } from '~/app/components/ui/button'
 
 export default function HomeIntroSection() {
   return (

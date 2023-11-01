@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 import { mergeClass } from '~/utils/helpers'
 
 type Props = {
@@ -29,16 +30,20 @@ function serializedContent(content: string): string {
 }
 
 export function MarkdownContent({ content, className }: Props) {
-  const plugins = [remarkGfm]
+  const remarkPlugins = [remarkGfm]
+
+  const rehypePlugins = [rehypeRaw]
 
   return (
     <div
       className={mergeClass(
-        'text-foreground prose prose-lg dark:prose-invert prose-headings:font-medium dark:prose-headings:text-foreground laptop:prose-h1:text-6xl prose-h1:text-5xl prose-a:no-underline prose-img:rounded-xl',
+        'text-foreground !max-w-full prose prose-lg dark:prose-invert prose-headings:font-medium dark:prose-headings:text-foreground laptop:prose-h1:text-6xl prose-h1:text-5xl prose-a:no-underline prose-img:rounded-xl',
         className,
       )}
     >
-      <Markdown remarkPlugins={plugins}>{serializedContent(content)}</Markdown>
+      <Markdown remarkPlugins={remarkPlugins} rehypePlugins={rehypePlugins}>
+        {serializedContent(content)}
+      </Markdown>
     </div>
   )
 }

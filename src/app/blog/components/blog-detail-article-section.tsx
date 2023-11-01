@@ -1,4 +1,4 @@
-import { MarkdownContent } from '@components/common/markdown-content'
+import { MarkdownContent } from '~/app/components/common/markdown-content'
 import Image from 'next/image'
 import { blogService } from '~/services/blog-service'
 
@@ -24,9 +24,9 @@ export default async function BlogDetailArticleSection({ slug }: Props) {
   return (
     <section className="flex flex-col mt-16">
       <article className="flex flex-col">
-        <h2 className="text-5xl !leading-tight">{post.title}</h2>
+        <h1 className="text-5xl !leading-tight">{post.title}</h1>
 
-        <picture className="relative h-[450px] overflow-hidden rounded-2xl mt-16">
+        <picture className="relative h-[400px] overflow-hidden rounded-2xl mt-16">
           <Image
             src={post.image}
             alt={post.title}
