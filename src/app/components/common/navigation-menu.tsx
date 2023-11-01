@@ -1,7 +1,5 @@
 'use client'
 
-import { Button } from '~/app/components/ui/button'
-import { Sheet, SheetContent } from '~/app/components/ui/sheet'
 import {
   Tooltip,
   TooltipContent,
@@ -12,6 +10,8 @@ import { usePathname } from 'next/navigation'
 import * as React from 'react'
 import { sideNavMenus } from '~/constants/menu'
 import { socials } from '~/constants/social'
+import { Button } from '../ui/button'
+import { Sheet, SheetContent } from '../ui/sheet'
 
 export function NavigationMenu() {
   const pathname = usePathname()
