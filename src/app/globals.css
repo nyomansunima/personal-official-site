@@ -18,6 +18,8 @@
     --primary-foreground: #f1f5f9;
     --secondary: #000000;
     --secondary-foreground: #f1f5f9;
+    --cursor-background: #000000;
+    --cursor-foreground: #ffffff;
   }
 
   .dark {
@@ -30,6 +32,8 @@
     --primary-foreground: #f1f5f9;
     --secondary: #ffffff;
     --secondary-foreground: #000000;
+    --cursor-background: #ffffff;
+    --cursor-foreground: #000000;
   }
 }
 

@@ -97,9 +97,9 @@ export default function CursorFollower({
   textAnimationEase = Expo.easeOut,
   textAnimationDuration = 1,
   cursorSize = 12,
-  cursorBackgrounColor = 'var(--foreground)',
-  exclusionBackgroundColor = '#fff',
-  cursorInnerColor = '#fff',
+  cursorBackgrounColor = 'var(--cursor-background)',
+  exclusionBackgroundColor = '#ffffff',
+  cursorInnerColor = 'var(--cursor-foreground)',
 }: Props) {
   const cursor = React.useRef<HTMLDivElement | null>(null)
   const cursorInner = React.useRef<HTMLDivElement | null>(null)

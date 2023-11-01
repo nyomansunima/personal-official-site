@@ -11,7 +11,7 @@ const buttonVariants = cva('flex justify-center items-center relative gap-3', {
       secondary: 'bg-secondary text-secondary-foreground',
     },
     size: {
-      base: 'h-10 px-4 py-2',
+      base: 'h-12 px-6 py-2 rounded-xl text-base',
       sm: 'h-9 rounded-md px-3',
       lg: 'h-11 rounded-md px-8',
       md: 'h-16 px-10 rounded-full text-lg',

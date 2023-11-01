@@ -1,5 +1,5 @@
 import { hygraphConnection } from '~/config/hygraph'
-import { Career, FAQ, Timeline } from '~/types'
+import { Career, FAQ, LinkBio, Timeline } from '~/types'
 
 class CommonService {
   async getAllFaq(): Promise<FAQ[]> {
@@ -45,6 +45,29 @@ class CommonService {
 
     const res = await hygraphConnection.request<any>(query)
     return res.careers
+  }
+
+  async getAllLinks(): Promise<LinkBio[]> {
+    const query = `
+      query LinksQuery {
+        links {
+          iconCode
+          title
+          type
+          url
+          description
+          publishedAt
+          image {
+            url(transformation: {image: {}, validateOptions: false})
+          }
+        }
+      }
+    `
+
+    const res = await hygraphConnection.request<any>(query)
+    const payload = res.links.map((link) => ({ ...link, image: '' }))
+
+    return payload
   }
 }
 
