@@ -1,3 +1,5 @@
+import { boolean } from 'zod'
+
 export type FAQ = {
   question: string
   answer: string
@@ -67,4 +69,29 @@ export type LinkBio = {
   description?: string
   publishedAt: string
   image?: string
+}
+
+export type Work = {
+  slug: string
+  tags: string[]
+  title: string
+  type: string
+  createdAt: string
+  thumbnail: string
+  status: string
+}
+
+export type WorkMeta = {
+  title: string
+  desc: string
+  image: string
+}
+
+export type PaginatedWork = {
+  works: Work[]
+  pageInfo: {
+    hasNextPage: boolean
+    pageSize: number
+    endCursor: string
+  }
 }

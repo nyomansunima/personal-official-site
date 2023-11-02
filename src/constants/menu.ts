@@ -6,7 +6,7 @@ type MenuItem = {
 export const sideNavMenus: MenuItem[] = [
   {
     label: 'My Works',
-    link: '/projects',
+    link: '/works',
   },
   {
     label: 'Services',
@@ -19,5 +19,9 @@ export const sideNavMenus: MenuItem[] = [
   {
     label: 'Contacts',
     link: '/contact',
+  },
+  {
+    label: 'Blog',
+    link: '/blog',
   },
 ]
