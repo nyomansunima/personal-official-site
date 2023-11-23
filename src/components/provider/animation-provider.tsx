@@ -8,7 +8,7 @@ type Props = {
 
 import Lenis from '@studio-freight/lenis'
 import gsap from 'gsap/dist/gsap'
-import { ScrollTrigger } from 'gsap/all'
+import { ScrollToPlugin, ScrollTrigger } from 'gsap/all'
 import SplitType from 'split-type'
 import { usePathname } from 'next/navigation'
 
@@ -198,14 +198,8 @@ export default function AnimationProvider({ children }: Props) {
   const pathname = usePathname()
 
   React.useEffect(function registerAnimationEffect() {
-    gsap.registerPlugin(ScrollTrigger)
-    const lenis = new Lenis({ duration: 4.0 })
-
-    lenis.on('scroll', ScrollTrigger.update)
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000)
-    })
-    gsap.ticker.lagSmoothing(0)
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
+    const lenis = new Lenis({})
 
     function raf(time) {
       lenis.raf(time)
