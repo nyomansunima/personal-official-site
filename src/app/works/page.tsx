@@ -3,8 +3,8 @@ import {
   defaultOpenGraphMetadata,
   defaultTwitterMetadata,
 } from '~/lib/shared-metadata'
-import WorksIntroSection from './components/works-intro-section'
-import WorksListSection from './components/works-list-section'
+import WorksIntroSection from './works-intro-section'
+import WorksListSection from './works-list-section'
 
 export const metadata: Metadata = {
   title: 'Design, development & indie hacking works | Nyoman Sunima',

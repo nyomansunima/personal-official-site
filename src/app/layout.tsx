@@ -3,12 +3,12 @@ import { dmMono, gilroy } from '~/fonts'
 import './globals.css'
 import { configuration } from '~/config/setting'
 import { Analytics } from '@vercel/analytics/react'
-import ThemeProvider from './components/provider/theme-provider'
-import QueryProvider from './components/provider/query-provider'
-import AnimationProvider from './components/provider/animation-provider'
-import MainHeader from './components/main-header'
-import MainFooter from './components/main-footer'
-import CursorFollower from './components/common/cursor-follower'
+import ThemeProvider from '../components/provider/theme-provider'
+import QueryProvider from '../components/provider/query-provider'
+import AnimationProvider from '../components/provider/animation-provider'
+import MainHeader from '../components/main-header'
+import MainFooter from '../components/main-footer'
+import CursorFollower from '../components/common/cursor-follower'
 
 export const metadata: Metadata = {
   applicationName: 'Nyoman Sunima',

@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '~/app/components/ui/button'
+import { Button } from '~/components/ui/button'
 import { WorkListItemCard } from './work-list-item'
 import { useInfiniteQuery } from '@tanstack/react-query'
 import { workService } from '~/services/work-service'

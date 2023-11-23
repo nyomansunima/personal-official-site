@@ -4,7 +4,7 @@ import { useInfiniteQuery } from '@tanstack/react-query'
 import { blogService } from '~/services/blog-service'
 import * as React from 'react'
 import { BlogPostItemCard } from './blog-post-item'
-import { Button } from '~/app/components/ui/button'
+import { Button } from '~/components/ui/button'
 
 export default function BlogLatestPostSection() {
   const allPost = useInfiniteQuery({

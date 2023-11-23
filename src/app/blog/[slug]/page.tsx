@@ -5,9 +5,9 @@ import {
   defaultOpenGraphMetadata,
   defaultTwitterMetadata,
 } from '~/lib/shared-metadata'
-import BlogDetailHeaderSection from '../components/blog-detail-header-section'
-import BlogDetailArticleSection from '../components/blog-detail-article-section'
-import BlogDetailNewsletterSection from '../components/blog-detail-newsletter-section'
+import BlogDetailHeaderSection from '../blog-detail-header-section'
+import BlogDetailArticleSection from '../blog-detail-article-section'
+import BlogDetailNewsletterSection from '../blog-detail-newsletter-section'
 
 type Props = {
   params: {

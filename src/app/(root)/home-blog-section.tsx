@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import { BlogPostItemCard } from '~/app/blog/components/blog-post-item'
-import { Button } from '~/app/components/ui/button'
+import { Button } from '~/components/ui/button'
 import { blogService } from '~/services/blog-service'
+import { BlogPostItemCard } from '../blog/blog-post-item'
 
 export default async function HomeBlogSection() {
   const posts = await blogService.getInitialBlogPost()

@@ -1,4 +1,4 @@
-import { MarkdownContent } from '~/app/components/common/markdown-content'
+import { MarkdownContent } from '~/components/common/markdown-content'
 import Image from 'next/image'
 import { blogService } from '~/services/blog-service'
 

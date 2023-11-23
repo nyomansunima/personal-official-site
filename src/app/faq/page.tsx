@@ -1,6 +1,6 @@
-import ContactSection from '../contact/components/contact-section'
-import FaqIntroSection from './components/faq-intro-section'
-import FaqListSection from './components/faq-list-section'
+import ContactSection from '../contact/contact-section'
+import FaqIntroSection from './faq-intro-section'
+import FaqListSection from './faq-list-section'
 import { type Metadata } from 'next'
 import {
   defaultOpenGraphMetadata,

@@ -3,10 +3,10 @@ import {
   defaultOpenGraphMetadata,
   defaultTwitterMetadata,
 } from '~/lib/shared-metadata'
-import BioIntroSection from './components/bio-intro-section'
-import BioSocialSection from './components/bio-social-section'
-import BioLinkSection from './components/bio-link-section'
-import BioNewsletterSection from './components/bio-newsletter-section'
+import BioIntroSection from './bio-intro-section'
+import BioSocialSection from './bio-social-section'
+import BioLinkSection from './bio-link-section'
+import BioNewsletterSection from './bio-newsletter-section'
 
 export const metadata: Metadata = {
   title:

@@ -1,9 +1,9 @@
-import AboutActivitySection from './components/about-activity-section'
-import AboutCareerSection from './components/about-career-section'
-import AboutContactSection from './components/about-contact-section'
-import AboutIntroSection from './components/about-intro-section'
-import AboutProfileSection from './components/about-profile-section'
-import AboutTimelineSection from './components/about-timeline-section'
+import AboutActivitySection from './about-activity-section'
+import AboutCareerSection from './about-career-section'
+import AboutContactSection from './about-contact-section'
+import AboutIntroSection from './about-intro-section'
+import AboutProfileSection from './about-profile-section'
+import AboutTimelineSection from './about-timeline-section'
 import { Metadata } from 'next'
 import {
   defaultOpenGraphMetadata,

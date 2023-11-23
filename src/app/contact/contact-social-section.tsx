@@ -1,4 +1,4 @@
-import { Button } from '~/app/components/ui/button'
+import { Button } from '~/components/ui/button'
 import Link from 'next/link'
 import { socials } from '~/constants/social'
 
