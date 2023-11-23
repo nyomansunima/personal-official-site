@@ -109,18 +109,30 @@ export default function CursorFollower({
   const vel: Vel = useInstance(() => ({ x: 0, y: 0 }))
   const set: any = useInstance()
 
-  React.useLayoutEffect(() => {
-    set.x = gsap.quickSetter(cursor.current, 'x', 'px')
-    set.y = gsap.quickSetter(cursor.current, 'y', 'px')
+  React.useLayoutEffect(
+    function activateGellyEffect() {
+      set.x = gsap.quickSetter(cursor.current, 'x', 'px')
+      set.y = gsap.quickSetter(cursor.current, 'y', 'px')
 
-    if (isGelly) {
-      set.r = gsap.quickSetter(cursor.current, 'rotate', 'deg')
-      set.sx = gsap.quickSetter(cursor.current, 'scaleX')
-      set.sy = gsap.quickSetter(cursor.current, 'scaleY')
-      set.width = gsap.quickSetter(cursor.current, 'width', 'px')
-      set.rt = gsap.quickSetter(cursorInner.current, 'rotate', 'deg')
-    }
-  }, [pathname])
+      if (isGelly) {
+        set.r = gsap.quickSetter(cursor.current, 'rotate', 'deg')
+        set.sx = gsap.quickSetter(cursor.current, 'scaleX')
+        set.sy = gsap.quickSetter(cursor.current, 'scaleY')
+        set.width = gsap.quickSetter(cursor.current, 'width', 'px')
+        set.rt = gsap.quickSetter(cursorInner.current, 'rotate', 'deg')
+      }
+    },
+    [pathname],
+  )
+
+  React.useEffect(
+    function resetElements() {
+      if (cursorInner.current) {
+        cursorInner.current.textContent = ''
+      }
+    },
+    [pathname],
+  )
 
   const loop = React.useCallback(() => {
     const rotation = getAngle(vel.x, vel.y)
@@ -138,330 +150,333 @@ export default function CursorFollower({
     }
   }, [gellyAnimationAmount, isGelly, pos.x, pos.y, set, vel.x, vel.y, pathname])
 
-  React.useLayoutEffect(() => {
-    const sizeElements = document.querySelectorAll(
-      '[data-cursor-size]',
-    ) as unknown as NodeListOf<HTMLElement>
-    const textElements = document.querySelectorAll(
-      '[data-cursor-text]',
-    ) as unknown as NodeListOf<HTMLElement>
-    const colorElements = document.querySelectorAll(
-      '[data-cursor-color]',
-    ) as unknown as NodeListOf<HTMLElement>
-    const backgroundImageElements = document.querySelectorAll(
-      '[data-cursor-background-image]',
-    ) as unknown as NodeListOf<HTMLElement>
-    const magneticElements = document.querySelectorAll(
-      '[data-cursor-magnetic]',
-    ) as unknown as NodeListOf<HTMLElement>
-    const stickElements = document.querySelectorAll(
-      '[data-cursor-stick]',
-    ) as unknown as NodeListOf<HTMLElement>
-    const exclusionElements = document.querySelectorAll(
-      '[data-cursor-exclusion]',
-    ) as unknown as NodeListOf<HTMLElement>
+  React.useLayoutEffect(
+    function animateElements() {
+      const sizeElements = document.querySelectorAll(
+        '[data-cursor-size]',
+      ) as unknown as NodeListOf<HTMLElement>
+      const textElements = document.querySelectorAll(
+        '[data-cursor-text]',
+      ) as unknown as NodeListOf<HTMLElement>
+      const colorElements = document.querySelectorAll(
+        '[data-cursor-color]',
+      ) as unknown as NodeListOf<HTMLElement>
+      const backgroundImageElements = document.querySelectorAll(
+        '[data-cursor-background-image]',
+      ) as unknown as NodeListOf<HTMLElement>
+      const magneticElements = document.querySelectorAll(
+        '[data-cursor-magnetic]',
+      ) as unknown as NodeListOf<HTMLElement>
+      const stickElements = document.querySelectorAll(
+        '[data-cursor-stick]',
+      ) as unknown as NodeListOf<HTMLElement>
+      const exclusionElements = document.querySelectorAll(
+        '[data-cursor-exclusion]',
+      ) as unknown as NodeListOf<HTMLElement>
 
-    let stickStatus = false
+      let stickStatus = false
 
-    let hasExclusionAlready = false
+      let hasExclusionAlready = false
 
-    const setFromEvent = (e: MouseEvent) => {
-      const areatarget = e.target as HTMLElement
-      let target: Element | null
-      let bound: DOMRect | undefined
-      let x = e.clientX
-      let y = e.clientY
-      let duration = animationDuration
-      let ease = animationEase
-
-      if (stickStatus) {
-        target = areatarget.querySelector(
-          areatarget.dataset['cursorStick'] as string,
-        )
-        bound = target?.getBoundingClientRect()
-        if (target && bound) {
-          y =
-            bound.top +
-            target.clientHeight / 2 -
-            (bound.top + target.clientHeight / 2 - e.clientY) *
-              stickAnimationAmount
-          x =
-            bound.left +
-            target.clientWidth / 2 -
-            (bound.left + target.clientWidth / 2 - e.clientX) *
-              stickAnimationAmount
-          duration = stickAnimationDuration
-          ease = stickAnimationEase
-        }
-      }
-
-      gsap.set(pos, {})
-
-      const xTo = gsap.quickTo(pos, 'x', {
-        duration,
-        ease,
-        onUpdate: () => {
-          if (pos.x) vel.x = x - pos.x
-        },
-      })
-
-      const yTo = gsap.quickTo(pos, 'y', {
-        duration,
-        ease,
-        onUpdate: () => {
-          if (pos.y) vel.y = y - pos.y
-        },
-      })
-
-      xTo(x)
-      yTo(y)
-
-      loop()
-    }
-
-    window.addEventListener('mousemove', (e) => {
-      setFromEvent(e)
-    })
-
-    document.body.addEventListener('mouseenter', (e: MouseEvent) => {
-      if (e.target instanceof HTMLElement && cursor.current) {
-        gsap.to(`#${cursor.current.id}`, {
-          opacity: 1,
-          duration: animationDuration,
-          ease: animationEase,
-        })
-      }
-    })
-
-    document.body.addEventListener('mouseleave', (e: MouseEvent) => {
-      if (e.target instanceof HTMLElement && cursor.current) {
-        gsap.to(`#${cursor.current.id}`, {
-          opacity: 0,
-          duration: animationDuration,
-          ease: animationEase,
-        })
-      }
-    })
-
-    sizeElements.forEach((el) => {
-      el.addEventListener('mouseenter', (e: MouseEvent) => {
-        if (e.target instanceof HTMLElement && cursor.current) {
-          gsap.to(`#${cursor.current.id}`, {
-            width: `${e.target.dataset['cursorSize']}`,
-            height: `${e.target.dataset['cursorSize']}`,
-            duration: sizeAnimationDuration,
-            ease: sizeAnimationEase,
-          })
-        }
-      })
-    })
-    sizeElements.forEach((el) => {
-      el.addEventListener('mouseleave', (e: MouseEvent) => {
-        if (e.target instanceof HTMLElement && cursor.current) {
-          gsap.to(`#${cursor.current.id}`, {
-            width: `${cursorSize}`,
-            height: `${cursorSize}`,
-            duration: sizeAnimationDuration,
-            ease: sizeAnimationEase,
-          })
-        }
-      })
-    })
-
-    textElements.forEach((el) => {
-      el.addEventListener('mouseenter', (e: MouseEvent) => {
-        if (e.target instanceof HTMLElement && cursorInner.current) {
-          cursorInner.current.textContent = `${e.target.dataset['cursorText']}`
-          gsap.to(`#${cursorInner.current.id}`, {
-            scale: 1,
-            opacity: 1,
-            duration: textAnimationDuration,
-            ease: textAnimationEase,
-          })
-        }
-      })
-    })
-    textElements.forEach((el) => {
-      el.addEventListener('mouseleave', (e: MouseEvent) => {
-        if (e.target instanceof HTMLElement && cursorInner.current) {
-          cursorInner.current.textContent = ''
-          gsap.to(`#${cursorInner.current.id}`, {
-            scale: 0,
-            opacity: 0,
-            duration: textAnimationDuration,
-            ease: textAnimationEase,
-          })
-        }
-      })
-    })
-
-    colorElements.forEach((el) => {
-      el.addEventListener('mouseenter', (e: MouseEvent) => {
-        if (e.target instanceof HTMLElement && cursor.current) {
-          gsap.to(`#${cursor.current.id}`, {
-            backgroundColor: `${e.target.dataset['cursorColor']}`,
-            duration: colorAnimationDuration,
-            ease: colorAnimationEase,
-          })
-        }
-      })
-    })
-    colorElements.forEach((el) => {
-      el.addEventListener('mouseleave', (e: MouseEvent) => {
-        if (e.target instanceof HTMLElement && cursor.current) {
-          gsap.to(`#${cursor.current.id}`, {
-            backgroundColor: `${cursorBackgrounColor}`,
-            duration: colorAnimationDuration,
-            ease: colorAnimationEase,
-          })
-        }
-      })
-    })
-
-    exclusionElements.forEach((el) => {
-      el.addEventListener('mouseenter', (e: MouseEvent) => {
-        if (e.target instanceof HTMLElement && cursor.current) {
-          // @ts-ignore: Unreachable code error
-          cursor.current.style.mixBlendMode = 'exclusion'
-          cursor.current.style.background = `${exclusionBackgroundColor}`
-        }
-      })
-    })
-    exclusionElements.forEach((el) => {
-      el.addEventListener('mouseleave', (e: MouseEvent) => {
-        if (e.target instanceof HTMLElement && cursor.current) {
-          // @ts-ignore: Unreachable code error
-          cursor.current.style.mixBlendMode = ''
-          cursor.current.style.background = `${cursorBackgrounColor}`
-        }
-      })
-    })
-
-    backgroundImageElements.forEach((el) => {
-      el.addEventListener('mouseenter', (e: MouseEvent) => {
-        if (e.target instanceof HTMLElement && cursorInner.current) {
-          if (cursor.current) {
-            // @ts-ignore: Unreachable code error
-            if (cursor.current.style.mixBlendMode === 'exclusion')
-              hasExclusionAlready = true
-
-            // @ts-ignore: Unreachable code error
-            cursor.current.style.mixBlendMode = 'exclusion'
-            cursor.current.style.backgroundColor = 'transform'
-          }
-          gsap.to(`#${cursorInner.current.id}`, {
-            scale: 1,
-            opacity: 1,
-            background: `url("${e.target.dataset['cursorBackgroundImage']}")`,
-            filter: 'invert(1)',
-            duration: backgroundImageAnimationDuration,
-            ease: backgroundImageAnimationEase,
-          })
-        }
-      })
-    })
-    backgroundImageElements.forEach((el) => {
-      el.addEventListener('mouseleave', (e: MouseEvent) => {
-        if (e.target instanceof HTMLElement && cursorInner.current) {
-          if (cursor.current) {
-            if (!hasExclusionAlready) {
-              // @ts-ignore: Unreachable code error
-              cursor.current.style.mixBlendMode = ''
-              cursor.current.style.backgroundColor = `${cursorBackgrounColor}`
-            } else {
-              cursor.current.style.backgroundColor = `${exclusionBackgroundColor}`
-            }
-          }
-          gsap.to(`#${cursorInner.current.id}`, {
-            scale: 0,
-            opacity: 0,
-            background: ``,
-            filter: 'none',
-            duration: backgroundImageAnimationDuration,
-          })
-        }
-      })
-    })
-
-    magneticElements.forEach((el) => {
-      el.addEventListener('mousemove', (e) => {
+      const setFromEvent = (e: MouseEvent) => {
         const areatarget = e.target as HTMLElement
-        gsap.to(areatarget, {
-          x:
-            (e.clientX -
-              (areatarget.offsetLeft - window.pageXOffset) -
-              areatarget.clientWidth / 2) *
-            magneticAnimationAmount,
-          y:
-            (e.clientY -
-              (areatarget.offsetTop - window.pageYOffset) -
-              areatarget.clientHeight / 2) *
-            magneticAnimationAmount,
-          duration: magneticAnimationDuration,
-          ease: magneticAnimationEase,
-        })
-      })
-    })
-    magneticElements.forEach((el) => {
-      el.addEventListener('mouseleave', (e) => {
-        const areatarget = e.target as HTMLElement
-        gsap.to(areatarget, {
-          x: 0,
-          y: 0,
-          duration: magneticAnimationDuration,
-          ease: magneticAnimationEase,
-        })
-      })
-    })
+        let target: Element | null
+        let bound: DOMRect | undefined
+        let x = e.clientX
+        let y = e.clientY
+        let duration = animationDuration
+        let ease = animationEase
 
-    stickElements.forEach((el) => {
-      el.addEventListener('mouseenter', () => (stickStatus = true))
-    })
-    stickElements.forEach((el) => {
-      el.addEventListener('mouseleave', () => (stickStatus = false))
-    })
+        if (stickStatus) {
+          target = areatarget.querySelector(
+            areatarget.dataset['cursorStick'] as string,
+          )
+          bound = target?.getBoundingClientRect()
+          if (target && bound) {
+            y =
+              bound.top +
+              target.clientHeight / 2 -
+              (bound.top + target.clientHeight / 2 - e.clientY) *
+                stickAnimationAmount
+            x =
+              bound.left +
+              target.clientWidth / 2 -
+              (bound.left + target.clientWidth / 2 - e.clientX) *
+                stickAnimationAmount
+            duration = stickAnimationDuration
+            ease = stickAnimationEase
+          }
+        }
 
-    return () => {
-      window.removeEventListener('mousemove', setFromEvent)
-      document.body.removeEventListener('mouseenter', () => {})
-      document.body.removeEventListener('mouseleave', () => {})
+        gsap.set(pos, {})
+
+        const xTo = gsap.quickTo(pos, 'x', {
+          duration,
+          ease,
+          onUpdate: () => {
+            if (pos.x) vel.x = x - pos.x
+          },
+        })
+
+        const yTo = gsap.quickTo(pos, 'y', {
+          duration,
+          ease,
+          onUpdate: () => {
+            if (pos.y) vel.y = y - pos.y
+          },
+        })
+
+        xTo(x)
+        yTo(y)
+
+        loop()
+      }
+
+      window.addEventListener('mousemove', (e) => {
+        setFromEvent(e)
+      })
+
+      document.body.addEventListener('mouseenter', (e: MouseEvent) => {
+        if (e.target instanceof HTMLElement && cursor.current) {
+          gsap.to(`#${cursor.current.id}`, {
+            opacity: 1,
+            duration: animationDuration,
+            ease: animationEase,
+          })
+        }
+      })
+
+      document.body.addEventListener('mouseleave', (e: MouseEvent) => {
+        if (e.target instanceof HTMLElement && cursor.current) {
+          gsap.to(`#${cursor.current.id}`, {
+            opacity: 0,
+            duration: animationDuration,
+            ease: animationEase,
+          })
+        }
+      })
 
       sizeElements.forEach((el) => {
-        el.removeEventListener('mouseenter', () => {})
-        el.removeEventListener('mouseleave', () => {})
+        el.addEventListener('mouseenter', (e: MouseEvent) => {
+          if (e.target instanceof HTMLElement && cursor.current) {
+            gsap.to(`#${cursor.current.id}`, {
+              width: `${e.target.dataset['cursorSize']}`,
+              height: `${e.target.dataset['cursorSize']}`,
+              duration: sizeAnimationDuration,
+              ease: sizeAnimationEase,
+            })
+          }
+        })
+      })
+      sizeElements.forEach((el) => {
+        el.addEventListener('mouseleave', (e: MouseEvent) => {
+          if (e.target instanceof HTMLElement && cursor.current) {
+            gsap.to(`#${cursor.current.id}`, {
+              width: `${cursorSize}`,
+              height: `${cursorSize}`,
+              duration: sizeAnimationDuration,
+              ease: sizeAnimationEase,
+            })
+          }
+        })
       })
 
       textElements.forEach((el) => {
-        el.removeEventListener('mouseenter', () => {})
-        el.removeEventListener('mouseleave', () => {})
+        el.addEventListener('mouseenter', (e: MouseEvent) => {
+          if (e.target instanceof HTMLElement && cursorInner.current) {
+            cursorInner.current.textContent = `${e.target.dataset['cursorText']}`
+            gsap.to(`#${cursorInner.current.id}`, {
+              scale: 1,
+              opacity: 1,
+              duration: textAnimationDuration,
+              ease: textAnimationEase,
+            })
+          }
+        })
+      })
+      textElements.forEach((el) => {
+        el.addEventListener('mouseleave', (e: MouseEvent) => {
+          if (e.target instanceof HTMLElement && cursorInner.current) {
+            cursorInner.current.textContent = ''
+            gsap.to(`#${cursorInner.current.id}`, {
+              scale: 0,
+              opacity: 0,
+              duration: textAnimationDuration,
+              ease: textAnimationEase,
+            })
+          }
+        })
       })
 
       colorElements.forEach((el) => {
-        el.removeEventListener('mouseenter', () => {})
-        el.removeEventListener('mouseleave', () => {})
+        el.addEventListener('mouseenter', (e: MouseEvent) => {
+          if (e.target instanceof HTMLElement && cursor.current) {
+            gsap.to(`#${cursor.current.id}`, {
+              backgroundColor: `${e.target.dataset['cursorColor']}`,
+              duration: colorAnimationDuration,
+              ease: colorAnimationEase,
+            })
+          }
+        })
+      })
+      colorElements.forEach((el) => {
+        el.addEventListener('mouseleave', (e: MouseEvent) => {
+          if (e.target instanceof HTMLElement && cursor.current) {
+            gsap.to(`#${cursor.current.id}`, {
+              backgroundColor: `${cursorBackgrounColor}`,
+              duration: colorAnimationDuration,
+              ease: colorAnimationEase,
+            })
+          }
+        })
       })
 
       exclusionElements.forEach((el) => {
-        el.removeEventListener('mouseenter', () => {})
-        el.removeEventListener('mouseleave', () => {})
+        el.addEventListener('mouseenter', (e: MouseEvent) => {
+          if (e.target instanceof HTMLElement && cursor.current) {
+            // @ts-ignore: Unreachable code error
+            cursor.current.style.mixBlendMode = 'exclusion'
+            cursor.current.style.background = `${exclusionBackgroundColor}`
+          }
+        })
+      })
+      exclusionElements.forEach((el) => {
+        el.addEventListener('mouseleave', (e: MouseEvent) => {
+          if (e.target instanceof HTMLElement && cursor.current) {
+            // @ts-ignore: Unreachable code error
+            cursor.current.style.mixBlendMode = ''
+            cursor.current.style.background = `${cursorBackgrounColor}`
+          }
+        })
       })
 
       backgroundImageElements.forEach((el) => {
-        el.removeEventListener('mouseenter', () => {})
-        el.removeEventListener('mouseleave', () => {})
+        el.addEventListener('mouseenter', (e: MouseEvent) => {
+          if (e.target instanceof HTMLElement && cursorInner.current) {
+            if (cursor.current) {
+              // @ts-ignore: Unreachable code error
+              if (cursor.current.style.mixBlendMode === 'exclusion')
+                hasExclusionAlready = true
+
+              // @ts-ignore: Unreachable code error
+              cursor.current.style.mixBlendMode = 'exclusion'
+              cursor.current.style.backgroundColor = 'transform'
+            }
+            gsap.to(`#${cursorInner.current.id}`, {
+              scale: 1,
+              opacity: 1,
+              background: `url("${e.target.dataset['cursorBackgroundImage']}")`,
+              filter: 'invert(1)',
+              duration: backgroundImageAnimationDuration,
+              ease: backgroundImageAnimationEase,
+            })
+          }
+        })
+      })
+      backgroundImageElements.forEach((el) => {
+        el.addEventListener('mouseleave', (e: MouseEvent) => {
+          if (e.target instanceof HTMLElement && cursorInner.current) {
+            if (cursor.current) {
+              if (!hasExclusionAlready) {
+                // @ts-ignore: Unreachable code error
+                cursor.current.style.mixBlendMode = ''
+                cursor.current.style.backgroundColor = `${cursorBackgrounColor}`
+              } else {
+                cursor.current.style.backgroundColor = `${exclusionBackgroundColor}`
+              }
+            }
+            gsap.to(`#${cursorInner.current.id}`, {
+              scale: 0,
+              opacity: 0,
+              background: ``,
+              filter: 'none',
+              duration: backgroundImageAnimationDuration,
+            })
+          }
+        })
       })
 
       magneticElements.forEach((el) => {
-        el.removeEventListener('mousemove', () => {})
-        el.removeEventListener('mouseleave', () => {})
+        el.addEventListener('mousemove', (e) => {
+          const areatarget = e.target as HTMLElement
+          gsap.to(areatarget, {
+            x:
+              (e.clientX -
+                (areatarget.offsetLeft - window.pageXOffset) -
+                areatarget.clientWidth / 2) *
+              magneticAnimationAmount,
+            y:
+              (e.clientY -
+                (areatarget.offsetTop - window.pageYOffset) -
+                areatarget.clientHeight / 2) *
+              magneticAnimationAmount,
+            duration: magneticAnimationDuration,
+            ease: magneticAnimationEase,
+          })
+        })
+      })
+      magneticElements.forEach((el) => {
+        el.addEventListener('mouseleave', (e) => {
+          const areatarget = e.target as HTMLElement
+          gsap.to(areatarget, {
+            x: 0,
+            y: 0,
+            duration: magneticAnimationDuration,
+            ease: magneticAnimationEase,
+          })
+        })
       })
 
       stickElements.forEach((el) => {
-        el.removeEventListener('mouseenter', () => {})
-        el.removeEventListener('mouseleave', () => {})
+        el.addEventListener('mouseenter', () => (stickStatus = true))
       })
-    }
-  }, [pathname])
+      stickElements.forEach((el) => {
+        el.addEventListener('mouseleave', () => (stickStatus = false))
+      })
+
+      return () => {
+        window.removeEventListener('mousemove', setFromEvent)
+        document.body.removeEventListener('mouseenter', () => {})
+        document.body.removeEventListener('mouseleave', () => {})
+
+        sizeElements.forEach((el) => {
+          el.removeEventListener('mouseenter', () => {})
+          el.removeEventListener('mouseleave', () => {})
+        })
+
+        textElements.forEach((el) => {
+          el.removeEventListener('mouseenter', () => {})
+          el.removeEventListener('mouseleave', () => {})
+        })
+
+        colorElements.forEach((el) => {
+          el.removeEventListener('mouseenter', () => {})
+          el.removeEventListener('mouseleave', () => {})
+        })
+
+        exclusionElements.forEach((el) => {
+          el.removeEventListener('mouseenter', () => {})
+          el.removeEventListener('mouseleave', () => {})
+        })
+
+        backgroundImageElements.forEach((el) => {
+          el.removeEventListener('mouseenter', () => {})
+          el.removeEventListener('mouseleave', () => {})
+        })
+
+        magneticElements.forEach((el) => {
+          el.removeEventListener('mousemove', () => {})
+          el.removeEventListener('mouseleave', () => {})
+        })
+
+        stickElements.forEach((el) => {
+          el.removeEventListener('mouseenter', () => {})
+          el.removeEventListener('mouseleave', () => {})
+        })
+      }
+    },
+    [pathname],
+  )
 
   useTicker(loop)
 
