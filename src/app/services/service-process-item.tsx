@@ -14,6 +14,7 @@ export function ServiceProcessItem({ position, process }: Props) {
       className="flex flex-col p-6 rounded-2xl border border-gray-100 dark:border-gray-800 gap-6"
       data-cursor-size="80"
       data-cursor-exclusion
+      data-animation-target
     >
       <h3 className="text-2xl font-medium leading-tight">
         {position + 1}. {process.title}
