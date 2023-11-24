@@ -33,7 +33,7 @@ export default function HomePage() {
   return (
     <main className="flex flex-col pt-28 py-32 laptop:py-28 gap-28 laptop:gap-80">
       <HomeIntroSection />
-      <HomeProjectSection />
+      {/* <HomeProjectSection /> */}
       <HomeBlogSection />
       <HomeLearnSection />
       <HomeContactSection />

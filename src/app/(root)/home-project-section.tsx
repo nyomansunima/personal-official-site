@@ -22,7 +22,7 @@ export default function HomeProjectSection() {
 
       <div className="flex justify-center mt-56">
         <Button asChild variant="outline">
-          <Link href={'/project'}>
+          <Link href={'/works'}>
             More projects <i className="fi fi-sr-gamepad" />
           </Link>
         </Button>

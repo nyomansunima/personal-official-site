@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function HomeContactSection() {
   return (
-    <section className="flex flex-col container mx-auto px-5 laptop:px-20 projects">
+    <section className="flex flex-col container mx-auto px-5 laptop:px-20">
       <h2
         className="text-5xl laptop:text-8xl !leading-tight laptop:w-11/12 mx-auto text-center"
         data-cursor-size="200"
