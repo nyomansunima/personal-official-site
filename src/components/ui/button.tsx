@@ -7,7 +7,7 @@ const buttonVariants = cva('flex justify-center items-center relative gap-3', {
   variants: {
     variant: {
       primary: 'bg-primary text-primary-foreground',
-      outline: 'border border-border',
+      outline: 'border border-border bg-background',
       secondary: 'bg-secondary text-secondary-foreground',
     },
     size: {
