@@ -28,7 +28,7 @@ export default function ServiceWebAppSection() {
           </div>
         </div>
         <div
-          className="relative overflow-hidden rounded-3xl w-full laptop:w-5/12 h-[300px] h-[625px]"
+          className="relative overflow-hidden rounded-3xl w-full laptop:w-5/12 h-[300px] laptop:h-[625px]"
           data-animation="fade"
         >
           <Image
