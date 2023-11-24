@@ -33,17 +33,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      style={{ colorScheme: 'dark' }}
-      className={'dark'}
-    >
+    <html lang="en" suppressHydrationWarning>
       <QueryProvider>
         <AnimationProvider>
           <body className={`${gilroy.variable} ${dmMono.variable}`}>
             <MainHeader />
-            <div className="py-20 min-h-screen">{children}</div>
+            <div className="min-h-screen">{children}</div>
             <MainFooter />
             <CursorFollower isGelly />
             <Analytics />
