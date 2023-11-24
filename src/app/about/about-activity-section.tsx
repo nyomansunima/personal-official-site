@@ -1,6 +1,10 @@
 export default function AboutActivitySection() {
   return (
-    <section className="flex flex-col container mx-auto laptop:px-20 px-5 items-center">
+    <section
+      className="flex flex-col container mx-auto laptop:px-20 px-5 items-center"
+      data-animation="body-background-transition"
+      data-animation-body-color="#98CBD6"
+    >
       <h2
         className="text-5xl laptop:text-8xl !leading-tight"
         data-animation="text-char-opacity"
@@ -12,8 +16,8 @@ export default function AboutActivitySection() {
       </h2>
 
       <div className="grid grid-cols-1 laptop:grid-cols-2 text-xl leading-relaxed gap-10 mt-20 laptop:mt-36">
-        <div>
-          <p>
+        <div data-animation="slide-up">
+          <p data-animation-target>
             My daily activities revolve around the exciting process of
             transforming concepts into fully-fledged applications. From the very
             inception of an idea, I dive into thorough research. Understanding
@@ -24,8 +28,8 @@ export default function AboutActivitySection() {
             process.
           </p>
         </div>
-        <div>
-          <p>
+        <div data-animation="slide-up">
+          <p data-animation-target>
             Design is where the magic happens. With a keen eye for aesthetics
             and an understanding of user experience, I create captivating
             interfaces that strike a perfect balance between beauty and
@@ -38,8 +42,8 @@ export default function AboutActivitySection() {
             forms the backbone of the final product.
           </p>
         </div>
-        <div>
-          <p>
+        <div data-animation="slide-up">
+          <p data-animation-target>
             I believe in the power of shipping products that make a real impact.
             With careful testing, bug fixes, and optimizations, I ensure that
             the application is polished and ready for launch. The satisfaction

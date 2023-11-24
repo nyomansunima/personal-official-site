@@ -11,10 +11,14 @@ export default function AboutTimelineSection() {
   })
 
   return (
-    <section className="flex flex-col container mx-auto laptop:px-20 px-5">
+    <section
+      className="flex flex-col container mx-auto laptop:px-20 px-5"
+      data-animation="body-background-transition"
+      data-animation-body-color="#C8E543"
+    >
       <h2
         className="text-5xl laptop:text-8xl !leading-tight"
-        data-animation="text-line-mask-opacity-scrub"
+        data-animation="text-char-slide-down"
         data-cursor-size="200"
         data-cursor-exclusion
       >
