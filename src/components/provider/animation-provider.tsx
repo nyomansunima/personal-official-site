@@ -7,7 +7,7 @@ type Props = {
 }
 
 import Lenis from '@studio-freight/lenis'
-import gsap from 'gsap/dist/gsap'
+import gsap from 'gsap'
 import { ScrollToPlugin, ScrollTrigger } from 'gsap/all'
 import SplitType from 'split-type'
 import { usePathname } from 'next/navigation'
@@ -21,7 +21,7 @@ function triggerAnimationOnScroll(
 ) {
   ScrollTrigger.create({
     trigger,
-    start: start || 'top 70%',
+    start: 'top 70%',
     onEnter: () => {
       timeline.play()
     },
@@ -65,6 +65,7 @@ export function runAnimation() {
     )
     const target = el.querySelector('[data-animation-target]') ?? el
     const targets = el.querySelectorAll('[data-animation-target]') ?? [el]
+    const animationDelay = el.getAttribute('data-animation-delay') ?? 0
 
     function startAnimate() {
       if (animation == 'text-word-slide-up') {
@@ -156,7 +157,9 @@ export function runAnimation() {
           opacity: 0,
           ease: 'expo',
           duration,
+          delay: animationDelay,
         })
+        triggerAnimationOnScroll(el, tl)
       }
 
       if (animation == 'fade') {
@@ -168,6 +171,36 @@ export function runAnimation() {
         })
 
         triggerAnimationOnScroll(el, tl)
+      }
+
+      // body transfrom and transition animation
+      // including the backhround colors, and elements
+      if (animation === 'body-background-transition') {
+        const animationColor =
+          el.getAttribute('data-animation-body-color') ?? 'var(--background)'
+
+        const anim = gsap.to(document.body, {
+          paused: true,
+          duration: 1.2,
+          ease: 'expo',
+          background: animationColor,
+        })
+
+        ScrollTrigger.create({
+          trigger: target,
+          start: 'top 90%',
+          onEnter: () => {
+            anim.restart()
+          },
+        })
+
+        ScrollTrigger.create({
+          trigger: target,
+          start: 'bottom top',
+          onLeaveBack: () => {
+            anim.restart()
+          },
+        })
       }
     }
 
@@ -201,6 +234,12 @@ export default function AnimationProvider({ children }: Props) {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
     const lenis = new Lenis({})
 
+    // lenis.on('scroll', ScrollTrigger.update)
+    // gsap.ticker.add((time) => {
+    //   lenis.raf(time * 1000)
+    // })
+    // gsap.ticker.lagSmoothing(0)
+
     function raf(time) {
       lenis.raf(time)
       requestAnimationFrame(raf)
@@ -210,7 +249,11 @@ export default function AnimationProvider({ children }: Props) {
   }, [])
 
   React.useEffect(() => {
-    runAnimation()
+    const ctx = gsap.context(() => {
+      runAnimation()
+    })
+
+    return () => ctx.revert()
   }, [pathname])
 
   return <>{children}</>
