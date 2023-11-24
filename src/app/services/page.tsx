@@ -1,12 +1,16 @@
-import ContactSection from '../contact/components/contact-section'
-import ServiceIntroSection from './components/service-intro-section'
-import ServiceListSection from './components/service-list-section'
-import ServiceProcessSection from './components/service-process-section'
+import ContactSection from '../contact/contact-section'
+import ServiceDesignSection from './service-design-section'
+import ServiceIntroSection from './service-intro-section'
+import ServiceProcessSection from './service-process-section'
 import { Metadata } from 'next'
 import {
   defaultOpenGraphMetadata,
   defaultTwitterMetadata,
 } from '~/lib/shared-metadata'
+import ServiceWebsiteSection from './service-website-section'
+import ServiceWebAppSection from './service-web-app-section'
+import ServiceMobileSection from './service-mobile-section'
+import ServiceToolsSection from './service-tools-section'
 
 export const metadata: Metadata = {
   title: 'Services | Nyoman Sunima',
@@ -25,10 +29,14 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <main className="flex flex-col laptop:py-28 pt-32 laptop:pb-80 pb-40 text-xl laptop:gap-80 gap-32">
+    <main className="flex flex-col text-xl">
       <ServiceIntroSection />
-      <ServiceListSection />
+      <ServiceDesignSection />
+      <ServiceWebsiteSection />
+      <ServiceWebAppSection />
+      <ServiceMobileSection />
       <ServiceProcessSection />
+      <ServiceToolsSection />
       <ContactSection />
     </main>
   )
