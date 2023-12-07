@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '~/components/ui/button'
 
@@ -15,13 +16,27 @@ export default function HomeIntroSection() {
         data-cursor-exclusion
         data-animation="text-char-opacity"
       >
-        <span className="laptop:pl-20"></span>
-        Specialized in crafting apps from scratch.
+        Focused on crafting platforms,{' '}
+        <span
+          className="w-3/12 h-20 rounded-full overflow-hidden relative hidden laptop:block"
+          data-animation="fade"
+          data-animation-delay=".4"
+          data-cursor-size="80"
+          data-cursor-text="Apps"
+        >
+          <Image
+            src={'/images/service/service-intro-image.png'}
+            alt="Services"
+            fill
+            className="object-cover transition-all duration-1000 hover:scale-105"
+          />
+        </span>{' '}
+        web & mobile apps.
       </h2>
 
       <div className="flex flex-col mt-24">
         <div
-          className="flex flex-col gap-10 text-xl laptop:text-2xl !leading-relaxed laptop:w-10/12"
+          className="flex flex-col gap-10 text-xl laptop:text-xl !leading-relaxed laptop:w-10/12"
           data-animation="slide-up"
           data-animation-delay=".4"
         >
@@ -29,13 +44,11 @@ export default function HomeIntroSection() {
             5+ years as a product designer and full stack developer. Been
             focusing on crafting apps through research, design, and development.
             My day to day revolves around designing and developing digital
-            products. I've been passionate about this work from the start,
-            combining style with functionality to create user-friendly
-            experiences.
+            products. I've been passionate about design and coding, combining
+            style with functionality to create user-friendly experiences.
           </p>
         </div>
       </div>
-
       <div
         className="flex items-center flex-wrap gap-5 mt-16"
         data-animation="slide-up"

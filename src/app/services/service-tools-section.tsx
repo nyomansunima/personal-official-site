@@ -51,12 +51,7 @@ export default function ServiceToolsSection() {
     return () => ctx.revert()
   }, [])
   return (
-    <section
-      className="flex flex-col text-neutral-100"
-      data-animation="body-background-transition"
-      data-animation-body-color="#070410"
-      data-cursor-color="#ffffff"
-    >
+    <section className="flex flex-col bg-black text-neutral-100">
       <div className="flex flex-col container mx-auto px-5 laptop:px-20 py-28 laptop:py-64 gap-16">
         <h2
           className="text-5xl laptop:text-8xl !leading-none laptop:w-9/12"

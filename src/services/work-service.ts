@@ -83,6 +83,53 @@ class WorkService {
 
     return payload
   }
+
+  async getFeaturedWorks(): Promise<Work[]> {
+    const query = `
+      query WorksQuery($limit: Int!, $nextCursor: String, $types: [WorkType]) {
+        worksConnection(first: $limit, after: $nextCursor, where: {type_in: $types}) {
+          edges {
+            node {
+              slug
+              tags
+              title
+              type
+              workStatus
+              createdAt
+              thumbnail {
+                url
+              }
+            }
+          }
+          pageInfo {
+            hasNextPage
+            pageSize
+            endCursor
+          }
+        }
+      }
+    `
+
+    const res = await hygraphConnection.request<any>(query, {
+      limit: 3,
+      nextCursor: null,
+      types: ['Project'],
+      featured: true,
+    })
+
+    const payload = res.worksConnection.edges
+      .map((edge) => edge.node)
+      .map(
+        (node) =>
+          ({
+            ...node,
+            status: node.workStatus,
+            thumbnail: node.thumbnail.url,
+          } as Work),
+      ) as Work[]
+
+    return payload
+  }
 }
 
 export const workService = new WorkService()

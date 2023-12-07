@@ -1,7 +1,11 @@
 import { Button } from '~/components/ui/button'
 import Link from 'next/link'
+import { workService } from '~/services/work-service'
+import { WorkListItemCard } from '../works/work-list-item'
 
-export default function HomeProjectSection() {
+export default async function HomeProjectSection() {
+  const featuredWorks = await workService.getFeaturedWorks()
+
   return (
     <section
       v-show="projects.length > 0"
@@ -13,19 +17,21 @@ export default function HomeProjectSection() {
         data-cursor-exclusion
         data-animation="text-line-mask-opacity-scrub"
       >
-        <span className="laptop:pl-20"></span>
-        In crafting products.
-        <br />I want to ensure my ability to provide more value.
+        Top & featured projects.
       </h2>
 
-      <div className="flex flex-col mt-24 gap-20"></div>
-
-      <div className="flex justify-center mt-56">
-        <Button asChild variant="outline">
+      <div className="flex mt-16">
+        <Button asChild variant="primary">
           <Link href={'/works'}>
-            More projects <i className="fi fi-sr-gamepad" />
+            More projects <i className="fi fi-rr-arrow-right" />
           </Link>
         </Button>
+      </div>
+
+      <div className="grid laptop:grid-cols-3 tablet:grid-cols-2 grid-cols-1 mt-24 gap-6">
+        {featuredWorks.map((work, i) => (
+          <WorkListItemCard work={work} key={i} display="home" />
+        ))}
       </div>
     </section>
   )

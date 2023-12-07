@@ -2,11 +2,7 @@ import Image from 'next/image'
 
 export default function ServiceWebsiteSection() {
   return (
-    <section
-      className="flex flex-co"
-      data-animation="body-background-transition"
-      data-animation-body-color="#F2F3FF"
-    >
+    <section className="flex flex-co">
       <div className="flex flex-col laptop:flex-row-reverse container mx-auto laptop:px-20 px-5 py-28 laptop:py-64 gap-16 items-center">
         <div className="flex flex-col flex-1">
           <h2
@@ -17,7 +13,7 @@ export default function ServiceWebsiteSection() {
           </h2>
           <div data-animation="slide-up" data-animation-delay=".2">
             <p
-              className="text-xl laptop:text-2xl !leading-relaxed mt-16"
+              className="text-xl laptop:text-xl !leading-relaxed mt-16"
               data-animation-target
             >
               Build your own platform with special features. I create

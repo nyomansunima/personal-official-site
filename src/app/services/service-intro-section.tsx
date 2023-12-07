@@ -2,12 +2,9 @@ import Image from 'next/image'
 
 export default function ServiceIntroSection() {
   return (
-    <section
-      className="flex flex-col"
-      data-animation="body-background-transition"
-    >
+    <section className="flex flex-col">
       <div className="flex flex-col container mx-auto px-5 pt-24 pb-40 laptop:px-20 laptop:pt-40 laptop:pb-80">
-        <div className="flex flex-wrap gap-x-10 text-6xl laptop:text-9xl !leading-none gap-y-5 items-center">
+        <div className="flex flex-wrap gap-x-10 text-6xl laptop:text-8xl !leading-none gap-y-5 items-center">
           <span
             data-cursor-size="200"
             data-cursor-exclusion
@@ -34,7 +31,7 @@ export default function ServiceIntroSection() {
             data-animation="fade"
             data-animation-delay=".4"
             data-cursor-size="80"
-            data-cursor-text="Services"
+            data-cursor-text="Apps"
           >
             <Image
               src={'/images/service/service-intro-image.png'}
@@ -58,11 +55,11 @@ export default function ServiceIntroSection() {
           data-animation-delay=".4"
         >
           <p
-            className="text-xl laptop:text-2xl leading-relaxed"
+            className="text-xl laptop:text-xl !leading-relaxed"
             data-animation-target
           >
             In today's fast-paced digital landscape, having a dynamic and
-            user-friendly app is no longer a luxury; it's a necessity. I
+            user-friendly app is no longer a luxury. it's a necessity. I
             understand the importance of staying ahead in the ever-evolving
             world of technology. That's why I offer cutting-edge services that
             bring your vision to life and drive your business forward.

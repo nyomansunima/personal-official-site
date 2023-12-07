@@ -13,7 +13,7 @@ export default function AboutProfileSection() {
         <span className="laptop:pl-20"></span>
         I'm product
         <span
-          className="px-8 py-4 rounded-full bg-[#FF5FA1] mx-4"
+          className="px-8 py-4 rounded-full bg-[#FF5FA1] mx-4 text-white"
           data-animation="fade"
           data-animation-dela=".4"
         >

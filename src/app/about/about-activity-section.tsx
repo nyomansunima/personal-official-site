@@ -1,10 +1,6 @@
 export default function AboutActivitySection() {
   return (
-    <section
-      className="flex flex-col container mx-auto laptop:px-20 px-5 items-center"
-      data-animation="body-background-transition"
-      data-animation-body-color="#98CBD6"
-    >
+    <section className="flex flex-col container mx-auto laptop:px-20 px-5 items-center">
       <h2
         className="text-5xl laptop:text-8xl !leading-tight"
         data-animation="text-char-opacity"

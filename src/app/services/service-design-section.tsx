@@ -2,12 +2,7 @@ import Image from 'next/image'
 
 export default function ServiceDesignSection() {
   return (
-    <section
-      className="flex flex-col text-neutral-100"
-      data-animation="body-background-transition"
-      data-animation-body-color="#070410"
-      data-cursor-color="#ffffff"
-    >
+    <section className="flex flex-col">
       <div className="flex flex-col laptop:flex-row container mx-auto laptop:px-20 px-5 py-28 laptop:py-64 gap-16 items-center">
         <div className="flex flex-col flex-1">
           <h2
@@ -18,7 +13,7 @@ export default function ServiceDesignSection() {
           </h2>
           <div data-animation="slide-up" data-animation-delay=".2">
             <p
-              className="text-xl laptop:text-2xl !leading-relaxed mt-16"
+              className="text-xl laptop:text-xl !leading-relaxed mt-16"
               data-animation-target
             >
               UI/UX Design for your next app product. Everything is seamlessly

@@ -11,10 +11,7 @@ export default function AboutCareerSection() {
   })
 
   return (
-    <section
-      className="flex flex-col container mx-auto laptop:px-20 px-5"
-      data-animation="body-background-transition"
-    >
+    <section className="flex flex-col container mx-auto laptop:px-20 px-5">
       <h2
         className="text-5xl laptop:text-8xl !leading-tight"
         data-animation="text-char-slide-down"

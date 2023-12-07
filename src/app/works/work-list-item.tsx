@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import * as React from 'react'
 import { Work } from '~/types'
 import { mergeClass, parseReadableDate } from '~/utils/helpers'
@@ -11,6 +10,7 @@ type ItemPillProps = {
 
 type Props = {
   work: Work
+  display?: 'home' | 'works'
 }
 
 function ItemPill({ children, className }: ItemPillProps) {
@@ -26,7 +26,7 @@ function ItemPill({ children, className }: ItemPillProps) {
   )
 }
 
-export function WorkListItemCard({ work }: Props) {
+export function WorkListItemCard({ work, display }: Props) {
   const workURL = `/works/${work.slug}`
   const parsedDate = parseReadableDate(work.createdAt)
   const tag = work.tags[0] || ''
@@ -35,7 +35,13 @@ export function WorkListItemCard({ work }: Props) {
 
   return (
     <Comp href={workURL} className="col-span-1 flex flex-col">
-      <picture className="relative w-full laptop:h-[560px] h-[330px] overflow-hidden rounded-2xl">
+      <picture
+        className={`relative w-full overflow-hidden rounded-2xl ${
+          display === 'home'
+            ? 'laptop:h-[460px] h-[330px]'
+            : 'laptop:h-[560px] h-[330px]'
+        }`}
+      >
         <Image src={work.thumbnail} alt="Hello" fill className="object-cover" />
 
         {work.status === 'IN_PROGRESS' && (
