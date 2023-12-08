@@ -41,6 +41,12 @@ export default async function HomeLearnSection() {
             Youtube
           </Link>
         </Button>
+        <Button variant="outline" asChild>
+          <Link href={'https://dribbble.com/nyomamsunima'} target="_blank">
+            <i className="fi fi-brands-dribbble" />
+            Dribbble
+          </Link>
+        </Button>
       </div>
 
       <div data-animation="slide-up">

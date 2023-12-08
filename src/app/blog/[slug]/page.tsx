@@ -7,7 +7,7 @@ import {
 } from '~/lib/shared-metadata'
 import BlogDetailHeaderSection from '../blog-detail-header-section'
 import BlogDetailArticleSection from '../blog-detail-article-section'
-import BlogDetailNewsletterSection from '../blog-detail-newsletter-section'
+import BlogDetailNewsletterSection from './blog-detail-newsletter-section'
 
 type Props = {
   params: {

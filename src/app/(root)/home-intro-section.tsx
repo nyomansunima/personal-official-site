@@ -21,8 +21,6 @@ export default function HomeIntroSection() {
           className="w-3/12 h-20 rounded-full overflow-hidden relative hidden laptop:block"
           data-animation="fade"
           data-animation-delay=".4"
-          data-cursor-size="80"
-          data-cursor-text="Apps"
         >
           <Image
             src={'/images/service/service-intro-image.png'}

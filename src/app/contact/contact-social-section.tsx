@@ -5,7 +5,7 @@ import { socials } from '~/constants/social'
 export default function ContactSocialSection() {
   return (
     <section
-      className="flex container mx-auto laptop:px-20 px-5"
+      className="flex container mx-auto laptop:px-20 px-5 laptop:pb-80"
       data-animation="slide-up"
       data-animation-delay=".4"
     >
@@ -27,11 +27,9 @@ export default function ContactSocialSection() {
           </Button>
         ))}
         <Button asChild size={'md'} variant={'primary'}>
-          <Link
-            href={'https://www.upwork.com/freelancers/~0173a3d4a34995e572'}
-            target="_blank"
-          >
-            Find me on Upwork
+          <Link href={'mailto:nyomansunima@gmail.com'} target="_blank">
+            Send me email
+            <i className="fi fi-rr-arrow-right" />
           </Link>
         </Button>
       </div>
