@@ -32,6 +32,15 @@ export default function ContactSocialSection() {
             <i className="fi fi-rr-arrow-right" />
           </Link>
         </Button>
+        <Button asChild size={'md'} className="bg-[#011BF4] text-neutral-100">
+          <Link
+            href={'https://calendly.com/nyomansunima/project-meeting'}
+            target="_blank"
+          >
+            Book a call with me
+            <i className="fi fi-sr-video-camera-alt" />
+          </Link>
+        </Button>
       </div>
     </section>
   )

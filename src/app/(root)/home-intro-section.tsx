@@ -63,6 +63,12 @@ export default function HomeIntroSection() {
             About me <i className="fi fi-sr-video-camera" />
           </Link>
         </Button>
+        <Button asChild size={'md'} variant={'outline'}>
+          <Link href={'/services'}>
+            My Services
+            <i className="fi fi-rr-arrow-right" />
+          </Link>
+        </Button>
       </div>
     </section>
   )

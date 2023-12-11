@@ -9,7 +9,7 @@ export default function ServiceWebAppSection() {
             className="text-5xl laptop:text-8xl !leading-none"
             data-animation="text-char-slide-up"
           >
-            Web Application
+            Web application
           </h2>
           <div data-animation="slide-up" data-animation-delay=".2">
             <p
