@@ -42,7 +42,13 @@ export function WorkListItemCard({ work, display }: Props) {
             : 'laptop:h-[560px] h-[330px]'
         }`}
       >
-        <Image src={work.thumbnail} alt="Hello" fill className="object-cover" />
+        <Image
+          src={work.thumbnail}
+          alt="Hello"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
 
         {work.status === 'IN_PROGRESS' && (
           <ItemPill className="absolute top-5 right-5">On Going</ItemPill>
