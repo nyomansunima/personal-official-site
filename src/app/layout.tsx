@@ -8,6 +8,7 @@ import AnimationProvider from '../components/provider/animation-provider'
 import MainHeader from '../components/main-header'
 import MainFooter from '../components/main-footer'
 import CursorFollower from '../components/common/cursor-follower'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   applicationName: 'Nyoman Sunima',
@@ -37,6 +38,21 @@ export default function RootLayout({
       <QueryProvider>
         <AnimationProvider>
           <body className={`${gilroy.variable} ${dmMono.variable}`}>
+            {/* Google analytics tags */}
+            <Script
+              strategy="lazyOnload"
+              src={`https://www.googletagmanager.com/gtag/js?id=${configuration.google.analytics.id}`}
+            />
+            <Script strategy="lazyOnload" id="google-analytics">
+              {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+        
+                  gtag('config', '${configuration.google.analytics.id}');
+              `}
+            </Script>
+
             <MainHeader />
             <div className="min-h-screen">{children}</div>
             <MainFooter />

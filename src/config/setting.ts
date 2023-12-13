@@ -13,4 +13,9 @@ export const configuration = {
     url: process.env.NEXT_PUBLIC_BREVO_URL!,
     apiKey: process.env.NEXT_PUBLIC_BREVO_API_KEY!,
   },
+  google: {
+    analytics: {
+      id: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID!,
+    },
+  },
 }
