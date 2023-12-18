@@ -1,5 +1,4 @@
 import ContactSection from '../contact/contact-section'
-import ServiceDesignSection from './service-design-section'
 import ServiceIntroSection from './service-intro-section'
 import ServiceProcessSection from './service-process-section'
 import { Metadata } from 'next'
@@ -31,7 +30,6 @@ export default function ServicesPage() {
   return (
     <main className="flex flex-col text-xl">
       <ServiceIntroSection />
-      <ServiceDesignSection />
       <ServiceWebsiteSection />
       <ServiceWebAppSection />
       <ServiceMobileSection />

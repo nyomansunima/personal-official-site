@@ -9,7 +9,7 @@ export default function ServiceWebsiteSection() {
             className="text-5xl laptop:text-8xl !leading-none"
             data-animation="text-char-slide-up"
           >
-            Website & platforms
+            Website
           </h2>
           <div data-animation="slide-up" data-animation-delay=".2">
             <p

@@ -14,7 +14,7 @@ export default async function HomeLearnSection() {
         data-cursor-exclusion
         data-animation="text-word-slide-up"
       >
-        I share about design, coding, & crafting apps tips.
+        Learn about design, coding, & crafting apps tips.
       </h2>
 
       <div className="flex mt-16 actions gap-6" data-animation="slide-up">
