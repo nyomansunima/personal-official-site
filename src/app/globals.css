@@ -10,30 +10,30 @@
 @layer base {
   :root {
     --background: #ffffff;
-    --foreground: #000000;
+    --foreground: #07042f;
     --invert-foreground: #070410;
     --border: #f1f5f9;
     --input: #f1f5f9;
-    --primary: #d5e4ff;
-    --primary-foreground: #04061d;
-    --secondary: #000000;
+    --primary: #2723ff;
+    --primary-foreground: #f9fafb;
+    --secondary: #07042f;
     --secondary-foreground: #f1f5f9;
-    --cursor-background: #000000;
+    --cursor-background: #07042f;
     --cursor-foreground: #ffffff;
   }
 
   .dark {
     --background: #070410;
     --foreground: #f1f5f9;
-    --invert-foreground: #000000;
+    --invert-foreground: #07042f;
     --border: #0f172a;
     --input: #0f172a;
-    --primary: #d5e4ff;
+    --primary: #2723ff;
     --primary-foreground: #f1f5f9;
     --secondary: #ffffff;
-    --secondary-foreground: #000000;
+    --secondary-foreground: #07042f;
     --cursor-background: #ffffff;
-    --cursor-foreground: #000000;
+    --cursor-foreground: #07042f;
   }
 }
 

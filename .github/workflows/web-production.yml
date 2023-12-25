@@ -16,6 +16,8 @@ env:
 # and push the code into the main branch
 on:
   workflow_dispatch:
+  push:
+    branches: ['main']
 
 jobs:
   update:

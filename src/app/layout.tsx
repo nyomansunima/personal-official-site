@@ -20,6 +20,8 @@ export const metadata: Metadata = {
     'Framer Expert',
     'Squarespace',
     'Seo',
+    'Wix Developer',
+    'Fullstack',
   ],
   authors: [{ name: 'Nyoman Sunima' }],
   publisher: 'Nyoman Sunima',

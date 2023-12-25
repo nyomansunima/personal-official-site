@@ -2,10 +2,7 @@ import Link from 'next/link'
 
 export default function ContactSection() {
   return (
-    <section
-      className="flex flex-col items-center container mx-auto laptop:px-20 px-5 py-28 text-center text-5xl laptop:text-8xl laptop:py-80"
-      data-animation="body-background-transition"
-    >
+    <section className="flex flex-col items-center container mx-auto laptop:px-20 px-5 py-28 text-center text-5xl laptop:text-8xl laptop:py-80">
       <div>
         <h2
           className="font-medium mx-auto leading-tight"

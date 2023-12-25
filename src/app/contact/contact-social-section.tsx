@@ -26,13 +26,14 @@ export default function ContactSocialSection() {
             </Link>
           </Button>
         ))}
+
         <Button asChild size={'md'} variant={'primary'}>
           <Link href={'mailto:nyomansunima@gmail.com'} target="_blank">
             Send me email
-            <i className="fi fi-rr-arrow-right" />
+            <i className="fi fi-sr-envelope" />
           </Link>
         </Button>
-        <Button asChild size={'md'} className="bg-[#011BF4] text-neutral-100">
+        <Button asChild size={'md'} variant={'secondary'}>
           <Link
             href={'https://calendly.com/nyomansunima/project-meeting'}
             target="_blank"
