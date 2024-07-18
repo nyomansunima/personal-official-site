@@ -1,7 +1,6 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  darkMode: ['class'],
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -9,8 +8,8 @@ const config: Config = {
   ],
   theme: {
     fontFamily: {
-      sans: ['var(--font-gilroy)'],
-      mono: ['var(--font-dm-mono)'],
+      heading: ['var(--font-cabinet-grotesk)'],
+      body: ['var(--font-satoshi)'],
     },
     screens: {
       tablet: '640px',
@@ -28,6 +27,10 @@ const config: Config = {
         'primary-foreground': 'var(--primary-foreground)',
         secondary: 'var(--secondary)',
         'secondary-foreground': 'var(--secondary-foreground)',
+        popover: {
+          DEFAULT: 'var(--popover)',
+          foreground: 'var(--popover-foreground)',
+        },
       },
       keyframes: {
         'accordion-down': {

@@ -1,10 +1,16 @@
-import { DM_Mono } from 'next/font/google'
 import localFont from 'next/font/local'
 
-/** DM Mono from google */
-export const dmMono = DM_Mono({
-  weight: ['300', '400', '500'],
-  subsets: ['latin'],
+export const cabinetGrotesk = localFont({
+  src: './cabinet-grotesk/cabinet-grotesk-variable.woff2',
   display: 'swap',
-  variable: '--font-dm-mono',
+  variable: '--font-cabinet-grotesk',
+})
+
+export const satoshi = localFont({
+  src: [
+    { path: './satoshi/satoshi-variable.woff2', style: 'normal' },
+    { path: './satoshi/satoshi-variable-italic.woff2', style: 'italic' },
+  ],
+  display: 'swap',
+  variable: '--font-satoshi',
 })

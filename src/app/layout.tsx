@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import {} from '~/fonts'
+import { satoshi, cabinetGrotesk } from '~/fonts'
 import './globals.css'
 import { config } from '~/config/setting'
 import { Analytics } from '@vercel/analytics/react'
@@ -35,8 +35,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={``}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${satoshi.variable} ${cabinetGrotesk.variable}`}
+    >
+      <body className="">
         {/* Google trackings and tags scripts */}
         <Script
           strategy="lazyOnload"

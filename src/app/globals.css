@@ -1,7 +1,7 @@
-/* resources */
+/* Flaticons */
 @import '~@flaticon/flaticon-uicons/css/all/all';
 
-/* tailwindcss */
+/* Tailwindcss */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,30 +10,16 @@
 @layer base {
   :root {
     --background: #ffffff;
-    --foreground: #07042f;
-    --invert-foreground: #070410;
-    --border: #f1f5f9;
-    --input: #f1f5f9;
-    --primary: #2723ff;
-    --primary-foreground: #f9fafb;
-    --secondary: #07042f;
-    --secondary-foreground: #f1f5f9;
-    --cursor-background: #07042f;
-    --cursor-foreground: #ffffff;
-  }
-
-  .dark {
-    --background: #070410;
-    --foreground: #f1f5f9;
-    --invert-foreground: #07042f;
-    --border: #0f172a;
-    --input: #0f172a;
-    --primary: #2723ff;
-    --primary-foreground: #f1f5f9;
-    --secondary: #ffffff;
-    --secondary-foreground: #07042f;
-    --cursor-background: #ffffff;
-    --cursor-foreground: #07042f;
+    --foreground: #000000;
+    --invert-foreground: #ffffff;
+    --border: #f4f4f4;
+    --input: #f4f4f4;
+    --primary: #000000;
+    --primary-foreground: #ffffff;
+    --secondary: #f4f4f4;
+    --secondary-foreground: #000000;
+    --popover: #ffffff;
+    --popover-foreground: #000000;
   }
 }
 
@@ -142,8 +128,9 @@ html.lenis {
 
 /* base preset */
 body {
-  @apply text-base font-medium text-foreground bg-background leading-normal font-sans;
+  @apply text-base font-medium text-foreground bg-background leading-normal font-body;
 }
+
 .fi {
   @apply flex justify-center items-center;
 }
