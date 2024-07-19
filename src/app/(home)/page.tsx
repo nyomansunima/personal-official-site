@@ -5,21 +5,18 @@ import {
 } from '../shared-metadata'
 
 export const metadata: Metadata = {
-  title:
-    'Product designer, Fullstack developer, Web & mobile expert | Nyoman Sunima',
+  title: 'Nyoman Sunima',
   description:
     'Focused on crafting digital products, website, web app, mobile app to help business.',
   openGraph: {
     ...defaultOpenGraphMetadata,
-    title:
-      'Product designer, Fullstack developer, Web & mobile expert | Nyoman Sunima',
+    title: 'Nyoman Sunima',
     description:
       'Focused on crafting digital products, website, web app, mobile app to help business.',
   },
   twitter: {
     ...defaultTwitterMetadata,
-    title:
-      'Product designer, Fullstack developer, Web & mobile expert | Nyoman Sunima',
+    title: 'Nyoman Sunima',
     description:
       'Focused on crafting digital products, website, web app, mobile app to help business.',
   },

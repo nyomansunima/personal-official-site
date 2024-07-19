@@ -19,6 +19,7 @@ const config: Config = {
     extend: {
       fontSize: {
         base: '15px',
+        lg: '17px',
       },
       colors: {
         background: 'var(--background)',
@@ -26,10 +27,14 @@ const config: Config = {
         'invert-foreground': 'var(--invert-foreground)',
         border: 'var(--border)',
         input: 'var(--input)',
-        primary: 'var(--primary)',
-        'primary-foreground': 'var(--primary-foreground)',
-        secondary: 'var(--secondary)',
-        'secondary-foreground': 'var(--secondary-foreground)',
+        primary: {
+          DEFAULT: 'var(--primary)',
+          'primary-foreground': 'var(--primary-foreground)',
+        },
+        secondary: {
+          DEFAULT: 'var(--secondary)',
+          'secondary-foreground': 'var(--secondary-foreground)',
+        },
         popover: {
           DEFAULT: 'var(--popover)',
           foreground: 'var(--popover-foreground)',

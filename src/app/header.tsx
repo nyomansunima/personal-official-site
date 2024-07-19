@@ -81,7 +81,7 @@ function DropdownItem({ icon, label, desc, href }) {
       <Link href={href} className="h-full w-full flex gap-3 items-start">
         <i className={`${icon} text-lg`} />
         <div className="flex flex-col gap-2">
-          <span className="text-sm">{label}</span>
+          <span className="text-base">{label}</span>
           <p className="text-sm opacity-40">{desc}</p>
         </div>
       </Link>
@@ -101,7 +101,7 @@ function DropdownList() {
 
 function Navs() {
   return (
-    <div className="">
+    <div className="ml-14 flex flex-grow">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -195,7 +195,7 @@ function Actions() {
 
 export default function Header() {
   return (
-    <header className="flex items-center px-10 h-20 bg-white justify-between">
+    <header className="flex items-center px-10 h-20 bg-white">
       <Brand />
       <Navs />
       <Actions />

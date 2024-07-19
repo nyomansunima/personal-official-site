@@ -47,7 +47,7 @@ function SocialItem({ href, icon, label }) {
             asChild
             className="text-base scale-110"
           >
-            <Link href={href}>
+            <Link href={href} target="_blank">
               <i className={icon} />
             </Link>
           </Button>
