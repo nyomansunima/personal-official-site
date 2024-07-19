@@ -17,6 +17,9 @@ const config: Config = {
       desktop: '1280px',
     },
     extend: {
+      fontSize: {
+        base: '15px',
+      },
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
