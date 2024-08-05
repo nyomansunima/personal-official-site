@@ -1,16 +1,16 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  darkMode: ['class'],
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: ['class'],
   theme: {
     fontFamily: {
-      sans: ['var(--font-gilroy)'],
-      mono: ['var(--font-dm-mono)'],
+      sans: ['var(--font-geist-sans)'],
+      mono: ['var(--font-geist-mono)'],
     },
     screens: {
       tablet: '640px',
@@ -18,33 +18,32 @@ const config: Config = {
       desktop: '1280px',
     },
     extend: {
+      fontSize: {
+        base: '15px',
+      },
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
-        'invert-foreground': 'var(--invert-foreground)',
-        border: 'var(--border)',
-        input: 'var(--input)',
-        primary: 'var(--primary)',
-        'primary-foreground': 'var(--primary-foreground)',
-        secondary: 'var(--secondary)',
-        'secondary-foreground': 'var(--secondary-foreground)',
-      },
-      keyframes: {
-        'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' },
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        ambient: 'hsl(var(--ambient))',
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
         },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
         },
       },
-      animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
+      typography: {
+        DEFAULT: {
+          css: {},
+        },
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('tailwindcss-animate')],
+  plugins: [require('@tailwindcss/typography')],
 }
+
 export default config
