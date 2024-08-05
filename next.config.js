@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       { hostname: 'cdn.dribbble.com' },
       { hostname: 'cdn.hashnode.com' },
-      { hostname: 'media.graphassets.com' },
+      { hostname: 'images.unsplash.com' },
     ],
   },
 }

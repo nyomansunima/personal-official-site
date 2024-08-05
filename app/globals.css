@@ -1,0 +1,51 @@
+/* User interface icons from flaticons.com */
+@import '~@flaticon/flaticon-uicons/css/all/all';
+
+/* Tailwindcss */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme customizations & adaptive for light and dark mode */
+@layer base {
+  :root {
+    --background: 0 0 98%;
+    --foreground: 0 0 4%;
+    --ambient: 0 0 100%;
+    --border: 0 0 94%;
+    --input: 0 0 94%;
+    --primary: 0 0 0%;
+    --primary-foreground: 0 0 98%;
+    --secondary: 0 0 94%;
+    --secondary-foreground: 0 0 10%;
+  }
+
+  .dark {
+    --background: 0 0 0%;
+    --foreground: 0 0 80%;
+    --ambient: 0 0 0%;
+    --border: 0 0 10%;
+    --input: 0 0 10%;
+    --primary: 0 0 90%;
+    --primary-foreground: 0 0 90%;
+    --secondary: 0 0 10%;
+    --secondary-foreground: 0 0 0%;
+  }
+}
+
+/* preset */
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  body {
+    @apply text-sm tablet:text-base font-normal text-foreground bg-background leading-normal font-sans antialiased;
+    font-variation-settings: normal;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  .fi {
+    @apply flex justify-center items-center text-sm;
+  }
+}
