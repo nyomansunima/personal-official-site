@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { Metadata, ResolvingMetadata } from 'next'
 import { getBlogMetadata } from '../blog-service'
 import {
@@ -37,7 +38,7 @@ export async function generateMetadata(
   }
 }
 
-export default function BlogDetailPage({ params }: Props) {
+export default function BlogDetailPage({ params }: Props): React.ReactElement {
   return (
     <div className="px-5 laptop:px-0 container mx-auto">
       <div className="flex flex-col py-20 laptop:py-36">

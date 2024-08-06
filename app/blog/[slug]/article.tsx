@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { ArticleContent, ProtectedHtmlContent } from '~/components/content'
 import { getBlogDetail } from '../blog-service'
 import Image from 'next/image'
@@ -29,7 +30,9 @@ function BlogCoverImage({ imageUrl, alt }: BlogCoverImageProps) {
   )
 }
 
-export async function BlogArticle({ params }: Props) {
+export async function BlogArticle({
+  params,
+}: Props): Promise<React.ReactElement> {
   const { slug } = params
   const post = await getBlogDetail(slug)
 

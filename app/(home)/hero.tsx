@@ -1,6 +1,113 @@
 import Link from 'next/link'
 import * as React from 'react'
 import { Button } from '~/components/ui/button'
+import {
+  HoverCard,
+  HoverCardTrigger,
+  HoverCardContent,
+} from '~/components/ui/hover-card'
+
+function SonibbleHoverStatus(): React.ReactElement {
+  return (
+    <HoverCard>
+      <HoverCardTrigger asChild>
+        <span className="cursor-pointer font-medium">@sonibble</span>
+      </HoverCardTrigger>
+      <HoverCardContent className="flex w-80 transition-all duration-300 hover:scale-95">
+        <div className="flex w-full gap-3 relative group">
+          <div className="flex justify-center items-center h-12 w-12 rounded-xl bg-secondary/35">
+            🏀
+          </div>
+          <div className="flex flex-col flex-1 justify-start items-start">
+            <h3 className="text-sm font-medium">Sonibble</h3>
+            <span className="text-sm text-foreground/90 text-clip">
+              sonibble.one
+            </span>
+
+            <p className="text-sm text-foreground/60 mt-3 text-start">
+              Helping business grow with design, website, copy and strategy.
+            </p>
+          </div>
+
+          <Link
+            href={'https://sonibble.one'}
+            className="hidden w-7 h-7 rounded-lg bg-secondary/30 border border-border group-hover:flex justify-center items-center absolute top-0 right-0"
+          >
+            <i className="fi fi-rr-arrow-small-right -rotate-45" />
+          </Link>
+        </div>
+      </HoverCardContent>
+    </HoverCard>
+  )
+}
+
+function WeeboHoverStatus(): React.ReactElement {
+  return (
+    <HoverCard>
+      <HoverCardTrigger asChild>
+        <span className="cursor-pointer font-medium">@weebo</span>
+      </HoverCardTrigger>
+      <HoverCardContent className="flex w-80 transition-all duration-300 hover:scale-95">
+        <div className="flex w-full gap-3 relative group">
+          <div className="flex justify-center items-center h-12 w-12 rounded-xl bg-secondary/35">
+            🐔
+          </div>
+          <div className="flex flex-col flex-1 justify-start items-start">
+            <h3 className="text-sm font-medium">Weebo</h3>
+            <span className="text-sm text-foreground/90 text-clip">
+              weebo.one
+            </span>
+
+            <p className="text-sm text-foreground/60 mt-3 text-start">
+              Create unlimited website design for businesses
+            </p>
+          </div>
+
+          <Link
+            href={'https://weebo.one'}
+            className="hidden w-7 h-7 rounded-lg bg-secondary/30 border border-border group-hover:flex justify-center items-center absolute top-0 right-0"
+          >
+            <i className="fi fi-rr-arrow-small-right -rotate-45" />
+          </Link>
+        </div>
+      </HoverCardContent>
+    </HoverCard>
+  )
+}
+
+function WeelabHoverStatus(): React.ReactElement {
+  return (
+    <HoverCard>
+      <HoverCardTrigger asChild>
+        <span className="cursor-pointer font-medium">@weelab</span>
+      </HoverCardTrigger>
+      <HoverCardContent className="flex w-80 transition-all duration-300 hover:scale-95">
+        <div className="flex w-full gap-3 relative group">
+          <div className="flex justify-center items-center h-12 w-12 rounded-xl bg-secondary/35">
+            🛍️
+          </div>
+          <div className="flex flex-col flex-1 justify-start items-start">
+            <h3 className="text-sm font-medium">Weelab</h3>
+            <span className="text-sm text-foreground/90 text-clip">
+              weelab.space
+            </span>
+
+            <p className="text-sm text-foreground/60 mt-3 text-start">
+              Create website, landing, micro sites collections as templates.
+            </p>
+          </div>
+
+          <Link
+            href={'https://weelab.space'}
+            className="hidden w-7 h-7 rounded-lg bg-secondary/30 border border-border group-hover:flex justify-center items-center absolute top-0 right-0"
+          >
+            <i className="fi fi-rr-arrow-small-right -rotate-45" />
+          </Link>
+        </div>
+      </HoverCardContent>
+    </HoverCard>
+  )
+}
 
 function OpenWorkBadge(): React.ReactElement {
   return (
@@ -30,28 +137,9 @@ export function HeroSection(): React.ReactElement {
       <div className="mt-10 tablet:w-10/12 laptop:w-5/12">
         <p className="text-foreground/80 text-center !leading-relaxed">
           Currently focus to work on business, projects, and creating side
-          hustles -{' '}
-          <Link
-            className="font-medium text-foreground"
-            href={'https://sonibble.com'}
-          >
-            Sonibble
-          </Link>
-          ,{' '}
-          <Link
-            className="font-medium text-foreground"
-            href={'https://weebo.com'}
-          >
-            Weebo
-          </Link>
-          ,{' '}
-          <Link
-            className="font-medium text-foreground"
-            href={'https://weelab.com'}
-          >
-            Weelab
-          </Link>
-          . Hunting a new opportunity to join the teams to build a things.
+          hustles - <SonibbleHoverStatus />, <WeeboHoverStatus />,{' '}
+          <WeelabHoverStatus />. Hunting a new opportunity to join the teams to
+          build a things.
         </p>
       </div>
 

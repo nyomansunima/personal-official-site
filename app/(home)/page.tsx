@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import {
   defaultOpenGraphMetadata,
   defaultTwitterMetadata,
-} from '../shared-metadata'
+} from '~/shared-metadata'
 import { HeroSection } from './hero'
 import { NewsletterSection } from './newsletter'
 import { CTASection } from './cta'

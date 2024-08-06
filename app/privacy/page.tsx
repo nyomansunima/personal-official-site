@@ -1,8 +1,9 @@
+import * as React from 'react'
 import { Metadata } from 'next'
 import {
   defaultOpenGraphMetadata,
   defaultTwitterMetadata,
-} from '../shared-metadata'
+} from '~/shared-metadata'
 import Link from 'next/link'
 import { ArticleContent } from '~/components/content'
 
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function PrivacyPage() {
+export default function PrivacyPage(): React.ReactElement {
   return (
     <div className="px-5 laptop:px-0 container mx-auto py-20 laptop:py-36">
       <div className="flex justify-center tablet:w-10/12 laptop:w-6/12 mx-auto">

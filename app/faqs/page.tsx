@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { Metadata } from 'next'
 import {
   defaultOpenGraphMetadata,
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function FAQsPage() {
+export default function FAQsPage(): React.ReactElement {
   return (
     <div className="px-5 laptop::px-0 container mx-auto">
       <section className="flex flex-col py-20 laptop:py-36 items-center">

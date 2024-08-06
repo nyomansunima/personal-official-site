@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { Button } from '~/components/ui/button'
 import { BlogItemCard } from './item'
 import { getBlogPosts } from './blog-service'
@@ -11,7 +12,7 @@ interface BlogPostListProps {
 
 export default async function BlogPostList({
   searchParams,
-}: BlogPostListProps) {
+}: BlogPostListProps): Promise<React.ReactElement> {
   const { page } = searchParams
   const parsedPage = page ? parseInt(page, 10) : undefined
 

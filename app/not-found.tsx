@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '~/components/ui/button'
@@ -7,12 +8,12 @@ export const metadata: Metadata = {
   description: ' Opps, good luck. You’re missing the pages',
 }
 
-export default function NotFound() {
+export default function NotFound(): React.ReactElement {
   return (
     <div className="px-5 laptop:px-0 container mx-auto py-20 laptop:py-36">
       <section className="flex flex-col items-center">
         <h1 className="!leading-tight text-3xl tablet:text-4xl text-center font-medium">
-          Not Found.
+          Not found
         </h1>
 
         <p className="mt-7 !leading-relaxed laptop:w-5/12 text-center text-foreground">

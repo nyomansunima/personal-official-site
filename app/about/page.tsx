@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import {
   defaultOpenGraphMetadata,
   defaultTwitterMetadata,
-} from '../shared-metadata'
+} from '~/shared-metadata'
 import { DetailSection } from './detail'
 import { ActivitySection } from './activity'
 import { TimelineSection } from './timeline'
