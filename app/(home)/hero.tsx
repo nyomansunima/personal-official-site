@@ -123,7 +123,7 @@ export function HeroSection(): React.ReactElement {
     <section className="flex flex-col py-20 laptop:py-36 items-center">
       <OpenWorkBadge />
 
-      <h2 className="text-3xl laptop:text-4xl !leading-tight text-center font-medium mt-10">
+      <h2 className="text-2xl laptop:text-3xl !leading-tight font-medium text-center mt-10">
         Hello, I’am a designer, developer & writer
         <br className="hidden tablet:block" />
         <span className="text-foreground/60">

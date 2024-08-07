@@ -15,7 +15,7 @@ interface BlogCoverImageProps {
 function BlogCoverImage({ imageUrl, alt }: BlogCoverImageProps) {
   return (
     <div className="flex justify-center items-center p-1 border border-border bg-ambient rounded-2xl mb-10 not-prose">
-      <picture className="flex w-full h-[360px] relative overflow-hidden rounded-xl">
+      <picture className="flex w-full h-[240px] tablet:h-[360px] relative overflow-hidden rounded-xl">
         <Image
           src={imageUrl}
           alt={alt}

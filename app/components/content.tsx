@@ -20,7 +20,7 @@ export function ArticleContent({
   children,
 }: ArticleContentProps): React.ReactElement {
   return (
-    <article className="prose prose-sm tablet:prose-base tablet:prose-p:text-base prose-headings:!leading-tight tablet:prose-li:text-base max-w-none prose-headings:font-medium prose-strong:font-medium prose-neutral prose-code:font-mono prose-img:overflow-hidden prose-img:border prose-img:border-border prose-img:bg-ambient prose-img:rounded-xl prose-pre:bg-ambient prose-pre:text-foreground prose-pre:border prose-pre:border-border prose-pre:font-medium overflow-hidden">
+    <article className="prose prose-sm tablet:prose-base tablet:prose-p:text-base prose-headings:!leading-tight tablet:prose-h1:text-3xl prose-h1:text-2xl tablet:prose-li:text-base max-w-none prose-headings:font-medium prose-strong:font-medium prose-neutral prose-code:font-mono prose-img:overflow-hidden prose-img:border prose-img:border-border prose-img:bg-ambient prose-img:rounded-xl prose-pre:bg-ambient prose-pre:text-foreground prose-pre:border prose-pre:border-border prose-pre:font-medium overflow-hidden">
       {children}
     </article>
   )

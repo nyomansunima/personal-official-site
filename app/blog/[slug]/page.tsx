@@ -42,7 +42,7 @@ export default function BlogDetailPage({ params }: Props): React.ReactElement {
   return (
     <div className="px-5 laptop:px-0 container mx-auto">
       <div className="flex flex-col py-20 laptop:py-36">
-        <div className="flex w-6/12 mx-auto">
+        <div className="flex w-full tablet:w-10/12 laptop:w-6/12 mx-auto">
           <BlogArticle params={params} />
         </div>
       </div>

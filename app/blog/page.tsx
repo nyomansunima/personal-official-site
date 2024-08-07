@@ -35,9 +35,9 @@ export default function BlogPage({ searchParams }: Props): React.ReactElement {
   return (
     <div className="px-5 laptop:px-0 container mx-auto">
       <div className="flex flex-col py-20 laptop:py-36 items-center">
-        <h2 className="text-3xl laptop:text-4xl text-center !leading-tight font-medium">
+        <h1 className="text-2xl laptop:text-3xl text-center !leading-tight font-medium">
           Blog
-        </h2>
+        </h1>
 
         <NewsletterSection />
         <BlogPostList searchParams={searchParams} />

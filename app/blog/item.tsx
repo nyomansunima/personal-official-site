@@ -43,7 +43,7 @@ export async function BlogItemCard({ post }: BlogItemProps) {
       </div>
 
       <div className="flex flex-col px-1">
-        <h3 className="text-lg font-medium !leading-tight mt-7">
+        <h3 className="text-lg text-foreground/80 font-medium mt-7">
           {post.title}
         </h3>
         <span className="text-sm text-foreground/60 mt-4">

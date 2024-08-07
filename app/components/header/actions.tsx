@@ -55,7 +55,7 @@ export function Actions(): React.ReactElement {
         asChild
         variant={'secondary'}
         size={'base'}
-        className="hover:scale-95"
+        className="hover:scale-95 font-normal"
       >
         <Link href={'/contact'}>Say hello”</Link>
       </Button>

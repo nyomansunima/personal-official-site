@@ -46,7 +46,7 @@ function GalleryList(): React.ReactElement {
 export function DetailSection(): React.ReactElement {
   return (
     <section className="flex flex-col py-20 laptop:py-36">
-      <h2 className="text-3xl laptop:text-4xl !leading-tight font-medium">
+      <h2 className="text-2xl laptop:text-3xl !leading-tight font-medium">
         Hello,
       </h2>
 

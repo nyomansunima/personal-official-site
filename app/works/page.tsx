@@ -27,7 +27,7 @@ export default function ResourcesPage(): React.ReactElement {
   return (
     <div className="px-5 laptop::px-0 container mx-auto">
       <section className="flex flex-col py-20 items-center">
-        <h1 className="text-3xl laptop:text-4xl text-center !leading-tight font-medium">
+        <h1 className="text-2xl laptop:text-3xl text-center !leading-tight font-medium">
           Works
         </h1>
 
