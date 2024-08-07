@@ -24,7 +24,7 @@ export function Brand(): React.ReactElement {
   const pathname = usePathname()
 
   return (
-    <div className="text-foreground/50 text-sm gap-3 flex">
+    <div className="text-foreground/50 text-sm gap-3 flex relative z-10">
       <Link
         href={'/'}
         className="transition-all duration-300 hover:-translate-x-1"

@@ -19,7 +19,7 @@ const TooltipContent = React.forwardRef<
     ref={ref}
     sideOffset={sideOffset}
     className={mergeClass(
-      'z-50 overflow-hidden rounded-lg border border-border bg-ambient px-3 py-1.5 text-xs text-foreground/70',
+      'z-50 overflow-hidden rounded-xl border border-border bg-ambient px-3 py-1.5 text-xs text-foreground/70',
       className,
     )}
     {...props}

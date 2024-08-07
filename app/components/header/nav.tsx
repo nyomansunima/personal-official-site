@@ -27,7 +27,7 @@ function NavMenuItem({
 
 export function Navs(): React.ReactElement {
   return (
-    <div className="flex flex-grow justify-center">
+    <div className="flex flex-grow justify-center absolute inset-x-0">
       <ul className="hidden laptop:flex list-none">
         <NavMenuItem href="/works">Works</NavMenuItem>
         <NavMenuItem href="/writing">Writing</NavMenuItem>

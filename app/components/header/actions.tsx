@@ -11,10 +11,10 @@ import {
 
 export function Actions(): React.ReactElement {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-2 relative z-10">
       <TooltipProvider>
         <Tooltip>
-          <TooltipTrigger>
+          <TooltipTrigger asChild>
             <Button
               asChild
               variant={'outline'}
@@ -32,7 +32,7 @@ export function Actions(): React.ReactElement {
 
       <TooltipProvider>
         <Tooltip>
-          <TooltipTrigger>
+          <TooltipTrigger asChild>
             <Button
               asChild
               variant={'outline'}

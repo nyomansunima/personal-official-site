@@ -10,6 +10,7 @@ import { AnimationProvider } from '~/components/animation-provider'
 import { ThemeProvider } from '~/components/theme-provider'
 import Header from '~/components/header'
 import Footer from '~/components/footer'
+import { Toaster } from './components/ui/toast'
 
 // default metadata for the site
 export const metadata: Metadata = {
@@ -77,6 +78,7 @@ export default function RootLayout({
             <Header />
             <main className="min-h-screen">{children}</main>
             <Footer />
+            <Toaster />
           </AnimationProvider>
         </ThemeProvider>
 
