@@ -25,6 +25,13 @@ export function ResourcesSection(): React.ReactElement {
           <LinkItem href="/writing" className="col-span-1">
             ✅ Read my articles
           </LinkItem>
+          <LinkItem
+            href="https://moono.space"
+            target="_blank"
+            className="col-span-1"
+          >
+            💎 Checkout my apps (New)
+          </LinkItem>
         </div>
       </div>
     </section>

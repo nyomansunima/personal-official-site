@@ -38,7 +38,7 @@ const menus = [
     label: 'Products',
     items: [
       { label: 'Weelab', href: '/' },
-      { label: 'Moolo', href: '/' },
+      { label: 'Moono', href: 'https://moono.space' },
     ],
   },
   {
