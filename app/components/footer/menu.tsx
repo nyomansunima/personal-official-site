@@ -31,6 +31,7 @@ const menus = [
       { label: 'Guides', href: '/' },
       { label: 'Development', href: '/' },
       { label: 'Design', href: '/' },
+      { label: 'Bio', href: '/bio' },
     ],
   },
   {

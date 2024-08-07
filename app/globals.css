@@ -40,7 +40,7 @@
   }
 
   body {
-    @apply text-sm tablet:text-base font-normal text-foreground bg-background leading-normal font-sans antialiased;
+    @apply text-sm tablet:text-base font-normal text-foreground bg-background leading-normal font-sans antialiased selection:bg-secondary selection:text-foreground;
     font-variation-settings: normal;
     font-feature-settings: 'rlig' 1, 'calt' 1;
   }
