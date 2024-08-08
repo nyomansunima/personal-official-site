@@ -7,7 +7,7 @@ function PillItem({ href, children }) {
       asChild
       variant={'outline'}
       size={'lg'}
-      className="h-16 px-7 transition-all duration-500 hover:scale-95"
+      className="h-16 px-7 transition-all duration-500 hover:scale-95 bg-ambient"
     >
       <Link href={href} target="_blank">
         {children}
