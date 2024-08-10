@@ -37,7 +37,7 @@ export async function BlogArticle({
   const post = await getBlogDetail(slug)
 
   return (
-    <div className="flex w-full">
+    <div className="flex w-full mt-14">
       <ArticleContent>
         <h1>{post.title}</h1>
         <BlogCoverImage imageUrl={post.coverImage.url} alt={post.title} />

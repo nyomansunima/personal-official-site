@@ -6,6 +6,8 @@ import {
   defaultTwitterMetadata,
 } from '~/shared-metadata'
 import { BlogArticle } from './article'
+import { Button } from '~/components/ui/button'
+import Link from 'next/link'
 
 interface Props {
   params: { slug: string }
@@ -42,7 +44,15 @@ export default function BlogDetailPage({ params }: Props): React.ReactElement {
   return (
     <div className="px-5 laptop:px-0 container mx-auto">
       <div className="flex flex-col py-20 laptop:py-36">
-        <div className="flex w-full tablet:w-10/12 laptop:w-6/12 mx-auto">
+        <div className="flex flex-col w-full tablet:w-10/12 laptop:w-6/12 mx-auto">
+          <div className="flex">
+            <Button asChild variant={'outline'} size={'lg'}>
+              <Link href={'/blog'}>
+                <i className="fi fi-rr-arrow-left" /> Back
+              </Link>
+            </Button>
+          </div>
+
           <BlogArticle params={params} />
         </div>
       </div>

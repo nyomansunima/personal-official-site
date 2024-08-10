@@ -31,6 +31,7 @@ function SonibbleHoverStatus(): React.ReactElement {
 
           <Link
             href={'https://sonibble.one'}
+            target="_blank"
             className="hidden w-7 h-7 rounded-lg bg-secondary/30 border border-border group-hover:flex justify-center items-center absolute top-0 right-0"
           >
             <i className="fi fi-rr-arrow-small-right -rotate-45" />
@@ -65,6 +66,7 @@ function WeeboHoverStatus(): React.ReactElement {
 
           <Link
             href={'https://weebo.one'}
+            target="_blank"
             className="hidden w-7 h-7 rounded-lg bg-secondary/30 border border-border group-hover:flex justify-center items-center absolute top-0 right-0"
           >
             <i className="fi fi-rr-arrow-small-right -rotate-45" />
@@ -99,6 +101,43 @@ function WeelabHoverStatus(): React.ReactElement {
 
           <Link
             href={'https://weelab.space'}
+            target="_blank"
+            className="hidden w-7 h-7 rounded-lg bg-secondary/30 border border-border group-hover:flex justify-center items-center absolute top-0 right-0"
+          >
+            <i className="fi fi-rr-arrow-small-right -rotate-45" />
+          </Link>
+        </div>
+      </HoverCardContent>
+    </HoverCard>
+  )
+}
+
+function MoonoHoverStatus(): React.ReactElement {
+  return (
+    <HoverCard>
+      <HoverCardTrigger asChild>
+        <span className="cursor-pointer font-medium">@moono</span>
+      </HoverCardTrigger>
+      <HoverCardContent className="flex w-80 transition-all duration-300 hover:scale-95">
+        <div className="flex w-full gap-3 relative group">
+          <div className="flex justify-center items-center h-12 w-12 rounded-xl bg-secondary/35">
+            🛼
+          </div>
+          <div className="flex flex-col flex-1 justify-start items-start">
+            <h3 className="text-sm font-medium">Moono</h3>
+            <span className="text-sm text-foreground/90 text-clip">
+              moono.space
+            </span>
+
+            <p className="text-sm text-foreground/60 mt-3 text-start">
+              The tiny studio for software projects, create micro, and simple
+              saas.
+            </p>
+          </div>
+
+          <Link
+            href={'https://moono.space'}
+            target="_blank"
             className="hidden w-7 h-7 rounded-lg bg-secondary/30 border border-border group-hover:flex justify-center items-center absolute top-0 right-0"
           >
             <i className="fi fi-rr-arrow-small-right -rotate-45" />
@@ -124,22 +163,19 @@ export function HeroSection(): React.ReactElement {
       <OpenWorkBadge />
 
       <h2 className="text-2xl laptop:text-3xl !leading-tight font-medium text-center mt-10">
-        Hello, I’am a designer, developer & writer
+        Hello, I’am a designer, developer & creator{' '}
         <br className="hidden tablet:block" />
-        <span className="text-foreground/60">
-          {' '}
-          loves to crafts products, apps, &
-          <br className="hidden tablet:block" />
-          solutions for people
-        </span>
+        loves to crafts products, apps, services{' '}
+        <br className="hidden tablet:block" />
+        for global audiences
       </h2>
 
       <div className="mt-10 tablet:w-10/12 laptop:w-5/12">
         <p className="text-foreground/80 text-center !leading-relaxed">
           Currently focus to work on business, projects, and creating side
-          hustles - <SonibbleHoverStatus />, <WeeboHoverStatus />,{' '}
-          <WeelabHoverStatus />. Hunting a new opportunity to join the teams to
-          build a things.
+          hustles - <SonibbleHoverStatus />, <MoonoHoverStatus />,{' '}
+          <WeeboHoverStatus />, <WeelabHoverStatus />. Hunting a new opportunity
+          to join the teams to build a things.
         </p>
       </div>
 
