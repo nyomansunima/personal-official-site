@@ -33,6 +33,9 @@ export const metadata: Metadata = {
   publisher: 'Nyoman Sunima',
   creator: 'Nyoman Sunima',
   metadataBase: new URL(config.app.host),
+  verification: {
+    google: 'fTZZv4lCZ2_i8jo8FFKuXc6Acuy8jMClhwDzRX64NgE',
+  },
 }
 
 // Set the google analytics tracking code and script
