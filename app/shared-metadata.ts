@@ -7,13 +7,13 @@ import { Twitter } from 'next/dist/lib/metadata/types/twitter-types'
  */
 
 export const defaultOpenGraphMetadata: OpenGraph = {
-  images: ['/images/social-image.png'],
+  images: ['/images/meta-image.png'],
   type: 'website',
   siteName: 'Nyoman Sunima',
 }
 
 export const defaultTwitterMetadata: Twitter = {
-  images: ['/images/social-image.png'],
+  images: ['/images/meta-image.png'],
   card: 'summary_large_image',
   creator: '@nyomansunima',
 }
