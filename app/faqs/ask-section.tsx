@@ -17,7 +17,7 @@ export function AskSection(): React.ReactElement {
 
       <div className="flex justify-center mt-16">
         <Button
-          variant={'secondary'}
+          variant={'text'}
           size={'lg'}
           asChild
           className="transition-all duration-500 hover:scale-95"

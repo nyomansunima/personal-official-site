@@ -158,7 +158,7 @@ function OpenWorkBadge(): React.ReactElement {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger>
-          <div className="flex justify-center items-center px-4 h-9 rounded-full bg-fuchsia-700/10 text-fuchsia-800 text-xs gap-2 font-medium transition-all duration-300 hover:scale-95 cursor-pointer">
+          <div className="flex justify-center items-center px-4 h-9 rounded-full bg-fuchsia-100 dark:bg-fuchsia-600/10 text-fuchsia-800 text-xs gap-2 font-medium transition-all duration-300 hover:scale-95 cursor-pointer">
             <span className="h-2 w-2 rounded-full bg-fuchsia-800" />
             Open to work
           </div>

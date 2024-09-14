@@ -72,6 +72,7 @@ export default function ContactList() {
     { label: 'Instagram', href: 'https://instagram.com/nyomansunima' },
     { label: 'Facebook', href: 'https://facebook.com/nyomansunima' },
     { label: 'LinkedIn', href: 'https://linkedin.com/in/nyomansunima' },
+    { label: 'Threads', href: 'https://threads.net/@nyomansunima' },
   ]
 
   return (

@@ -23,7 +23,7 @@
 
 .dark {
   --background: 245 16 5%;
-  --foreground: 245 2 65%;
+  --foreground: 245 2 70%;
   --ambient: 0 0 0%;
   --border: 0 0 10%;
   --input: 0 0 10%;
@@ -40,7 +40,7 @@
   }
 
   body {
-    @apply text-sm tablet:text-base font-normal text-foreground bg-background leading-normal font-sans antialiased selection:bg-fuchsia-100 selection:text-fuchsia-950;
+    @apply text-sm tablet:text-base font-normal text-foreground bg-background leading-normal font-sans antialiased selection:bg-fuchsia-500/10 dark:selection:text-fuchsia-200/70 selection:text-fuchsia-950;
     font-variation-settings: normal;
     font-feature-settings: 'rlig' 1, 'calt' 1;
   }
