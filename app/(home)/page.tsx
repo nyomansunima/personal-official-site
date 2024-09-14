@@ -5,8 +5,6 @@ import {
   defaultTwitterMetadata,
 } from '~/shared-metadata'
 import { HeroSection } from './hero'
-import { NewsletterSection } from './newsletter'
-import { CTASection } from './cta'
 
 export const metadata: Metadata = {
   title: 'Nyoman Sunima',
@@ -30,8 +28,6 @@ export default function HomePage(): React.ReactElement {
   return (
     <div className="px-5 laptop:px-0 container mx-auto">
       <HeroSection />
-      <NewsletterSection />
-      <CTASection />
     </div>
   )
 }

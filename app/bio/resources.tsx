@@ -12,15 +12,19 @@ export function ResourcesSection(): React.ReactElement {
           <LinkItem href="/become-partner" className="col-span-1 row-span-2">
             🛼 Become partner (business)
           </LinkItem>
-          <LinkItem href="/blog" className="col-span-1">
-            💖 Read my blog (new)
-          </LinkItem>
           <LinkItem
             href="https://nyomansunima.lemonsqueezy.com"
             target="_blank"
             className="col-span-1"
           >
             🛍️ Buy something
+          </LinkItem>
+          <LinkItem
+            href="https://nyomansunima.lemonsqueezy.com"
+            target="_blank"
+            className="col-span-1"
+          >
+            💖 Suport me by donation
           </LinkItem>
           <LinkItem href="/writing" className="col-span-1">
             ✅ Read my articles

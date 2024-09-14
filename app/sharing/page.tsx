@@ -7,35 +7,35 @@ import {
 import { PublicationSection } from './publication'
 
 export const metadata: Metadata = {
-  title: 'Speaks',
+  title: 'Sharing',
   description:
-    'See where i share something through talks. Talks that help you find some solutions and i share something',
+    'Everyday i write, record, and create any resources to sharing into the social media and community platforms',
   openGraph: {
     ...defaultOpenGraphMetadata,
-    title: 'Speaks',
+    title: 'Sharing',
     description:
-      'See where i share something through talks. Talks that help you find some solutions and i share something',
+      'Everyday i write, record, and create any resources to sharing into the social media and community platforms',
   },
   twitter: {
     ...defaultTwitterMetadata,
-    title: 'Speaks',
+    title: 'Sharing',
     description:
-      'See where i share something through talks. Talks that help you find some solutions and i share something',
+      'Everyday i write, record, and create any resources to sharing into the social media and community platforms',
   },
 }
 
-export default function SpeaksPage(): React.ReactElement {
+export default function WritingPage(): React.ReactElement {
   return (
     <div className="px-5 laptop:px-0 container mx-auto">
       <section className="flex flex-col py-20 items-center">
         <h1 className="text-2xl laptop:text-3xl text-center !leading-tight font-medium">
-          Speaks
+          Sharing
         </h1>
 
         <p className="text-foreground/80 text-center tablet:w-8/12 laptop:w-5/12 mt-7 !leading-relaxed">
-          Talks in any of are, find interested topics around business, indie
-          hacking, podcasts, and entrepreneur. See the videos, or podcast from
-          any creators, events with me.
+          Writing, recording and create content become my daily activity. I make
+          tips about design, development, indie hacking, business, entrepreneur,
+          productivity, story and self improvement.
         </p>
       </section>
 

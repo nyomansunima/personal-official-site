@@ -25,9 +25,19 @@ interface SocialItemProps {
 // connect with the author
 const socials: Social[] = [
   {
+    label: 'Subscribe',
+    href: 'https://youtube.com/@nyomansunima',
+    icon: 'fi fi-brands-youtube',
+  },
+  {
     label: 'Follow on twitter',
     href: 'https://twitter.com/nyomansunima',
     icon: 'fi fi-brands-twitter',
+  },
+  {
+    label: 'See on Threads',
+    href: 'https://threads.net/@nyomansunima',
+    icon: 'fi fi-rr-knitting',
   },
   {
     label: 'Connect now',
@@ -64,7 +74,7 @@ const socials: Social[] = [
 export function SocialMediaList(): React.ReactElement {
   return (
     <div className="flex justify-center px-5 py-10">
-      <ul className="flex flex-wrap items-center justify-center gap-3">
+      <ul className="flex flex-wrap items-center justify-center gap-2">
         {socials.map((soc, index) => (
           <SocialItem social={soc} key={index} />
         ))}
@@ -75,7 +85,7 @@ export function SocialMediaList(): React.ReactElement {
 
 export function SocialItem({ social }: SocialItemProps): React.ReactElement {
   const { href, icon, label } = social
-  const isEmail = icon.includes('fi-rr-envelope') || label.includes('Copy')
+  const isEmail = href.includes('@gmail.com') || label.includes('Copy')
 
   function copyEmailToClipboard(): void {
     const email = href
@@ -99,7 +109,7 @@ export function SocialItem({ social }: SocialItemProps): React.ReactElement {
               <Button
                 variant={'outline'}
                 size={'icon'}
-                className="text-sm h-12 w-12 transition-all duration-500 hover:scale-95 bg-ambient"
+                className="text-sm h-12 w-12 rounded-2xl transition-all duration-500 hover:scale-95 bg-ambient"
                 onClick={copyEmailToClipboard}
               >
                 <i className={icon} />
@@ -109,7 +119,7 @@ export function SocialItem({ social }: SocialItemProps): React.ReactElement {
                 variant={'outline'}
                 size={'icon'}
                 asChild
-                className="text-sm h-12 w-12 transition-all duration-500 hover:scale-95 bg-ambient"
+                className="text-sm h-12 w-12 rounded-2xl transition-all duration-500 hover:scale-95 bg-ambient"
               >
                 <Link href={href} target="_blank">
                   <i className={icon} />

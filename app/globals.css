@@ -19,18 +19,18 @@
     --secondary: 0 0 94%;
     --secondary-foreground: 0 0 10%;
   }
+}
 
-  .dark {
-    --background: 0 0 0%;
-    --foreground: 0 0 80%;
-    --ambient: 0 0 0%;
-    --border: 0 0 10%;
-    --input: 0 0 10%;
-    --primary: 0 0 90%;
-    --primary-foreground: 0 0 90%;
-    --secondary: 0 0 10%;
-    --secondary-foreground: 0 0 0%;
-  }
+.dark {
+  --background: 245 16 5%;
+  --foreground: 245 2 65%;
+  --ambient: 0 0 0%;
+  --border: 0 0 10%;
+  --input: 0 0 10%;
+  --primary: 0 0 90%;
+  --primary-foreground: 0 0 90%;
+  --secondary: 245 8 10%;
+  --secondary-foreground: 245 2 65%;
 }
 
 /* preset */

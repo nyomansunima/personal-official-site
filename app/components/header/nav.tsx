@@ -17,7 +17,7 @@ function NavMenuItem({
       <Link
         href={href}
         target={target}
-        className="flex h-10 px-4 justify-center items-center rounded-full bg-transparent border-transparent text-sm transition-all duration-300 hover:bg-secondary/80 hover:text-secondary-foreground hover:scale-95 origin-center"
+        className="flex h-10 px-4 justify-center items-center rounded-full bg-transparent border border-transparent hover:border-border text-sm transition-all duration-300 origin-center"
       >
         {children}
       </Link>
@@ -30,10 +30,8 @@ export function Navs(): React.ReactElement {
     <div className="flex flex-grow justify-center absolute inset-x-0">
       <ul className="hidden laptop:flex list-none">
         <NavMenuItem href="/works">Works</NavMenuItem>
-        <NavMenuItem href="/writing">Writing</NavMenuItem>
-        <NavMenuItem href="/speaks">Speaks</NavMenuItem>
+        <NavMenuItem href="/sharing">Sharing</NavMenuItem>
         <NavMenuItem href="/resources">Resources</NavMenuItem>
-        <NavMenuItem href="/blog">Blog</NavMenuItem>
         <NavMenuItem href="/about">About</NavMenuItem>
       </ul>
     </div>

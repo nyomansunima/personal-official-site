@@ -74,7 +74,8 @@ export default function RootLayout({
         <GoogleAnalyticsScript />
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="system"
+          enableSystem
           disableTransitionOnChange
         >
           <AnimationProvider>

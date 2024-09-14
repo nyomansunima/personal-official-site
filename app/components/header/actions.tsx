@@ -19,7 +19,7 @@ export function Actions(): React.ReactElement {
               asChild
               variant={'outline'}
               size={'icon'}
-              className="hover:scale-95"
+              className="hover:scale-95 rounded-2xl"
             >
               <Link href={'https://ko-fi.com/nyomansunima'} target="_blank">
                 <i className="fi text-xs fi-rr-heart" />
@@ -37,7 +37,7 @@ export function Actions(): React.ReactElement {
               asChild
               variant={'outline'}
               size={'icon'}
-              className="hover:scale-95"
+              className="hover:scale-95 rounded-2xl"
             >
               <Link
                 href={'https://nyomansunima.lemonsqueezy.com/'}
@@ -55,9 +55,9 @@ export function Actions(): React.ReactElement {
         asChild
         variant={'secondary'}
         size={'base'}
-        className="hover:scale-95 font-normal"
+        className="hover:scale-95 font-normal rounded-2xl"
       >
-        <Link href={'/contact'}>Say hello”</Link>
+        <Link href={'/contact'}>⛺️ Say hello</Link>
       </Button>
     </div>
   )

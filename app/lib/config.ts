@@ -13,10 +13,6 @@ export const config = {
   app: {
     host: process.env.NEXT_PUBLIC_APP_HOST || 'http://localhost:3000',
   },
-  hashnode: {
-    host: process.env.HASHNODE_HOST!,
-    token: process.env.HASHNODE_TOKEN!,
-  },
   google: {
     analytics: {
       id: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID!,
