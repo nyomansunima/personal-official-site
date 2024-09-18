@@ -19,7 +19,7 @@ function MoonoHoverStatus(): React.ReactElement {
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
-        <span className="cursor-pointer text-foreground/50">@moono</span>
+        <span className="cursor-pointer text-orange-600">@moono</span>
       </HoverCardTrigger>
       <HoverCardContent className="flex w-80 transition-all duration-300 hover:scale-95">
         <div className="flex w-full gap-3 relative group font-normal">
@@ -61,7 +61,7 @@ function WeecraftHoverStatus(): React.ReactElement {
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
-        <span className="cursor-pointer text-foreground/50">@weecraft</span>
+        <span className="cursor-pointer text-pink-600">@weecraft</span>
       </HoverCardTrigger>
       <HoverCardContent className="flex w-80 transition-all duration-300 hover:scale-95">
         <div className="flex w-full gap-3 relative group font-normal">
@@ -124,7 +124,7 @@ export function HeroSection(): React.ReactElement {
     <section className="flex flex-col py-20 laptop:py-36">
       <OpenWorkBadge />
 
-      <h2 className="flex flex-col text-2xl laptop:text-6xl !leading-tight font-medium mt-10 laptop:mt-16 gap-6 laptop:gap-16">
+      <h2 className="flex flex-col text-2xl tablet:text-4xl laptop:text-5xl desktop:text-6xl !leading-tight font-medium mt-10 laptop:mt-16 gap-6 laptop:gap-16">
         <span className="text-foreground/40">Hello,</span>
         <span>
           I'm a designer, developer & creator loves to crafts solutions for
@@ -139,8 +139,8 @@ export function HeroSection(): React.ReactElement {
           that help people to solve their problem.
         </span>
         <span>
-          Currently focus on building career, projects & business at{' '}
-          <WeecraftHoverStatus /> , <MoonoHoverStatus />
+          Currently focus on building career, brands & businesses{' '}
+          <WeecraftHoverStatus />, <MoonoHoverStatus />
         </span>
       </h2>
     </section>

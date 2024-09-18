@@ -7,7 +7,7 @@ interface NavMenuItemProps {
   target?: React.HTMLAttributeAnchorTarget
 }
 
-function NavMenuItem({
+export function NavMenuItem({
   children,
   href,
   target,
