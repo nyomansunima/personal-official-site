@@ -64,6 +64,13 @@ const publications: Publication[] = [
     url: 'https://instagram.com/nyomansunima',
   },
   {
+    title: 'Hashnode',
+    description: 'Daily post about product design & development',
+    image: '🥳',
+    publisher: 'hashnode.com',
+    url: 'https://nyomansunima.hashnode.dev',
+  },
+  {
     title: 'Medium',
     description:
       'Personal blog publish to share daily interest, tips and tricks around business, entrepreneur, productivity',
