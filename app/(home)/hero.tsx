@@ -98,10 +98,9 @@ function WeecraftHoverStatus(): React.ReactElement {
   )
 }
 
-// Badge for open work or looking for new opportunity
 function OpenWorkBadge(): React.ReactElement {
   return (
-    <div>
+    <div className="mb-10">
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger>
@@ -110,9 +109,7 @@ function OpenWorkBadge(): React.ReactElement {
               Open to work
             </div>
           </TooltipTrigger>
-          <TooltipContent>
-            Looking for teams to join in, Please contact me!
-          </TooltipContent>
+          <TooltipContent>Looking for solid works & teams</TooltipContent>
         </Tooltip>
       </TooltipProvider>
     </div>
@@ -121,28 +118,27 @@ function OpenWorkBadge(): React.ReactElement {
 
 export function HeroSection(): React.ReactElement {
   return (
-    <section className="flex flex-col py-20 laptop:py-36">
+    <section className="flex flex-col py-20 laptop:pb-56">
       <OpenWorkBadge />
-
-      <h2 className="flex flex-col text-2xl tablet:text-4xl laptop:text-5xl desktop:text-6xl !leading-tight font-medium mt-10 laptop:mt-16 gap-6 laptop:gap-16">
-        <span className="text-foreground/40">Hello,</span>
-        <span>
-          I'm a designer, developer & creator loves to crafts solutions for
-          global audiences.
-        </span>
-        <span>
-          Mostly focus on crafts{' '}
+      <div className="flex flex-col text-2xl tablet:text-3xl laptop:text-3xl !leading-snug font-medium gap-6 laptop:gap-16">
+        <h2>
+          Hello, I am a designer, developer & creator that loves to crafts
+          solutions for global audiences. With strong experience to build better
+          products.
+        </h2>
+        <h2>
+          Mostly focus on shipping{' '}
           <span className="cursor-pointer text-fuchsia-600">saas</span>,{' '}
           <span className="cursor-pointer text-orange-600">products</span>,{' '}
           <span className="cursor-pointer text-blue-600">goodies</span> &{' '}
           <span className="cursor-pointer text-pink-600">sharing tips</span>{' '}
           that help people to solve their problem.
-        </span>
-        <span>
+        </h2>
+        <h2>
           Currently focus on building career, brands & businesses{' '}
           <WeecraftHoverStatus />, <MoonoHoverStatus />
-        </span>
-      </h2>
+        </h2>
+      </div>
     </section>
   )
 }

@@ -9,124 +9,104 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '../ui/tooltip'
-import { NavMenuItem } from './nav'
+import { usePathname } from 'next/navigation'
 
-function SupportButton(): React.ReactElement {
+interface NavMenuItemProps {
+  children: React.ReactNode
+  href: string
+  target?: React.HTMLAttributeAnchorTarget
+}
+
+export function NavMenuItem({
+  children,
+  href,
+  target,
+}: NavMenuItemProps): React.ReactElement {
   return (
-    <TooltipProvider>
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <Button
-            asChild
-            variant={'outline'}
-            size={'icon'}
-            className="hover:scale-95 rounded-2xl"
-          >
-            <Link href={'https://ko-fi.com/nyomansunima'} target="_blank">
-              <i className="fi text-xs fi-rr-heart" />
-            </Link>
-          </Button>
-        </TooltipTrigger>
-        <TooltipContent>Support me</TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
+    <li className="flex w-full col-span-1">
+      <Link
+        href={href}
+        target={target}
+        className="flex justify-center items-center text-sm transition-all duration-300 hover:-translate-x-1"
+      >
+        {children}
+      </Link>
+    </li>
   )
 }
 
-function StoreButton(): React.ReactElement {
+function Menu(): React.ReactElement {
+  const modalRef = React.useRef<HTMLDivElement>(null)
+  const [isShow, toggleMenu] = React.useState<boolean>(false)
+  const path = usePathname()
+
+  // handle when the mouse clicked outside of the target
+  // should close the modal automaticaly
+  React.useEffect(() => {
+    function onClickOutside(e: MouseEvent) {
+      if (modalRef.current && !modalRef.current.contains(e.target as any)) {
+        toggleMenu(false)
+      }
+    }
+
+    document.addEventListener('mousedown', onClickOutside)
+
+    return () => {
+      document.removeEventListener('mousedown', onClickOutside)
+    }
+  }, [])
+
+  // handle the event when pathname has changes
+  // if the path got changes, we will automatically
+  // close the modal
+  React.useEffect(() => {
+    if (path) {
+      toggleMenu(false)
+    }
+
+    return () => {}
+  }, [path])
+
   return (
-    <TooltipProvider>
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <Button
-            asChild
-            variant={'outline'}
-            size={'icon'}
-            className="hover:scale-95 rounded-2xl"
-          >
-            <Link
-              href={'https://nyomansunima.lemonsqueezy.com/'}
+    <div className="relative">
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button
+              variant={'outline'}
+              size={'icon'}
+              onClick={() => {
+                toggleMenu((state) => !state)
+              }}
+              className="hover:scale-95 rounded-2xl"
+            >
+              <i className="fi text-xs fi-rr-menu-burger" />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>
+            Explore all of the menus, support & contact
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+
+      {isShow && (
+        <div
+          className="flex px-6 py-5 rounded-xl border border-border bg-ambient w-[300px] absolute z-20 top-12 right-0"
+          ref={modalRef}
+        >
+          <ul className="grid grid-cols-2 w-full gap-x-4 gap-y-4">
+            <NavMenuItem href="/works">Works</NavMenuItem>
+            <NavMenuItem href="/sharing">Sharing</NavMenuItem>
+            <NavMenuItem href="/about">About</NavMenuItem>
+            <NavMenuItem href="/contact">Contact</NavMenuItem>
+            <NavMenuItem href="/bio">Bio</NavMenuItem>
+            <NavMenuItem
+              href="https://nyomansunima.lemonsqueezy.com"
               target="_blank"
             >
-              <i className="fi text-xs fi-rr-shop" />
-            </Link>
-          </Button>
-        </TooltipTrigger>
-        <TooltipContent>Checkout store</TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
-  )
-}
-
-function ContactButton(): React.ReactElement {
-  return (
-    <Button
-      asChild
-      variant={'secondary'}
-      size={'base'}
-      className="hover:scale-95 font-normal rounded-2xl"
-    >
-      <Link href={'/contact'}>⛺️ Say hello</Link>
-    </Button>
-  )
-}
-
-// only show on desktop screen
-function DesktopAction(): React.ReactElement {
-  return (
-    <div className="hidden laptop:flex items-center gap-2">
-      <SupportButton />
-      <StoreButton />
-      <ContactButton />
-    </div>
-  )
-}
-
-// show when user on mobile phone
-function MobileAction(): React.ReactElement {
-  const [isShow, toggleMenu] = React.useState<boolean>(false)
-
-  function TriggerButton(): React.ReactElement {
-    return (
-      <Button
-        asChild
-        variant={'outline'}
-        size={'icon'}
-        onClick={() => {
-          toggleMenu((state) => !state)
-        }}
-        className="hover:scale-95 rounded-2xl"
-      >
-        <i className="fi text-xs fi-rr-menu-burger" />
-      </Button>
-    )
-  }
-
-  return (
-    <div className="flex laptop:hidden gap-2 items-center">
-      <TriggerButton />
-      {isShow && (
-        <div className="flex h-screen w-screen fixed inset-0 z-20 bg-background">
-          <div className="flex flex-col w-full p-5">
-            <div className="flex justify-end">
-              <TriggerButton />
-            </div>
-
-            <div className="flex flex-col mt-4">
-              <ul className="flex flex-col list-none items-start">
-                <NavMenuItem href="/works">Works</NavMenuItem>
-                <NavMenuItem href="/sharing">Sharing</NavMenuItem>
-                <NavMenuItem href="/resources">Resources</NavMenuItem>
-                <NavMenuItem href="/about">About</NavMenuItem>
-              </ul>
-            </div>
-
-            <div className="flex items-center flex-wrap gap-2 mt-10">
-              <SupportButton />
-              <StoreButton />
-              <ContactButton />
-            </div>
-          </div>
+              Stores
+            </NavMenuItem>
+          </ul>
         </div>
       )}
     </div>
@@ -135,9 +115,8 @@ function MobileAction(): React.ReactElement {
 
 export function Actions(): React.ReactElement {
   return (
-    <div className="flex relative z-10">
-      <DesktopAction />
-      <MobileAction />
+    <div className="flex relative z-10 gap-2">
+      <Menu />
     </div>
   )
 }

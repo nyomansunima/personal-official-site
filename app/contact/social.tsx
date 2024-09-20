@@ -1,15 +1,15 @@
 'use client'
 
 import * as React from 'react'
-import { Button } from '../ui/button'
+import { Button } from '~/components/ui/button'
 import Link from 'next/link'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '../ui/tooltip'
-import { toast } from '../ui/toast'
+} from '~/components/ui/tooltip'
+import { toast } from '~/components/ui/toast'
 
 interface Social {
   label: string
@@ -73,7 +73,7 @@ const socials: Social[] = [
 
 export function SocialMediaList(): React.ReactElement {
   return (
-    <div className="flex justify-center px-5 py-10">
+    <div className="flex mt-6">
       <ul className="flex flex-wrap items-center justify-center gap-2">
         {socials.map((soc, index) => (
           <SocialItem social={soc} key={index} />

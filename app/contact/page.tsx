@@ -5,6 +5,7 @@ import {
   defaultTwitterMetadata,
 } from '~/shared-metadata'
 import ContactList from './list'
+import { SocialMediaList } from './social'
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -23,14 +24,9 @@ export const metadata: Metadata = {
 
 export default function ContactPage(): React.ReactElement {
   return (
-    <div className="px-5 laptop:px-0 container mx-auto">
-      <div className="flex flex-col py-20 laptop:py-36 items-center">
-        <h1 className="text-2xl laptop:text-3xl text-center !leading-tight font-medium">
-          Contact
-        </h1>
-
-        <ContactList />
-      </div>
+    <div className="flex flex-col">
+      <ContactList />
+      <SocialMediaList />
     </div>
   )
 }

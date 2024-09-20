@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function SpeaksPage(): React.ReactElement {
   return (
-    <div className="px-5 laptop:px-0 container mx-auto">
+    <div className="flex flex-col">
       <AboutSection />
       <ResourcesSection />
     </div>

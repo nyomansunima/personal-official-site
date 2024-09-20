@@ -59,6 +59,16 @@ function GoogleAnalyticsScript(): React.ReactElement {
   )
 }
 
+function CenteredLayout({ children }): React.ReactElement {
+  return (
+    <div className="px-5 laptop:px-0 container mx-auto">
+      <div className="mx-auto w-full tablet:w-11/12 laptop:w-9/12 desktop:w-7/12 laptop:px-10">
+        {children}
+      </div>
+    </div>
+  )
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -79,9 +89,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <AnimationProvider>
-            <Header />
-            <main className="min-h-screen">{children}</main>
-            <Footer />
+            <CenteredLayout>
+              <Header />
+              <main className="min-h-screen">{children}</main>
+              <Footer />
+            </CenteredLayout>
+
             <Toaster />
           </AnimationProvider>
         </ThemeProvider>

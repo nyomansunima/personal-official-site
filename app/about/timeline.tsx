@@ -85,16 +85,11 @@ function TimelineItem({ timeline }: TimelineItemProps): React.ReactElement {
       <div className="flex flex-col flex-grow ml-3 gap-1">
         <span className="font-medium">{title}</span>
         <span className="text-sm text-foreground/60">{description}</span>
-        <div className="items-center flex tablet:hidden">
-          <span className="flex justify-center items-center h-8 rounded-full border border-border px-3 text-xs text-foreground/50">
+        <div className="items-center flex mt-1">
+          <span className="flex justify-center items-center rounded-full text-xs text-foreground">
             {date}
           </span>
         </div>
-      </div>
-      <div className="items-center hidden tablet:flex">
-        <span className="flex justify-center items-center h-8 rounded-full border border-border px-3 text-xs text-foreground/50">
-          {date}
-        </span>
       </div>
     </Link>
   )
@@ -102,7 +97,7 @@ function TimelineItem({ timeline }: TimelineItemProps): React.ReactElement {
 
 function TimelineList(): React.ReactElement {
   return (
-    <div className="grid grid-cols-1 tablet:grid-cols-2 gap-x-10 gap-y-3 w-full">
+    <div className="grid grid-cols-1 tablet:grid-cols-2 gap-3 w-full">
       {timelines.map((tl, index) => (
         <TimelineItem timeline={tl} key={index} />
       ))}
@@ -112,13 +107,13 @@ function TimelineList(): React.ReactElement {
 
 export function TimelineSection(): React.ReactElement {
   return (
-    <section className="flex flex-col py-20 laptop:py-36 items-center">
-      <h2 className="text-2xl laptop:text-3xl !leading-tight text-center font-medium">
+    <section className="flex flex-col py-20 laptop:pb-56">
+      <h2 className="text-2xl laptop:text-3xl !leading-tight font-medium">
         Timeline
       </h2>
 
-      <div className="flex mt-7 justify-center">
-        <p className="text-foreground/80 !leading-relaxed laptop:w-6/12 text-center">
+      <div className="flex mt-7">
+        <p className="!leading-relaxed ">
           Journey of my life from how it start and how it goes. Everything
           documented on the timeline. See all of the detail information and how
           it’s going. See everything from works, career, moments and product
@@ -126,7 +121,7 @@ export function TimelineSection(): React.ReactElement {
         </p>
       </div>
 
-      <div className="flex laptop:px-10 w-full laptop:w-10/12 mt-16">
+      <div className="flex w-full mt-16">
         <TimelineList />
       </div>
     </section>

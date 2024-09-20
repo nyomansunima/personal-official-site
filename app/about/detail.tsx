@@ -18,7 +18,7 @@ function GalleryItem({ image }: GalleryItemProps): React.ReactElement {
 
   return (
     <div className="flex col-span-1 rounded-2xl p-1 border border-border bg-ambient cursor-pointer">
-      <picture className="relative w-full h-[390px] overflow-hidden rounded-xl">
+      <picture className="relative w-full h-[290px] overflow-hidden rounded-xl">
         <Image
           src={imageUrl}
           alt="Gallery"
@@ -35,7 +35,7 @@ function GalleryItem({ image }: GalleryItemProps): React.ReactElement {
 
 function GalleryList(): React.ReactElement {
   return (
-    <div className="grid grid-cols-1 tablet:grid-cols-3 laptop:grid-cols-4 gap-3">
+    <div className="grid grid-cols-1 tablet:grid-cols-3 laptop:grid-cols-4 gap-2">
       {images.map((image, index) => (
         <GalleryItem image={image} key={index} />
       ))}
@@ -45,23 +45,20 @@ function GalleryList(): React.ReactElement {
 
 export function DetailSection(): React.ReactElement {
   return (
-    <section className="flex flex-col py-20 laptop:py-36">
+    <section className="flex flex-col py-20">
       <h2 className="text-2xl laptop:text-3xl !leading-tight font-medium">
         Hello,
       </h2>
 
-      <div className="flex mt-7 laptop:mt-10">
-        <p className="text-foreground/80 !leading-relaxed laptop:w-7/12">
+      <div className="flex flex-col gap-10 mt-7 laptop:mt-10">
+        <p className="!leading-relaxed">
           Hi, My name is Nyoman Sunima, a product designer and creative
           developer with a passion for solving problems. My journey as a
           designer has been driven by the desire to create innovative solutions
           that address real-world challenges. As a product designer, I
           meticulously blend form and function to deliver seamless experiences.
         </p>
-      </div>
-
-      <div className="flex mt-5 laptop:mt-16">
-        <p className="text-foreground/80 !leading-relaxed laptop:w-7/12 laptop:ml-28">
+        <p className="!leading-relaxed">
           I believe that design should not only meet users' needs but also
           exceed their expectations. By putting myself in the users' shoes and
           prioritizing their perspectives, I ensure that every decision I make
@@ -74,28 +71,22 @@ export function DetailSection(): React.ReactElement {
         <GalleryList />
       </div>
 
-      <div className="flex flex-col laptop:flex-row gap-y-10 gap-x-14">
-        <div className="flex flex-col gap-10">
-          <p className="text-foreground/80 !leading-relaxed">
-            But my expertise doesn't stop at design. I'm also a creative
-            developer equipped with technical skills to bring ideas to life.
-            Through my knowledge of programming languages and cutting-edge
-            technologies, I turn design concepts into fully functional and
-            interactive digital experiences. By combining design and
-            development,
-          </p>
-        </div>
-
-        <div className="flex flex-col gap-10">
-          <p className="text-foreground/80 !leading-relaxed">
-            I create immersive solutions that captivate and engage audiences.
-            What truly sets me apart is my insatiable thirst for knowledge and
-            growth. I'm constantly exploring new frontiers and staying at the
-            forefront of emerging trends and technologies. This curiosity fuels
-            my ability to think outside the box and deliver forward-thinking
-            solutions that resonate with audiences.
-          </p>
-        </div>
+      <div className="flex flex-col gap-y-10">
+        <p className="!leading-relaxed">
+          But my expertise doesn't stop at design. I'm also a creative developer
+          equipped with technical skills to bring ideas to life. Through my
+          knowledge of programming languages and cutting-edge technologies, I
+          turn design concepts into fully functional and interactive digital
+          experiences. By combining design and development,
+        </p>
+        <p className="!leading-relaxed">
+          I create immersive solutions that captivate and engage audiences. What
+          truly sets me apart is my insatiable thirst for knowledge and growth.
+          I'm constantly exploring new frontiers and staying at the forefront of
+          emerging trends and technologies. This curiosity fuels my ability to
+          think outside the box and deliver forward-thinking solutions that
+          resonate with audiences.
+        </p>
       </div>
     </section>
   )

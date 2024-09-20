@@ -4,7 +4,7 @@ import {
   defaultOpenGraphMetadata,
   defaultTwitterMetadata,
 } from '../shared-metadata'
-import { FAQList } from './list'
+import { FAQListSection } from './list'
 import { AskSection } from './ask-section'
 
 export const metadata: Metadata = {
@@ -24,15 +24,8 @@ export const metadata: Metadata = {
 
 export default function FAQsPage(): React.ReactElement {
   return (
-    <div className="px-5 laptop::px-0 container mx-auto">
-      <section className="flex flex-col py-20 laptop:py-36 items-center">
-        <h1 className="text-2xl laptop:text-3xl text-center !leading-tight font-medium">
-          FAQs.
-        </h1>
-
-        <FAQList />
-      </section>
-
+    <div className="flex flex-col">
+      <FAQListSection />
       <AskSection />
     </div>
   )

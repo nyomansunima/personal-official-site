@@ -17,12 +17,13 @@ function Avatar(): React.ReactElement {
 
 export function AboutSection(): React.ReactElement {
   return (
-    <section className="flex flex-col items-center pt-20 pb-16 laptop:pt-36 laptop:pb-20">
+    <section className="flex flex-col items-center py-20">
       <Avatar />
       <span className="font-medium mt-4">Nyoman Sunima</span>
-      <p className="text-foreground/60 mt-2 tablet:w-6/12 laptop:w-4/12 text-center">
-        Welcome, to the shortcut. I'am a product designer, fullstak developer
-        and solopreneur that loves to craft digital solutions.
+      <p className="text-foreground/60 mt-2 tablet:w-10/12 laptop:w-8/12 text-center">
+        Welcome, to the shortcut. I am a designer, developer & creator that
+        loves to crafts solutions for global audiences. With strong experience
+        to build better products.
       </p>
     </section>
   )

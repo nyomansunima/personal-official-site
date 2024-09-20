@@ -6,7 +6,6 @@ import {
 import { DetailSection } from './detail'
 import { ActivitySection } from './activity'
 import { TimelineSection } from './timeline'
-import { CTASection } from './cta'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -27,11 +26,10 @@ export const metadata: Metadata = {
 
 export default function AboutPage(): React.ReactElement {
   return (
-    <div className="px-5 laptop:px-0 container mx-auto">
+    <div className="flex flex-col">
       <DetailSection />
       <ActivitySection />
       <TimelineSection />
-      <CTASection />
     </div>
   )
 }

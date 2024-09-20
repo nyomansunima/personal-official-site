@@ -125,14 +125,12 @@ function PublicationItem({ publication }: PublicationItemProps): ReactElement {
 
 export function PublicationSection(): ReactElement {
   return (
-    <div className="flex flex-col pb-20 laptop:pb-36">
-      <div className="flex w-full desktop:w-10/12 mx-auto">
-        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-3 w-full">
-          {publications.map((pub, index) => (
-            <PublicationItem publication={pub} key={index} />
-          ))}
-        </div>
+    <section className="flex flex-col pb-20 laptop:pb-56">
+      <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 gap-3 w-full">
+        {publications.map((pub, index) => (
+          <PublicationItem publication={pub} key={index} />
+        ))}
       </div>
-    </div>
+    </section>
   )
 }

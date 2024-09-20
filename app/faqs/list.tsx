@@ -75,19 +75,21 @@ const faqs = [
   },
 ]
 
-export function FAQList() {
+export function FAQListSection() {
   return (
-    <div className="mt-16 laptop:mt-24 w-full tablet:px-10">
-      <Accordion
-        type="single"
-        collapsible
-        className="grid grid-cols-1 laptop:grid-cols-2 gap-x-10 gap-y-4 "
-      >
-        {faqs.map((item, index) => (
-          <FAQItem {...item} position={index + 1} key={index} />
-        ))}
-      </Accordion>
-    </div>
+    <section className="flex py-20 w-10/12 mx-auto">
+      <div className="w-full">
+        <Accordion
+          type="single"
+          collapsible
+          className="grid grid-cols-1 gap-x-10 gap-y-4"
+        >
+          {faqs.map((item, index) => (
+            <FAQItem {...item} position={index + 1} key={index} />
+          ))}
+        </Accordion>
+      </div>
+    </section>
   )
 }
 

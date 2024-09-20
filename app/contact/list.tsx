@@ -16,7 +16,7 @@ interface PillItemProps {
 }
 
 function PillItem({ contact, children }: PillItemProps) {
-  const { href, label } = contact
+  const { href } = contact
 
   // check the link is email, would like to
   // use different method to contact
@@ -40,7 +40,7 @@ function PillItem({ contact, children }: PillItemProps) {
       asChild={!isEmail}
       variant={'outline'}
       size={'lg'}
-      className="h-16 px-7 transition-all duration-500 hover:scale-95 bg-ambient"
+      className="transition-all duration-500 hover:scale-95 bg-ambient"
       onClick={copyEmailToClipboard}
     >
       {isEmail ? (
@@ -61,22 +61,14 @@ export default function ContactList() {
       label: 'Schedule Meeting',
       href: 'https://cal.com/nyomansunima/build-opportunity',
     },
-    { label: 'Github', href: 'https://github.com/nyomansunima' },
-    { label: 'Dribbble', href: 'https://dribbble.com/nyomansunima' },
-    { label: 'Layers', href: 'https://layers.to/nyomansunima' },
     {
       label: 'Chat on WhatsApp',
       href: 'https://api.whatsapp.com/send?phone=6285161619109',
     },
-    { label: 'Twitter', href: 'https://twitter.com/nyomansunima' },
-    { label: 'Instagram', href: 'https://instagram.com/nyomansunima' },
-    { label: 'Facebook', href: 'https://facebook.com/nyomansunima' },
-    { label: 'LinkedIn', href: 'https://linkedin.com/in/nyomansunima' },
-    { label: 'Threads', href: 'https://threads.net/@nyomansunima' },
   ]
 
   return (
-    <div className="flex flex-wrap justify-center items-center mt-16 gap-3 tablet:w-10/12 laptop:w-6/12">
+    <div className="flex flex-wrap items-center mt-16 gap-3">
       {contacts.map((con, index) => (
         <PillItem contact={con} key={index}>
           {con.label}
