@@ -10,13 +10,13 @@ export const metadata: Metadata = {
 
 export default function NotFound(): React.ReactElement {
   return (
-    <div className="px-5 laptop:px-0 container mx-auto py-20 laptop:py-36">
-      <section className="flex flex-col items-center">
+    <div className="flex flex-col">
+      <section className="flex flex-col items-center py-20">
         <h1 className="!leading-tight text-3xl tablet:text-4xl text-center font-medium">
           Not found
         </h1>
 
-        <p className="mt-7 !leading-relaxed laptop:w-5/12 text-center text-foreground">
+        <p className="mt-7 !leading-relaxed laptop:w-10/12 text-center text-foreground">
           You’re searching something wrong. This can be happen when the url is
           invalid or deleted, this mean your pages is not found. Start explore
           another one, we help you find better way to navigate through header
@@ -26,9 +26,8 @@ export default function NotFound(): React.ReactElement {
         <div className="mt-16">
           <Button
             asChild
-            variant={'secondary'}
+            variant={'text'}
             size={'lg'}
-            data-cursor-size="40"
             className="transition-all hover:scale-95"
           >
             <Link href={'/'}>

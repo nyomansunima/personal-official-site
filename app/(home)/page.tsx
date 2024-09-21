@@ -5,6 +5,7 @@ import {
   defaultTwitterMetadata,
 } from '~/shared-metadata'
 import { HeroSection } from './hero'
+import { ResourcesSection } from './resources'
 
 export const metadata: Metadata = {
   title: 'Nyoman Sunima',
@@ -28,6 +29,7 @@ export default function HomePage(): React.ReactElement {
   return (
     <div className="flex flex-col">
       <HeroSection />
+      <ResourcesSection />
     </div>
   )
 }

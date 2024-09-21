@@ -56,13 +56,11 @@ function SourceItem({ source }: SourceItemProps): ReactElement {
 
 export function SourcesSection(): ReactElement {
   return (
-    <div className="flex flex-col pb-20 laptop:pb-36">
-      <div className="flex laptop:w-10/12 mx-auto">
-        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-3 w-full">
-          {sources.map((sou, index) => (
-            <SourceItem source={sou} key={index} />
-          ))}
-        </div>
+    <div className="flex flex-col pb-20 laptop:pb-56">
+      <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 gap-3 w-full">
+        {sources.map((sou, index) => (
+          <SourceItem source={sou} key={index} />
+        ))}
       </div>
     </div>
   )

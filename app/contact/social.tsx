@@ -9,12 +9,13 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '~/components/ui/tooltip'
-import { toast } from '~/components/ui/toast'
+import { mergeClass } from '~/lib/utils'
 
 interface Social {
   label: string
   href: string
   icon: string
+  className?: string
 }
 
 interface SocialItemProps {
@@ -38,6 +39,7 @@ const socials: Social[] = [
     label: 'See on Threads',
     href: 'https://threads.net/@nyomansunima',
     icon: 'fi fi-rr-knitting',
+    className: 'laptop:w-28',
   },
   {
     label: 'Connect now',
@@ -50,31 +52,39 @@ const socials: Social[] = [
     icon: 'fi fi-brands-facebook',
   },
   {
-    label: 'Copy & Send email',
-    href: 'nyomansunima@gmail.com',
-    icon: 'fi fi-rr-envelope',
-  },
-  {
     label: 'See the gallery',
     href: 'https://instagram.com/nyomansunima',
     icon: 'fi fi-brands-instagram',
   },
   {
+    label: 'Design tweets',
+    href: 'https://layers.to/nyomansunima',
+    icon: 'fi fi-rr-multiple-alt',
+    className: 'laptop:w-28',
+  },
+  {
     label: 'Coding projects',
     href: 'https://github.com/nyomansunima',
     icon: 'fi fi-brands-github',
+    className: 'laptop:w-28',
   },
   {
     label: 'Design projects',
     href: 'https://dribbble.com/nyomansunima',
     icon: 'fi fi-brands-dribbble',
   },
+  {
+    label: 'Past Coding projects',
+    href: 'https://gitlab.com/nyomansunima',
+    icon: 'fi fi-brands-gitlab',
+    className: 'laptop:w-36',
+  },
 ]
 
 export function SocialMediaList(): React.ReactElement {
   return (
     <div className="flex mt-6">
-      <ul className="flex flex-wrap items-center justify-center gap-2">
+      <ul className="flex flex-wrap items-center gap-2">
         {socials.map((soc, index) => (
           <SocialItem social={soc} key={index} />
         ))}
@@ -84,48 +94,26 @@ export function SocialMediaList(): React.ReactElement {
 }
 
 export function SocialItem({ social }: SocialItemProps): React.ReactElement {
-  const { href, icon, label } = social
-  const isEmail = href.includes('@gmail.com') || label.includes('Copy')
-
-  function copyEmailToClipboard(): void {
-    const email = href
-
-    navigator.clipboard
-      .writeText(email)
-      .then(() => {
-        toast('Nice, Email already copied to clipboard')
-      })
-      .catch(() => {
-        toast('Opps, Cannot copy the email')
-      })
-  }
+  const { href, icon, label, className } = social
 
   return (
     <li className="flex">
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger suppressHydrationWarning asChild>
-            {isEmail ? (
-              <Button
-                variant={'outline'}
-                size={'icon'}
-                className="text-sm h-12 w-12 rounded-2xl transition-all duration-500 hover:scale-95 bg-ambient"
-                onClick={copyEmailToClipboard}
-              >
+            <Button
+              variant={'outline'}
+              size={'icon'}
+              asChild
+              className={mergeClass(
+                `text-sm h-12 w-12 rounded-2xl transition-all duration-500 hover:scale-95 bg-ambient`,
+                className,
+              )}
+            >
+              <Link href={href} target="_blank">
                 <i className={icon} />
-              </Button>
-            ) : (
-              <Button
-                variant={'outline'}
-                size={'icon'}
-                asChild
-                className="text-sm h-12 w-12 rounded-2xl transition-all duration-500 hover:scale-95 bg-ambient"
-              >
-                <Link href={href} target="_blank">
-                  <i className={icon} />
-                </Link>
-              </Button>
-            )}
+              </Link>
+            </Button>
           </TooltipTrigger>
           <TooltipContent>{label}</TooltipContent>
         </Tooltip>

@@ -97,9 +97,9 @@ function Menu(): React.ReactElement {
           <ul className="grid grid-cols-2 w-full gap-x-4 gap-y-4">
             <NavMenuItem href="/works">Works</NavMenuItem>
             <NavMenuItem href="/sharing">Sharing</NavMenuItem>
+            <NavMenuItem href="/resources">Resources</NavMenuItem>
             <NavMenuItem href="/about">About</NavMenuItem>
             <NavMenuItem href="/contact">Contact</NavMenuItem>
-            <NavMenuItem href="/bio">Bio</NavMenuItem>
             <NavMenuItem
               href="https://nyomansunima.lemonsqueezy.com"
               target="_blank"

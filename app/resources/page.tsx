@@ -23,15 +23,11 @@ export const metadata: Metadata = {
 
 export default function ResourcesPage(): React.ReactElement {
   return (
-    <div className="px-5 laptop::px-0 container mx-auto">
-      <section className="flex flex-col py-20 items-center">
-        <h1 className="text-2xl laptop:text-3xl text-center !leading-tight font-medium">
-          Resources
-        </h1>
-
-        <p className="text-foreground/80 text-center tablet:w-8/12 laptop:w-5/12 mt-7 !leading-relaxed">
-          Helpful websites, references, sources that I've been using for years
-          that have helped me in career, works, business and much more. 🔥
+    <div className="flex flex-col">
+      <section className="flex flex-col py-20">
+        <p className="laptop:w-10/12 !leading-relaxed">
+          🔥 Helpful websites, references, sources that I've been using for
+          years that have helped me in career, works, business and much more.
         </p>
       </section>
 

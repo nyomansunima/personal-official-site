@@ -118,13 +118,13 @@ function OpenWorkBadge(): React.ReactElement {
 
 export function HeroSection(): React.ReactElement {
   return (
-    <section className="flex flex-col py-20 laptop:pb-56">
+    <section className="flex flex-col py-20">
       <OpenWorkBadge />
       <div className="flex flex-col text-2xl tablet:text-3xl laptop:text-3xl !leading-snug font-medium gap-6 laptop:gap-16">
         <h2>
-          Hello, I am a designer, developer & creator that loves to crafts
-          solutions for global audiences. With strong experience to build better
-          products.
+          Hello, I am a designer, developer & creator who loves to craft
+          solutions for global audiences, with strong experience in building
+          better products.
         </h2>
         <h2>
           Mostly focus on shipping{' '}
@@ -132,7 +132,7 @@ export function HeroSection(): React.ReactElement {
           <span className="cursor-pointer text-orange-600">products</span>,{' '}
           <span className="cursor-pointer text-blue-600">goodies</span> &{' '}
           <span className="cursor-pointer text-pink-600">sharing tips</span>{' '}
-          that help people to solve their problem.
+          that help people to solve their problems.
         </h2>
         <h2>
           Currently focus on building career, brands & businesses{' '}
