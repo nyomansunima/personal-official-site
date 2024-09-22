@@ -10,6 +10,7 @@ import {
   TooltipTrigger,
 } from '../ui/tooltip'
 import { usePathname } from 'next/navigation'
+import { useClickOutside, useKeyEvent, usePathChange } from '~/lib/hooks/event'
 
 interface NavMenuItemProps {
   children: React.ReactNode
@@ -37,35 +38,20 @@ export function NavMenuItem({
 
 function Menu(): React.ReactElement {
   const modalRef = React.useRef<HTMLDivElement>(null)
-  const [isShow, toggleMenu] = React.useState<boolean>(false)
+  const [isShow, setShow] = React.useState<boolean>(false)
   const path = usePathname()
 
-  // handle when the mouse clicked outside of the target
-  // should close the modal automaticaly
-  React.useEffect(() => {
-    function onClickOutside(e: MouseEvent) {
-      if (modalRef.current && !modalRef.current.contains(e.target as any)) {
-        toggleMenu(false)
-      }
-    }
+  useClickOutside(modalRef, () => {
+    setShow(false)
+  })
 
-    document.addEventListener('mousedown', onClickOutside)
+  usePathChange(() => {
+    setShow(false)
+  })
 
-    return () => {
-      document.removeEventListener('mousedown', onClickOutside)
-    }
-  }, [])
-
-  // handle the event when pathname has changes
-  // if the path got changes, we will automatically
-  // close the modal
-  React.useEffect(() => {
-    if (path) {
-      toggleMenu(false)
-    }
-
-    return () => {}
-  }, [path])
+  useKeyEvent('keydown', 'Escape', () => {
+    setShow(false)
+  })
 
   return (
     <div className="relative">
@@ -75,9 +61,7 @@ function Menu(): React.ReactElement {
             <Button
               variant={'outline'}
               size={'icon'}
-              onClick={() => {
-                toggleMenu((state) => !state)
-              }}
+              onClick={() => setShow(true)}
               className="hover:scale-95 rounded-2xl"
             >
               <i className="fi text-xs fi-rr-menu-burger" />
@@ -100,6 +84,9 @@ function Menu(): React.ReactElement {
             <NavMenuItem href="/resources">Resources</NavMenuItem>
             <NavMenuItem href="/about">About</NavMenuItem>
             <NavMenuItem href="/contact">Contact</NavMenuItem>
+            <NavMenuItem href="https://ko-fi.com/nyomansunima" target="_blank">
+              Support me
+            </NavMenuItem>
             <NavMenuItem
               href="https://nyomansunima.lemonsqueezy.com"
               target="_blank"

@@ -59,6 +59,8 @@ function GoogleAnalyticsScript(): React.ReactElement {
   )
 }
 
+// allow to centering the layout and
+// make all of the pages, components, and sections align with the styles
 function CenteredLayout({ children }): React.ReactElement {
   return (
     <div className="px-5 laptop:px-0 container mx-auto">

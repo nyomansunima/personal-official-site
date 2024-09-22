@@ -9,13 +9,6 @@ function renderPathBrand(pathname: string): string {
     return 'home'
   } else {
     const brand = pathname.replace('/', '')
-
-    // protect only for blog
-    // shorten the path
-    if (brand.includes('blog/')) {
-      return 'blog'
-    }
-
     return brand
   }
 }
