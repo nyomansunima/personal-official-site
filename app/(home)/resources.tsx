@@ -67,6 +67,13 @@ export function ResourcesSection(): React.ReactElement {
             🛍️ Buy something
           </LinkItem>
           <LinkItem
+            href="https://tryweebo.one"
+            target="_blank"
+            className="laptop:row-span-2"
+          >
+            🌸 Create your own site
+          </LinkItem>
+          <LinkItem
             href="https://ko-fi.com/nyomansunima"
             target="_blank"
             className="col-span-1"
