@@ -98,6 +98,48 @@ function WeecraftHoverStatus(): React.ReactElement {
   )
 }
 
+function WeeboHoverStatus(): React.ReactElement {
+  return (
+    <HoverCard>
+      <HoverCardTrigger asChild>
+        <span className="cursor-pointer text-blue-600">@tryweebo</span>
+      </HoverCardTrigger>
+      <HoverCardContent className="flex w-80 transition-all duration-300 hover:scale-95">
+        <div className="flex w-full gap-3 relative group font-normal">
+          <div>
+            <Image
+              src={'/images/weebo.png'}
+              alt="Weebo"
+              width={40}
+              height={40}
+              className="overflow-hidden rounded-xl"
+            />
+          </div>
+          <div className="flex flex-col flex-1 justify-start items-start">
+            <h3 className="text-sm font-medium">Weebo</h3>
+            <span className="text-sm text-foreground/90 text-clip">
+              tryweebo.one
+            </span>
+
+            <p className="text-sm text-foreground/60 mt-3 text-start">
+              Unlimited web design partners for startups, agencies, and
+              enterprises.
+            </p>
+          </div>
+
+          <Link
+            href={'https://tryweebo.one'}
+            target="_blank"
+            className="hidden w-7 h-7 rounded-lg bg-secondary/30 border border-border group-hover:flex justify-center items-center absolute top-0 right-0"
+          >
+            <i className="fi fi-rr-arrow-small-right -rotate-45" />
+          </Link>
+        </div>
+      </HoverCardContent>
+    </HoverCard>
+  )
+}
+
 function OpenWorkBadge(): React.ReactElement {
   return (
     <div className="mb-10">
@@ -136,7 +178,7 @@ export function HeroSection(): React.ReactElement {
         </h2>
         <h2>
           Currently focus on building career, brands & businesses{' '}
-          <WeecraftHoverStatus />, <MoonoHoverStatus />
+          <WeecraftHoverStatus />, <MoonoHoverStatus />, <WeeboHoverStatus />.
         </h2>
       </div>
     </section>
