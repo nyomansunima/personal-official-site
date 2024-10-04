@@ -79,6 +79,11 @@ const socials: Social[] = [
     icon: 'fi fi-brands-gitlab',
     className: 'laptop:w-36',
   },
+  {
+    label: 'Connect on Peerlist',
+    href: 'https://peerlist.io/nyomansunima',
+    icon: 'fi fi-rr-circle-p',
+  },
 ]
 
 export function SocialMediaList(): React.ReactElement {
