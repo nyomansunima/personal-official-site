@@ -19,7 +19,7 @@ const config: Config = {
     },
     extend: {
       fontSize: {
-        base: '15px',
+        base: '.935rem',
       },
       colors: {
         background: 'hsl(var(--background))',
