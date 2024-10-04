@@ -162,19 +162,30 @@ export function HeroSection(): React.ReactElement {
   return (
     <section className="flex flex-col py-20">
       <OpenWorkBadge />
-      <div className="flex flex-col text-2xl tablet:text-3xl laptop:text-3xl !leading-snug font-medium gap-6 laptop:gap-16">
+      <div className="flex flex-col text-2xl tablet:text-3xl laptop:text-3xl !leading-normal font-medium gap-6 laptop:gap-16">
         <h2>
-          Hello, I am a designer, developer & creator who loves to craft
-          solutions for global audiences, with strong experience in building
-          better products.
+          Hello, I am a{' '}
+          <span className="cursor-pointer text-rose-600">product designer</span>
+          {', '}
+          <span className="cursor-pointer text-orange-600">
+            software engineer
+          </span>
+          {' & '}
+          <span className="cursor-pointer text-indigo-600">creator</span> who
+          loves to craft solutions for global audiences, with strong experience
+          in building better products.
         </h2>
         <h2>
           Mostly focus on shipping{' '}
           <span className="cursor-pointer text-fuchsia-600">saas</span>,{' '}
           <span className="cursor-pointer text-orange-600">products</span>,{' '}
-          <span className="cursor-pointer text-blue-600">goodies</span> &{' '}
-          <span className="cursor-pointer text-pink-600">sharing tips</span>{' '}
-          that help people to solve their problems.
+          <span className="cursor-pointer text-blue-600">apps</span> &{' '}
+          <span className="cursor-pointer text-pink-600">sites</span> that help
+          people to solve their problems.
+        </h2>
+        <h2>
+          Sharing about self improvement, productivity, life hacks, design,
+          development, product, and business.
         </h2>
         <h2>
           Currently focus on building career, brands & businesses{' '}

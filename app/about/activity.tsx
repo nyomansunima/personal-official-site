@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Image from 'next/image'
 
 export function ActivitySection(): React.ReactElement {
   return (
@@ -18,6 +19,35 @@ export function ActivitySection(): React.ReactElement {
           planning, mapping out the journey from concept to launch. This stage
           lays the foundation for a successful product development process.
         </p>
+
+        <div className="flex rounded-2xl p-1 border border-border bg-ambient cursor-pointer">
+          <picture className="relative w-full h-[200px] laptop:h-[360px] overflow-hidden rounded-xl">
+            <Image
+              src={'/images/photos/design.jpg'}
+              alt="Research"
+              fill
+              quality={100}
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover transition-all duration-300 hover:scale-105"
+            />
+          </picture>
+        </div>
+
+        <div className="flex rounded-2xl p-1 border border-border bg-ambient cursor-pointer">
+          <picture className="relative w-full h-[200px] laptop:h-[360px] overflow-hidden rounded-xl">
+            <Image
+              src={'/images/photos/code.jpg'}
+              alt="Develop"
+              fill
+              quality={100}
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover transition-all duration-300 hover:scale-105"
+            />
+          </picture>
+        </div>
+
         <p className="!leading-relaxed">
           I believe in the power of shipping products that make a real impact.
           With careful testing, bug fixes, and optimizations, I ensure that the

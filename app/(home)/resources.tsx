@@ -57,21 +57,21 @@ export function ResourcesSection(): React.ReactElement {
             href="/become-partner"
             className="col-span-1 laptop:row-span-2"
           >
-            🛼 Become partner (business)
+            🚕 Become partner (business)
           </LinkItem>
           <LinkItem
             href="https://nyomansunima.lemonsqueezy.com"
             target="_blank"
             className="col-span-1"
           >
-            🛍️ Buy something
+            🛍️ Check my goodies
           </LinkItem>
           <LinkItem
             href="https://tryweebo.one"
             target="_blank"
             className="laptop:row-span-2"
           >
-            🌸 Create your own site
+            🌸 My web design business (NEW)
           </LinkItem>
           <LinkItem
             href="https://ko-fi.com/nyomansunima"
@@ -81,21 +81,21 @@ export function ResourcesSection(): React.ReactElement {
             💖 Suport me by donation
           </LinkItem>
           <LinkItem href="/sharing" className="col-span-1">
-            ✅ Read my articles
+            📝 Learn together with me
           </LinkItem>
           <LinkItem
             href="https://moono.space"
             target="_blank"
             className="laptop:col-span-2"
           >
-            💎 Checkout my apps (New)
+            💎 My apps collection (NEW)
           </LinkItem>
           <LinkItem
             href="https://weecraft.club"
             target="_blank"
             className="laptop:col-span-2"
           >
-            🚌 See tiny dev resources (New)
+            🚌 See tiny dev resources (NEW)
           </LinkItem>
         </div>
       </div>

@@ -1,10 +1,10 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import * as React from 'react'
 
 // predefined images url for the gallery
 const images = [
   'https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=2838&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1542897644-e04428948020?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   'https://images.unsplash.com/photo-1561969310-fa2e856250ba?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   'https://images.unsplash.com/photo-1540776398900-46755652c969?q=80&w=2914&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
 ]
@@ -35,7 +35,7 @@ function GalleryItem({ image }: GalleryItemProps): React.ReactElement {
 
 function GalleryList(): React.ReactElement {
   return (
-    <div className="grid grid-cols-1 tablet:grid-cols-3 laptop:grid-cols-4 gap-2">
+    <div className="grid grid-cols-1 tablet:grid-cols-3 laptop:grid-cols-3 gap-2">
       {images.map((image, index) => (
         <GalleryItem image={image} key={index} />
       ))}
@@ -47,16 +47,46 @@ export function DetailSection(): React.ReactElement {
   return (
     <section className="flex flex-col py-20">
       <h2 className="text-2xl laptop:text-3xl !leading-tight font-medium">
-        Hello,
+        Hello, nice to meet you
       </h2>
 
       <div className="flex flex-col gap-10 mt-7 laptop:mt-10">
         <p className="!leading-relaxed">
-          Hi, My name is Nyoman Sunima, a product designer and creative
-          developer with a passion for solving problems. My journey as a
-          designer has been driven by the desire to create innovative solutions
-          that address real-world challenges. As a product designer, I
-          meticulously blend form and function to deliver seamless experiences.
+          Hello, my name is Nyoman Sunima, a product designer, software engineer
+          & creator with a passion for solving problems. Located in Bali,
+          Indonesia and work with remotely teams around the world. I loved to
+          shipping products, apps, sites and also exploring the technology.
+        </p>
+        <p className="!leading-relaxed">
+          It's all start when i'am in a vocational high school (2016) at{' '}
+          <Link href="https://smknbalimandara.sch.id" className="font-medium">
+            Bali Mandara
+          </Link>
+          , i'am had a lot of interest of design, especially in website. I take
+          the computer and networking class, but also learning design &
+          development alone with the tutorials. It's bring me a big impact and
+          also guide my life into tech industries.
+        </p>
+
+        <div className="flex rounded-2xl p-1 border border-border bg-ambient cursor-pointer">
+          <picture className="relative w-full h-[200px] laptop:h-[360px] overflow-hidden rounded-xl">
+            <Image
+              src={'/images/photos/workspace.jpg'}
+              alt="Workspace"
+              fill
+              quality={100}
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover transition-all duration-300 hover:scale-105"
+            />
+          </picture>
+        </div>
+
+        <p className="!leading-relaxed">
+          My journey as a designer has been driven by the desire to create
+          innovative solutions that address real-world challenges. As a product
+          designer & software engineer, I meticulously blend form and seamless
+          experiences.
         </p>
         <p className="!leading-relaxed">
           I believe that design should not only meet users' needs but also
@@ -73,7 +103,7 @@ export function DetailSection(): React.ReactElement {
 
       <div className="flex flex-col gap-y-10">
         <p className="!leading-relaxed">
-          But my expertise doesn't stop at design. I'm also a creative developer
+          But my expertise doesn't stop at design. I'm also a software engineer
           equipped with technical skills to bring ideas to life. Through my
           knowledge of programming languages and cutting-edge technologies, I
           turn design concepts into fully functional and interactive digital

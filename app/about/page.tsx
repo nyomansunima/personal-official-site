@@ -6,6 +6,7 @@ import {
 import { DetailSection } from './detail'
 import { ActivitySection } from './activity'
 import { TimelineSection } from './timeline'
+import { SharingSection } from './sharing'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -29,6 +30,7 @@ export default function AboutPage(): React.ReactElement {
     <div className="flex flex-col">
       <DetailSection />
       <ActivitySection />
+      <SharingSection />
       <TimelineSection />
     </div>
   )
