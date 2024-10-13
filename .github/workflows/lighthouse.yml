@@ -44,7 +44,7 @@ jobs:
         run: npm run dev
 
       - name: Audit URLs using Lighthouse
-        uses: treosh/lighthouse-ci-action@v10
+        uses: treosh/lighthouse-ci-action@v11
         with:
           urls: ${{env.url}}
           uploadArtifacts: true
