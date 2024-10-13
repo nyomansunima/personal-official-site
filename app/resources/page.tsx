@@ -26,8 +26,8 @@ export default function ResourcesPage(): React.ReactElement {
     <div className="flex flex-col">
       <section className="flex flex-col py-20">
         <p className="laptop:w-10/12 !leading-relaxed">
-          🔥 Helpful websites, references, sources that I've been using for
-          years that have helped me in career, works, business and much more.
+          Helpful websites, references, sources that I've been using for years
+          that have helped me in career, works, business and much more.
         </p>
       </section>
 

@@ -20,7 +20,7 @@ const publications: Publication[] = [
     title: 'Youtube',
     description:
       'Find development tips and tricks, vlog, videos around business, life styles, entrepreneur',
-    image: '👾',
+    image: 'fi fi-brands-youtube',
     publisher: 'youtube.com',
     url: 'https://youtube.com/@nyomansunima',
   },
@@ -28,7 +28,7 @@ const publications: Publication[] = [
     title: 'Twitter',
     description:
       'Sharing self improvement, business, design, development, and indie hacking tips',
-    image: '💖',
+    image: 'fi fi-brands-twitter-alt',
     publisher: 'twitter.com',
     url: 'https://twitter.com/nyomansunima',
   },
@@ -36,7 +36,7 @@ const publications: Publication[] = [
     title: 'Threads',
     description:
       'Daily tips & tricks about self improvement, business, and indie hacking',
-    image: '⛺️',
+    image: 'fi fi-rr-comment-quote',
     publisher: 'threads.net',
     url: 'https://threads.net/@nyomansunima',
   },
@@ -44,7 +44,7 @@ const publications: Publication[] = [
     title: 'LinkedIn',
     description:
       'Daily tips & tricks about self improvement, business, and indie hacking',
-    image: '🚜',
+    image: 'fi fi-brands-linkedin',
     publisher: 'linkedin.com',
     url: 'https://linkedin.com/in/nyomansunima',
   },
@@ -52,21 +52,21 @@ const publications: Publication[] = [
     title: 'Dev community',
     description:
       'Find development tips and tricks, resources and articles related to tech',
-    image: '🛼',
+    image: 'fi fi-brands-dev',
     publisher: 'dev.to',
     url: 'https://dev.to/nyomansunima',
   },
   {
     title: 'Instagram',
     description: 'Daily post about money, investment, and self improvement',
-    image: '🥾',
+    image: 'fi fi-brands-instagram',
     publisher: 'instagram.com',
     url: 'https://instagram.com/nyomansunima',
   },
   {
     title: 'Hashnode',
     description: 'Daily post about product design & development',
-    image: '🥳',
+    image: 'fi fi-rr-hastag',
     publisher: 'hashnode.com',
     url: 'https://nyomansunima.hashnode.dev',
   },
@@ -74,14 +74,14 @@ const publications: Publication[] = [
     title: 'Medium',
     description:
       'Personal blog publish to share daily interest, tips and tricks around business, entrepreneur, productivity',
-    image: '☂️',
+    image: 'fi fi-brands-medium',
     publisher: 'medium.com',
     url: 'https://medium.com/@nyomansunima',
   },
   {
     title: 'Quora',
     description: 'Sharing around indie hacking, business, self improvement',
-    image: '💎',
+    image: 'fi fi-rr-message-heart',
     publisher: 'quora.com',
     url: 'https://quora.com/nyomansunima',
   },
@@ -89,7 +89,7 @@ const publications: Publication[] = [
     title: 'Substack',
     description:
       'daily newsletter around self improvement, productivity, tips & tricks',
-    image: '🏀',
+    image: 'fi fi-rr-newsletter-subscribe',
     publisher: 'substack.com',
     url: 'https://nyomansunima.substack.com',
   },
@@ -105,7 +105,7 @@ function PublicationItem({ publication }: PublicationItemProps): ReactElement {
       className="flex bg-ambient border border-border p-3 rounded-2xl col-span-1 gap-3 transition-all duration-300 hover:scale-95 group relative"
     >
       <div className="flex justify-center items-center h-12 w-12 rounded-xl bg-secondary/35">
-        {image}
+        <i className={`text-base ${image}`} />
       </div>
       <div className="flex flex-col flex-1">
         <h3 className="text-sm font-medium">{title}</h3>
@@ -125,7 +125,7 @@ function PublicationItem({ publication }: PublicationItemProps): ReactElement {
 
 export function PublicationSection(): ReactElement {
   return (
-    <section className="flex flex-col pb-20 laptop:pb-56">
+    <section className="flex flex-col pb-20">
       <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 gap-3 w-full">
         {publications.map((pub, index) => (
           <PublicationItem publication={pub} key={index} />

@@ -28,9 +28,9 @@ export default function ResourcesPage(): React.ReactElement {
     <div className="flex flex-col">
       <section className="flex flex-col py-20 laptop:pb-56">
         <p className="text-foreground !leading-relaxed laptop:w-10/12">
-          🛍️ All of my works in my careers and something that i crafted to
-          public. See everything including projects, apps, products, case
-          studies, idea and playground.
+          All of my works in my careers and something that i crafted to public.
+          See everything including projects, apps, products, case studies, idea
+          and playground.
         </p>
       </section>
     </div>

@@ -78,7 +78,7 @@ export default function Footer(): React.ReactElement {
       <div className="flex flex-col text-foreground/60 gap-1">
         <p>
           Design in{' '}
-          <span className="transition-all duration-300 hover:font-medium hover:text-foreground">
+          <span className="transition-all duration-300 hover:font-medium hover:text-foreground cursor-pointer">
             Bali, Indonesia
           </span>{' '}
           for global audiences
