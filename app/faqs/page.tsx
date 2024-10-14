@@ -5,7 +5,7 @@ import {
   defaultTwitterMetadata,
 } from '../shared-metadata'
 import { FAQListSection } from './list'
-import { AskSection } from './ask-section'
+import { AskSection } from './ask'
 
 export const metadata: Metadata = {
   title: 'FAQs',

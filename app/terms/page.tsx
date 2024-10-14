@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function PrivacyPage(): React.ReactElement {
+export default function TermsPage(): React.ReactElement {
   return (
     <div className="py-20 laptop:pb-56">
       <ArticleContent>

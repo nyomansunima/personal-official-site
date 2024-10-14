@@ -22,9 +22,7 @@ export function AskSection(): React.ReactElement {
           asChild
           className="transition-all duration-500 hover:scale-95"
         >
-          <Link href={'/contact'}>
-            Connect Now <i className="fi fi-rr-heart" />
-          </Link>
+          <Link href={'/contact'}>Asks me a question</Link>
         </Button>
       </div>
     </section>

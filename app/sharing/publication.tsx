@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ReactElement } from 'react'
+import jsonData from './data.json'
 
 interface Publication {
   title: string
@@ -15,85 +16,7 @@ interface PublicationItemProps {
 
 // Predefined publication
 // can be modified to update the content
-const publications: Publication[] = [
-  {
-    title: 'Youtube',
-    description:
-      'Find development tips and tricks, vlog, videos around business, life styles, entrepreneur',
-    image: 'fi fi-brands-youtube',
-    publisher: 'youtube.com',
-    url: 'https://youtube.com/@nyomansunima',
-  },
-  {
-    title: 'Twitter',
-    description:
-      'Sharing self improvement, business, design, development, and indie hacking tips',
-    image: 'fi fi-brands-twitter-alt',
-    publisher: 'twitter.com',
-    url: 'https://twitter.com/nyomansunima',
-  },
-  {
-    title: 'Threads',
-    description:
-      'Daily tips & tricks about self improvement, business, and indie hacking',
-    image: 'fi fi-rr-comment-quote',
-    publisher: 'threads.net',
-    url: 'https://threads.net/@nyomansunima',
-  },
-  {
-    title: 'LinkedIn',
-    description:
-      'Daily tips & tricks about self improvement, business, and indie hacking',
-    image: 'fi fi-brands-linkedin',
-    publisher: 'linkedin.com',
-    url: 'https://linkedin.com/in/nyomansunima',
-  },
-  {
-    title: 'Dev community',
-    description:
-      'Find development tips and tricks, resources and articles related to tech',
-    image: 'fi fi-brands-dev',
-    publisher: 'dev.to',
-    url: 'https://dev.to/nyomansunima',
-  },
-  {
-    title: 'Instagram',
-    description: 'Daily post about money, investment, and self improvement',
-    image: 'fi fi-brands-instagram',
-    publisher: 'instagram.com',
-    url: 'https://instagram.com/nyomansunima',
-  },
-  {
-    title: 'Hashnode',
-    description: 'Daily post about product design & development',
-    image: 'fi fi-rr-hastag',
-    publisher: 'hashnode.com',
-    url: 'https://nyomansunima.hashnode.dev',
-  },
-  {
-    title: 'Medium',
-    description:
-      'Personal blog publish to share daily interest, tips and tricks around business, entrepreneur, productivity',
-    image: 'fi fi-brands-medium',
-    publisher: 'medium.com',
-    url: 'https://medium.com/@nyomansunima',
-  },
-  {
-    title: 'Quora',
-    description: 'Sharing around indie hacking, business, self improvement',
-    image: 'fi fi-rr-message-heart',
-    publisher: 'quora.com',
-    url: 'https://quora.com/nyomansunima',
-  },
-  {
-    title: 'Substack',
-    description:
-      'daily newsletter around self improvement, productivity, tips & tricks',
-    image: 'fi fi-rr-newsletter-subscribe',
-    publisher: 'substack.com',
-    url: 'https://nyomansunima.substack.com',
-  },
-]
+const publications: Publication[] = jsonData.publications as Publication[]
 
 function PublicationItem({ publication }: PublicationItemProps): ReactElement {
   const { title, description, publisher, image, url } = publication
@@ -125,7 +48,7 @@ function PublicationItem({ publication }: PublicationItemProps): ReactElement {
 
 export function PublicationSection(): ReactElement {
   return (
-    <section className="flex flex-col pb-20">
+    <section className="flex flex-col py-20">
       <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 gap-3 w-full">
         {publications.map((pub, index) => (
           <PublicationItem publication={pub} key={index} />

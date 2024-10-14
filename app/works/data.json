@@ -1,0 +1,28 @@
+{
+  "works": [
+    {
+      "href": "https://github.com/weecraft/boola",
+      "title": "Boola visual studio code theme",
+      "description": "Visually appealing and user-friendly color scheme designed to enhance the coding experience. It incorporates a balanced blend of colors to provide good contrast, readability, and a touch of personality to your code editor.",
+      "images": [
+        "https://cdn.hashnode.com/res/hashnode/image/upload/v1728832725989/86e3baf9-dc0d-4fb2-8f39-dc6138bec894.png"
+      ],
+      "type": "Hacking",
+      "rule": "Product designer & developer",
+      "category": "Code editor theme",
+      "isFeatured": true
+    },
+    {
+      "href": "https://github.com/weecraft/blaze-theme",
+      "title": "Blaze theme",
+      "description": "Modern, minimal visual studio code theme for better experience code. With less and minimal look, combine with simple color pallete for the day and night use.",
+      "images": [
+        "https://cdn.hashnode.com/res/hashnode/image/upload/v1728833361672/6bd157c4-a153-4846-8627-5ac10611aaa2.png"
+      ],
+      "type": "Hacking",
+      "rule": "Product designer & developer",
+      "category": "Code editor theme",
+      "isFeatured": true
+    }
+  ]
+}

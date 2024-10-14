@@ -59,6 +59,9 @@ export function ResourcesSection(): React.ReactElement {
           >
             🚕 Become partner (business)
           </LinkItem>
+          <LinkItem href="/works" className="col-span-1 laptop:row-span-2">
+            🛼 See my works
+          </LinkItem>
           <LinkItem
             href="https://nyomansunima.lemonsqueezy.com"
             target="_blank"
