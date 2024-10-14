@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ReactElement } from 'react'
+import jsonData from './data.json'
 
 interface Source {
   title: string
@@ -15,16 +16,7 @@ interface SourceItemProps {
 
 // Predefined publication
 // can be modified to update the content
-const sources: Source[] = [
-  {
-    title: 'Personal store',
-    description:
-      'Find free and paid resources to support your career, business, design, and development workflows.',
-    image: '🛍️',
-    publisher: 'lemonsqueezy.com',
-    url: 'https://nyomansunima.lemonsqueezy.com',
-  },
-]
+const sources: Source[] = jsonData.sources as Source[]
 
 function SourceItem({ source }: SourceItemProps): ReactElement {
   const { title, description, publisher, image, url } = source
@@ -36,7 +28,7 @@ function SourceItem({ source }: SourceItemProps): ReactElement {
       className="flex bg-ambient border border-border p-3 rounded-2xl col-span-1 gap-3 transition-all duration-300 hover:scale-95 group relative"
     >
       <div className="flex justify-center items-center h-12 w-12 rounded-xl bg-secondary/35">
-        {image}
+        <i className={image} />
       </div>
       <div className="flex flex-col flex-1">
         <h3 className="text-sm font-medium">{title}</h3>
@@ -56,7 +48,7 @@ function SourceItem({ source }: SourceItemProps): ReactElement {
 
 export function SourcesSection(): ReactElement {
   return (
-    <div className="flex flex-col pb-20 laptop:pb-56">
+    <div className="flex flex-col py-20 laptop:pb-56">
       <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 gap-3 w-full">
         {sources.map((sou, index) => (
           <SourceItem source={sou} key={index} />

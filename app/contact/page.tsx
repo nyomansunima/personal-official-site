@@ -25,8 +25,10 @@ export const metadata: Metadata = {
 export default function ContactPage(): React.ReactElement {
   return (
     <div className="flex flex-col">
-      <ContactList />
-      <SocialMediaList />
+      <section className="flex flex-col py-20 laptop:pb-56">
+        <ContactList />
+        <SocialMediaList />
+      </section>
     </div>
   )
 }

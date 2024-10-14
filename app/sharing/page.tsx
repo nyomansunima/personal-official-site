@@ -25,17 +25,9 @@ export const metadata: Metadata = {
   },
 }
 
-export default function WritingPage(): React.ReactElement {
+export default function SharingPage(): React.ReactElement {
   return (
     <div className="flex flex-col">
-      <section className="flex flex-col py-20">
-        <p className="text-foreground !leading-relaxed laptop:w-10/12">
-          Writing, recording and create content become my daily activity. I make
-          tips about design, development, indie hacking, business, entrepreneur,
-          productivity, story and self improvement.
-        </p>
-      </section>
-
       <PublicationSection />
       <RecentlySection />
     </div>

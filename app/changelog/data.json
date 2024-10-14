@@ -1,0 +1,34 @@
+{
+  "logs": [
+    {
+      "title": "Learn basic html, css, javascript to create blog",
+      "description": "Learn the basic of html, css, javascript to create blog, then start learning web design, create template and others.",
+      "date": "June 2019"
+    },
+    {
+      "title": "Fresh graduated as a computer & networking engineer",
+      "description": "After 3 years of hard work, learning and practicing, I finally graduated from vocational high school of <a href='https://smknbalimandara.sch.id' target='_blank'>Negeri Balimandara</a>. I was so proud of myself.",
+      "date": "July 2019"
+    },
+    {
+      "title": "Become junior software engineer @dimata",
+      "description": "After graduated, joining the awesome team to create and maintain software for business and goverment at <a href='https://dimata.com' target='_blank'>Dimata</a>. Responsible to maintain the sites, codebase, create new apps, redesign apps.",
+      "date": "Sep 2019"
+    },
+    {
+      "title": "Promoted as a senior software engineer",
+      "description": "After 2 years of hard work, time to promoted as a senior software engineer. Responsible to redesign the apps, create microservices, integrate api, collab with designers, and create a design system for the company.",
+      "date": "June 2021"
+    },
+    {
+      "title": "Start freelance as a fullstack developer",
+      "description": "It's my turn time to start all of my career as freelancer. I resign to @dimata and start the journey.",
+      "date": "Jan 2023"
+    },
+    {
+      "title": "Create web design business @weebo",
+      "description": "With all of the experience and knowledge, I create a web design business <a href='https://tryweebo.one' target='_blank'>@weebo</a>. I'm so excited to start this new journey.",
+      "date": "Jan 2024"
+    }
+  ]
+}

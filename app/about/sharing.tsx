@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export function SharingSection(): React.ReactElement {
   return (
-    <section className="flex flex-col py-20">
+    <section className="flex flex-col py-20 laptop:pb-56">
       <h2 className="text-2xl laptop:text-3xl !leading-tight font-medium">
         Reading, writing, and sharing
       </h2>

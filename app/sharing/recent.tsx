@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import * as React from 'react'
+import jsonData from './data.json'
 
 interface RecentData {
   title: string
@@ -14,23 +15,7 @@ interface RecentItemProps {
 }
 
 // ** INFO: Limit this list into 5 items to keep it short and clean
-const recents: RecentData[] = [
-  {
-    title: 'How to make your GitHub project better',
-    publisher: 'Hashnode',
-    url: 'https://nyomansunima.hashnode.dev/how-to-make-your-github-project-better',
-  },
-  {
-    title: 'How to create a better README',
-    publisher: 'Hashnode',
-    url: 'https://nyomansunima.hashnode.dev/how-to-create-a-better-readme',
-  },
-  {
-    title: 'Turn Nest.Js into Serverless with Nitric in a few seconds',
-    publisher: 'Hashnode',
-    url: 'https://nyomansunima.hashnode.dev/turn-nestjs-into-serverless-with-nitric-in-a-few-seconds',
-  },
-]
+const recents: RecentData[] = jsonData.recents as RecentData[]
 
 export function RecentItem({ recent }: RecentItemProps): React.ReactElement {
   const { title, publisher, url } = recent
