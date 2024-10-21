@@ -2,9 +2,6 @@
 
 Hey, welcome. Please see all of the change and update version for this project. All of the project code are in the tags
 
-<br/>
-<br/>
-
 ## Version 1.0.0
 
 ### Basic release

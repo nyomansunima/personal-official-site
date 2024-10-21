@@ -1,14 +1,8 @@
 # Code of Conduct
 
-<br/>
-<br/>
-
 ## Our Pledge
 
 We are dedicated to providing a harassment-free experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices. We do not tolerate harassment of participants in any form.
-
-<br/>
-<br/>
 
 ## Expected Behavior
 
@@ -16,9 +10,6 @@ We are dedicated to providing a harassment-free experience for everyone, regardl
 - Communicate openly and thoughtfully.
 - Be inclusive and welcoming of diverse perspectives and experiences.
 - Take responsibility for your words and actions.
-
-<br/>
-<br/>
 
 ## Unacceptable Behavior
 
@@ -28,21 +19,13 @@ Harassment includes, but is not limited to:
 - Discrimination based on gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices.
 - Any behavior that is intended to, or has the effect of, creating an intimidating, hostile, or offensive environment.
 
-<br/>
-<br/>
-
 ## Consequences of Unacceptable Behavior
 
 Participants who engage in harassing behavior will be asked to stop immediately. We reserve the right to take any necessary actions to maintain a harassment-free environment for all participants, including warning the offender or asking them to leave the project or event.
-<br/>
-<br/>
 
 ## Reporting Harassment
 
 If you experience or witness any form of harassment or have concerns about the conduct of other participants, please contact a member of the project team immediately. All reports will be treated with confidentiality and investigated thoroughly.
-
-<br/>
-<br/>
 
 ## Attribution
 
