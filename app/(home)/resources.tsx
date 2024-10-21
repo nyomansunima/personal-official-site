@@ -53,10 +53,7 @@ export function ResourcesSection(): React.ReactElement {
           <LinkItem href="/contact" className="col-span-1">
             🏀 Hire me
           </LinkItem>
-          <LinkItem
-            href="/become-partner"
-            className="col-span-1 laptop:row-span-2"
-          >
+          <LinkItem href="/contact" className="col-span-1 laptop:row-span-2">
             🚕 Become partner (business)
           </LinkItem>
           <LinkItem href="/works" className="col-span-1 laptop:row-span-2">
