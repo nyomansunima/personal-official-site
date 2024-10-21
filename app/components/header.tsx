@@ -139,13 +139,13 @@ function Menu(): React.ReactElement {
             <NavMenuItem href="/about">About</NavMenuItem>
             <NavMenuItem href="/contact">Contact</NavMenuItem>
             <NavMenuItem href="https://ko-fi.com/nyomansunima" target="_blank">
-              Support me
+              Support
             </NavMenuItem>
             <NavMenuItem
               href="https://nyomansunima.lemonsqueezy.com"
               target="_blank"
             >
-              Stores
+              Store
             </NavMenuItem>
           </ul>
         </div>
