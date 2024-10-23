@@ -20,7 +20,9 @@ export function SharingSection(): React.ReactElement {
         <div className="flex rounded-2xl p-1 border border-border bg-ambient cursor-pointer">
           <picture className="relative w-full h-[200px] laptop:h-[360px] overflow-hidden rounded-xl">
             <Image
-              src={'/images/photos/books.jpg'}
+              src={
+                'https://cdn.hashnode.com/res/hashnode/image/upload/v1729709291876/a59a6504-a98b-4818-955f-efba3364d5b6.jpeg'
+              }
               alt="Books"
               fill
               quality={100}

@@ -71,7 +71,9 @@ export function DetailSection(): React.ReactElement {
         <div className="flex rounded-2xl p-1 border border-border bg-ambient cursor-pointer">
           <picture className="relative w-full h-[200px] laptop:h-[360px] overflow-hidden rounded-xl">
             <Image
-              src={'/images/photos/workspace.jpg'}
+              src={
+                'https://cdn.hashnode.com/res/hashnode/image/upload/v1729709241070/2aa95ebc-0bfd-4362-90cb-3b238cc4ef46.jpeg'
+              }
               alt="Workspace"
               fill
               quality={100}
