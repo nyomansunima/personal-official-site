@@ -1,11 +1,4 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import * as React from 'react'
-import {
-  HoverCard,
-  HoverCardTrigger,
-  HoverCardContent,
-} from '~/components/ui/hover-card'
 import {
   Tooltip,
   TooltipContent,
@@ -13,141 +6,13 @@ import {
   TooltipTrigger,
 } from '~/components/ui/tooltip'
 
-// Hover status that show the detail info
-// and insight of current works
-function MoonoHoverStatus(): React.ReactElement {
-  return (
-    <HoverCard>
-      <HoverCardTrigger asChild>
-        <span className="cursor-pointer text-orange-600">@moono</span>
-      </HoverCardTrigger>
-      <HoverCardContent className="flex w-80 transition-all duration-300 hover:scale-95">
-        <div className="flex w-full gap-3 relative group font-normal">
-          <div>
-            <Image
-              src={'/images/moono.png'}
-              alt="Moono"
-              width={40}
-              height={40}
-              className=""
-            />
-          </div>
-          <div className="flex flex-col flex-1 justify-start items-start">
-            <h3 className="text-sm font-medium">Moono</h3>
-            <span className="text-sm text-foreground/90 text-clip">
-              moono.space
-            </span>
-
-            <p className="text-sm text-foreground/60 mt-3 text-start">
-              The tiny studio for software projects, create micro, and simple
-              saas.
-            </p>
-          </div>
-
-          <Link
-            href={'https://moono.space'}
-            target="_blank"
-            className="hidden w-7 h-7 rounded-lg bg-secondary/30 border border-border group-hover:flex justify-center items-center absolute top-0 right-0"
-          >
-            <i className="fi fi-rr-arrow-small-right -rotate-45" />
-          </Link>
-        </div>
-      </HoverCardContent>
-    </HoverCard>
-  )
-}
-
-function WeecraftHoverStatus(): React.ReactElement {
-  return (
-    <HoverCard>
-      <HoverCardTrigger asChild>
-        <span className="cursor-pointer text-pink-600">@weecraft</span>
-      </HoverCardTrigger>
-      <HoverCardContent className="flex w-80 transition-all duration-300 hover:scale-95">
-        <div className="flex w-full gap-3 relative group font-normal">
-          <div>
-            <Image
-              src={'/images/weecraft.png'}
-              alt="Weecraft"
-              width={40}
-              height={40}
-              className=""
-            />
-          </div>
-          <div className="flex flex-col flex-1 justify-start items-start">
-            <h3 className="text-sm font-medium">Weecraft</h3>
-            <span className="text-sm text-foreground/90 text-clip">
-              weecraft.club
-            </span>
-
-            <p className="text-sm text-foreground/60 mt-3 text-start">
-              Tiny resources for better experience on code
-            </p>
-          </div>
-
-          <Link
-            href={'https://weecraft.club'}
-            target="_blank"
-            className="hidden w-7 h-7 rounded-lg bg-secondary/30 border border-border group-hover:flex justify-center items-center absolute top-0 right-0"
-          >
-            <i className="fi fi-rr-arrow-small-right -rotate-45" />
-          </Link>
-        </div>
-      </HoverCardContent>
-    </HoverCard>
-  )
-}
-
-function WeeboHoverStatus(): React.ReactElement {
-  return (
-    <HoverCard>
-      <HoverCardTrigger asChild>
-        <span className="cursor-pointer text-blue-600">@tryweebo</span>
-      </HoverCardTrigger>
-      <HoverCardContent className="flex w-80 transition-all duration-300 hover:scale-95">
-        <div className="flex w-full gap-3 relative group font-normal">
-          <div>
-            <Image
-              src={'/images/weebo.png'}
-              alt="Weebo"
-              width={40}
-              height={40}
-              className="overflow-hidden rounded-xl"
-            />
-          </div>
-          <div className="flex flex-col flex-1 justify-start items-start">
-            <h3 className="text-sm font-medium">Weebo</h3>
-            <span className="text-sm text-foreground/90 text-clip">
-              tryweebo.one
-            </span>
-
-            <p className="text-sm text-foreground/60 mt-3 text-start">
-              Unlimited web design partners for startups, agencies, and
-              enterprises.
-            </p>
-          </div>
-
-          <Link
-            href={'https://tryweebo.one'}
-            target="_blank"
-            className="hidden w-7 h-7 rounded-lg bg-secondary/30 border border-border group-hover:flex justify-center items-center absolute top-0 right-0"
-          >
-            <i className="fi fi-rr-arrow-small-right -rotate-45" />
-          </Link>
-        </div>
-      </HoverCardContent>
-    </HoverCard>
-  )
-}
-
 function OpenWorkBadge(): React.ReactElement {
   return (
     <div className="mb-10">
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger>
-            <div className="flex justify-center items-center px-4 h-9 rounded-full bg-fuchsia-100 dark:bg-fuchsia-600/10 text-fuchsia-800 text-xs gap-2 font-medium transition-all duration-300 hover:scale-95 cursor-pointer">
-              <span className="h-2 w-2 rounded-full bg-fuchsia-800" />
+            <div className="flex justify-center items-center px-3 h-9 rounded-full bg-fuchsia-100 dark:bg-fuchsia-400/10 border border-fuchsia-200 dark:border-fuchsia-200/20 text-fuchsia-800 dark:text-fuchsia-400 text-xs gap-2 font-medium transition-all duration-300 hover:scale-95 cursor-pointer">
               Open to work
             </div>
           </TooltipTrigger>
@@ -162,35 +27,32 @@ export function HeroSection(): React.ReactElement {
   return (
     <section className="flex flex-col py-20">
       <OpenWorkBadge />
-      <div className="flex flex-col text-2xl tablet:text-3xl laptop:text-3xl !leading-normal font-medium gap-6 laptop:gap-16">
+      <div className="flex flex-col text-2xl tablet:text-3xl laptop:text-3xl !leading-normal font-medium gap-6 laptop:gap-12">
         <h2>
           Hello, I am a{' '}
-          <span className="cursor-pointer text-rose-600">product designer</span>
+          <span className="cursor-pointer text-rose-600 dark:text-rose-400">
+            product designer
+          </span>
           {', '}
-          <span className="cursor-pointer text-orange-600">
+          <span className="cursor-pointer text-orange-600 dark:text-orange-400">
             software engineer
           </span>
           {' & '}
-          <span className="cursor-pointer text-indigo-600">creator</span> who
-          loves to craft solutions for global audiences, with strong experience
-          in building better products.
+          <span className="cursor-pointer text-indigo-600 dark:text-indigo-400">
+            creator
+          </span>{' '}
+          who loves to craft solutions for global audiences, with strong
+          experience in building better products.
         </h2>
         <h2>
-          Mostly focus on shipping{' '}
-          <span className="cursor-pointer text-fuchsia-600">saas</span>,{' '}
-          <span className="cursor-pointer text-orange-600">products</span>,{' '}
-          <span className="cursor-pointer text-blue-600">apps</span> &{' '}
-          <span className="cursor-pointer text-pink-600">sites</span> that help
-          people to solve their problems.
+          Mostly focus on shipping saas, products, apps & sites that help people
+          to solve their problems.
         </h2>
         <h2>
           Sharing about self improvement, productivity, life hacks, design,
           development, product, and business.
         </h2>
-        <h2>
-          Currently focus on building career, brands & businesses{' '}
-          <WeecraftHoverStatus />, <MoonoHoverStatus />, <WeeboHoverStatus />.
-        </h2>
+        <h2>Currently focus on building career, brands & businesses.</h2>
       </div>
     </section>
   )

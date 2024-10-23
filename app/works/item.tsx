@@ -103,13 +103,13 @@ export function WorkItem({ work }: WorkItemProps): React.ReactElement {
       <p className="!leading-relaxed mt-4">{description}</p>
 
       <div className="flex flex-wrap text-sm text-foreground/70 mt-6 gap-2">
-        <span className="text-fuchsia-600 py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer transition-all duration-300 hover:-translate-y-1">
+        <span className="text-fuchsia-600 dark:text-fuchsia-400 py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer transition-all duration-300 hover:-translate-y-1">
           {type}
         </span>
-        <span className="text-orange-600 py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer transition-all duration-300 hover:-translate-y-1">
+        <span className="text-orange-600 dark:text-orange-400 py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer transition-all duration-300 hover:-translate-y-1">
           {rule}
         </span>
-        <span className="text-blue-600 py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer transition-all duration-300 hover:-translate-y-1">
+        <span className="text-blue-600 dark:text-blue-400 py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer transition-all duration-300 hover:-translate-y-1">
           {category}
         </span>
       </div>

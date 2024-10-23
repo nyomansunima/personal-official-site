@@ -68,7 +68,7 @@ export default function ContactList() {
   ]
 
   return (
-    <div className="flex flex-wrap items-center gap-3">
+    <div className="flex flex-wrap items-center gap-2 tablet:gap-3">
       {contacts.map((con, index) => (
         <PillItem contact={con} key={index}>
           {con.label}

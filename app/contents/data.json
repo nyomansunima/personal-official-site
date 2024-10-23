@@ -2,7 +2,7 @@
   "publications": [
     {
       "title": "Youtube",
-      "description": "Find development tips and tricks, vlog, videos around business, life styles, entrepreneur",
+      "description": "Find development tips and tricks, vlog, videos around business",
       "image": "fi fi-brands-youtube",
       "publisher": "youtube.com",
       "url": "https://youtube.com/@nyomansunima"
@@ -51,7 +51,7 @@
     },
     {
       "title": "Medium",
-      "description": "Personal blog publish to share daily interest, tips and tricks around business, entrepreneur, productivity",
+      "description": "Personal blog publish to share daily interest, tips and tricks around business",
       "image": "fi fi-brands-medium",
       "publisher": "medium.com",
       "url": "https://medium.com/@nyomansunima"
@@ -65,7 +65,7 @@
     },
     {
       "title": "Substack",
-      "description": "daily newsletter around self improvement, productivity, tips & tricks",
+      "description": "Daily newsletter around self improvement, productivity, tips & tricks",
       "image": "fi fi-rr-newsletter-subscribe",
       "publisher": "substack.com",
       "url": "https://nyomansunima.substack.com"

@@ -1,5 +1,5 @@
 /* User interface icons from flaticons.com */
-@import '~@flaticon/flaticon-uicons/css/all/all';
+@import '@flaticon/flaticon-uicons/css/all/all.css';
 
 /* Tailwindcss */
 @tailwind base;
@@ -22,15 +22,15 @@
 }
 
 .dark {
-  --background: 245 16 5%;
-  --foreground: 245 2 70%;
-  --ambient: 0 0 0%;
-  --border: 0 0 10%;
+  --background: 0 0 0%;
+  --foreground: 0 0 80%;
+  --ambient: 0 0 4%;
+  --border: 0 0 15%;
   --input: 0 0 10%;
   --primary: 0 0 90%;
   --primary-foreground: 0 0 90%;
-  --secondary: 245 8 10%;
-  --secondary-foreground: 245 2 65%;
+  --secondary: 0 0 15%;
+  --secondary-foreground: 0 0 65%;
 }
 
 /* preset */
