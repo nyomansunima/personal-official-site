@@ -6,6 +6,7 @@ import {
 import { DetailSection } from './detail'
 import { ActivitySection } from './activity'
 import { SharingSection } from './sharing'
+import { ArticleContent } from '~/components/content'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -27,9 +28,11 @@ export const metadata: Metadata = {
 export default function AboutPage(): React.ReactElement {
   return (
     <div className="flex flex-col">
-      <DetailSection />
-      <ActivitySection />
-      <SharingSection />
+      <ArticleContent>
+        <DetailSection />
+        <ActivitySection />
+        <SharingSection />
+      </ArticleContent>
     </div>
   )
 }

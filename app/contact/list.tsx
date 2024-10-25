@@ -40,7 +40,7 @@ function PillItem({ contact, children }: PillItemProps) {
       asChild={!isEmail}
       variant={'outline'}
       size={'lg'}
-      className="transition-all duration-500 hover:scale-95 bg-ambient"
+      className="transition-all duration-500 hover:-translate-y-1 bg-ambient"
       onClick={copyEmailToClipboard}
     >
       {isEmail ? (
@@ -68,7 +68,7 @@ export default function ContactList() {
   ]
 
   return (
-    <div className="flex flex-wrap items-center gap-2 tablet:gap-3">
+    <div className="flex flex-wrap items-center gap-2">
       {contacts.map((con, index) => (
         <PillItem contact={con} key={index}>
           {con.label}

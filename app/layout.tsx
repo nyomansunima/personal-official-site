@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { config } from '~/lib/config'
 import { Analytics } from '@vercel/analytics/react'
-import Script from 'next/script'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { AnimationProvider } from '~/components/animation-provider'
@@ -11,6 +10,8 @@ import { ThemeProvider } from '~/components/theme-provider'
 import Header from '~/components/header'
 import Footer from '~/components/footer'
 import { Toaster } from './components/ui/toast'
+import { CenteredLayout } from './components/centered-layout'
+import { GoogleAnalyticsScript } from './components/script-tag'
 
 // default metadata for the site
 export const metadata: Metadata = {
@@ -38,39 +39,6 @@ export const metadata: Metadata = {
   },
 }
 
-// Set the google analytics tracking code and script
-function GoogleAnalyticsScript(): React.ReactElement {
-  return (
-    <>
-      <Script
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${config.google.analytics.id}`}
-      />
-      <Script strategy="lazyOnload" id="google-analytics">
-        {`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', '${config.google.analytics.id}');
-    `}
-      </Script>
-    </>
-  )
-}
-
-// allow to centering the layout and
-// make all of the pages, components, and sections align with the styles
-function CenteredLayout({ children }): React.ReactElement {
-  return (
-    <div className="px-5 laptop:px-0 container mx-auto">
-      <div className="mx-auto w-full tablet:w-11/12 laptop:w-9/12 desktop:w-7/12 laptop:px-10">
-        {children}
-      </div>
-    </div>
-  )
-}
-
 export default function RootLayout({
   children,
 }: {
@@ -93,7 +61,9 @@ export default function RootLayout({
           <AnimationProvider>
             <CenteredLayout>
               <Header />
-              <main className="min-h-screen">{children}</main>
+              <main className="min-h-screen py-20 tablet:pb-56">
+                {children}
+              </main>
               <Footer />
             </CenteredLayout>
 

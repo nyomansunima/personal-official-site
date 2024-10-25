@@ -24,11 +24,12 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage(): React.ReactElement {
   return (
-    <div className="flex justify-center py-20 laptop:pb-56">
+    <div className="flex">
       <ArticleContent>
         <h1>Privacy policy</h1>
 
         <strong>Effective Date: Friday, 12 April 2024</strong>
+
         <p>
           This privacy policy outlines the information practices and procedures
           followed by{' '}
@@ -44,7 +45,9 @@ export default function PrivacyPage(): React.ReactElement {
         </p>
 
         <h2>Information We Collect</h2>
+
         <h3>Personal Information</h3>
+
         <p>
           We may collect personal information that you voluntarily provide to us
           when you interact with our Website, such as your name, email address,
@@ -52,6 +55,7 @@ export default function PrivacyPage(): React.ReactElement {
         </p>
 
         <h3>Usage Information</h3>
+
         <p>
           When you visit our Website, we may automatically collect certain
           information about your visit, such as your IP address, browser type,
@@ -59,7 +63,9 @@ export default function PrivacyPage(): React.ReactElement {
         </p>
 
         <h2>Use of Information</h2>
+
         <p>We may use the personal information we collect to:</p>
+
         <ul>
           <li>Respond to your inquiries or requests</li>
           <li>Provide the services or information you requested</li>
@@ -76,6 +82,7 @@ export default function PrivacyPage(): React.ReactElement {
           </li>
           <li>Comply with applicable laws, regulations, or legal processes.</li>
         </ul>
+
         <p>
           We may use usage information to analyze trends, administer our
           Website, track users' movements, and gather demographic information
@@ -84,6 +91,7 @@ export default function PrivacyPage(): React.ReactElement {
         </p>
 
         <h2>Cookies and Tracking Technologies</h2>
+
         <p>
           We may use cookies, web beacons, and similar technologies to enhance
           your experience on our Website, analyze trends, track users'
@@ -92,6 +100,7 @@ export default function PrivacyPage(): React.ReactElement {
         </p>
 
         <h2>Information Sharing and Disclosure</h2>
+
         <p>
           We do not sell, trade, or otherwise transfer your personal information
           to third parties for their marketing purposes. However, we may share
@@ -118,6 +127,7 @@ export default function PrivacyPage(): React.ReactElement {
         </ul>
 
         <h2>Data Security</h2>
+
         <p>
           We implement reasonable security measures to protect the personal
           information we collect from unauthorized access, disclosure,
@@ -127,6 +137,7 @@ export default function PrivacyPage(): React.ReactElement {
         </p>
 
         <h2>Third-Party Links</h2>
+
         <p>
           Our Website may contain links to third-party websites or services that
           are not owned or controlled by us. This Privacy Policy applies only to
@@ -137,6 +148,7 @@ export default function PrivacyPage(): React.ReactElement {
         </p>
 
         <h2>Changes to this Privacy Policy</h2>
+
         <p>
           We may update this Privacy Policy from time to time. Any changes we
           make will be posted on this page, and the "Effective Date" at the top
@@ -146,6 +158,7 @@ export default function PrivacyPage(): React.ReactElement {
         </p>
 
         <h2>Contact</h2>
+
         <p>
           If you have any questions, concerns, or requests regarding this
           privacy policy or the handling of your personal information, please{' '}

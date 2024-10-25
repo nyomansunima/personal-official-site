@@ -115,9 +115,9 @@ function Menu(): React.ReactElement {
               variant={'outline'}
               size={'icon'}
               onClick={() => setShow(true)}
-              className="hover:scale-95 rounded-2xl"
+              className="hover:-translate-y-1"
             >
-              <i className="fi text-xs fi-rr-menu-burger" />
+              <i className="fi text-xs fi-rr-bookmark" />
             </Button>
           </TooltipTrigger>
           <TooltipContent>
@@ -170,7 +170,7 @@ export function Actions(): React.ReactElement {
  */
 export default function Header(): React.ReactElement {
   return (
-    <header className="flex items-center justify-between h-20 laptop:h-44">
+    <header className="flex items-center justify-between h-20 tablet:h-44">
       <Brand />
       <Actions />
     </header>

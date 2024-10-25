@@ -25,8 +25,9 @@ function OpenWorkBadge(): React.ReactElement {
 
 export function HeroSection(): React.ReactElement {
   return (
-    <section className="flex flex-col py-20">
+    <section className="flex flex-col">
       <OpenWorkBadge />
+
       <div className="flex flex-col text-2xl tablet:text-3xl laptop:text-3xl !leading-normal font-medium gap-6 laptop:gap-12">
         <h2>
           Hello, I am a{' '}
@@ -45,12 +46,12 @@ export function HeroSection(): React.ReactElement {
           experience in building better products.
         </h2>
         <h2>
-          Mostly focus on shipping saas, products, apps & sites that help people
-          to solve their problems.
+          Mostly focus on shipping saas, products, apps, sites & contents to
+          help people solve their problems.
         </h2>
         <h2>
-          Sharing about self improvement, productivity, life hacks, design,
-          development, product, and business.
+          Talks about self improvement, productivity, life hacks, design, dev,
+          product, and business.
         </h2>
         <h2>Currently focus on building career, brands & businesses.</h2>
       </div>

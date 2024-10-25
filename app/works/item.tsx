@@ -72,7 +72,7 @@ function WorkImage({
     <div
       className={`flex bg-ambient p-1 border border-border rounded-2xl group col-span-1 ${gridImageClassName}`}
     >
-      <picture className="relative overflow-hidden w-full h-[200px] laptop:h-[360px] rounded-xl">
+      <picture className="relative overflow-hidden w-full h-[200px] tablet:h-[360px] rounded-xl">
         <Image
           src={image}
           alt={alt}
@@ -96,7 +96,7 @@ export function WorkItem({ work }: WorkItemProps): React.ReactElement {
     <Link
       href={link}
       target={isLink ? '_blank' : undefined}
-      className="flex flex-col transition-all duration-300 hover:-translate-y-2"
+      className="flex flex-col transition-all duration-300"
     >
       <h3 className="text-lg font-medium !leading-tight">{title}</h3>
 

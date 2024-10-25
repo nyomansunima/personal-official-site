@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function FAQsPage(): React.ReactElement {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-20 tablet:gap-36">
       <FAQListSection />
       <AskSection />
     </div>

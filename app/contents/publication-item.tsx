@@ -25,7 +25,7 @@ export function PublicationItem({
       className="flex flex-col bg-ambient border border-border p-3 rounded-2xl col-span-1 transition-all duration-300 hover:-translate-y-1 group relative"
     >
       <div className="flex gap-3">
-        <div className="flex justify-center items-center h-10 w-10 rounded-xl bg-secondary/35">
+        <div className="flex justify-center items-center h-10 w-10 rounded-xl bg-secondary/60">
           <i className={`text-base ${image}`} />
         </div>
 

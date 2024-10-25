@@ -89,7 +89,7 @@ const socials: Social[] = [
 export function SocialMediaList(): React.ReactElement {
   return (
     <div className="flex mt-4 tablet:mt-6">
-      <ul className="flex flex-wrap items-center gap-2 tablet:gap-3">
+      <ul className="flex flex-wrap items-center gap-2">
         {socials.map((soc, index) => (
           <SocialItem social={soc} key={index} />
         ))}
@@ -111,7 +111,7 @@ export function SocialItem({ social }: SocialItemProps): React.ReactElement {
               size={'icon'}
               asChild
               className={mergeClass(
-                `text-sm h-12 w-12 rounded-2xl transition-all duration-500 hover:scale-95 bg-ambient`,
+                `text-sm h-12 w-12 rounded-2xl transition-all duration-500 hover:-translate-y-1 bg-ambient`,
                 className,
               )}
             >

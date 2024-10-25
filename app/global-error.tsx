@@ -4,18 +4,7 @@ import './globals.css'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { Button } from './components/ui/button'
-
-// allow to centering the layout and
-// make all of the pages, components, and sections align with the styles
-function CenteredLayout({ children }): React.ReactElement {
-  return (
-    <div className="px-5 laptop:px-0 container mx-auto">
-      <div className="mx-auto w-full tablet:w-11/12 laptop:w-9/12 desktop:w-7/12 laptop:px-10">
-        {children}
-      </div>
-    </div>
-  )
-}
+import { CenteredLayout } from './components/centered-layout'
 
 export default function GlobalError({
   error,
@@ -32,7 +21,7 @@ export default function GlobalError({
     >
       <body suppressHydrationWarning>
         <CenteredLayout>
-          <main className="min-h-screen">
+          <main className="min-h-screen py-20 tablet:pb-56">
             <h1 className="!leading-tight text-3xl tablet:text-4xl text-center font-medium">
               Something wrong!
             </h1>

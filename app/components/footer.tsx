@@ -37,7 +37,7 @@ export function MenuItem({
   return (
     <li
       className={`${mergeClass(
-        'flex items-center justify-center text-sm px-3 py-2 rounded-xl bg-transparent transition-all hover:-translate-x-1 hover:text-foreground/60 duration-200',
+        'flex items-center justify-center text-sm px-2 py-1 rounded-xl bg-transparent transition-all hover:-translate-y-1 hover:text-foreground/60 duration-300',
         className,
       )}`}
     >
@@ -78,7 +78,7 @@ export default function Footer(): React.ReactElement {
       <div className="flex flex-col text-foreground/60 gap-1">
         <p>
           Design in{' '}
-          <span className="transition-all duration-300 hover:font-medium hover:text-foreground cursor-pointer">
+          <span className="transition-all duration-300 hover:font-medium text-foreground cursor-pointer">
             Bali, Indonesia
           </span>{' '}
           for global audiences
@@ -87,7 +87,7 @@ export default function Footer(): React.ReactElement {
           Connect with me{' '}
           <Link
             href={'/contact'}
-            className="transition-all duration-300 hover:font-medium hover:text-foreground"
+            className="transition-all duration-300 hover:font-medium text-foreground"
           >
             @nyomansunima
           </Link>
@@ -100,9 +100,9 @@ export default function Footer(): React.ReactElement {
                 <Link
                   href={'https://ko-fi.com/nyomansunima'}
                   target="_blank"
-                  className="transition-all duration-300 hover:font-medium hover:text-foreground"
+                  className="transition-all duration-300 hover:font-medium text-foreground"
                 >
-                  buy a coffee 💖
+                  buy a coffee
                 </Link>
               </TooltipTrigger>
               <TooltipContent>Get something free</TooltipContent>
@@ -111,7 +111,7 @@ export default function Footer(): React.ReactElement {
         </p>
       </div>
 
-      <div className="flex flex-col tablet:flex-row laptop:items-center py-7 laptop:justify-between mt-8">
+      <div className="flex flex-col tablet:flex-row tablet:items-center py-7 tablet:justify-between mt-8">
         <span className="text-sm">
           Copyright &copy; 2024 - Alright Reserved
         </span>

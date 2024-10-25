@@ -18,7 +18,7 @@ export function RecentItem({ recent }: RecentItemProps): React.ReactElement {
     <Link
       href={url}
       target="_blank"
-      className="flex flex-col tablet:flex-row p-4 rounded-2xl bg-ambient border border-border transition-all duration-300 hover:-translate-y-1"
+      className="flex flex-col tablet:flex-row px-4 py-3 rounded-2xl bg-ambient border border-border transition-all duration-300 hover:-translate-y-1"
     >
       <h3 className="text-sm font-medium text-pretty !leading-tight line-clamp-1 flex-grow">
         {title}

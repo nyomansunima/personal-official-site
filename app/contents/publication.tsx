@@ -9,8 +9,8 @@ const publications: PublicationData[] =
 
 export function PublicationSection(): React.ReactElement {
   return (
-    <section className="flex flex-col py-20">
-      <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 gap-2 tablet:gap-3 w-full">
+    <section className="flex flex-col">
+      <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 gap-x-3 gap-y-2 w-full">
         {publications.map((pub, index) => (
           <PublicationItem publication={pub} key={index} />
         ))}

@@ -8,7 +8,7 @@ const sources: SourceData[] = jsonData.sources as SourceData[]
 
 export function SourcesSection(): React.ReactElement {
   return (
-    <div className="flex flex-col py-20 laptop:pb-56">
+    <div className="flex flex-col">
       <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 gap-2 tablet:gap-3 w-full">
         {sources.map((sou, index) => (
           <SourceItem source={sou} key={index} />

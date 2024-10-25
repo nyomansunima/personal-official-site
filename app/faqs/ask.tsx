@@ -4,7 +4,7 @@ import { Button } from '~/components/ui/button'
 
 export function AskSection(): React.ReactElement {
   return (
-    <section className="flex flex-col py-20 laptop:py-56 items-center">
+    <section className="flex flex-col items-center">
       <h2 className="text-2xl laptop:text-3xl text-center !leading-tight font-medium">
         Asks.
       </h2>

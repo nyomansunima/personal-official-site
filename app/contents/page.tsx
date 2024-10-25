@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function ContentsPage(): React.ReactElement {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-20">
       <PublicationSection />
       <RecentlySection />
     </div>

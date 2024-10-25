@@ -9,7 +9,7 @@ export function RecentlySection(): React.ReactElement {
   return (
     <>
       {recents && recents.length > 0 && (
-        <section className="flex flex-col pb-20 laptop:pb-56">
+        <section className="flex flex-col">
           <span>Recently:</span>
 
           <div className="flex flex-col gap-2 mt-10">

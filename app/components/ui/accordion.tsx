@@ -14,7 +14,7 @@ const AccordionItem = React.forwardRef<
   <AccordionPrimitive.Item
     ref={ref}
     className={mergeClass(
-      'border border-border bg-ambient rounded-2xl p-4',
+      'border border-border bg-ambient rounded-2xl px-4 py-3',
       className,
     )}
     {...props}

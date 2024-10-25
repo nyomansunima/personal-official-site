@@ -24,9 +24,10 @@ export const metadata: Metadata = {
 
 export default function TermsPage(): React.ReactElement {
   return (
-    <div className="py-20 laptop:pb-56">
+    <div className="flex">
       <ArticleContent>
         <h1>Terms of use</h1>
+
         <p>
           These terms of use govern your use of our website, located at 
           <Link href={'https://nyomansunima.one'}>
@@ -37,6 +38,7 @@ export default function TermsPage(): React.ReactElement {
         </p>
 
         <h2>Acceptance of Terms</h2>
+
         <p>
           By accessing or using our website, you agree to be bound by these
           Terms of Use and all applicable laws and regulations. If you do not
@@ -44,6 +46,7 @@ export default function TermsPage(): React.ReactElement {
         </p>
 
         <h2>Intellectual Property</h2>
+
         <p>
           All content on our website, including but not limited to text,
           graphics, logos, images, and software, is the property of Nyoman
@@ -53,10 +56,12 @@ export default function TermsPage(): React.ReactElement {
         </p>
 
         <h2>User Conduct</h2>
+
         <p>
           When using our website, you agree to abide by the following
           guidelines:
         </p>
+
         <ul>
           <li>Do not engage in any unlawful, harmful, or abusive behavior.</li>
           <li>
@@ -74,6 +79,7 @@ export default function TermsPage(): React.ReactElement {
         </ul>
 
         <h2>Third-Party Websites and Content</h2>
+
         <p>
           Our website may contain links to third-party websites or display
           content from third parties. We do not endorse or control these
@@ -82,6 +88,7 @@ export default function TermsPage(): React.ReactElement {
         </p>
 
         <h2>Disclaimer of Warranties</h2>
+
         <p>
           Our website is provided on an "as is" and "as available" basis,
           without any warranties of any kind, whether express or implied. We do
@@ -90,6 +97,7 @@ export default function TermsPage(): React.ReactElement {
         </p>
 
         <h2>Limitation of Liability</h2>
+
         <p>
           In no event shall{' '}
           <Link href={'https://nyomansunima.one'}>
@@ -103,6 +111,7 @@ export default function TermsPage(): React.ReactElement {
         </p>
 
         <h2>Privacy Policy</h2>
+
         <p>
           By using our website, you agree to the terms of our Privacy Policy,
           which describes how we collect, use, and disclose your personal
@@ -111,6 +120,7 @@ export default function TermsPage(): React.ReactElement {
         </p>
 
         <h2>Changes to the Terms of Use</h2>
+
         <p>
           We reserve the right to modify or update these Terms of Use at any
           time without prior notice. Any changes will be effective immediately
@@ -120,6 +130,7 @@ export default function TermsPage(): React.ReactElement {
         </p>
 
         <h2>Governing Law and Jurisdiction</h2>
+
         <p>
           These Terms of Use shall be governed by and construed in accordance
           with the laws of Bali, Indonesia. Any dispute arising out of or in
@@ -128,6 +139,7 @@ export default function TermsPage(): React.ReactElement {
         </p>
 
         <h2>Contact</h2>
+
         <p>
           If you have any questions or concerns regarding these terms of use,
           please <Link href={'/contact'}>contact us</Link>.

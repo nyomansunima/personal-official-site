@@ -26,7 +26,7 @@ export function LinkItem({
     >
       {children}
 
-      <div className="absolute h-7 w-7 rounded-full bg-ambient border border-border flex justify-center items-center top-3 right-3 transition-all duration-500 opacity-0 group-hover:opacity-100">
+      <div className="absolute h-7 w-7 rounded-full bg-secondary/30 border border-border flex justify-center items-center top-3 right-3 transition-all duration-500 opacity-0 group-hover:opacity-100">
         <i className="fi fi-rr-arrow-small-right -rotate-45" />
       </div>
     </Link>
