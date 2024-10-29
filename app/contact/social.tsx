@@ -10,6 +10,7 @@ import {
   TooltipTrigger,
 } from '~/components/ui/tooltip'
 import { mergeClass } from '~/lib/utils'
+import jsonData from './data.json'
 
 interface Social {
   label: string
@@ -22,69 +23,7 @@ interface SocialItemProps {
   social: Social
 }
 
-// predefined socials and links that help to
-// connect with the author
-const socials: Social[] = [
-  {
-    label: 'Subscribe',
-    href: 'https://youtube.com/@nyomansunima',
-    icon: 'fi fi-brands-youtube',
-  },
-  {
-    label: 'Follow on twitter',
-    href: 'https://twitter.com/nyomansunima',
-    icon: 'fi fi-brands-twitter',
-  },
-  {
-    label: 'See on Threads',
-    href: 'https://threads.net/@nyomansunima',
-    icon: 'fi fi-rr-knitting',
-    className: 'laptop:w-28',
-  },
-  {
-    label: 'Connect now',
-    href: 'https://linkedin.com/in/nyomansunima',
-    icon: 'fi fi-brands-linkedin',
-  },
-  {
-    label: 'See story',
-    href: 'https://facebook.com/nyomansunima',
-    icon: 'fi fi-brands-facebook',
-  },
-  {
-    label: 'See the gallery',
-    href: 'https://instagram.com/nyomansunima',
-    icon: 'fi fi-brands-instagram',
-  },
-  {
-    label: 'Design tweets',
-    href: 'https://layers.to/nyomansunima',
-    icon: 'fi fi-rr-multiple-alt',
-    className: 'laptop:w-28',
-  },
-  {
-    label: 'Coding projects',
-    href: 'https://github.com/nyomansunima',
-    icon: 'fi fi-brands-github',
-    className: 'laptop:w-28',
-  },
-  {
-    label: 'Design projects',
-    href: 'https://dribbble.com/nyomansunima',
-    icon: 'fi fi-brands-dribbble',
-  },
-  {
-    label: 'Past Coding projects',
-    href: 'https://gitlab.com/nyomansunima',
-    icon: 'fi fi-brands-gitlab',
-    className: 'laptop:w-36',
-  },
-  {
-    label: 'Connect on Peerlist',
-    href: 'https://peerlist.io/nyomansunima',
-    icon: 'fi fi-rr-circle-p',
-  },
-]
+const socials: Social[] = jsonData.socials as Social[]
 
 export function SocialMediaList(): React.ReactElement {
   return (

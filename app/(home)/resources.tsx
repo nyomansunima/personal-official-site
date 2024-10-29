@@ -16,21 +16,21 @@ export function ResourcesSection(): React.ReactElement {
             See my works
           </LinkItem>
           <LinkItem
-            href="https://nyomansunima.lemonsqueezy.com"
+            href="https://nyomansunima.lemonsqueezy.com?ref=nyomansunima"
             target="_blank"
             className="col-span-1"
           >
             Check my goodies
           </LinkItem>
           <LinkItem
-            href="https://tryweebo.one"
+            href="https://tryweebo.one?ref=nyomansunima"
             target="_blank"
             className="tablet:row-span-2"
           >
             My web design business (NEW)
           </LinkItem>
           <LinkItem
-            href="https://ko-fi.com/nyomansunima"
+            href="https://ko-fi.com/nyomansunima?ref=nyomansunima"
             target="_blank"
             className="col-span-1"
           >
@@ -40,14 +40,14 @@ export function ResourcesSection(): React.ReactElement {
             Learn together with me
           </LinkItem>
           <LinkItem
-            href="https://moono.space"
+            href="https://moono.space?ref=nyomansunima"
             target="_blank"
             className="tablet:col-span-2"
           >
             My apps collection (NEW)
           </LinkItem>
           <LinkItem
-            href="https://weecraft.club"
+            href="https://weecraft.club?ref=nyomansunima"
             target="_blank"
             className="tablet:col-span-2"
           >

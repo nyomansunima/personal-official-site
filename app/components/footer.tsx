@@ -98,7 +98,7 @@ export default function Footer(): React.ReactElement {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link
-                  href={'https://ko-fi.com/nyomansunima'}
+                  href={'https://ko-fi.com/nyomansunima?ref=nyomansunima'}
                   target="_blank"
                   className="transition-all duration-300 hover:font-medium text-foreground"
                 >

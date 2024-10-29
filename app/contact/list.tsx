@@ -4,6 +4,7 @@ import * as React from 'react'
 import Link from 'next/link'
 import { Button } from '~/components/ui/button'
 import { toast } from '~/components/ui/toast'
+import jsonData from './data.json'
 
 interface ContactItem {
   href: string
@@ -14,6 +15,8 @@ interface PillItemProps {
   contact: ContactItem
   children: React.ReactNode
 }
+
+const contacts: ContactItem[] = jsonData.contacts as ContactItem[]
 
 function PillItem({ contact, children }: PillItemProps) {
   const { href } = contact
@@ -55,18 +58,6 @@ function PillItem({ contact, children }: PillItemProps) {
 }
 
 export default function ContactList() {
-  const contacts: ContactItem[] = [
-    { label: 'Send Me Email', href: 'nyomansunima@gmail.com' },
-    {
-      label: 'Schedule Meeting',
-      href: 'https://cal.com/nyomansunima/build-opportunity',
-    },
-    {
-      label: 'Chat on WhatsApp',
-      href: 'https://api.whatsapp.com/send?phone=6285161619109',
-    },
-  ]
-
   return (
     <div className="flex flex-wrap items-center gap-2">
       {contacts.map((con, index) => (
