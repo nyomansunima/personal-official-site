@@ -25,7 +25,7 @@
       "label": "See on Threads",
       "href": "https://threads.net/@nyomansunima?ref=nyomansunima",
       "icon": "fi fi-rr-knitting",
-      "className": "laptop:w-28"
+      "className": "tablet:w-28"
     },
     {
       "label": "Connect now",
@@ -46,13 +46,13 @@
       "label": "Design tweets",
       "href": "https://layers.to/nyomansunima?ref=nyomansunima",
       "icon": "fi fi-rr-multiple-alt",
-      "className": "laptop:w-28"
+      "className": "tablet:w-28"
     },
     {
       "label": "Coding projects",
       "href": "https://github.com/nyomansunima?ref=nyomansunima",
       "icon": "fi fi-brands-github",
-      "className": "laptop:w-28"
+      "className": "tablet:w-28"
     },
     {
       "label": "Design projects",
