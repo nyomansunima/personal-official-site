@@ -4,7 +4,7 @@ import {
   defaultOpenGraphMetadata,
   defaultTwitterMetadata,
 } from '~/shared-metadata'
-import { ProjectsListSection } from './list'
+import { CraftListSection } from './list'
 
 export const metadata: Metadata = {
   title: 'Projects',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 export default function ProjectsPage(): React.ReactElement {
   return (
     <div className="flex flex-col">
-      <ProjectsListSection />
+      <CraftListSection />
     </div>
   )
 }

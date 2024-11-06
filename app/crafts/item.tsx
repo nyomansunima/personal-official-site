@@ -2,7 +2,7 @@ import * as React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export interface ProjectData {
+export interface CraftData {
   title: string
   description: string
   publisher: string
@@ -10,12 +10,12 @@ export interface ProjectData {
   link: string
 }
 
-interface ProjectItemProps {
-  project: ProjectData
+interface CraftItemProps {
+  craft: CraftData
 }
 
-export function ProjectItem({ project }: ProjectItemProps): React.ReactElement {
-  const { title, description, publisher, image, link } = project
+export function CraftItem({ craft }: CraftItemProps): React.ReactElement {
+  const { title, description, publisher, image, link } = craft
 
   return (
     <Link

@@ -42,12 +42,11 @@ export function HeroSection(): React.ReactElement {
           <span className="cursor-pointer text-indigo-600 dark:text-indigo-400">
             creator
           </span>{' '}
-          who loves to craft solutions for global audiences, with strong
-          experience in building better products.
+          who loves to craft solutions for global audiences.
         </h2>
         <h2>
-          Mostly focus on shipping saas, products, apps, sites & contents to
-          help people solve their problems.
+          Mostly focus on shipping saas, goodies, digital products, sites &
+          contents to help people solve their problems.
         </h2>
         <h2>
           Talks about self improvement, productivity, life hacks, design, dev,

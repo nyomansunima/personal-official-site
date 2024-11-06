@@ -1,5 +1,7 @@
 # Personal Site
 
+![Github View](https://github.com/user-attachments/assets/7a86d44c-69d8-4144-a922-c36a93982d5b)
+
 _"My personal website to connect and share something with client and audience"_
 
 ## About

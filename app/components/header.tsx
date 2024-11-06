@@ -133,7 +133,7 @@ function Menu(): React.ReactElement {
         >
           <ul className="grid grid-cols-2 w-full gap-x-4 gap-y-4">
             <NavMenuItem href="/works">Works</NavMenuItem>
-            <NavMenuItem href="/projects">Projects</NavMenuItem>
+            <NavMenuItem href="/crafts">Crafts</NavMenuItem>
             <NavMenuItem href="/contents">Contents</NavMenuItem>
             <NavMenuItem href="/changelog">Changelog</NavMenuItem>
             <NavMenuItem href="/resources">Resources</NavMenuItem>
