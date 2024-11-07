@@ -4,7 +4,7 @@ import {
   defaultOpenGraphMetadata,
   defaultTwitterMetadata,
 } from '~/shared-metadata'
-import ContactList from './list'
+import ContactList from './contact-list'
 import { SocialMediaList } from './social'
 
 export const metadata: Metadata = {

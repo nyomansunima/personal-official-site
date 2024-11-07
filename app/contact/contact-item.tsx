@@ -4,21 +4,18 @@ import * as React from 'react'
 import Link from 'next/link'
 import { Button } from '~/components/ui/button'
 import { toast } from '~/components/ui/toast'
-import jsonData from './data.json'
 
-interface ContactItem {
+export interface ContactItemData {
   href: string
   label: string
 }
 
-interface PillItemProps {
-  contact: ContactItem
+interface ContactItemProps {
+  contact: ContactItemData
   children: React.ReactNode
 }
 
-const contacts: ContactItem[] = jsonData.contacts as ContactItem[]
-
-function PillItem({ contact, children }: PillItemProps) {
+export function ContactItem({ contact, children }: ContactItemProps) {
   const { href } = contact
 
   // check the link is email, would like to
@@ -44,7 +41,11 @@ function PillItem({ contact, children }: PillItemProps) {
       variant={'outline'}
       size={'lg'}
       className="transition-all duration-500 hover:-translate-y-1 bg-ambient"
-      onClick={copyEmailToClipboard}
+      onClick={() => {
+        if (isEmail) {
+          copyEmailToClipboard()
+        }
+      }}
     >
       {isEmail ? (
         children
@@ -54,17 +55,5 @@ function PillItem({ contact, children }: PillItemProps) {
         </Link>
       )}
     </Button>
-  )
-}
-
-export default function ContactList() {
-  return (
-    <div className="flex flex-wrap items-center gap-2">
-      {contacts.map((con, index) => (
-        <PillItem contact={con} key={index}>
-          {con.label}
-        </PillItem>
-      ))}
-    </div>
   )
 }

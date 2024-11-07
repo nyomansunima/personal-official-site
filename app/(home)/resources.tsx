@@ -53,6 +53,9 @@ export function ResourcesSection(): React.ReactElement {
           >
             See tiny dev resources (NEW)
           </LinkItem>
+          <LinkItem href="/crafts" className="tablet:col-span-2">
+            See all of my crafts
+          </LinkItem>
         </div>
       </div>
     </section>
