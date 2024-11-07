@@ -72,7 +72,7 @@ function WorkImage({
     <div
       className={`flex bg-ambient p-1 border border-border rounded-2xl group col-span-1 ${gridImageClassName}`}
     >
-      <picture className="relative overflow-hidden w-full h-[200px] tablet:h-[360px] rounded-xl">
+      <picture className="relative overflow-hidden w-full h-[200px] tablet:h-[400px] rounded-xl">
         <Image
           src={image}
           alt={alt}

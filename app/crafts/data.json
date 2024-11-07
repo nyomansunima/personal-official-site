@@ -5,21 +5,24 @@
       "description": "Unlimited web design for startups, agency, and enterprises",
       "publisher": "tryweebo.one",
       "image": "https://cdn.hashnode.com/res/hashnode/image/upload/v1729704496490/7d3949ae-e901-4714-8df9-b4e0355d6d90.png",
-      "link": "https://tryweebo.one?ref=nyomansunima"
+      "link": "https://tryweebo.one?ref=nyomansunima",
+      "insights": ["Services", "Website"]
     },
     {
       "title": "Moono",
       "description": "Apps collections for my works, contain simple and useful apps",
       "publisher": "moono.space",
       "image": "https://cdn.hashnode.com/res/hashnode/image/upload/v1729706783589/06a931f0-e37b-4672-a97d-4e7d99eecf1f.png",
-      "link": "https://moono.space?ref=nyomansunima"
+      "link": "https://moono.space?ref=nyomansunima",
+      "insights": ["Saas", "10+ products"]
     },
     {
       "title": "Weecraft",
       "description": "Tiny resources for developer that create tools, ui, and goodies",
       "publisher": "weecraft.club",
       "image": "https://cdn.hashnode.com/res/hashnode/image/upload/v1729706888234/066b8470-3aab-4e11-9d38-82284e607f1a.png",
-      "link": "https://weecraft.club?ref=nyomansunima"
+      "link": "https://weecraft.club?ref=nyomansunima",
+      "insights": ["Utils", "Dev", "2k+ downloads"]
     }
   ]
 }

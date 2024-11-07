@@ -88,7 +88,7 @@ export function ContentImage({
         className,
       )}`}
     >
-      <picture className="relative w-full h-[200px] tablet:h-[360px] overflow-hidden rounded-xl not-prose">
+      <picture className="relative w-full h-[200px] tablet:h-[400px] overflow-hidden rounded-xl not-prose">
         <Image
           src={src}
           alt={alt}

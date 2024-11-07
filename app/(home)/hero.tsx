@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import * as React from 'react'
 import {
   Tooltip,
@@ -12,9 +13,12 @@ function OpenWorkBadge(): React.ReactElement {
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger>
-            <div className="flex justify-center items-center px-3 h-9 rounded-full bg-fuchsia-100 dark:bg-fuchsia-400/10 border border-fuchsia-200 dark:border-fuchsia-200/20 text-fuchsia-800 dark:text-fuchsia-400 text-xs gap-2 font-medium transition-all duration-300 hover:scale-95 cursor-pointer">
+            <Link
+              href={'/contact'}
+              className="flex justify-center items-center px-3 h-9 rounded-full bg-fuchsia-100 dark:bg-fuchsia-400/10 border border-fuchsia-200 dark:border-fuchsia-200/20 text-fuchsia-800 dark:text-fuchsia-400 text-xs gap-2 font-medium transition-all duration-300 hover:scale-95 cursor-pointer"
+            >
               Open to work
-            </div>
+            </Link>
           </TooltipTrigger>
           <TooltipContent>Looking for solid works & teams</TooltipContent>
         </Tooltip>
@@ -40,17 +44,17 @@ export function HeroSection(): React.ReactElement {
           </span>
           {' & '}
           <span className="cursor-pointer text-indigo-600 dark:text-indigo-400">
-            creator
+            creator.
           </span>{' '}
-          who loves to craft solutions for global audiences.
+          Loves to craft solutions for global audiences.
         </h2>
         <h2>
-          Mostly focus on shipping saas, goodies, digital products, sites &
-          contents to help people solve their problems.
+          Focus on shipping saas, goodies, digital products, sites & contents to
+          help people solve their problems.
         </h2>
         <h2>
-          Talks about self improvement, productivity, life hacks, design, dev,
-          product, and business.
+          Talks about self improvement, productivity, life hacks, design,
+          development, product shipping, and business.
         </h2>
         <h2>Currently focus on building career, brands & businesses.</h2>
       </div>

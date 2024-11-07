@@ -7,24 +7,24 @@ import {
 import { CraftListSection } from './list'
 
 export const metadata: Metadata = {
-  title: 'Projects',
+  title: 'Crafts',
   description:
     'See all of my projects, business, products, side husltes and something that i built',
   openGraph: {
     ...defaultOpenGraphMetadata,
-    title: 'Projects',
+    title: 'Crafts',
     description:
       'See all of my projects, business, products, side husltes and something that i built',
   },
   twitter: {
     ...defaultTwitterMetadata,
-    title: 'Project',
+    title: 'Crafts',
     description:
       'See all of my projects, business, products, side husltes and something that i built',
   },
 }
 
-export default function ProjectsPage(): React.ReactElement {
+export default function CraftsPage(): React.ReactElement {
   return (
     <div className="flex flex-col">
       <CraftListSection />
