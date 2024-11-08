@@ -56,7 +56,25 @@ export function HeroSection(): React.ReactElement {
           Talks about self improvement, productivity, life hacks, design,
           development, product shipping, and business.
         </h2>
-        <h2>Currently focus on building career, brands & businesses.</h2>
+        <h2>
+          Now, focus to building{' '}
+          <span className="cursor-pointer text-pink-600 dark:text-pink-400">
+            career
+          </span>
+          {', '}
+          <span className="cursor-pointer text-orange-600 dark:text-orange-400">
+            brands
+          </span>
+          {', '}
+          <span className="cursor-pointer text-blue-600 dark:text-blue-400">
+            projects
+          </span>
+          {' & '}
+          <span className="cursor-pointer text-fuchsia-600 dark:text-fuchsia-400">
+            business
+          </span>
+          .
+        </h2>
       </div>
     </section>
   )

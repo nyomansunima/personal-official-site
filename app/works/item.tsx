@@ -98,7 +98,7 @@ export function WorkItem({ work }: WorkItemProps): React.ReactElement {
       target={isLink ? '_blank' : undefined}
       className="flex flex-col transition-all duration-300"
     >
-      <h3 className="text-lg font-medium !leading-tight">{title}</h3>
+      <h3 className="text-xl font-medium !leading-tight">{title}</h3>
 
       <p className="!leading-relaxed mt-4">{description}</p>
 
