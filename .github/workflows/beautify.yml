@@ -9,6 +9,8 @@
 
 name: Beautify Code
 
+on: ['push', 'pull_request']
+
 jobs:
   lint:
     name: Beautify Code

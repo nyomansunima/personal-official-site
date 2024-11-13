@@ -7,6 +7,10 @@
 
 name: Lighthouse
 
+on:
+  push:
+    branches: ['main']
+
 jobs:
   lighthouse:
     strategy:
