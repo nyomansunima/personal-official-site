@@ -9,7 +9,9 @@
 
 name: Beautify Code
 
-on: ['push', 'pull_request']
+on:
+  push:
+    branches: ['main']
 
 jobs:
   lint:

@@ -44,9 +44,9 @@ export function HeroSection(): React.ReactElement {
           </span>
           {' & '}
           <span className="cursor-pointer text-indigo-600 dark:text-indigo-400">
-            creator.
+            creator
           </span>{' '}
-          Loves to craft solutions for global audiences.
+          loves to craft solutions for global audiences.
         </h2>
         <h2>
           Focus on shipping saas, goodies, digital products, sites & contents to

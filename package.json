@@ -6,7 +6,8 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint:check": "next lint",
+    "lint": "next lint --fix",
     "typecheck": "tsc",
     "format:check": "prettier --check .",
     "format": "prettier --write . --list-different"
