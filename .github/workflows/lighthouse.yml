@@ -7,18 +7,6 @@
 
 name: Lighthouse
 
-# only run this workflows
-# on the apps/web sub directory
-on:
-  push:
-    branches-ignore: [main]
-    paths:
-      - "/apps/web/**"
-  pull_request:
-    branches: [main]
-    paths:
-      - "/apps/web/**"
-
 jobs:
   lighthouse:
     strategy:

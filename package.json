@@ -6,7 +6,10 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc",
+    "format:check": "prettier --check .",
+    "format": "prettier --write . --list-different"
   },
   "dependencies": {
     "@flaticon/flaticon-uicons": "^3.3.1",
@@ -43,6 +46,7 @@
     "eslint-config-next": "^15.0.2",
     "eslint-config-prettier": "^9.1.0",
     "postcss": "^8",
+    "prettier": "^3.3.3",
     "tailwindcss": "^3",
     "typescript": "^5"
   }

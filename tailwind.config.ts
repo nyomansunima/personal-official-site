@@ -1,11 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx,json}',
-    './components/**/*.{js,ts,jsx,tsx,mdx,json}',
-    './app/**/*.{js,ts,jsx,tsx,mdx,json}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx,json}'],
   darkMode: ['selector'],
   theme: {
     fontFamily: {

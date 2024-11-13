@@ -1,0 +1,42 @@
+# This GitHub Actions workflow runs two jobs:
+#
+# 1. `lint`: Checks the code for linting issues using the Bun runtime.
+# 2. `format`: Formats the code using the Bun runtime.
+#
+# The workflow checks out the code, sets up the Bun environment, and then runs the
+# respective linting and formatting commands.
+
+
+name: Beautify Code
+
+jobs:
+  lint:
+    name: Beautify Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun Environment
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Lint the code
+        run: bun run lint
+
+
+  format:
+    name: Format Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun Environment
+      uses: oven-sh/setup-bun@v2
+      with:
+        bun-version: latest
+
+      - name: Format the code
+        run: bun run format

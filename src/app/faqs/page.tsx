@@ -1,0 +1,31 @@
+import * as React from 'react'
+import { Metadata } from 'next'
+import {
+  defaultOpenGraphMetadata,
+  defaultTwitterMetadata,
+} from '@shared/lib/shared-metadata'
+import { FAQListSection, AskSection } from '@features/faqs'
+
+export const metadata: Metadata = {
+  title: 'FAQs',
+  description: 'Most asked questions by people around the world',
+  openGraph: {
+    ...defaultOpenGraphMetadata,
+    title: 'FAQs',
+    description: 'Most asked questions by people around the world',
+  },
+  twitter: {
+    ...defaultTwitterMetadata,
+    title: 'FAQs',
+    description: 'Most asked questions by people around the world',
+  },
+}
+
+export default function FAQsPage(): React.ReactElement {
+  return (
+    <div className="flex flex-col gap-20 tablet:gap-36">
+      <FAQListSection />
+      <AskSection />
+    </div>
+  )
+}
