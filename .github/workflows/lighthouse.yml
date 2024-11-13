@@ -8,36 +8,23 @@
 name: Lighthouse
 
 on:
-  push:
-    branches: ['main']
+  push: ['main']
+  pull_request: ['main']
 
 jobs:
   lighthouse:
-    strategy:
-      matrix:
-        node: [18]
-    env:
-      url: https://localhost:3000
     runs-on: ubuntu-latest
     name: Lighthouse Testing the web on Node ${{matrix.node}}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{matrix.node}}
-
-      - name: Install dependencies
-        run: npm i --legacy-peer-deps --silent
-
-      - name: Build
-        run: npm run dev
-
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v12
-        with:
-          urls: ${{env.url}}
+         with:
+          urls: |
+            https://nyomansunima.one
+          budgetPath: ./lighthouse/budget.json
           uploadArtifacts: true
           temporaryPublicStorage: true
+          runs: 3
