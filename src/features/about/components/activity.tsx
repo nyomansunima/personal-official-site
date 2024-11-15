@@ -3,8 +3,12 @@ import { ContentImage } from '@shared/components/content'
 
 export function ActivitySection(): React.ReactElement {
   return (
-    <div>
-      <h2>I did research, planning, design, develop & ship the product</h2>
+    <section>
+      <br />
+
+      <h2>
+        From ideation, research, planning, design, code to ship the best product
+      </h2>
 
       <p>
         My daily activities revolve around the exciting process of transforming
@@ -60,6 +64,6 @@ export function ActivitySection(): React.ReactElement {
         build applications from scratch, crafting clean and efficient code that
         forms the backbone of the final product.
       </p>
-    </div>
+    </section>
   )
 }

@@ -10,8 +10,8 @@ const images = [
 
 export function DetailSection(): React.ReactElement {
   return (
-    <div>
-      <h1>Hello, nice to meet you</h1>
+    <section>
+      <h1>Hey, we're good friends</h1>
 
       <p>
         Hello, my name is Nyoman Sunima, a product designer, software engineer &
@@ -69,6 +69,6 @@ export function DetailSection(): React.ReactElement {
         think outside the box and deliver forward-thinking solutions that
         resonate with audiences.
       </p>
-    </div>
+    </section>
   )
 }

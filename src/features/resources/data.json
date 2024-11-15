@@ -1,11 +1,84 @@
 {
   "sources": [
     {
-      "title": "Personal store",
-      "description": "Find free and paid resources to support your career, business, design, and development workflows.",
-      "image": "fi fi-rr-store-alt",
-      "publisher": "lemonsqueezy.com",
-      "url": "https://nyomansunima.lemonsqueezy.com?ref=nyomansunima"
+      "title": "Favorite tools",
+      "list": [
+        {
+          "title": "Visual Studio Code",
+          "description": "Visual Studio Code is a source-code editor developed by Microsoft for Windows, Linux and macOS.",
+          "url": "https://code.visualstudio.com/?ref=nyomansunima"
+        },
+        {
+          "title": "Notion",
+          "description": "Notion is a workspace where you can create, organize, and share anything you want.",
+          "url": "https://notion.so/signup?ref=nyomansunima"
+        },
+        {
+          "title": "Figma",
+          "description": "Figma is a collaborative web application for interface design.",
+          "url": "https://figma.com/signup?ref=nyomansunima"
+        },
+        {
+          "title": "ChatGPT",
+          "description": "ChatGPT is a chatbot that can answer questions and generate text.",
+          "url": "https://chat.openai.com/signup?ref=nyomansunima"
+        },
+        {
+          "title": "Warp.dev",
+          "description": "Warp is a terminal for the 21st century.",
+          "url": "https://warp.dev/signup?ref=nyomansunima"
+        },
+        {
+          "title": "Notion Calendar",
+          "description": "Notion Calendar is a calendar for Notion.",
+          "url": "https://notion.so/signup?ref=nyomansunima"
+        },
+        {
+          "title": "Spark Email",
+          "description": "Spark Email is a fast and beautiful email client.",
+          "url": "https://sparkmailapp.com/signup?ref=nyomansunima"
+        }
+      ]
+    },
+    {
+      "title": "Indie hacking stacks",
+      "list": [
+        {
+          "title": "Next.js",
+          "description": "Next.js is a framework for server-rendered React applications.",
+          "url": "https://nextjs.org/docs/getting-started?ref=nyomansunima"
+        },
+        {
+          "title": "Expo.dev",
+          "description": "Expo is a framework for building React Native applications.",
+          "url": "https://expo.dev?ref=nyomansunima"
+        },
+        {
+          "title": "Electron Forge",
+          "description": "Electron Forge is a tool for building Electron applications.",
+          "url": "https://www.electronforge.io?ref=nyomansunima"
+        },
+        {
+          "title": "Vite",
+          "description": "Vite is a build tool for modern web projects.",
+          "url": "https://vitejs.dev/guide/?ref=nyomansunima"
+        },
+        {
+          "title": "Shadcn UI",
+          "description": "Shadcn UI is a library of React components.",
+          "url": "https://ui.shadcn.com/docs/installation?ref=nyomansunima"
+        },
+        {
+          "title": "Tailwind CSS",
+          "description": "Tailwind CSS is a utility-first CSS framework.",
+          "url": "https://tailwindcss.com/docs/installation?ref=nyomansunima"
+        },
+        {
+          "title": "Hoppscotch",
+          "description": "Hoppscotch is a free, fast and beautiful API request builder.",
+          "url": "https://hoppscotch.com?ref=nyomansunima"
+        }
+      ]
     }
   ]
 }

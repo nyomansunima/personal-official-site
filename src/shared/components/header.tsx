@@ -47,7 +47,7 @@ export function Brand(): React.ReactElement {
   const pathname = usePathname()
 
   return (
-    <div className="text-foreground/50 text-sm gap-3 flex relative z-10">
+    <div className="text-foreground/50 dark:text-foreground/70 text-sm gap-3 flex relative z-10">
       <Link
         href={'/'}
         className="transition-all duration-300 hover:-translate-x-1"
@@ -138,8 +138,8 @@ function Menu(): React.ReactElement {
           <ul className="grid grid-cols-2 w-full gap-x-4 gap-y-4">
             <NavMenuItem href="/works">Works</NavMenuItem>
             <NavMenuItem href="/crafts">Crafts</NavMenuItem>
-            <NavMenuItem href="/contents">Contents</NavMenuItem>
-            <NavMenuItem href="/changelog">Changelog</NavMenuItem>
+            <NavMenuItem href="/stories">Stories</NavMenuItem>
+            <NavMenuItem href="/journeys">Journeys</NavMenuItem>
             <NavMenuItem href="/resources">Resources</NavMenuItem>
             <NavMenuItem href="/about">About</NavMenuItem>
             <NavMenuItem href="/contact">Contact</NavMenuItem>
@@ -147,13 +147,13 @@ function Menu(): React.ReactElement {
               href="https://ko-fi.com/nyomansunima?ref=nyomansunima"
               target="_blank"
             >
-              Support
+              Donate
             </NavMenuItem>
             <NavMenuItem
               href="https://nyomansunima.lemonsqueezy.com?ref=nyomansunima"
               target="_blank"
             >
-              Store
+              Goodies
             </NavMenuItem>
           </ul>
         </div>

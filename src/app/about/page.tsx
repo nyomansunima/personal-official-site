@@ -3,7 +3,14 @@ import {
   defaultOpenGraphMetadata,
   defaultTwitterMetadata,
 } from '@shared/lib/shared-metadata'
-import { DetailSection, SharingSection, ActivitySection } from '@features/about'
+import {
+  DetailSection,
+  SharingSection,
+  ActivitySection,
+  IndieSection,
+  AchievementSection,
+  EndWordSection,
+} from '@features/about'
 import { ArticleContent } from '@shared/components/content'
 
 export const metadata: Metadata = {
@@ -30,6 +37,9 @@ export default function AboutPage(): React.ReactElement {
         <DetailSection />
         <ActivitySection />
         <SharingSection />
+        <IndieSection />
+        <AchievementSection />
+        <EndWordSection />
       </ArticleContent>
     </div>
   )

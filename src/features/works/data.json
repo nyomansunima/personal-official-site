@@ -10,7 +10,8 @@
       "type": "Hacking",
       "rule": "Product designer & developer",
       "category": "Code editor theme",
-      "isFeatured": true
+      "isFeatured": true,
+      "timeline": "Aug, 31 2023"
     },
     {
       "href": "https://github.com/weecraft/blaze-theme?ref=nyomansunima",
@@ -22,7 +23,8 @@
       "type": "Hacking",
       "rule": "Product designer & developer",
       "category": "Code editor theme",
-      "isFeatured": true
+      "isFeatured": true,
+      "timeline": "Oct, 11 2024"
     }
   ]
 }

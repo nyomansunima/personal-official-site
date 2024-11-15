@@ -1,0 +1,68 @@
+{
+  "publications": [
+    {
+      "title": "Youtube",
+      "url": "https://youtube.com/@nyomansunima?ref=nyomansunima"
+    },
+    {
+      "title": "Twitter",
+      "url": "https://twitter.com/nyomansunima?ref=nyomansunima"
+    },
+    {
+      "title": "Threads",
+      "url": "https://threads.net/@nyomansunima?ref=nyomansunima"
+    },
+    {
+      "title": "LinkedIn",
+      "url": "https://linkedin.com/in/nyomansunima?ref=nyomansunima"
+    },
+    {
+      "title": "Dev community",
+      "url": "https://dev.to/nyomansunima?ref=nyomansunima"
+    },
+    {
+      "title": "Instagram",
+      "url": "https://instagram.com/nyomansunima?ref=nyomansunima"
+    },
+    {
+      "title": "Hashnode",
+      "url": "https://nyomansunima.hashnode.dev?ref=nyomansunima"
+    },
+    {
+      "title": "Medium",
+      "url": "https://medium.com/@nyomansunima?ref=nyomansunima"
+    },
+    {
+      "title": "Quora",
+      "url": "https://quora.com/nyomansunima?ref=nyomansunima"
+    },
+    {
+      "title": "Substack",
+      "url": "https://nyomansunima.substack.com?ref=nyomansunima"
+    },
+    {
+      "title": "Indie Hackers",
+      "url": "https://www.indiehackers.com/nyomansunima?ref=nyomansunima"
+    }
+  ],
+  "recents": [
+    {
+      "title": "How to create a better README",
+      "publisher": "Hashnode",
+      "timeline": "Jun 3, 2023",
+      "url": "https://nyomansunima.hashnode.dev/how-to-create-a-better-readme?ref=nyomansunima"
+    },
+    {
+      "title": "How to make your GitHub project better",
+      "publisher": "Hashnode",
+      "timeline": "Jun 5, 2023",
+      "url": "https://nyomansunima.hashnode.dev/how-to-make-your-github-project-better?ref=nyomansunima"
+    },
+    {
+      "title": "Turn Nest.Js into Serverless with Nitric in a few seconds",
+      "publisher": "Hashnode",
+      "timeline": "Aug 27, 2023",
+      "url": "https://nyomansunima.hashnode.dev/turn-nestjs-into-serverless-with-nitric-in-a-few-seconds?ref=nyomansunima"
+    }
+  ]
+}

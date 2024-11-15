@@ -37,16 +37,21 @@ export function CraftItem({ craft }: CraftItemProps): React.ReactElement {
 
         <div className="flex flex-col flex-grow">
           <h3 className="text-sm font-medium">{title}</h3>
-          <span className="text-sm text-foreground/80">{publisher}</span>
+          <span className="text-sm text-foreground/60">{publisher}</span>
         </div>
       </div>
 
       <p className="text-sm mt-3 text-foreground/80">{description}</p>
 
       {insights && (
-        <div className="flex items-center gap-2 mt-5 text-xs font-medium">
+        <div className="flex items-center gap-2 mt-5 text-xs text-foreground/60">
           {insights.map((insight, i) => (
-            <span key={i}>{insight}</span>
+            <span
+              key={i}
+              className="transition-all duration-300 group-hover:font-medium group-hover:text-foreground"
+            >
+              {insight}
+            </span>
           ))}
         </div>
       )}

@@ -36,7 +36,7 @@ export function ResourcesSection(): React.ReactElement {
           >
             Suport me by donation
           </LinkItem>
-          <LinkItem href="/contents" className="col-span-1">
+          <LinkItem href="/stories" className="col-span-1">
             Learn together with me
           </LinkItem>
           <LinkItem

@@ -11,6 +11,7 @@ export interface WorkData {
   rule: string
   category: string
   isFeatured?: boolean
+  timeline: string
 }
 
 interface WorkItemProps {
@@ -86,7 +87,8 @@ function WorkImage({
 }
 
 export function WorkItem({ work }: WorkItemProps): React.ReactElement {
-  const { href, title, description, rule, type, images, category } = work
+  const { href, title, description, rule, type, images, category, timeline } =
+    work
 
   const link = parseLink(href)
   const totalImages = images.length || 0
@@ -96,21 +98,24 @@ export function WorkItem({ work }: WorkItemProps): React.ReactElement {
     <Link
       href={link}
       target={isLink ? '_blank' : undefined}
-      className="flex flex-col transition-all duration-300"
+      className="flex flex-col transition-all duration-300 group"
     >
       <h3 className="text-xl font-medium !leading-tight">{title}</h3>
 
       <p className="!leading-relaxed mt-4">{description}</p>
 
       <div className="flex flex-wrap text-sm text-foreground/70 mt-6 gap-2">
-        <span className="text-fuchsia-600 dark:text-fuchsia-400 py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer transition-all duration-300 hover:-translate-y-1">
+        <span className="py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer transition-all duration-300 group-hover:font-medium">
           {type}
         </span>
-        <span className="text-orange-600 dark:text-orange-400 py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer transition-all duration-300 hover:-translate-y-1">
+        <span className="py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer transition-all duration-300 group-hover:font-medium">
           {rule}
         </span>
-        <span className="text-blue-600 dark:text-blue-400 py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer transition-all duration-300 hover:-translate-y-1">
+        <span className="py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer transition-all duration-300 group-hover:font-medium">
           {category}
+        </span>
+        <span className="py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer transition-all duration-300 group-hover:font-medium">
+          {timeline}
         </span>
       </div>
 

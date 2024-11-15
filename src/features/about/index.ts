@@ -1,3 +1,6 @@
 export * from './components/activity'
 export * from './components/detail'
 export * from './components/sharing'
+export * from './components/indie'
+export * from './components/achievement'
+export * from './components/endword'
