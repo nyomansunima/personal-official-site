@@ -25,10 +25,8 @@ export function RecentItem({ recent }: RecentItemProps): React.ReactElement {
         {title}
       </h3>
       <div className="flex gap-2 text-sm text-foreground/50">
-        <span className="transition-all duration-300 group-hover:text-foreground group-hover:font-medium">
-          {publisher}
-        </span>
-        <span className="transition-all duration-300 group-hover:text-foreground group-hover:font-medium">
+        <span className="transition-all duration-300">{publisher}</span>
+        <span className="transition-all duration-300 group-hover:text-foreground">
           {timeline}
         </span>
       </div>

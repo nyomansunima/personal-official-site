@@ -105,16 +105,16 @@ export function WorkItem({ work }: WorkItemProps): React.ReactElement {
       <p className="!leading-relaxed mt-4">{description}</p>
 
       <div className="flex flex-wrap text-sm text-foreground/70 mt-6 gap-2">
-        <span className="py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer transition-all duration-300 group-hover:font-medium">
+        <span className="py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer">
           {type}
         </span>
-        <span className="py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer transition-all duration-300 group-hover:font-medium">
+        <span className="py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer">
           {rule}
         </span>
-        <span className="py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer transition-all duration-300 group-hover:font-medium">
+        <span className="py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer">
           {category}
         </span>
-        <span className="py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer transition-all duration-300 group-hover:font-medium">
+        <span className="py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer">
           {timeline}
         </span>
       </div>

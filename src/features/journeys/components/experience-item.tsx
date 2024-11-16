@@ -27,10 +27,10 @@ export function ExperienceItem({
         {team}
       </Link>
       <div className="flex items-center gap-2">
-        <span className="text-foreground/40 transition-all duration-300 group-hover:text-foreground group-hover:font-medium">
+        <span className="text-foreground/40 transition-all duration-300 group-hover:text-foreground">
           {position}
         </span>
-        <span className="text-foreground/40 transition-all duration-300 group-hover:text-foreground group-hover:font-medium">
+        <span className="text-foreground/40 transition-all duration-300 group-hover:text-foreground">
           {timeline}
         </span>
       </div>
