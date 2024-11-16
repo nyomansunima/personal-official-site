@@ -22,6 +22,7 @@ jobs:
   lighthouse:
     name: Lighthouse Testing the web on Node ${{matrix.node}}
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -31,7 +32,5 @@ jobs:
         with:
           urls: |
             https://nyomansunima.one
-          budgetPath: ./lighthouse/budget.json
           uploadArtifacts: true
           temporaryPublicStorage: true
-          runs: 3
