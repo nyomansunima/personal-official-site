@@ -27,7 +27,6 @@ jobs:
   update:
     name: Update Web App
     runs-on: ubuntu-latest
-    depends
     steps:
       - name: Checkout the code
         uses: actions/checkout@v4
