@@ -10,7 +10,7 @@ export function PublicationSection(): React.ReactElement {
     <section className="flex flex-col gap-4">
       <h3 className="text-lg font-medium">Publications:</h3>
 
-      <div className="grid grid-cols-1 tablet:grid-cols-3 gap-2 w-full">
+      <div className="grid grid-cols-2 tablet:grid-cols-3 gap-2 w-full">
         {publications.map((pub, index) => (
           <PublicationItem publication={pub} key={index} />
         ))}

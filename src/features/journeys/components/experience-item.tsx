@@ -26,7 +26,7 @@ export function ExperienceItem({
       >
         {team}
       </Link>
-      <div className="flex items-center gap-2">
+      <div className="flex flex-wrap items-center gap-2">
         <span className="text-foreground/40 transition-all duration-300 group-hover:text-foreground">
           {position}
         </span>

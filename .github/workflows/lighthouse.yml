@@ -8,8 +8,15 @@
 name: Lighthouse
 
 on:
-  push: ['main']
-  pull_request: ['main']
+  workflow_dispatch:
+  workflow_run:
+    workflows: ['Web Production']
+    types:
+      - completed
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
 
 jobs:
   lighthouse:

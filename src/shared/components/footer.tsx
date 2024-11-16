@@ -37,7 +37,7 @@ export function MenuItem({
   return (
     <li
       className={`${mergeClass(
-        'flex items-center justify-center text-sm px-2 py-1 rounded-xl bg-transparent transition-all hover:-translate-y-1 hover:text-foreground/60 duration-300',
+        'flex items-center justify-center text-sm p-1 rounded-xl bg-transparent transition-all hover:-translate-y-1 hover:text-foreground/60 duration-300',
         className,
       )}`}
     >

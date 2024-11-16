@@ -16,6 +16,10 @@ env:
 # and push the code into the main branch
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: ['Beautify Code']
+    types:
+      - completed
   push:
     branches: ['main']
 
@@ -23,6 +27,7 @@ jobs:
   update:
     name: Update Web App
     runs-on: ubuntu-latest
+    depends
     steps:
       - name: Checkout the code
         uses: actions/checkout@v4
