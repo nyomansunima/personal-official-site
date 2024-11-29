@@ -1,4 +1,4 @@
-'use clinet'
+'use client'
 
 import * as React from 'react'
 import { Accordion } from '@shared/components/ui/accordion'
@@ -6,7 +6,7 @@ import { FAQItem } from './faq-item'
 import { useQuery } from '@tanstack/react-query'
 import * as faqService from './faq-service'
 
-export function FAQListSection() {
+export function FAQListSection(): React.ReactElement {
   const { isSuccess, data } = useQuery({
     queryKey: ['faqs'],
     queryFn: faqService.getFAQs,

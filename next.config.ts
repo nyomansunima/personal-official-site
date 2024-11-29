@@ -3,9 +3,6 @@ import createMDX from '@next/mdx'
 import remarkGfm from 'remark-gfm'
 
 const nextConfig: NextConfig = {
-  experimental: {
-    mdxRs: true,
-  },
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   images: {
     remotePatterns: [
