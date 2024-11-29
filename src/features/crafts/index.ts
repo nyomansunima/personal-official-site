@@ -1,6 +1,2 @@
-import jsonData from './data.json'
-
-export * from './components/item'
-export * from './components/list'
-
-export { jsonData }
+export * from './item'
+export * from './list'

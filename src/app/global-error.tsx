@@ -4,7 +4,7 @@ import '@shared/styles/globals.css'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { Button } from '@shared/components/ui/button'
-import { CenteredLayout } from '@shared/components/centered-layout'
+import { CenteredLayout } from '@shared/components//common/centered-layout'
 
 export default function GlobalError({
   error,

@@ -1,5 +1,3 @@
-import jsonData from './data.json'
-
-export * from './components/ask-section'
-export * from './components/faq-item'
-export * from './components/list'
+export * from './ask-section'
+export * from './faq-item'
+export * from './list'

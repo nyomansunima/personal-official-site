@@ -1,12 +1,9 @@
-/* User interface icons from flaticons.com */
 @import '@flaticon/flaticon-uicons/css/all/all.css';
 
-/* Tailwindcss */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Theme customizations & adaptive for light and dark mode */
 @layer base {
   :root {
     --background: 0 0 98%;
@@ -33,7 +30,6 @@
   --secondary-foreground: 0 0 65%;
 }
 
-/* preset */
 @layer base {
   * {
     @apply box-border;

@@ -1,3 +1,3 @@
-export * from './components/hero'
-export * from './components/resource-item'
-export * from './components/resources'
+export * from './hero'
+export * from './resource-item'
+export * from './resources'
