@@ -1,20 +1,17 @@
 import { Metadata } from 'next'
-import {
-  defaultOpenGraphMetadata,
-  defaultTwitterMetadata,
-} from '@shared/lib/shared-metadata'
+import * as defaultMetadata from '@shared/libs/shared-metadata'
 import { ExperienceSection, LogListSection } from '@features/journeys'
 
 export const metadata: Metadata = {
   title: 'Journeys',
   description: 'The whole story of me, nyoman sunima and all of the journey',
   openGraph: {
-    ...defaultOpenGraphMetadata,
+    ...defaultMetadata.openGraph,
     title: 'Journeys',
     description: 'The whole story of me, nyoman sunima and all of the journey',
   },
   twitter: {
-    ...defaultTwitterMetadata,
+    ...defaultMetadata.twitter,
     title: 'Journeys',
     description: 'The whole story of me, nyoman sunima and all of the journey',
   },

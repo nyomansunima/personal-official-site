@@ -1,9 +1,6 @@
 import * as React from 'react'
 import { Metadata } from 'next'
-import {
-  defaultOpenGraphMetadata,
-  defaultTwitterMetadata,
-} from '@shared/lib/shared-metadata'
+import * as defaultMetadata from '@shared/libs/shared-metadata'
 import { PublicationSection, RecentlySection } from '@features/stories'
 
 export const metadata: Metadata = {
@@ -11,13 +8,13 @@ export const metadata: Metadata = {
   description:
     'Everyday i write, record, and create any resources to sharing into the social media and community platforms',
   openGraph: {
-    ...defaultOpenGraphMetadata,
+    ...defaultMetadata.openGraph,
     title: 'Stories',
     description:
       'Everyday i write, record, and create any resources to sharing into the social media and community platforms',
   },
   twitter: {
-    ...defaultTwitterMetadata,
+    ...defaultMetadata.twitter,
     title: 'Stories',
     description:
       'Everyday i write, record, and create any resources to sharing into the social media and community platforms',

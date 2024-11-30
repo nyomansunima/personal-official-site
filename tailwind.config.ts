@@ -1,12 +1,18 @@
 import type { Config } from 'tailwindcss'
+import form from '@tailwindcss/forms'
+import typography from '@tailwindcss/typography'
+import animation from 'tailwindcss-animate'
 
 const config: Config = {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx,json}'],
+  content: [
+    './src/**/*.{js,ts,jsx,tsx,mdx,json}',
+    './data/**/*.{js,ts,jsx,tsx,mdx,json}',
+  ],
   darkMode: ['selector'],
   theme: {
     fontFamily: {
-      sans: ['var(--font-geist-sans)'],
-      mono: ['var(--font-geist-mono)'],
+      sans: ['var(--font-inter)'],
+      mono: ['var(--font-dm-mono)'],
     },
     screens: {
       tablet: '640px',
@@ -39,7 +45,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [typography, form, animation],
 }
 
 export default config

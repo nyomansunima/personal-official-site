@@ -3,7 +3,6 @@
 import * as React from 'react'
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import { mergeClass } from '@shared/utils/helper'
-import { motion } from 'framer-motion'
 
 const Accordion = AccordionPrimitive.Root
 
@@ -51,18 +50,7 @@ const AccordionContent = React.forwardRef<
     className="overflow-hidden text-sm text-foreground/70 !leading-relaxed transition-all duration-700"
     {...props}
   >
-    <motion.div
-      initial={{ y: 20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{
-        type: 'spring',
-        stiffness: 60,
-        duration: 0.2,
-      }}
-      className={mergeClass('py-4', className)}
-    >
-      {children}
-    </motion.div>
+    <div className={mergeClass('py-4', className)}>{children}</div>
   </AccordionPrimitive.Content>
 ))
 

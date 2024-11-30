@@ -1,8 +1,4 @@
-import jsonData from './data.json'
-
-export * from './components/publication'
-export * from './components/publication-item'
-export * from './components/recent'
-export * from './components/recent-item'
-
-export { jsonData }
+export * from './publication-section'
+export * from './publication-item'
+export * from './recent-section'
+export * from './recent-item'

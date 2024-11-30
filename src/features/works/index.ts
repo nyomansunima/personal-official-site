@@ -1,7 +1,3 @@
-import jsonData from './data.json'
-
-export * from './components/item'
-export * from './components/list'
-export * from './components/coming-soon'
-
-export { jsonData }
+export * from './work-item'
+export * from './work-list-section'
+export * from './coming-soon'

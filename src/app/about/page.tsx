@@ -1,8 +1,6 @@
+import * as React from 'react'
 import { Metadata } from 'next'
-import {
-  defaultOpenGraphMetadata,
-  defaultTwitterMetadata,
-} from '@shared/lib/shared-metadata'
+import * as defaultMetadata from '@shared/libs/shared-metadata'
 import {
   DetailSection,
   SharingSection,
@@ -11,19 +9,19 @@ import {
   AchievementSection,
   EndWordSection,
 } from '@features/about'
-import { ArticleContent } from '@shared/components/content'
+import { ArticleContent } from '@shared/components/common/content'
 
 export const metadata: Metadata = {
   title: 'About',
   description: 'The whole story about me, nyoman sunima and all of the journey',
   openGraph: {
-    ...defaultOpenGraphMetadata,
+    ...defaultMetadata.openGraph,
     title: 'About',
     description:
       'The whole story about me, nyoman sunima and all of the journey',
   },
   twitter: {
-    ...defaultTwitterMetadata,
+    ...defaultMetadata.twitter,
     title: 'About',
     description:
       'The whole story about me, nyoman sunima and all of the journey',
