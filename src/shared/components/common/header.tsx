@@ -33,6 +33,10 @@ function renderPathBrand(pathname: string): string {
     return 'home'
   } else {
     const brand = pathname.replace('/', '')
+    if (brand.includes('works')) {
+      return brand.split('/')[0]
+    }
+
     return brand
   }
 }

@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
       { hostname: 'cdn.dribbble.com' },
       { hostname: 'cdn.hashnode.com' },
       { hostname: 'images.unsplash.com' },
+      { hostname: 'via.placeholder.com' },
     ],
   },
   skipTrailingSlashRedirect: true,
