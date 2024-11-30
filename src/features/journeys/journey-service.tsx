@@ -4,30 +4,27 @@ import config from '@shared/libs/config'
 import { githubDataClient, localDataClient } from '@shared/libs/connections'
 import { LogGroupData } from './log-group'
 
-export async function getExperiences(): Promise<any[]> {
-  const filename = 'journeys.json'
-  const isProduction = config.isProduction
+const filePath = '/journeys.json'
+const isProduction = config.isProduction
 
+export async function getExperiences(): Promise<any[]> {
   let res: any
   if (isProduction) {
-    res = await githubDataClient(filename)
+    res = await githubDataClient(filePath)
   } else {
-    res = await localDataClient(filename)
+    res = await localDataClient(filePath)
   }
 
   return [...res.experiences].reverse() as any[]
 }
 
 export async function getLogs(): Promise<LogGroupData[]> {
-  const filename = 'journeys.json'
-  const isProduction = config.isProduction
-
   let res: any
   if (isProduction) {
-    res = await githubDataClient(filename)
+    res = await githubDataClient(filePath)
   } else {
-    res = await localDataClient(filename)
+    res = await localDataClient(filePath)
   }
 
-  return res.logs as LogGroupData[]
+  return [...res.logs].reverse() as LogGroupData[]
 }

@@ -96,7 +96,6 @@ export function NavMenuItem({
 function Menu(): React.ReactElement {
   const modalRef = React.useRef<HTMLDivElement>(null)
   const [isShow, setShow] = React.useState<boolean>(false)
-  const path = usePathname()
 
   useClickOutside(modalRef, () => {
     setShow(false)

@@ -3,6 +3,10 @@ import createMDX from '@next/mdx'
 import remarkGfm from 'remark-gfm'
 
 const nextConfig: NextConfig = {
+  experimental: {
+    mdxRs: true,
+    optimizePackageImports: ['@flaticon/flaticon-uicons'],
+  },
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   images: {
     remotePatterns: [
@@ -12,6 +16,7 @@ const nextConfig: NextConfig = {
     ],
   },
   skipTrailingSlashRedirect: true,
+  transpilePackages: ['next-mdx-remote'],
 }
 
 const withMDX = createMDX({

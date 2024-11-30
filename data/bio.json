@@ -1,0 +1,60 @@
+{
+  "links": [
+    {
+      "type": "link",
+      "url": "/contact",
+      "label": "Hire me"
+    },
+    {
+      "type": "link",
+      "url": "/contact",
+      "label": "Become partner (business)",
+      "className": "tablet:row-span-2"
+    },
+    {
+      "type": "link",
+      "url": "/works",
+      "label": " See my works",
+      "className": "tablet:row-span-2"
+    },
+    {
+      "type": "link",
+      "url": "https://nyomansunima.lemonsqueezy.com?ref=nyomansunima",
+      "label": "Check my goodies"
+    },
+    {
+      "type": "link",
+      "url": "https://tryweebo.one?ref=nyomansunima",
+      "label": "My web design business (NEW)",
+      "className": "tablet:row-span-2"
+    },
+    {
+      "type": "link",
+      "url": "https://ko-fi.com/nyomansunima?ref=nyomansunima",
+      "label": "Suport me by donation"
+    },
+    {
+      "type": "link",
+      "url": "/stories",
+      "label": "Learn together with me"
+    },
+    {
+      "type": "link",
+      "url": "https://moono.space?ref=nyomansunima",
+      "label": "My apps collection (NEW)",
+      "className": "tablet:col-span-2"
+    },
+    {
+      "type": "link",
+      "url": "https://weecraft.club?ref=nyomansunima",
+      "label": "See tiny dev resources (NEW)",
+      "className": "tablet:col-span-2"
+    },
+    {
+      "type": "link",
+      "url": "/crafts",
+      "label": "See all of my crafts",
+      "className": "tablet:col-span-2"
+    }
+  ]
+}

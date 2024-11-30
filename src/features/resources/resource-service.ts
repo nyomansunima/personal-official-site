@@ -4,15 +4,15 @@ import config from '@shared/libs/config'
 import { githubDataClient, localDataClient } from '@shared/libs/connections'
 import { SourceGroupData } from './source-group'
 
-export async function getResources(): Promise<SourceGroupData[]> {
-  const filename = 'resources.json'
-  const isProduction = config.isProduction
+const isProduction = config.isProduction
+const filePath = '/resources.json'
 
+export async function getResources(): Promise<SourceGroupData[]> {
   let res: any
   if (isProduction) {
-    res = await githubDataClient(filename)
+    res = await githubDataClient(filePath)
   } else {
-    res = await localDataClient(filename)
+    res = await localDataClient(filePath)
   }
 
   return res.sources as SourceGroupData[]

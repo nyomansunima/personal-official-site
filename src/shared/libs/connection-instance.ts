@@ -1,4 +1,5 @@
 import { promises as fs } from 'fs'
+import fsPath from 'path'
 
 type FetchRequestInit = Omit<RequestInit, 'body'> & {
   body?: Record<string, any>
@@ -38,7 +39,7 @@ export async function fetchConnection<T = any>(
 }
 
 export async function loadLocalFile<T = any>(path: string): Promise<T> {
-  const file = await fs.readFile(`${process.cwd()}${path}`, 'utf8')
+  const file = await fs.readFile(fsPath.join(process.cwd(), path), 'utf8')
   const data = JSON.parse(file)
 
   return data as T

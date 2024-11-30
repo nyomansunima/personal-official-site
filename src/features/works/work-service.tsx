@@ -2,17 +2,17 @@
 
 import config from '@shared/libs/config'
 import { githubDataClient, localDataClient } from '@shared/libs/connections'
-import { WorkData } from './item'
+import { WorkData } from './work-item'
+
+const isProduction = config.isProduction
+const filePath = '/works.json'
 
 export async function getWorks(): Promise<WorkData[]> {
-  const filename = 'works.json'
-  const isProduction = config.isProduction
-
   let res: any
   if (isProduction) {
-    res = await githubDataClient(filename)
+    res = await githubDataClient(filePath)
   } else {
-    res = await localDataClient(filename)
+    res = await localDataClient(filePath)
   }
 
   return res.works as WorkData[]

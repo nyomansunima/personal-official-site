@@ -1,3 +1,3 @@
-export * from './hero'
-export * from './resource-item'
-export * from './resources'
+export * from './hero-section'
+export * from './bio-item'
+export * from './bio-section'

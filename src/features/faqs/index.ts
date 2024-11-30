@@ -1,3 +1,3 @@
 export * from './ask-section'
 export * from './faq-item'
-export * from './list'
+export * from './faq-list-section'

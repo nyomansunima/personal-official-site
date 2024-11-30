@@ -7,7 +7,6 @@ import { Button } from '@shared/components/ui/button'
 import { CenteredLayout } from '@shared/components//common/centered-layout'
 
 export default function GlobalError({
-  error,
   reset,
 }: {
   error: Error & { digest?: string }

@@ -2,23 +2,34 @@ import * as React from 'react'
 import Link from 'next/link'
 import { mergeClass } from '@shared/utils/helper'
 
+export interface BioItemData {
+  type: string
+  url: string
+  label: string
+  className?: string
+}
+
 interface LinkItemProps {
   className?: string
   children?: React.ReactNode
   href: string
-  target?: React.HTMLAttributeAnchorTarget
 }
 
-export function LinkItem({
+interface BioItemProps {
+  data: BioItemData
+}
+
+function LinkItem({
   href,
-  target,
   children,
   className,
 }: LinkItemProps): React.ReactElement {
+  const isUrl = href.includes('http://') || href.includes('https://')
+
   return (
     <Link
       href={href}
-      target={target}
+      target={isUrl ? '_blank' : '_self'}
       className={`${mergeClass(
         'col-span-1 bg-ambient border border-border p-3 rounded-2xl relative transition-all duration-300 hover:scale-95 group text-sm text-foreground/90 min-h-16 flex items-center justify-center text-center gap-3',
         className,
@@ -31,4 +42,18 @@ export function LinkItem({
       </div>
     </Link>
   )
+}
+
+export function BioItem({ data }: BioItemProps): React.ReactElement {
+  const { type, label, url, className } = data
+
+  const components = Object.freeze({
+    link: (
+      <LinkItem href={url} className={className}>
+        {label}
+      </LinkItem>
+    ),
+  })
+
+  return components[type]
 }

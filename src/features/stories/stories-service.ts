@@ -5,29 +5,26 @@ import { githubDataClient, localDataClient } from '@shared/libs/connections'
 import { PublicationData } from './publication-item'
 import { RecentData } from './recent-item'
 
-export async function getPublications(): Promise<PublicationData[]> {
-  const filename = 'stories.json'
-  const isProduction = config.isProduction
+const isProduction = config.isProduction
+const filePath = '/stories.json'
 
+export async function getPublications(): Promise<PublicationData[]> {
   let res: any
   if (isProduction) {
-    res = await githubDataClient(filename)
+    res = await githubDataClient(filePath)
   } else {
-    res = await localDataClient(filename)
+    res = await localDataClient(filePath)
   }
 
   return res.publications as PublicationData[]
 }
 
 export async function getRecents(): Promise<RecentData[]> {
-  const filename = 'stories.json'
-  const isProduction = config.isProduction
-
   let res: any
   if (isProduction) {
-    res = await githubDataClient(filename)
+    res = await githubDataClient(filePath)
   } else {
-    res = await localDataClient(filename)
+    res = await localDataClient(filePath)
   }
 
   return [...res.recents].reverse() as RecentData[]

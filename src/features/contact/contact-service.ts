@@ -5,29 +5,26 @@ import { ContactItemData } from './contact-item'
 import { githubDataClient, localDataClient } from '@shared/libs/connections'
 import { SocialData } from './social-item'
 
-export async function getContacts(): Promise<ContactItemData[]> {
-  const filename = 'contact.json'
-  const isProduction = config.isProduction
+const filePath = '/contact.json'
+const isProduction = config.isProduction
 
+export async function getContacts(): Promise<ContactItemData[]> {
   let res: any
   if (isProduction) {
-    res = await githubDataClient(filename)
+    res = await githubDataClient(filePath)
   } else {
-    res = await localDataClient(filename)
+    res = await localDataClient(filePath)
   }
 
   return res.contacts as ContactItemData[]
 }
 
 export async function getSocials(): Promise<SocialData[]> {
-  const filename = 'contact.json'
-  const isProduction = config.isProduction
-
   let res: any
   if (isProduction) {
-    res = await githubDataClient(filename)
+    res = await githubDataClient(filePath)
   } else {
-    res = await localDataClient(filename)
+    res = await localDataClient(filePath)
   }
 
   return res.socials as SocialData[]

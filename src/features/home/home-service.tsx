@@ -2,12 +2,12 @@
 
 import config from '@shared/libs/config'
 import { githubDataClient, localDataClient } from '@shared/libs/connections'
-import { FAQData } from './faq-item'
+import { BioItemData } from './bio-item'
 
-const filePath = '/faqs.json'
+const filePath = '/bio.json'
 const isProduction = config.isProduction
 
-export async function getFAQs(): Promise<FAQData[]> {
+export async function getBioLinks(): Promise<BioItemData[]> {
   let res: any
   if (isProduction) {
     res = await githubDataClient(filePath)
@@ -15,5 +15,5 @@ export async function getFAQs(): Promise<FAQData[]> {
     res = await localDataClient(filePath)
   }
 
-  return res.faqs as FAQData[]
+  return res.links as BioItemData[]
 }

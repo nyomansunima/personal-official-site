@@ -1,16 +1,10 @@
-'use client'
-
 import * as React from 'react'
 import * as journeyService from './journey-service'
-import { useQuery } from '@tanstack/react-query'
 import { ExperienceItem } from './experience-item'
 
-export function ExperienceSection(): React.ReactElement {
-  const { data, isSuccess } = useQuery({
-    queryKey: ['experiences'],
-    queryFn: journeyService.getExperiences,
-  })
+const experiences = await journeyService.getExperiences()
 
+export function ExperienceSection(): React.ReactElement {
   return (
     <section className="flex flex-col">
       <div className="flex flex-col w-full laptop:w-10/12 mx-auto gap-4">
@@ -19,11 +13,9 @@ export function ExperienceSection(): React.ReactElement {
         </h3>
 
         <div className="flex flex-col gap-1 bg-ambient p-3 border border-border rounded-2xl transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-          {isSuccess &&
-            data &&
-            data.map((exp, index) => (
-              <ExperienceItem experience={exp} key={index} />
-            ))}
+          {experiences.map((exp, index) => (
+            <ExperienceItem experience={exp} key={index} />
+          ))}
         </div>
       </div>
     </section>
