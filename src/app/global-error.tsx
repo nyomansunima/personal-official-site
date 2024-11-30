@@ -1,10 +1,9 @@
 'use client'
 
 import '@shared/styles/globals.css'
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
 import { Button } from '@shared/components/ui/button'
 import { CenteredLayout } from '@shared/components//common/centered-layout'
+import * as fonts from '@shared/fonts'
 
 export default function GlobalError({
   reset,
@@ -16,7 +15,7 @@ export default function GlobalError({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      className={`${fonts.inter.variable} ${fonts.dmMono.variable}`}
     >
       <body suppressHydrationWarning>
         <CenteredLayout>

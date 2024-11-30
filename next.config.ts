@@ -1,10 +1,7 @@
 import { NextConfig } from 'next'
-import createMDX from '@next/mdx'
-import remarkGfm from 'remark-gfm'
 
 const nextConfig: NextConfig = {
   experimental: {
-    mdxRs: true,
     optimizePackageImports: ['@flaticon/flaticon-uicons'],
   },
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
@@ -16,14 +13,7 @@ const nextConfig: NextConfig = {
     ],
   },
   skipTrailingSlashRedirect: true,
-  transpilePackages: ['next-mdx-remote'],
+  transpilePackages: [],
 }
 
-const withMDX = createMDX({
-  options: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [],
-  },
-})
-
-export default withMDX(nextConfig)
+export default nextConfig

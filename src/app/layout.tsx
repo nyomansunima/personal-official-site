@@ -3,8 +3,6 @@ import type { Metadata } from 'next'
 import '@shared/styles/globals.css'
 import config from '@shared/libs/config'
 import { Analytics as VercelAnalytics } from '@vercel/analytics/react'
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
 import { AnimationProvider } from '@shared/providers/animation-provider'
 import { ThemeProvider } from '@shared/providers/theme-provider'
 import Header from '@shared/components/common/header'
@@ -13,6 +11,7 @@ import { Toaster } from '@shared/components/ui/toast'
 import { CenteredLayout } from '@shared/components/common/centered-layout'
 import { PosthogProvider } from '@shared/providers/posthog-provider'
 import { QueryProvider } from '@shared/providers/query-provider'
+import * as fonts from '@shared/fonts'
 
 export const metadata: Metadata = {
   applicationName: 'Nyoman Sunima',
@@ -48,7 +47,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      className={`${fonts.inter.variable} ${fonts.dmMono.variable}`}
     >
       <PosthogProvider>
         <body suppressHydrationWarning>

@@ -1,3 +1,3 @@
-export * from './item'
-export * from './list'
+export * from './work-item'
+export * from './work-list-section'
 export * from './coming-soon'
