@@ -23,7 +23,7 @@ export function CraftItem({ craft }: CraftItemProps): React.ReactElement {
       target="_blank"
       className="flex flex-col p-3 rounded-2xl border border-border bg-ambient relative group transition-all duration-300 hover:-translate-y-1"
     >
-      <div className="flex items-center gap-3">
+      <div className="flex gap-3">
         <div className="block">
           <Image
             src={image}
@@ -40,7 +40,7 @@ export function CraftItem({ craft }: CraftItemProps): React.ReactElement {
         </div>
       </div>
 
-      <p className="text-sm mt-3 text-foreground/80">{description}</p>
+      <p className="text-sm mt-3 text-foreground/60">{description}</p>
 
       <div className="hidden w-7 h-7 rounded-lg bg-secondary/30 border border-border group-hover:flex justify-center items-center absolute top-3 right-3">
         <i className="fi fi-rr-arrow-small-right -rotate-45" />

@@ -57,7 +57,7 @@ export function LogItem({ log }: LogItemProps): React.ReactElement {
         </div>
       </div>
 
-      <div className="flex flex-col mt-4 text-foreground/70 text-sm !leading-relaxed">
+      <div className="flex flex-col mt-4 text-foreground/60 text-sm !leading-relaxed">
         <div
           dangerouslySetInnerHTML={{ __html: description }}
           className="prose prose-sm !text-foreground/70 dark:prose-invert"

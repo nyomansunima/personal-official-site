@@ -1,6 +1,11 @@
 import Image from 'next/image'
 import * as React from 'react'
 import { mergeClass } from '@shared/utils/helper'
+import {
+  MDXComponents,
+  MDXRemote,
+  MDXRemoteOptions,
+} from 'next-mdx-remote-client/rsc'
 
 interface ArticleContentProps {
   children: React.ReactNode
@@ -11,12 +16,6 @@ interface ProtectedHtmlContentProps {
   children: string
 }
 
-interface ContentImageProps {
-  src: string
-  alt: string
-  className?: string
-}
-
 interface GalleryItemProps {
   image: string
 }
@@ -25,14 +24,6 @@ interface GalleryListImageProps {
   images: string[]
 }
 
-/**
- * ## ArticleContent
- *
- * Predefined component that allow to styling the article and documents
- * using the advantages of `tailwindcss typography`
- *
- * @returns {React.ReactElement}
- */
 export function ArticleContent({
   children,
   className,
@@ -49,13 +40,6 @@ export function ArticleContent({
   )
 }
 
-/**
- * ## ProtectedHtmlContent
- *
- * Protect and secure the parsing of string html
- * @param children the string content that passed as html
- * @returns {React.ReactElement}
- */
 export function ProtectedHtmlContent({
   children,
 }: ProtectedHtmlContentProps): React.ReactElement {
@@ -65,17 +49,14 @@ export function ProtectedHtmlContent({
   return <div dangerouslySetInnerHTML={content}></div>
 }
 
-/**
- * ## ContentImage
- *
- * A React component that renders an image with a rounded border, background, and hover effect.
- *
- * @param {ContentImageProps} props - The props for the component.
- * @param {string} props.src - The URL of the image to be displayed.
- * @param {string} props.alt - The alt text for the image.
- * @param {string} [props.className] - An optional CSS class to be applied to the container div.
- * @returns {React.ReactElement} - The rendered ContentImage component.
- */
+interface ContentImageProps {
+  src: string
+  alt: string
+  height?: number
+  width?: number
+  className?: string
+}
+
 export function ContentImage({
   src,
   alt,
@@ -83,6 +64,7 @@ export function ContentImage({
 }: ContentImageProps): React.ReactElement {
   return (
     <div
+      suppressHydrationWarning
       className={`${mergeClass(
         'flex rounded-2xl p-1 border border-border bg-ambient cursor-pointer my-4',
         className,
@@ -92,8 +74,8 @@ export function ContentImage({
         <Image
           src={src}
           alt={alt}
-          fill
           quality={100}
+          fill
           priority
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover transition-all duration-300 hover:scale-105 not-prose"
@@ -103,15 +85,6 @@ export function ContentImage({
   )
 }
 
-/**
- * ## GalleryItem
- *
- * A React component that renders a gallery item with an image.
- *
- * @param {GalleryItemProps} props - The props for the component.
- * @param {string} props.image - The URL of the image to be displayed.
- * @returns {React.ReactElement} - The rendered GalleryItem component.
- */
 export function GalleryItem({ image }: GalleryItemProps): React.ReactElement {
   const imageUrl = image
 
@@ -132,15 +105,6 @@ export function GalleryItem({ image }: GalleryItemProps): React.ReactElement {
   )
 }
 
-/**
- * ## GalleryListImage
- *
- * A React component that renders a grid of gallery items with images.
- *
- * @param {GalleryListImageProps} props - The props for the component.
- * @param {string[]} props.images - An array of image URLs to be displayed in the gallery.
- * @returns {React.ReactElement} - The rendered GalleryListImage component.
- */
 export function GalleryListImage({
   images,
 }: GalleryListImageProps): React.ReactElement {
@@ -150,5 +114,29 @@ export function GalleryListImage({
         <GalleryItem image={image} key={index} />
       ))}
     </div>
+  )
+}
+
+interface MDXRemoteContentProps {
+  content: any
+}
+
+export function MDXRemoteContent({
+  content,
+}: MDXRemoteContentProps): React.ReactElement {
+  const components: MDXComponents = {
+    img: ContentImage,
+  }
+
+  const options: MDXRemoteOptions = {
+    mdxOptions: {},
+    parseFrontmatter: true,
+    scope: {},
+  }
+
+  return (
+    <ArticleContent>
+      <MDXRemote source={content} components={components} options={options} />
+    </ArticleContent>
   )
 }
