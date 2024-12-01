@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { SocialItem } from './social-item'
-import * as contactService from './contact-service'
+import { SocialData, SocialItem } from './social-item'
+import contactData from './contact-data.json'
 
-const socials = await contactService.getSocials()
+const socials = contactData.socials as SocialData[]
 
 export function SocialMediaList(): React.ReactElement {
   return (

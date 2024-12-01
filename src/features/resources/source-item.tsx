@@ -18,7 +18,7 @@ export function SourceItem({ source }: SourceItemProps): React.ReactElement {
     <Link
       href={url}
       target="_blank"
-      className="flex flex-col bg-ambient border border-border p-3 rounded-2xl col-span-1 transition-all duration-300 hover:-translate-y-1 group relative"
+      className="flex flex-col bg-surface border border-border p-3 rounded-2xl col-span-1 transition-all duration-300 hover:-translate-y-1 group relative"
     >
       <h3 className="text-sm font-medium">{title}</h3>
       <p className="text-sm text-foreground/60 mt-3">{description}</p>

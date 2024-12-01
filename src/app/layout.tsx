@@ -10,7 +10,6 @@ import Footer from '@shared/components/common/footer'
 import { Toaster } from '@shared/components/ui/toast'
 import { CenteredLayout } from '@shared/components/common/centered-layout'
 import { PosthogProvider } from '@shared/providers/posthog-provider'
-import { QueryProvider } from '@shared/providers/query-provider'
 import * as fonts from '@shared/fonts'
 
 export const metadata: Metadata = {
@@ -47,7 +46,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${fonts.inter.variable} ${fonts.dmMono.variable}`}
+      className={`${fonts.inter.variable}`}
     >
       <PosthogProvider>
         <body suppressHydrationWarning>
@@ -57,19 +56,17 @@ export default function RootLayout({
             enableSystem={true}
             disableTransitionOnChange
           >
-            <QueryProvider>
-              <AnimationProvider>
-                <CenteredLayout>
-                  <Header />
-                  <main className="min-h-screen py-20 tablet:pb-56">
-                    {children}
-                  </main>
-                  <Footer />
-                </CenteredLayout>
+            <AnimationProvider>
+              <CenteredLayout>
+                <Header />
+                <main className="min-h-screen py-20 tablet:pb-56">
+                  {children}
+                </main>
+                <Footer />
+              </CenteredLayout>
 
-                <Toaster />
-              </AnimationProvider>
-            </QueryProvider>
+              <Toaster />
+            </AnimationProvider>
           </ThemeProvider>
 
           <VercelAnalytics />

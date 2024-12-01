@@ -1,11 +1,6 @@
 import Image from 'next/image'
 import * as React from 'react'
 import { mergeClass } from '@shared/utils/helper'
-import {
-  MDXComponents,
-  MDXRemote,
-  MDXRemoteOptions,
-} from 'next-mdx-remote-client/rsc'
 
 interface ArticleContentProps {
   children: React.ReactNode
@@ -31,7 +26,7 @@ export function ArticleContent({
   return (
     <article
       className={`${mergeClass(
-        'prose dark:prose-invert prose-sm tablet:prose-base tablet:prose-p:text-base prose-headings:!leading-tight tablet:prose-h1:text-3xl prose-h1:text-2xl tablet:prose-li:text-base max-w-none prose-headings:font-medium prose-strong:font-medium prose-neutral prose-code:font-mono prose-img:overflow-hidden prose-img:border prose-img:border-border prose-img:bg-ambient prose-img:rounded-xl prose-pre:bg-ambient prose-pre:text-foreground prose-pre:border prose-pre:border-border prose-pre:font-medium overflow-hidden text-foreground prose-headings:text-foreground prose-a:text-foreground prose-strong:text-foreground prose-headings:!text-pretty',
+        'prose dark:prose-invert prose-sm tablet:prose-base tablet:prose-p:text-base prose-headings:!leading-tight tablet:prose-h1:text-3xl prose-h1:text-2xl tablet:prose-li:text-base max-w-none prose-headings:font-medium prose-strong:font-medium prose-neutral prose-code:font-mono prose-img:overflow-hidden prose-img:border prose-img:border-border prose-img:bg-surface prose-img:rounded-xl prose-pre:bg-surface prose-pre:text-foreground prose-pre:border prose-pre:border-border prose-pre:font-medium overflow-hidden text-foreground prose-headings:text-foreground prose-a:text-foreground prose-strong:text-foreground prose-headings:!text-pretty',
         className,
       )}`}
     >
@@ -66,7 +61,7 @@ export function ContentImage({
     <div
       suppressHydrationWarning
       className={`${mergeClass(
-        'flex rounded-2xl p-1 border border-border bg-ambient cursor-pointer my-4',
+        'flex rounded-2xl p-1 border border-border bg-surface cursor-pointer my-4',
         className,
       )}`}
     >
@@ -89,7 +84,7 @@ export function GalleryItem({ image }: GalleryItemProps): React.ReactElement {
   const imageUrl = image
 
   return (
-    <div className="flex col-span-1 rounded-2xl p-1 border border-border bg-ambient cursor-pointer">
+    <div className="flex col-span-1 rounded-2xl p-1 border border-border bg-surface cursor-pointer">
       <picture className="relative w-full h-[290px] overflow-hidden rounded-xl not-prose">
         <Image
           src={imageUrl}
@@ -114,29 +109,5 @@ export function GalleryListImage({
         <GalleryItem image={image} key={index} />
       ))}
     </div>
-  )
-}
-
-interface MDXRemoteContentProps {
-  content: any
-}
-
-export function MDXRemoteContent({
-  content,
-}: MDXRemoteContentProps): React.ReactElement {
-  const components: MDXComponents = {
-    img: ContentImage,
-  }
-
-  const options: MDXRemoteOptions = {
-    mdxOptions: {},
-    parseFrontmatter: true,
-    scope: {},
-  }
-
-  return (
-    <ArticleContent>
-      <MDXRemote source={content} components={components} options={options} />
-    </ArticleContent>
   )
 }

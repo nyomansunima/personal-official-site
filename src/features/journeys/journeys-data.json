@@ -96,9 +96,10 @@
           "date": "Oct 2024",
           "category": "Work"
         },
-         {
+        {
           "title": "Launching brook code theme",
-          "description": "Create simple and elegant code editor theme that support vscode, zed and others, comes with simplicity for developers'>Moono</a>.",
+          "description": "Create simple and elegant code editor theme that support vscode, zed and others, comes with simplicity for developers.",
+          "image": "https://cdn.hashnode.com/res/hashnode/image/upload/v1732697877111/1d2058fb-5e79-4161-8eb4-d8499c417862.png",
           "date": "Nov 2024",
           "category": "Work"
         }

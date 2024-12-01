@@ -1,13 +1,13 @@
 import * as React from 'react'
-import { WorkItem } from './work-item'
-import * as workService from './work-service'
+import { WorkData, WorkItem } from './work-item'
+import worksData from './works-data.json'
 
-const works = await workService.getWorks()
+const works = [...worksData.works].reverse() as WorkData[]
 
 export function WorksListSection(): React.ReactElement {
   return (
     <section className="flex flex-col">
-      <div className="flex flex-col gap-20 tablet:gap-36">
+      <div className="flex flex-col gap-3 tablet:w-10/12 mx-auto">
         {works.map((work, i) => (
           <WorkItem work={work} key={i} />
         ))}

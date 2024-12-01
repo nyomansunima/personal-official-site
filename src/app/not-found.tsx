@@ -31,7 +31,7 @@ export default function NotFound(): React.ReactElement {
             className="transition-all hover:scale-95"
           >
             <Link href={'/'}>
-              Bring me back <i className="fi fi-rr-arrow-right" />
+              Bring me back <i className="fi fi-rr-paper-plane" />
             </Link>
           </Button>
         </div>

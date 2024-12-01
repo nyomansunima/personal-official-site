@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { PublicationItem } from './publication-item'
-import * as storiesService from './stories-service'
+import { PublicationData, PublicationItem } from './publication-item'
+import storiesData from './stories-data.json'
 
-const publications = await storiesService.getPublications()
+const publications = storiesData.publications as PublicationData[]
 
 export function PublicationSection(): React.ReactElement {
   return (

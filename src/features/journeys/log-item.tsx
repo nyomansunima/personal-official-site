@@ -20,7 +20,7 @@ interface LogImageProps {
 
 function LogImage({ alt, src }: LogImageProps): React.ReactElement {
   return (
-    <div className="flex rounded-xl p-1 border border-border bg-ambient cursor-pointer mt-6">
+    <div className="flex rounded-xl p-1 border border-border bg-surface cursor-pointer mt-6">
       <picture className="relative w-full h-[180px] tablet:h-[300px] overflow-hidden rounded-xl not-prose">
         <Image
           src={src}
@@ -40,7 +40,7 @@ export function LogItem({ log }: LogItemProps): React.ReactElement {
   const { title, description, date, category, image } = log
 
   return (
-    <div className="flex flex-col bg-ambient border border-border p-3 rounded-2xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group">
+    <div className="flex flex-col bg-surface border border-border p-3 rounded-2xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group">
       <div className="flex flex-col tablet:flex-row gap-2 tablet:items-center">
         <h3 className="font-medium text-sm !leading-tight flex-grow">
           {title}

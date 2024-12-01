@@ -1,14 +1,14 @@
 import * as React from 'react'
-import * as journeyService from './journey-service'
-import { LogGroup } from './log-group'
+import { LogGroup, LogGroupData } from './log-group'
+import journeysData from './journeys-data.json'
 
-const logs = await journeyService.getLogs()
+const logGroups = [...journeysData.logs].reverse() as LogGroupData[]
 
 export function LogListSection(): React.ReactElement {
   return (
     <section className="flex flex-col">
-      <div className="flex flex-col w-full laptop:w-10/12 mx-auto gap-14">
-        {logs.map((group, groupIndex) => (
+      <div className="flex flex-col w-full tablet:w-10/12 mx-auto gap-14">
+        {logGroups.map((group, groupIndex) => (
           <LogGroup group={group} key={groupIndex} />
         ))}
       </div>

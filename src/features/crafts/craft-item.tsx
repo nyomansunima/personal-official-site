@@ -21,7 +21,7 @@ export function CraftItem({ craft }: CraftItemProps): React.ReactElement {
     <Link
       href={link}
       target="_blank"
-      className="flex flex-col p-3 rounded-2xl border border-border bg-ambient relative group transition-all duration-300 hover:-translate-y-1"
+      className="flex flex-col p-3 rounded-2xl border border-border bg-surface relative group transition-all duration-300 hover:-translate-y-1"
     >
       <div className="flex gap-3">
         <div className="block">

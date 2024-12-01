@@ -12,7 +12,6 @@ const config: Config = {
   theme: {
     fontFamily: {
       sans: ['var(--font-inter)'],
-      mono: ['var(--font-dm-mono)'],
     },
     screens: {
       tablet: '640px',
@@ -24,18 +23,18 @@ const config: Config = {
         base: '.935rem',
       },
       colors: {
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        ambient: 'hsl(var(--ambient))',
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
+        background: 'hsl(var(--color-background))',
+        foreground: 'hsl(var(--color-foreground))',
+        surface: 'hsl(var(--color-surface))',
+        border: 'hsl(var(--color-border))',
+        input: 'hsl(var(--color-input))',
         primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
+          DEFAULT: 'hsl(var(--color-primary))',
+          foreground: 'hsl(var(--color-primary-foreground))',
         },
         secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
+          DEFAULT: 'hsl(var(--color-secondary))',
+          foreground: 'hsl(var(--color-secondary-foreground))',
         },
       },
       typography: {

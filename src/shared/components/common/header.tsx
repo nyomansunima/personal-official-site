@@ -135,7 +135,7 @@ function Menu(): React.ReactElement {
 
       {isShow && (
         <div
-          className="flex px-6 py-5 rounded-xl border border-border bg-ambient w-[300px] absolute z-20 top-12 right-0"
+          className="flex px-6 py-5 rounded-xl border border-border bg-surface w-[300px] absolute z-20 top-12 right-0"
           ref={modalRef}
         >
           <ul className="grid grid-cols-2 w-full gap-x-4 gap-y-4">

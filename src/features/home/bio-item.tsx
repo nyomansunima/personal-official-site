@@ -31,7 +31,7 @@ function LinkItem({
       href={href}
       target={isUrl ? '_blank' : '_self'}
       className={`${mergeClass(
-        'col-span-1 bg-ambient border border-border p-3 rounded-2xl relative transition-all duration-300 hover:scale-95 group text-sm text-foreground/90 min-h-16 flex items-center justify-center text-center gap-3',
+        'col-span-1 bg-surface border border-border p-3 rounded-2xl relative transition-all duration-300 hover:scale-95 group text-sm text-foreground/90 min-h-16 flex items-center justify-center text-center gap-3',
         className,
       )}`}
     >

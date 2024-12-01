@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { SourceGroup } from './source-group'
-import * as resourceService from './resource-service'
+import { SourceGroup, SourceGroupData } from './source-group'
+import resourcesData from './resources-data.json'
 
-const resources = await resourceService.getResources()
+const resources = resourcesData.sources as SourceGroupData[]
 
 export function SourcesSection(): React.ReactElement {
   return (

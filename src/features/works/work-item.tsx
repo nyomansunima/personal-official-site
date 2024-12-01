@@ -71,9 +71,9 @@ function WorkImage({
 
   return (
     <div
-      className={`flex bg-ambient p-1 border border-border rounded-2xl group col-span-1 ${gridImageClassName}`}
+      className={`flex bg-surface p-1 border border-border rounded-xl group col-span-1 ${gridImageClassName}`}
     >
-      <picture className="relative overflow-hidden w-full h-[200px] tablet:h-[400px] rounded-xl">
+      <picture className="relative overflow-hidden w-full h-[200px] tablet:h-[320px] rounded-xl">
         <Image
           src={image}
           alt={alt}
@@ -98,28 +98,30 @@ export function WorkItem({ work }: WorkItemProps): React.ReactElement {
     <Link
       href={link}
       target={isLink ? '_blank' : undefined}
-      className="flex flex-col transition-all duration-300 group"
+      className="flex flex-col transition-all duration-300 hover:-translate-y-1 group border border-border rounded-2xl bg-surface p-3"
     >
-      <h3 className="text-xl font-medium !leading-tight">{title}</h3>
-
-      <p className="!leading-relaxed mt-4">{description}</p>
-
-      <div className="flex flex-wrap text-sm text-foreground/70 mt-6 gap-2">
-        <span className="py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer">
-          {type}
-        </span>
-        <span className="py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer">
-          {rule}
-        </span>
-        <span className="py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer">
-          {category}
-        </span>
-        <span className="py-1 px-3 bg-ambient border border-border rounded-xl cursor-pointer">
+      <div className="flex flex-col tablet:flex-row tablet:items-center justify-between">
+        <h3 className="text-base font-medium !leading-tight">{title}</h3>
+        <span className="text-sm text-foreground/50 group-hover:text-foreground">
           {timeline}
         </span>
       </div>
 
-      <div className="grid grid-cols-1 laptop:grid-cols-4 gap-2 mt-10">
+      <p className="!leading-relaxed mt-4 text-sm text-foreground/60">
+        {description}
+      </p>
+      <div className="flex flex-wrap text-sm text-foreground/70 mt-6 gap-2">
+        <span className="py-1 px-3 bg-surface border border-border rounded-xl cursor-pointer text-sm">
+          {type}
+        </span>
+        <span className="py-1 px-3 bg-surface border border-border rounded-xl cursor-pointer text-sm">
+          {rule}
+        </span>
+        <span className="py-1 px-3 bg-surface border border-border rounded-xl cursor-pointer text-sm">
+          {category}
+        </span>
+      </div>
+      <div className="grid grid-cols-1 tablet:grid-cols-4 gap-2 mt-10">
         {images.map((image, i) => (
           <WorkImage
             image={image}

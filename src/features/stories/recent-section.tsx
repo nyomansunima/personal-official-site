@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { RecentItem } from './recent-item'
-import * as storiesService from './stories-service'
+import { RecentData, RecentItem } from './recent-item'
+import storiesData from './stories-data.json'
 
-const recents = await storiesService.getRecents()
+const recents = [...storiesData.recents].reverse() as RecentData[]
 
 export function RecentlySection(): React.ReactElement {
   return (

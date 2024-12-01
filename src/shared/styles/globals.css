@@ -6,28 +6,28 @@
 
 @layer base {
   :root {
-    --background: 0 0 98%;
-    --foreground: 0 0 4%;
-    --ambient: 0 0 100%;
-    --border: 0 0 94%;
-    --input: 0 0 94%;
-    --primary: 0 0 0%;
-    --primary-foreground: 0 0 98%;
-    --secondary: 0 0 94%;
-    --secondary-foreground: 0 0 10%;
+    --color-background: 0 0 98%;
+    --color-foreground: 0 0 4%;
+    --color-surface: 0 0 100%;
+    --color-border: 0 0 94%;
+    --color-input: 0 0 94%;
+    --color-primary: 0 0 0%;
+    --color-primary-foreground: 0 0 98%;
+    --color-secondary: 0 0 94%;
+    --color-secondary-foreground: 0 0 10%;
   }
 }
 
 .dark {
-  --background: 0 0 0%;
-  --foreground: 0 0 90%;
-  --ambient: 0 0 6%;
-  --border: 0 0 15%;
-  --input: 0 0 10%;
-  --primary: 0 0 90%;
-  --primary-foreground: 0 0 90%;
-  --secondary: 0 0 19%;
-  --secondary-foreground: 0 0 65%;
+  --color-background: 0 0 0%;
+  --color-foreground: 0 0 90%;
+  --color-surface: 0 0 6%;
+  --color-border: 0 0 15%;
+  --color-input: 0 0 10%;
+  --color-primary: 0 0 90%;
+  --color-primary-foreground: 0 0 90%;
+  --color-secondary: 0 0 19%;
+  --color-secondary-foreground: 0 0 65%;
 }
 
 @layer base {
