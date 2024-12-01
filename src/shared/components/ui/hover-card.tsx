@@ -17,7 +17,7 @@ const HoverCardContent = React.forwardRef<
     align={align}
     sideOffset={sideOffset}
     className={mergeClass(
-      'z-50 w-64 rounded-2xl border border-border bg-ambient p-3',
+      'z-50 w-64 rounded-2xl border border-border bg-surface p-3',
       className,
     )}
     {...props}

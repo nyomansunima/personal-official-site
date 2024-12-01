@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { CraftItem } from './craft-item'
-import * as craftService from './craft-service'
+import { CraftData, CraftItem } from './craft-item'
+import craftsData from './crafts-data.json'
 
-const crafts = await craftService.getCrafts()
+const crafts = craftsData.crafts as CraftData[]
 
 export function CraftListSection(): React.ReactElement {
   return (

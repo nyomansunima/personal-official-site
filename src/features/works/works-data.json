@@ -25,6 +25,19 @@
       "category": "Code editor theme",
       "isFeatured": true,
       "timeline": "Oct, 11 2024"
+    },
+    {
+      "href": "https://brookcodetheme.vercel.app?ref=nyomansunima",
+      "title": "Brook Code Theme",
+      "description": "The best simple and elegant code editor theme with minimal looks and simple styles code editor themes for light & dark environments for perfect developer productivity.",
+      "images": [
+        "https://cdn.hashnode.com/res/hashnode/image/upload/v1732697877111/1d2058fb-5e79-4161-8eb4-d8499c417862.png"
+      ],
+      "type": "Hacking",
+      "rule": "Product designer & developer",
+      "category": "Code editor theme",
+      "isFeatured": true,
+      "timeline": "Nov, 28 2024"
     }
   ]
 }

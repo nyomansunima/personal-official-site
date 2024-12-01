@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { BioItem } from './bio-item'
-import * as homeService from './home-service'
+import { BioItem, BioItemData } from './bio-item'
+import bioData from './bio-data.json'
 
-const bios = await homeService.getBioLinks()
+const bios = bioData.links as BioItemData[]
 
 export function BioSection(): React.ReactElement {
   return (

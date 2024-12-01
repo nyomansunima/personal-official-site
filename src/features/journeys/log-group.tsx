@@ -31,7 +31,7 @@ export function LogGroup({ group }: LogGroupProps): React.ReactElement {
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger>
-              <span className="h-6 w-6 rounded-full border border-border flex justify-center items-center text-xs bg-ambient cursor-pointer transition-all duration-300 hover:scale-105">
+              <span className="h-6 w-6 rounded-full border border-border flex justify-center items-center text-xs bg-surface cursor-pointer transition-all duration-300 hover:scale-105">
                 {totalList}
               </span>
             </TooltipTrigger>

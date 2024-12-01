@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { ContactItem } from './contact-item'
-import * as contactService from './contact-service'
+import { ContactItem, ContactItemData } from './contact-item'
+import contactData from './contact-data.json'
 
-const contacts = await contactService.getContacts()
+const contacts = contactData.contacts as ContactItemData[]
 
 export function ContactList() {
   return (

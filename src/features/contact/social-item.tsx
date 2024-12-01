@@ -33,7 +33,7 @@ export function SocialItem({ social }: SocialItemProps): React.ReactElement {
               size={'icon'}
               asChild
               className={mergeClass(
-                `text-sm h-12 w-12 rounded-2xl transition-all duration-500 hover:-translate-y-1 bg-ambient`,
+                `text-sm h-12 w-12 rounded-2xl transition-all duration-500 hover:-translate-y-1 bg-surface`,
                 className,
               )}
             >

@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { Accordion } from '@shared/components/ui/accordion'
-import { FAQItem } from './faq-item'
-import * as faqService from './faq-service'
+import { FAQData, FAQItem } from './faq-item'
+import faqsData from './faqs-data.json'
 
-const faqs = await faqService.getFAQs()
+const faqs = faqsData.faqs as FAQData[]
 
 export function FAQListSection(): React.ReactElement {
   return (

@@ -11,17 +11,14 @@ interface PosthogProviderProps {
 
 if (typeof window !== 'undefined') {
   posthog.init(config.posthog.key, {
-    person_profiles: 'identified_only',
+    api_host: '/ingest',
     ui_host: 'https://us.posthog.com',
+    person_profiles: 'identified_only',
   })
 }
 
 export function PosthogProvider({
   children,
 }: PosthogProviderProps): React.ReactElement {
-  React.useEffect(() => {
-    posthog.capture('$pageview')
-  }, [])
-
   return <PostHogProvider client={posthog}>{children}</PostHogProvider>
 }
