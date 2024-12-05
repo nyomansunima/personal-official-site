@@ -52,16 +52,16 @@ export default function Footer(): React.ReactElement {
     <footer className="flex flex-col">
       <div className="bg-surface border border-border rounded-2xl p-1">
         <div className="flex flex-col text-foreground/60 gap-2 border border-border bg-surface p-3 rounded-xl text-sm">
-          <p className="flex items-center gap-1">
-            <i className="fi fi-rr-rocket-lunch mr-2" />
+          <p className="inline-block">
+            <i className="fi fi-rr-rocket-lunch mr-2 inline" />
             Design in{' '}
             <span className="transition-all duration-300 font-medium hover:scale-95 text-foreground cursor-pointer">
               Bali, Indonesia
             </span>{' '}
             for global audiences
           </p>
-          <p className="flex items-center gap-1">
-            <i className="fi fi-rr-social-network mr-2" />
+          <p className="inline-block">
+            <i className="fi fi-rr-social-network mr-2 inline" />
             Connect with me{' '}
             <Link
               href={'/contact'}
@@ -70,8 +70,8 @@ export default function Footer(): React.ReactElement {
               @nyomansunima
             </Link>
           </p>
-          <p className="flex items-center gap-1">
-            <i className="fi fi-rr-heart mr-2" />
+          <p className="inline-block">
+            <i className="fi fi-rr-heart mr-2 inline" />
             Support by feedback,{' '}
             <Link
               href={'https://ko-fi.com/nyomansunima?ref=nyomansunima'}
@@ -79,7 +79,7 @@ export default function Footer(): React.ReactElement {
               className="transition-all duration-300 font-medium hover:scale-95 text-foreground"
             >
               buy a coffee
-            </Link>
+            </Link>{' '}
             or support the{' '}
             <Link
               href={'https://github.com/sponsors/nyomansunima?ref=nyomansunima'}

@@ -1,5 +1,9 @@
+'use client'
+
 import Image from 'next/image'
+import Link from 'next/link'
 import * as React from 'react'
+import { motion } from 'motion/react'
 
 export interface LogItemData {
   title: string
@@ -7,6 +11,7 @@ export interface LogItemData {
   date: string
   category: string
   image?: string
+  url?: string
 }
 
 interface LogItemProps {
@@ -37,12 +42,23 @@ function LogImage({ alt, src }: LogImageProps): React.ReactElement {
 }
 
 export function LogItem({ log }: LogItemProps): React.ReactElement {
-  const { title, description, date, category, image } = log
+  const { title, description, date, category, image, url } = log
+  const isValidURL =
+    (url && url.includes('https://')) || url?.includes('http://')
 
   return (
-    <div className="flex flex-col bg-surface border border-border p-3 rounded-2xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group">
+    <motion.div
+      initial={{ y: 200, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      whileHover={{ y: -4 }}
+      transition={{ type: 'spring', duration: '1.2', delay: 0.1 }}
+      viewport={{
+        once: true,
+      }}
+      className="flex flex-col bg-surface border border-border p-3 rounded-2xl cursor-pointer group"
+    >
       <div className="flex flex-col tablet:flex-row gap-2 tablet:items-center">
-        <h3 className="font-medium text-sm !leading-tight flex-grow">
+        <h3 className="font-medium text-base !leading-tight flex-grow">
           {title}
         </h3>
 
@@ -63,8 +79,20 @@ export function LogItem({ log }: LogItemProps): React.ReactElement {
           className="prose prose-sm !text-foreground/70 dark:prose-invert"
         />
 
+        {url && (
+          <div className="flex mt-5">
+            <Link
+              href={url}
+              target={isValidURL ? '_blank' : '_self'}
+              className="flex items-center gap-2 text-foreground/60 group-hover:text-foreground transition-all duration-300 border border-border rounded-full px-3 py-1 hover:scale-95"
+            >
+              <i className="fi fi-rr-broken-chain-link-wrong" /> See detail
+            </Link>
+          </div>
+        )}
+
         {image && <LogImage src={image} alt={title} />}
       </div>
-    </div>
+    </motion.div>
   )
 }

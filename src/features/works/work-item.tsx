@@ -1,6 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import * as React from 'react'
+import { motion } from 'motion/react'
 
 export interface WorkData {
   href: string
@@ -24,6 +27,8 @@ interface WorkImageProps {
   totalImages: number
   index: number
 }
+
+const MotionLink = motion(Link)
 
 function isValidLink(link: string): boolean {
   if (link.includes('http://') || link.includes('https://')) {
@@ -95,10 +100,17 @@ export function WorkItem({ work }: WorkItemProps): React.ReactElement {
   const isLink = isValidLink(href)
 
   return (
-    <Link
+    <MotionLink
+      initial={{ y: 200, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      whileHover={{ y: -4 }}
+      transition={{ type: 'spring', duration: '1.2', delay: 0.1 }}
+      viewport={{
+        once: true,
+      }}
       href={link}
       target={isLink ? '_blank' : undefined}
-      className="flex flex-col transition-all duration-300 hover:-translate-y-1 group border border-border rounded-2xl bg-surface p-3"
+      className="flex flex-col group border border-border rounded-2xl bg-surface p-3"
     >
       <div className="flex flex-col tablet:flex-row tablet:items-center justify-between">
         <h3 className="text-base font-medium !leading-tight">{title}</h3>
@@ -132,6 +144,6 @@ export function WorkItem({ work }: WorkItemProps): React.ReactElement {
           />
         ))}
       </div>
-    </Link>
+    </MotionLink>
   )
 }
