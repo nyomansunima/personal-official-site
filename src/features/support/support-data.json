@@ -1,0 +1,18 @@
+{
+  "supports": [
+    {
+      "icon": "fi fi-rr-square-code",
+      "title": "Donate coding projects",
+      "description": "Help me to create better open source projects.",
+      "url": "https://github.com/sponsors/nyomansunima?ref=nyomansunima",
+      "publisher": "Github Sponsors"
+    },
+    {
+      "icon": "fi fi-rr-coffee-heart",
+      "title": "Donate produce content",
+      "description": "Support me to produce more great content for free.",
+      "url": "https://ko-fi.com/nyomansunima?ref=nyomansunima",
+      "publisher": "Ko-fi"
+    }
+  ]
+}

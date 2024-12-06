@@ -27,20 +27,21 @@
       "timeline": "Oct, 11 2024"
     },
     {
-      "href": "https://brookcodetheme.vercel.app?ref=nyomansunima",
+      "href": "/brook-code-theme",
       "title": "Brook Code Theme",
       "description": "The best simple and elegant code editor theme with minimal looks and simple styles code editor themes for light & dark environments for perfect developer productivity.",
       "images": [
-        "https://cdn.hashnode.com/res/hashnode/image/upload/v1732697877111/1d2058fb-5e79-4161-8eb4-d8499c417862.png"
+        "https://cdn.hashnode.com/res/hashnode/image/upload/v1733491606862/875c0d92-370d-4dd2-84e4-dbe2f6a89d1b.png"
       ],
       "type": "Hacking",
       "rule": "Product designer & developer",
       "category": "Code editor theme",
       "isFeatured": true,
+      "isDraft": true,
       "timeline": "Nov, 28 2024"
     },
     {
-      "href": "https://gunatransport.com/?ref=nyomansunima",
+      "href": "/guna-transport",
       "title": "Guna Transport Website",
       "description": "Create website for transportation business that allow to generate more client and convert up to 30% audiences",
       "images": [
@@ -50,6 +51,7 @@
       "rule": "Product designer & developer",
       "category": "Branding",
       "isFeatured": true,
+      "isDraft": true,
       "timeline": "Dec, 05 2024"
     }
   ]
