@@ -45,5 +45,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE_URL}/works`,
       lastModified: new Date().toISOString(),
     },
+    {
+      url: `${BASE_URL}/support`,
+      lastModified: new Date().toISOString(),
+    },
   ]
 }

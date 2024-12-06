@@ -77,6 +77,11 @@
           "title": "Hoppscotch",
           "description": "Hoppscotch is a free, fast and beautiful API request builder.",
           "url": "https://hoppscotch.com?ref=nyomansunima"
+        },
+        {
+          "title": "Vite",
+          "description": "Vite is a build tool for modern web projects.",
+          "url": "https://vite.dev?ref=nyomansunima"
         }
       ]
     }

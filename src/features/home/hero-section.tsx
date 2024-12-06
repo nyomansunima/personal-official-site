@@ -12,32 +12,47 @@ import { motion } from 'motion/react'
 
 function OpenWorkBadge(): React.ReactElement {
   return (
-    <div className="mb-10">
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger>
-            <Link
-              href={'/contact'}
-              className="flex justify-center items-center px-3 h-9 rounded-full bg-fuchsia-100 dark:bg-fuchsia-400/10 border border-fuchsia-200 dark:border-fuchsia-200/20 text-fuchsia-800 dark:text-fuchsia-400 text-xs gap-2 font-medium transition-all duration-300 hover:scale-95 cursor-pointer"
-            >
-              Open to work
-            </Link>
-          </TooltipTrigger>
-          <TooltipContent>Looking for solid works & teams</TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-    </div>
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger className="">
+          <Link
+            href={'/contact'}
+            className="flex justify-center items-center px-3 h-9 rounded-xl bg-fuchsia-100 dark:bg-fuchsia-400/10 border border-fuchsia-200 dark:border-fuchsia-200/20 text-fuchsia-800 dark:text-fuchsia-400 text-xs gap-2 font-medium transition-all duration-300 hover:scale-95 cursor-pointer"
+          >
+            <i className="fi fi-rr-coffee-heart" />
+            Open to work
+          </Link>
+        </TooltipTrigger>
+        <TooltipContent>Looking for solid works & teams</TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+  )
+}
+
+function NewBadge(): React.ReactElement {
+  return (
+    <Link
+      href={'/crafts'}
+      className="flex gap-5 justify-between h-9 px-4 items-center rounded-xl bg-orange-100 text-orange-700 text-xs font-medium border border-orange-200
+     dark:bg-orange-400/10 dark:text-orange-400 dark:border-orange-200/20 transition-all duration-300 hover:scale-95"
+    >
+      <span>New craft: Brook code theme</span>
+      <i className="fi fi-rr-broken-chain-link-wrong" />
+    </Link>
   )
 }
 
 export function HeroSection(): React.ReactElement {
   return (
     <section className="flex flex-col">
-      <OpenWorkBadge />
+      <div className="flex items-center gap-3 flex-wrap">
+        <OpenWorkBadge />
+        <NewBadge />
+      </div>
 
-      <div className="flex flex-col text-2xl tablet:text-3xl laptop:text-3xl !leading-normal font-medium gap-6 laptop:gap-12">
+      <div className="flex flex-col text-2xl tablet:text-3xl laptop:text-3xl !leading-normal font-medium gap-6 laptop:gap-12 mt-12">
         <motion.h2
-          initial={{ opacity: 0.1 }}
+          initial={{ opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ type: 'spring', duration: '1.2', delay: 0.1 }}
           viewport={{
@@ -60,7 +75,7 @@ export function HeroSection(): React.ReactElement {
           loves to craft solutions for global audiences.
         </motion.h2>
         <motion.h2
-          initial={{ opacity: 0.1 }}
+          initial={{ opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ type: 'spring', duration: '1.2', delay: 0.1 }}
           viewport={{
@@ -72,7 +87,7 @@ export function HeroSection(): React.ReactElement {
           help people solve their problems.
         </motion.h2>
         <motion.h2
-          initial={{ opacity: 0.1 }}
+          initial={{ opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ type: 'spring', duration: '1.2', delay: 0.1 }}
           viewport={{
@@ -84,7 +99,7 @@ export function HeroSection(): React.ReactElement {
           development, product shipping, and business.
         </motion.h2>
         <motion.h2
-          initial={{ opacity: 0.1 }}
+          initial={{ opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ type: 'spring', duration: '1.2', delay: 0.1 }}
           viewport={{

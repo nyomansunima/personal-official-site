@@ -22,12 +22,6 @@ interface NavMenuItemProps {
   target?: React.HTMLAttributeAnchorTarget
 }
 
-/**
- * Renders the brand based on the current pathname.
- *
- * @param pathname - The current pathname.
- * @returns The brand name to be displayed.
- */
 function renderPathBrand(pathname: string): string {
   if (pathname === '/') {
     return 'home'
@@ -41,12 +35,6 @@ function renderPathBrand(pathname: string): string {
   }
 }
 
-/**
- * Renders the brand name based on the current pathname.
- *
- * @param pathname - The current pathname.
- * @returns The brand name to be displayed.
- */
 export function Brand(): React.ReactElement {
   const pathname = usePathname()
 
@@ -66,14 +54,6 @@ export function Brand(): React.ReactElement {
   )
 }
 
-/**
- * Renders a navigation menu item.
- *
- * @param children - The content of the navigation menu item.
- * @param href - The URL of the navigation menu item.
- * @param target - The target of the navigation menu item.
- * @returns A React element representing a navigation menu item.
- */
 export function NavMenuItem({
   children,
   href,
@@ -92,11 +72,6 @@ export function NavMenuItem({
   )
 }
 
-/**
- * Renders the navigation menu.
- *
- * @returns A React element representing the navigation menu.
- */
 function Menu(): React.ReactElement {
   const modalRef = React.useRef<HTMLDivElement>(null)
   const [isShow, setShow] = React.useState<boolean>(false)
@@ -146,12 +121,7 @@ function Menu(): React.ReactElement {
             <NavMenuItem href="/resources">Resources</NavMenuItem>
             <NavMenuItem href="/about">About</NavMenuItem>
             <NavMenuItem href="/contact">Contact</NavMenuItem>
-            <NavMenuItem
-              href="https://ko-fi.com/nyomansunima?ref=nyomansunima"
-              target="_blank"
-            >
-              Donate
-            </NavMenuItem>
+            <NavMenuItem href="/support">Support</NavMenuItem>
             <NavMenuItem
               href="https://nyomansunima.lemonsqueezy.com?ref=nyomansunima"
               target="_blank"
@@ -173,11 +143,6 @@ export function Actions(): React.ReactElement {
   )
 }
 
-/**
- * Renders the header component.
- *
- * @returns A React element representing the header component.
- */
 export default function Header(): React.ReactElement {
   return (
     <header className="flex items-center justify-between h-20 tablet:h-44">

@@ -1,9 +1,9 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import * as React from 'react'
 import { motion } from 'motion/react'
+import { useRouter } from 'next/navigation'
 
 export interface WorkData {
   href: string
@@ -14,6 +14,7 @@ export interface WorkData {
   rule: string
   category: string
   isFeatured?: boolean
+  isDraft?: boolean
   timeline: string
 }
 
@@ -27,8 +28,6 @@ interface WorkImageProps {
   totalImages: number
   index: number
 }
-
-const MotionLink = motion(Link)
 
 function isValidLink(link: string): boolean {
   if (link.includes('http://') || link.includes('https://')) {
@@ -91,16 +90,45 @@ function WorkImage({
   )
 }
 
+function ComingSoon(): React.ReactElement {
+  return (
+    <span className="flex items-center gap-2 text-xs font-medium text-rose-600 dark:text-rose-400">
+      COMING SOON
+    </span>
+  )
+}
+
 export function WorkItem({ work }: WorkItemProps): React.ReactElement {
-  const { href, title, description, rule, type, images, category, timeline } =
-    work
+  const {
+    href,
+    title,
+    description,
+    rule,
+    type,
+    images,
+    category,
+    timeline,
+    isDraft,
+  } = work
+
+  const router = useRouter()
 
   const link = parseLink(href)
   const totalImages = images.length || 0
   const isLink = isValidLink(href)
 
+  const handleClick = () => {
+    if (!isDraft) {
+      if (isLink) {
+        window.open(link, '_blank')
+      } else {
+        router.push(link)
+      }
+    }
+  }
+
   return (
-    <MotionLink
+    <motion.div
       initial={{ y: 200, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       whileHover={{ y: -4 }}
@@ -108,15 +136,19 @@ export function WorkItem({ work }: WorkItemProps): React.ReactElement {
       viewport={{
         once: true,
       }}
-      href={link}
-      target={isLink ? '_blank' : undefined}
-      className="flex flex-col group border border-border rounded-2xl bg-surface p-3"
+      onClick={handleClick}
+      className="flex flex-col group border border-border rounded-2xl bg-surface p-3 cursor-pointer"
     >
       <div className="flex flex-col tablet:flex-row tablet:items-center justify-between">
         <h3 className="text-base font-medium !leading-tight">{title}</h3>
-        <span className="text-sm text-foreground/50 group-hover:text-foreground">
-          {timeline}
-        </span>
+
+        <div className="flex items-center gap-3">
+          {isDraft && <ComingSoon />}
+
+          <span className="text-sm text-foreground/50 group-hover:text-foreground">
+            {timeline}
+          </span>
+        </div>
       </div>
 
       <p className="!leading-relaxed mt-4 text-sm text-foreground/60">
@@ -144,6 +176,6 @@ export function WorkItem({ work }: WorkItemProps): React.ReactElement {
           />
         ))}
       </div>
-    </MotionLink>
+    </motion.div>
   )
 }
