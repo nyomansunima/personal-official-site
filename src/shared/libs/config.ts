@@ -1,4 +1,4 @@
-export default {
+export const config = {
   isProduction: process.env.NODE_ENV === 'production' || false,
   app: {
     host: process.env.NEXT_PUBLIC_APP_HOST || 'http://localhost:3000',

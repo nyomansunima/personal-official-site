@@ -1,9 +1,8 @@
 'use client'
 
 import '@shared/styles/globals.css'
-import { Button } from '@shared/components/ui/button'
-import { CenteredLayout } from '@shared/components//common/centered-layout'
-import * as fonts from '@shared/fonts'
+import { Button, CenteredLayout } from '@shared/components'
+import { fonts } from '@shared/fonts'
 
 export default function GlobalError({
   reset,

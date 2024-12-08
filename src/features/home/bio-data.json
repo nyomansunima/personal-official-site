@@ -3,7 +3,8 @@
     {
       "type": "link",
       "url": "/contact",
-      "label": "Hire me"
+      "label": "Hire me",
+      "isFeatured": true
     },
     {
       "type": "link",
@@ -15,6 +16,7 @@
       "type": "link",
       "url": "/works",
       "label": " See my works",
+      "isFeatured": true,
       "className": "tablet:row-span-2"
     },
     {
@@ -30,7 +32,7 @@
     },
     {
       "type": "link",
-      "url": "https://ko-fi.com/nyomansunima?ref=nyomansunima",
+      "url": "/support",
       "label": "Suport me by donation"
     },
     {
@@ -55,6 +57,13 @@
       "url": "/crafts",
       "label": "See all of my crafts",
       "className": "tablet:col-span-2"
+    },
+    {
+      "type": "link",
+      "url": "/journeys",
+      "label": "See what's new this week",
+      "isFeatured": true,
+      "className": "tablet:col-span-3"
     }
   ]
 }

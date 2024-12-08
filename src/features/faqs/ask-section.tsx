@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import * as React from 'react'
-import { Button } from '@shared/components/ui/button'
+import { Button } from '@shared/components'
 
 export function AskSection(): React.ReactElement {
   return (

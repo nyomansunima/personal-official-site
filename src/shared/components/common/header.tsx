@@ -2,7 +2,6 @@
 import * as React from 'react'
 
 import Link from 'next/link'
-import { Button } from '@shared/components/ui/button'
 import {
   Tooltip,
   TooltipContent,
@@ -10,11 +9,8 @@ import {
   TooltipTrigger,
 } from '../ui/tooltip'
 import { usePathname } from 'next/navigation'
-import {
-  useClickOutside,
-  useKeyEvent,
-  usePathChange,
-} from '@shared/hooks/use-event'
+import { useClickOutside, useKeyEvent, usePathChange } from '@shared/hooks'
+import { Button } from '../ui/button'
 
 interface NavMenuItemProps {
   children: React.ReactNode
@@ -143,7 +139,7 @@ export function Actions(): React.ReactElement {
   )
 }
 
-export default function Header(): React.ReactElement {
+export function Header(): React.ReactElement {
   return (
     <header className="flex items-center justify-between h-20 tablet:h-44">
       <Brand />

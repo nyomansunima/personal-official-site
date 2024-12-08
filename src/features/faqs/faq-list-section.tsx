@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Accordion } from '@shared/components/ui/accordion'
+import { Accordion } from '@shared/components'
 import { FAQData, FAQItem } from './faq-item'
 import faqsData from './faqs-data.json'
 

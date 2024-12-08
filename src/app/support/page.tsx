@@ -1,18 +1,18 @@
 import * as React from 'react'
 import { Metadata } from 'next'
-import * as defaultMetadata from '@shared/libs/shared-metadata'
+import { sharedMetadata } from '@shared/libs'
 import { SupportSection } from '@features/support'
 
 export const metadata: Metadata = {
   title: 'Support Me (Donate)',
   description: 'Support me by donating for projects and contents or goodies',
   openGraph: {
-    ...defaultMetadata.openGraph,
+    ...sharedMetadata.openGraph,
     title: 'Support me (Donate)',
     description: 'Support me by donating for projects and contents or goodies',
   },
   twitter: {
-    ...defaultMetadata.twitter,
+    ...sharedMetadata.twitter,
     title: 'Support me (Donate)',
     description: 'Support me by donating for projects and contents or goodies',
   },

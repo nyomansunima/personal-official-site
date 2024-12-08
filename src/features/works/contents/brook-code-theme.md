@@ -1,22 +1,35 @@
 ---
 title: "Redesigning Acme Corp's E-Commerce Platform"
 description: 'Acme Corp faced challenges with their outdated e-commerce platform. Key issues included a high bounce rate, low conversion rates, and an unappealing user interface. They needed a complete redesign to improve usability and enhance their customer experience.'
-image: 'https://res.cloudinary.com/brooklyn-pc/image/upload/v1671055182/Brooklyn-PC/brook-code-theme/Acme-Corp-e-commerce-platform-1.png'
+image: 'https://cdn.hashnode.com/res/hashnode/image/upload/v1732079951931/3ac2d9b4-d790-4b31-8855-4f6a909811b2.png'
+
 date: '2024-12-06'
-tags: ['Web Design', 'E-Commerce', 'UI/UX']
-client: 'Acme Corp'
-clientUrl: 'https://acmecorp.com'
-industry: ['Retail']
-services: ['UI/UX Design', 'Frontend Development']
-results: ['25% Increase in Conversion Rates']
+status: 'Completed'
+
+client:
+  name: 'Acme Corp'
+  url: 'https://acmecorp.com'
+
+roles: ['Product Designer', 'Developer']
+responsibilities: ['System Design', 'Frontend Development']
+
+teams:
+  - name: 'Jack Stark, Frontend Developer'
+    url: 'https://www.linkedin.com/in/jack-stark-b0b1b2b3/'
 ---
 
-# Redesigning Acme Corp's E-Commerce Platform
+## Challenges
+
+Acme Corp faced challenges with their outdated e-commerce platform. Key issues included a high bounce rate, low conversion rates, and an unappealing user interface. They needed a complete redesign to improve usability and enhance their customer experience.
 
 **Client:** Acme Corp
 **Industry:** Retail
 **Services Provided:** UI/UX Design, Frontend Development
 **Outcome:** 25% Increase in Conversion Rates
+
+[Launch](https://acmecorp.com)
+
+<br/>
 
 ![Banner](https://cdn.hashnode.com/res/hashnode/image/upload/v1732079951931/3ac2d9b4-d790-4b31-8855-4f6a909811b2.png)
 

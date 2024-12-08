@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ContentImage } from '@shared/components/common/content'
+import { ContentImage } from '@shared/components'
 
 export function SharingSection(): React.ReactElement {
   return (

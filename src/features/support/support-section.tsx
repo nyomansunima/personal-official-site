@@ -8,13 +8,7 @@ export function SupportSection(): React.ReactElement {
   return (
     <section className="flex">
       <div className="flex flex-col">
-        <h3 className="text-lg font-medium !leading-tight flex-grow tablet:flex-grow-0">
-          Support me to produce more
-          <br />
-          good things.
-        </h3>
-
-        <div className="flex mt-16">
+        <div className="flex">
           <div className="grid grid-cols-1 tablet:grid-cols-2 gap-3">
             {supports.map((support, index) => (
               <SupportItem data={support} key={index} />

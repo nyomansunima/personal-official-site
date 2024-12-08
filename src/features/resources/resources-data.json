@@ -4,6 +4,11 @@
       "title": "Favorite tools",
       "list": [
         {
+          "title": "Zed",
+          "description": "My favorite code editor for building apps, websites, and more.",
+          "url": "https://zed.dev/?ref=nyomansunima"
+        },
+        {
           "title": "Visual Studio Code",
           "description": "Visual Studio Code is a source-code editor developed by Microsoft for Windows, Linux and macOS.",
           "url": "https://code.visualstudio.com/?ref=nyomansunima"
@@ -82,6 +87,66 @@
           "title": "Vite",
           "description": "Vite is a build tool for modern web projects.",
           "url": "https://vite.dev?ref=nyomansunima"
+        },
+        {
+          "title": "Vercel",
+          "description": "Favorite platform to deploy my website and also the other business sites.",
+          "url": "https://vercel.com?ref=nyomansunima"
+        },
+        {
+          "title": "Waitlist",
+          "description": "I love this stacks, useful when building waiting list for product that embed in a beta sites.",
+          "url": "https://getwaitlist.com?ref=nyomansunima"
+        }
+      ]
+    },
+    {
+      "title": "Inspirations",
+      "list": [
+        {
+          "title": "Dribbble",
+          "description": "Best for designers, i love use this for inspirations and concept design.",
+          "url": "https://dribbble.com?ref=nyomansunima"
+        },
+        {
+          "title": "Godly Website",
+          "description": "My favorite website for inspiration when working with website design.",
+          "url": "https://godly.website?ref=nyomansunima"
+        },
+        {
+          "title": "Awwwards",
+          "description": "When i design a website, i always check the awards on this website.",
+          "url": "https://www.awwwards.com?ref=nyomansunima"
+        },
+        {
+          "title": "Mobbin",
+          "description": "Best for designers, i love use this for inspirations and concept design.",
+          "url": "https://mobbin.design?ref=nyomansunima"
+        }
+      ]
+    },
+    {
+      "title": "Utilities",
+      "list": [
+        {
+          "title": "Shadcn UI",
+          "description": "Best for developers when start create ui for the web app",
+          "url": "https://ui.shadcn.com?ref=nyomansunima"
+        },
+        {
+          "title": "Magic UI",
+          "description": "Best animation website that used to create animation for the web app",
+          "url": "https://magicui.design?ref=nyomansunima"
+        },
+        {
+          "title": "Motion",
+          "description": "My favorite animation library for the web app",
+          "url": "https://motion.dev?ref=nyomansunima"
+        },
+        {
+          "title": "Flaticon Interface Icon",
+          "description": "My favorite free icons for start website and design projects.",
+          "url": "https://www.flaticon.com/uicons/interface-icons?ref=nyomansunima"
         }
       ]
     }

@@ -1,18 +1,20 @@
 import * as React from 'react'
 import Link from 'next/link'
-import { mergeClass } from '@shared/utils/helper'
+import { mergeClass } from '@shared/utils'
 
 export interface BioItemData {
   type: string
   url: string
   label: string
   className?: string
+  isFeatured?: boolean
 }
 
 interface LinkItemProps {
   className?: string
   children?: React.ReactNode
   href: string
+  showBadge?: boolean
 }
 
 interface BioItemProps {
@@ -23,6 +25,7 @@ function LinkItem({
   href,
   children,
   className,
+  showBadge,
 }: LinkItemProps): React.ReactElement {
   const isUrl = href.includes('http://') || href.includes('https://')
 
@@ -37,6 +40,10 @@ function LinkItem({
     >
       {children}
 
+      {showBadge && (
+        <span className="absolute top-2 left-2 h-2 w-2 rounded-full bg-blue-600 dark:bg-blue-500 group-hover:animate-ping" />
+      )}
+
       <div className="absolute h-7 w-7 rounded-full bg-secondary/30 border border-border flex justify-center items-center top-3 right-3 transition-all duration-500 opacity-0 group-hover:opacity-100">
         <i className="fi fi-rr-arrow-small-right -rotate-45" />
       </div>
@@ -45,11 +52,11 @@ function LinkItem({
 }
 
 export function BioItem({ data }: BioItemProps): React.ReactElement {
-  const { type, label, url, className } = data
+  const { type, label, url, className, isFeatured } = data
 
   const components = Object.freeze({
     link: (
-      <LinkItem href={url} className={className}>
+      <LinkItem href={url} className={className} showBadge={isFeatured}>
         {label}
       </LinkItem>
     ),

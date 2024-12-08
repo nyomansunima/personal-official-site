@@ -23,7 +23,9 @@ export function SupportItem({ data }: SupportItemProps): React.ReactElement {
       className="flex flex-col gap-3 bg-surface p-3 border border-border rounded-2xl transition-all duration-300 hover:-translate-y-1 cursor-pointer relative group"
     >
       <div className="flex items-center gap-2">
-        <i className={`${icon} h-9 w-9 rounded-lg bg-secondary`} />
+        <i
+          className={`${icon} h-9 w-9 rounded-lg bg-secondary/40 border border-border`}
+        />
         <div className="flex flex-col flex-grow gap-1">
           <h3 className="text-sm font-medium text-wrap">{title}</h3>
 

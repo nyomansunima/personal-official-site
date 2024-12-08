@@ -3,7 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@shared/components/ui/accordion'
+} from '@shared/components'
 
 export interface FAQData {
   question: string

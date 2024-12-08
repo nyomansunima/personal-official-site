@@ -7,7 +7,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@shared/components/ui/tooltip'
+} from '@shared/components'
 import { motion } from 'motion/react'
 
 export interface LogGroupData {

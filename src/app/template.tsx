@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { PageTransition } from '@shared/components/animation/transition'
+import { PageTransition } from '@shared/components'
 
 interface RootTemplateProps {
   children: React.ReactNode

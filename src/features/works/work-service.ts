@@ -4,21 +4,27 @@ import fs from 'fs/promises'
 import path from 'path'
 import { evaluate } from 'next-mdx-remote-client/rsc'
 import * as React from 'react'
-import { ContentImage } from '@shared/components/common/content'
+import { ContentImage } from '@shared/components'
+import Link from 'next/link'
 
 const WORK_CONTENT_PATH = '/src/features/works/contents'
 
-type WorkFrontMatter = {
+export type WorkFrontMatter = {
   title: string
   description: string
   image: string
   date: string
-  tags: string[]
-  client: string
-  clientUrl: string
-  industry: string[]
-  services: string[]
-  results: string[]
+  status: string
+  client: {
+    name: string
+    url: string
+  }
+  roles: string[]
+  responsibilities: string[]
+  teams: {
+    name: string
+    url: string
+  }[]
 }
 
 type WorkMetadata = Pick<WorkFrontMatter, 'title' | 'description' | 'image'>
@@ -55,6 +61,7 @@ export async function getWorkDetail(slug: string): Promise<WorkDetail> {
     },
     components: {
       img: ContentImage,
+      a: Link,
     },
   })
 

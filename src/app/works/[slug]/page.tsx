@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Metadata, ResolvingMetadata } from 'next'
-import * as defaultMetadata from '@shared/libs/shared-metadata'
+import { sharedMetadata } from '@shared/libs'
 import { WorkDetailContent, workService } from '@features/works'
 
 interface Params {
@@ -24,13 +24,13 @@ export async function generateMetadata(
     title: meta.title,
     description: meta.description,
     openGraph: {
-      ...defaultMetadata.openGraph,
+      ...sharedMetadata.openGraph,
       title: meta.title,
       description: meta.description,
       images: [meta.image, ...previousOgImages],
     },
     twitter: {
-      ...defaultMetadata.twitter,
+      ...sharedMetadata.twitter,
       title: meta.title,
       description: meta.description,
       images: [meta.image, ...previousTwitterImages],

@@ -1,13 +1,13 @@
 import * as React from 'react'
-import { Button } from '@shared/components/ui/button'
 import Link from 'next/link'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@shared/components/ui/tooltip'
-import { mergeClass } from '@shared/utils/helper'
+  Button,
+} from '@shared/components'
+import { mergeClass } from '@shared/utils'
 
 export interface SocialData {
   label: string

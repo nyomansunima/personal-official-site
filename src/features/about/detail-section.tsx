@@ -1,9 +1,6 @@
 import Link from 'next/link'
 import * as React from 'react'
-import {
-  ContentImage,
-  GalleryListImage,
-} from '@shared/components/common/content'
+import { ContentImage, GalleryListImage } from '@shared/components'
 
 const images = [
   'https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=2838&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Metadata } from 'next'
-import * as defaultMetadata from '@shared/libs/shared-metadata'
+import { sharedMetadata } from '@shared/libs'
 import { BioSection, HeroSection } from '@features/home'
 
 export const metadata: Metadata = {
@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   description:
     'Focused on crafting digital products, website, web app, mobile app to help business.',
   openGraph: {
-    ...defaultMetadata.openGraph,
+    ...sharedMetadata.openGraph,
     title: 'Nyoman Sunima',
     description:
       'Focused on crafting digital products, website, web app, mobile app to help business.',
   },
   twitter: {
-    ...defaultMetadata.twitter,
+    ...sharedMetadata.twitter,
     title: 'Nyoman Sunima',
     description:
       'Focused on crafting digital products, website, web app, mobile app to help business.',

@@ -1,18 +1,18 @@
 import * as React from 'react'
 import { Metadata } from 'next'
-import * as defaultMetadata from '@shared/libs/shared-metadata'
+import { sharedMetadata } from '@shared/libs'
 import { FAQListSection, AskSection } from '@features/faqs'
 
 export const metadata: Metadata = {
   title: 'FAQs',
   description: 'Most asked questions by people around the world',
   openGraph: {
-    ...defaultMetadata.openGraph,
+    ...sharedMetadata.openGraph,
     title: 'FAQs',
     description: 'Most asked questions by people around the world',
   },
   twitter: {
-    ...defaultMetadata.twitter,
+    ...sharedMetadata.twitter,
     title: 'FAQs',
     description: 'Most asked questions by people around the world',
   },

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Metadata } from 'next'
-import * as defaultMetadata from '@shared/libs/shared-metadata'
+import { sharedMetadata } from '@shared/libs'
 import { CraftListSection } from '@features/crafts'
 
 export const metadata: Metadata = {
@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   description:
     'See all of my projects, business, products, side husltes and something that i built',
   openGraph: {
-    ...defaultMetadata.openGraph,
+    ...sharedMetadata.openGraph,
     title: 'Crafts',
     description:
       'See all of my projects, business, products, side husltes and something that i built',
   },
   twitter: {
-    ...defaultMetadata.twitter,
+    ...sharedMetadata.twitter,
     title: 'Crafts',
     description:
       'See all of my projects, business, products, side husltes and something that i built',

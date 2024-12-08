@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Button } from '@shared/components/ui/button'
+import { Button } from '@shared/components'
 
 export const metadata: Metadata = {
   title: 'Not Found',

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Link from 'next/link'
-import { mergeClass } from '@shared/utils/helper'
+import { mergeClass } from '@shared/utils'
 
 const footerMenus = [
   { label: 'Privacy policy', href: '/privacy' },
@@ -47,7 +47,7 @@ export function FooterMenuList(): React.ReactElement {
   )
 }
 
-export default function Footer(): React.ReactElement {
+export function Footer(): React.ReactElement {
   return (
     <footer className="flex flex-col">
       <div className="bg-surface border border-border rounded-2xl p-1">

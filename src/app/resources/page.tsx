@@ -1,18 +1,18 @@
 import * as React from 'react'
 import { Metadata } from 'next'
-import * as defaultMetadata from '@shared/libs/shared-metadata'
+import { sharedMetadata } from '@shared/libs'
 import { SourcesSection } from '@features/resources'
 
 export const metadata: Metadata = {
   title: 'Resources',
   description: 'Get free resources and things that help your works',
   openGraph: {
-    ...defaultMetadata.openGraph,
+    ...sharedMetadata.openGraph,
     title: 'Resources',
     description: 'Get free resources and things that help your works',
   },
   twitter: {
-    ...defaultMetadata.twitter,
+    ...sharedMetadata.twitter,
     title: 'Resources',
     description: 'Get free resources and things that help your works',
   },

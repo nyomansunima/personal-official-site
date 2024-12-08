@@ -2,8 +2,7 @@
 
 import * as React from 'react'
 import Link from 'next/link'
-import { Button } from '@shared/components/ui/button'
-import { toast } from '@shared/components/ui/toast'
+import { Button, toast } from '@shared/components'
 
 export interface ContactItemData {
   href: string

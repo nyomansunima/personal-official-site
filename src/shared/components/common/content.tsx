@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import * as React from 'react'
-import { mergeClass } from '@shared/utils/helper'
+import { mergeClass } from '@shared/utils'
 
 interface ArticleContentProps {
   children: React.ReactNode

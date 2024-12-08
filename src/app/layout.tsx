@@ -1,16 +1,15 @@
 import * as React from 'react'
 import type { Metadata } from 'next'
 import '@shared/styles/globals.css'
-import config from '@shared/libs/config'
+import { config } from '@shared/libs'
 import { Analytics as VercelAnalytics } from '@vercel/analytics/react'
-import { AnimationProvider } from '@shared/providers/animation-provider'
-import { ThemeProvider } from '@shared/providers/theme-provider'
-import Header from '@shared/components/common/header'
-import Footer from '@shared/components/common/footer'
-import { Toaster } from '@shared/components/ui/toast'
-import { CenteredLayout } from '@shared/components/common/centered-layout'
-import { PosthogProvider } from '@shared/providers/posthog-provider'
-import * as fonts from '@shared/fonts'
+import {
+  ThemeProvider,
+  AnimationProvider,
+  PosthogProvider,
+} from '@shared/providers'
+import { Footer, Header, Toaster, CenteredLayout } from '@shared/components'
+import { fonts } from '@shared/fonts'
 
 export const metadata: Metadata = {
   applicationName: 'Nyoman Sunima',
