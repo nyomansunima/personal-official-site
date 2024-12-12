@@ -38,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date().toISOString(),
     },
     {
-      url: `${BASE_URL}/terms`,
+      url: `${BASE_URL}/resources`,
       lastModified: new Date().toISOString(),
     },
     {

@@ -35,11 +35,12 @@ function NewBadge(): React.ReactElement {
       <Tooltip>
         <TooltipTrigger asChild>
           <Link
-            href={'/crafts'}
+            href={'https://devcrates.site?ref=nyomansunima'}
+            target="_blank"
             className="flex gap-5 justify-between h-9 px-4 items-center rounded-xl bg-orange-100 text-orange-700 text-xs font-medium border border-orange-200
      dark:bg-orange-400/10 dark:text-orange-400 dark:border-orange-200/20 transition-all duration-300 hover:scale-95"
           >
-            <span>New craft: Brook code theme</span>
+            <span>New craft: Developer Resources</span>
             <i className="fi fi-rr-broken-chain-link-wrong" />
           </Link>
         </TooltipTrigger>
