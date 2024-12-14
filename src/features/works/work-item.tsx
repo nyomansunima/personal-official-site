@@ -4,6 +4,7 @@ import Image from 'next/image'
 import * as React from 'react'
 import { motion } from 'motion/react'
 import { useRouter } from 'next/navigation'
+import { parseReadableDate } from '@shared/utils'
 
 export interface WorkData {
   href: string
@@ -111,6 +112,7 @@ export function WorkItem({ work }: WorkItemProps): React.ReactElement {
     isDraft,
   } = work
 
+  const readableTimeline = parseReadableDate(timeline)
   const router = useRouter()
 
   const link = parseLink(href)
@@ -131,50 +133,50 @@ export function WorkItem({ work }: WorkItemProps): React.ReactElement {
     <motion.div
       initial={{ y: 200, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
-      whileHover={{ y: -4 }}
       transition={{ type: 'spring', duration: '1.2', delay: 0.1 }}
       viewport={{
         once: true,
       }}
       onClick={handleClick}
-      className="flex flex-col group border border-border rounded-2xl bg-surface p-3 cursor-pointer"
     >
-      <div className="flex flex-col tablet:flex-row tablet:items-center justify-between">
-        <h3 className="text-base font-medium !leading-tight">{title}</h3>
+      <div className="flex flex-col group border border-border rounded-2xl bg-surface p-3 cursor-pointer transition-all duration-300 hover:-translate-y-1">
+        <div className="flex flex-col tablet:flex-row tablet:items-center justify-between">
+          <h3 className="text-base font-medium !leading-tight">{title}</h3>
 
-        <div className="flex items-center gap-3">
-          {isDraft && <ComingSoon />}
+          <div className="flex items-center gap-3">
+            {isDraft && <ComingSoon />}
 
-          <span className="text-sm text-foreground/50 group-hover:text-foreground">
-            {timeline}
+            <span className="text-sm text-foreground/50 group-hover:text-foreground">
+              {readableTimeline}
+            </span>
+          </div>
+        </div>
+
+        <p className="!leading-relaxed mt-4 text-sm text-foreground/60">
+          {description}
+        </p>
+        <div className="flex flex-wrap text-sm text-foreground/70 mt-6 gap-2">
+          <span className="py-1 px-3 bg-surface border border-border rounded-xl cursor-pointer text-sm">
+            {type}
+          </span>
+          <span className="py-1 px-3 bg-surface border border-border rounded-xl cursor-pointer text-sm">
+            {rule}
+          </span>
+          <span className="py-1 px-3 bg-surface border border-border rounded-xl cursor-pointer text-sm">
+            {category}
           </span>
         </div>
-      </div>
-
-      <p className="!leading-relaxed mt-4 text-sm text-foreground/60">
-        {description}
-      </p>
-      <div className="flex flex-wrap text-sm text-foreground/70 mt-6 gap-2">
-        <span className="py-1 px-3 bg-surface border border-border rounded-xl cursor-pointer text-sm">
-          {type}
-        </span>
-        <span className="py-1 px-3 bg-surface border border-border rounded-xl cursor-pointer text-sm">
-          {rule}
-        </span>
-        <span className="py-1 px-3 bg-surface border border-border rounded-xl cursor-pointer text-sm">
-          {category}
-        </span>
-      </div>
-      <div className="grid grid-cols-1 tablet:grid-cols-4 gap-2 mt-10">
-        {images.map((image, i) => (
-          <WorkImage
-            image={image}
-            alt={title}
-            totalImages={totalImages}
-            index={i}
-            key={i}
-          />
-        ))}
+        <div className="grid grid-cols-1 tablet:grid-cols-4 gap-2 mt-10">
+          {images.map((image, i) => (
+            <WorkImage
+              image={image}
+              alt={title}
+              totalImages={totalImages}
+              index={i}
+              key={i}
+            />
+          ))}
+        </div>
       </div>
     </motion.div>
   )

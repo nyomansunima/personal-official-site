@@ -2,27 +2,38 @@
   "experiences": [
     {
       "team": "Dimata",
+      "teamLabel": "Software house in Bali",
       "position": "Frontend Developer",
       "timeline": "Jul 2019 - Dec 2020",
       "teamUrl": "https://dimata.com?ref=nyomansunima"
     },
     {
       "team": "Dimata",
+      "teamLabel": "Software house in Bali",
       "position": "Senior Software Engineer",
       "timeline": "Dec 2020 - Feb 2023",
       "teamUrl": "https://dimata.com?ref=nyomansunima"
     },
     {
       "team": "Engaging Enterprises",
+      "teamLabel": "Creative & marketing agency in singapore",
       "position": "Full-stack Developer",
       "timeline": "Apr 2023 - May 2023",
       "teamUrl": "https://engagingenterprises.co/?ref=nyomansunima"
     },
     {
       "team": "Weebo",
+      "teamLabel": "Web design agency",
       "position": "Founder",
       "timeline": "Feb 2024 - Present",
       "teamUrl": "https://tryweebo.one/?ref=nyomansunima"
+    },
+    {
+      "team": "Moono",
+      "teamLabel": "Indie hacking for saas",
+      "position": "Founder",
+      "timeline": "May 2024 - Present",
+      "teamUrl": "https://moono.space/?ref=nyomansunima"
     }
   ],
   "logs": [

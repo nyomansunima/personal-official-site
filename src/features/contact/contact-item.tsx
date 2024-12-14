@@ -39,7 +39,7 @@ export function ContactItem({ contact, children }: ContactItemProps) {
       asChild={!isEmail}
       variant={'outline'}
       size={'lg'}
-      className="transition-all duration-500 hover:-translate-y-1 bg-surface"
+      className="transition-all duration-300 hover:-translate-y-1 bg-surface"
       onClick={() => {
         if (isEmail) {
           copyEmailToClipboard()

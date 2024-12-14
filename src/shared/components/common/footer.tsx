@@ -1,6 +1,9 @@
+'use client'
+
 import * as React from 'react'
 import Link from 'next/link'
 import { mergeClass } from '@shared/utils'
+import { motion } from 'motion/react'
 
 const footerMenus = [
   { label: 'Privacy policy', href: '/privacy' },
@@ -49,8 +52,14 @@ export function FooterMenuList(): React.ReactElement {
 
 export function Footer(): React.ReactElement {
   return (
-    <footer className="flex flex-col">
-      <div className="bg-surface border border-border rounded-2xl p-1">
+    <footer className="flex flex-col" id="footer">
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ type: 'spring', duration: 1.2, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="bg-surface border border-border rounded-2xl p-1"
+      >
         <div className="flex flex-col text-foreground/60 gap-2 border border-border bg-surface p-3 rounded-xl text-sm">
           <p className="inline-block">
             <i className="fi fi-rr-rocket-lunch mr-2 inline" />
@@ -72,26 +81,17 @@ export function Footer(): React.ReactElement {
           </p>
           <p className="inline-block">
             <i className="fi fi-rr-heart mr-2 inline" />
-            Support by feedback,{' '}
+            Support me to{' '}
             <Link
-              href={'https://ko-fi.com/nyomansunima?ref=nyomansunima'}
-              target="_blank"
+              href={'/support'}
               className="transition-all duration-300 font-medium hover:scale-95 text-foreground"
             >
-              buy a coffee
+              create good things
             </Link>{' '}
-            or support the{' '}
-            <Link
-              href={'https://github.com/sponsors/nyomansunima?ref=nyomansunima'}
-              target="_blank"
-              className="transition-all duration-300 font-medium hover:scale-95 text-foreground"
-            >
-              github project
-            </Link>
-            .
+            or support the .
           </p>
         </div>
-      </div>
+      </motion.div>
 
       <div className="flex flex-col tablet:flex-row tablet:items-center py-7 tablet:justify-between mt-8">
         <span className="text-sm">

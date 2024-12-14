@@ -11,7 +11,7 @@
       "rule": "Product designer & developer",
       "category": "Code editor theme",
       "isFeatured": true,
-      "timeline": "Aug, 31 2023"
+      "timeline": "2023-08-31"
     },
     {
       "href": "https://github.com/weecraft/blaze-theme?ref=nyomansunima",
@@ -24,7 +24,7 @@
       "rule": "Product designer & developer",
       "category": "Code editor theme",
       "isFeatured": true,
-      "timeline": "Oct, 11 2024"
+      "timeline": "2024-10-11"
     },
     {
       "href": "/brook-code-theme",
@@ -38,7 +38,7 @@
       "category": "Code editor theme",
       "isFeatured": true,
       "isDraft": true,
-      "timeline": "Nov, 28 2024"
+      "timeline": "2024-11-28"
     },
     {
       "href": "/guna-transport",
@@ -52,7 +52,21 @@
       "category": "Branding",
       "isFeatured": true,
       "isDraft": true,
-      "timeline": "Dec, 05 2024"
+      "timeline": "2024-12-05"
+    },
+    {
+      "href": "/dev-crates",
+      "title": "Dev Crates",
+      "description": "Helping developers to find the best resources, sites, and tools to build their projects. Also featuring a curated list of the best resources for developers to learn and grow.",
+      "images": [
+        "https://cdn.hashnode.com/res/hashnode/image/upload/v1733990991229/49886a53-896d-4b9c-9146-dad03454f1dd.png"
+      ],
+      "type": "Hacking",
+      "rule": "Product designer & developer",
+      "category": "Tools",
+      "isFeatured": true,
+      "isDraft": true,
+      "timeline": "2024-12-12"
     }
   ]
 }
