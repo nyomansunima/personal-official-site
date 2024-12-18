@@ -20,7 +20,10 @@ const config: Config = {
     },
     extend: {
       fontSize: {
-        base: '.935rem',
+        sm: '.84375rem',
+        base: '.9350rem',
+        lg: '1.0625rem',
+        xl: '1.1875rem',
       },
       colors: {
         background: 'hsl(var(--color-background))',

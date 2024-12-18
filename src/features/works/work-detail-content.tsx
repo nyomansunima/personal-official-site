@@ -85,7 +85,7 @@ export async function WorkDetailContent({
 
   return (
     <div className="flex flex-col">
-      <h1 className="text-2xl tablet:text-3xl font-medium !leading-tight text-pretty">
+      <h1 className="text-xl font-medium !leading-tight text-balance">
         {meta.title}
       </h1>
 
@@ -93,12 +93,12 @@ export async function WorkDetailContent({
         <Link
           href={meta.client.url}
           target="_blank"
-          className="font-medium !leading-none text-foreground/60 transition-all duration-300 hover:scale-95"
+          className="!leading-none transition-all duration-300 hover:-translate-y-1 text-sm"
         >
           {meta.client.name}
         </Link>
 
-        <span className="text-foreground/60 !leading-none cursor-pointer transition-all duration-300 hover:scale-95">
+        <span className="!leading-none cursor-pointer transition-all duration-300 hover:-translate-y-1 text-sm">
           {date}
         </span>
       </div>

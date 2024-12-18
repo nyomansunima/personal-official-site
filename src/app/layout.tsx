@@ -58,7 +58,7 @@ export default function RootLayout({
             <AnimationProvider>
               <CenteredLayout>
                 <Header />
-                <main className="min-h-screen py-20 tablet:pb-56">
+                <main className="min-h-screen pb-28 tablet:pb-56">
                   {children}
                 </main>
                 <Footer />

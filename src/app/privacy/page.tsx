@@ -25,7 +25,9 @@ export default function PrivacyPage(): React.ReactElement {
       <ArticleContent>
         <h1>Privacy policy</h1>
 
-        <strong>Effective Date: Friday, 12 April 2024</strong>
+        <p>
+          <i>Effective Date: Friday, 12 April 2024</i>
+        </p>
 
         <p>
           This privacy policy outlines the information practices and procedures
@@ -43,7 +45,9 @@ export default function PrivacyPage(): React.ReactElement {
 
         <h2>Information We Collect</h2>
 
-        <h3>Personal Information</h3>
+        <p>
+          <i>Personal Information:</i>
+        </p>
 
         <p>
           We may collect personal information that you voluntarily provide to us
@@ -51,7 +55,9 @@ export default function PrivacyPage(): React.ReactElement {
           and any other information you choose to provide.
         </p>
 
-        <h3>Usage Information</h3>
+        <p>
+          <i>Usage Information:</i>
+        </p>
 
         <p>
           When you visit our Website, we may automatically collect certain

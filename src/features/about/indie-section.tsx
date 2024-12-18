@@ -6,7 +6,9 @@ export function IndieSection(): React.ReactElement {
       <br />
 
       <h2>
-        Playing with concept and bring into a real product or proven business
+        Playing with concept and bring into a real
+        <br />
+        product or proven business
       </h2>
 
       <p>

@@ -166,7 +166,8 @@ export function WorkItem({ work }: WorkItemProps): React.ReactElement {
             {category}
           </span>
         </div>
-        <div className="grid grid-cols-1 tablet:grid-cols-4 gap-2 mt-10">
+
+        <div className="grid grid-cols-1 tablet:grid-cols-4 gap-2 mt-5">
           {images.map((image, i) => (
             <WorkImage
               image={image}
