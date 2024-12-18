@@ -29,7 +29,7 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={mergeClass(
-        'flex flex-1 items-center text-sm !font-medium text-left justify-between transition-all duration-300 [&[data-state=open]>i]:rotate-180',
+        'flex flex-1 gap-3 items-center text-sm !font-medium text-left justify-between transition-all duration-300 [&[data-state=open]>i]:rotate-180',
         className,
       )}
       {...props}

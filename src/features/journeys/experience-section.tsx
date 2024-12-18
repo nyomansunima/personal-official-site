@@ -9,7 +9,7 @@ const experiences = [
 export function ExperienceSection(): React.ReactElement {
   return (
     <section className="flex flex-col">
-      <div className="flex flex-col w-full tablet:w-10/12 mx-auto gap-4">
+      <div className="flex flex-col w-full tablet:w-11/12 mx-auto gap-4">
         <h3 className="text-lg font-medium flex-grow tablet:flex-grow-0">
           Experiences: Career & contributions
         </h3>

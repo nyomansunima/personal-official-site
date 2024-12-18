@@ -7,7 +7,9 @@ export function ActivitySection(): React.ReactElement {
       <br />
 
       <h2>
-        From ideation, research, planning, design, code to ship the best product
+        From ideation, research, planning, design, code
+        <br />
+        to ship the best product
       </h2>
 
       <p>

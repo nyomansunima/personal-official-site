@@ -8,7 +8,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '../ui/tooltip'
-import { usePathname } from 'next/navigation'
 import { useClickOutside, useKeyEvent, usePathChange } from '@shared/hooks'
 import { Button } from '../ui/button'
 
@@ -18,34 +17,15 @@ interface NavMenuItemProps {
   target?: React.HTMLAttributeAnchorTarget
 }
 
-function renderPathBrand(pathname: string): string {
-  if (pathname === '/') {
-    return 'home'
-  } else {
-    const brand = pathname.replace('/', '')
-    if (brand.includes('works')) {
-      return brand.split('/')[0]
-    }
-
-    return brand
-  }
-}
-
 export function Brand(): React.ReactElement {
-  const pathname = usePathname()
-
   return (
-    <div className="text-foreground/50 dark:text-foreground/70 text-sm gap-3 flex relative z-10">
+    <div className="text-sm gap-3 flex relative z-10">
       <Link
         href={'/'}
         className="transition-all duration-300 hover:-translate-x-1"
       >
         <span className="font-medium">nyomansunima.one</span>
       </Link>
-      <span className="text-foreground hidden tablet:block">/</span>
-      <span className="text-foreground transition-all duration-300 hover:-translate-x-1 cursor-pointer hidden tablet:block">
-        {renderPathBrand(pathname)}
-      </span>
     </div>
   )
 }
@@ -141,7 +121,7 @@ export function Actions(): React.ReactElement {
 
 export function Header(): React.ReactElement {
   return (
-    <header className="flex items-center justify-between h-20 tablet:h-44">
+    <header className="flex items-center justify-between h-24 tablet:h-36">
       <Brand />
       <Actions />
     </header>

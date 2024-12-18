@@ -26,7 +26,7 @@ export function ArticleContent({
   return (
     <article
       className={`${mergeClass(
-        'prose dark:prose-invert prose-sm tablet:prose-base tablet:prose-p:text-base prose-headings:!leading-tight tablet:prose-h1:text-3xl prose-h1:text-2xl tablet:prose-li:text-base max-w-none prose-headings:font-medium prose-strong:font-medium prose-neutral prose-code:font-mono prose-img:overflow-hidden prose-img:border prose-img:border-border prose-img:bg-surface prose-img:rounded-xl prose-pre:bg-surface prose-pre:text-foreground prose-pre:border prose-pre:border-border prose-pre:font-medium overflow-hidden text-foreground prose-headings:text-foreground prose-a:text-foreground prose-strong:text-foreground prose-headings:!text-pretty',
+        'prose dark:prose-invert prose-sm font-normal tablet:prose-p:text-base prose-headings:!leading-tight prose-p:!leading-7 prose-li:!leading-7 prose-h1:text-xl prose-h2:text-lg prose-h3:text-base tablet:prose-li:text-base max-w-none prose-headings:font-medium prose-strong:font-medium tablet:prose-strong:text-base prose-neutral prose-code:font-mono prose-img:overflow-hidden prose-img:border prose-img:border-border prose-img:bg-surface prose-img:rounded-xl prose-pre:bg-surface prose-pre:text-foreground prose-pre:border prose-pre:border-border prose-pre:font-medium overflow-hidden text-foreground prose-p:!text-foreground prose-headings:text-foreground prose-a:text-foreground prose-strong:text-foreground prose-headings:!text-balance text-pretty prose-p:text-pretty prose-li:text-pretty text-sm tablet:text-base',
         className,
       )}`}
     >
